@@ -1,0 +1,1487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="Main" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="Main" />
+      <s:element name="BuscaCriterio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Template" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaCriterioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaCriterioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneExpedientePadre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValorLlave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneExpedientePadreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneExpedientePadreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneExpedienteHijo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValorLlave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Docidp" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneExpedienteHijoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneExpedienteHijoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtienecampos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="iDocid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtienecamposResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtienecamposResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtienecamposPadre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="iDocid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtienecamposPadreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtienecamposPadreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaCamposCaptura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="iDocid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Campo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaCamposCapturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizaCamposCapturaResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaDato_ER">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoDato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LongitudMax" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LongitudMin" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mascara" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Regla" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaDato_ERResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaDato_ERResult" type="s1:Respuesta" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaCriterioGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Template" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GrupoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaCriterioGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaCriterioGrupoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaCriterioGrupoVerifica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Template" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GrupoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaCriterioGrupoVerificaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuscaCriterioGrupoVerificaResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerInfoDocPadre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFecha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerInfoDocPadreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerInfoDocPadreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerInfoDocHijos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngDocID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngDocPid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerInfoDocHijosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerInfoDocHijosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaImgExportado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="lngDocID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="intExp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaImgExportadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizaImgExportadoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsLogExportador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLoteID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNss" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFolio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nNoExp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nImgExp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dFecDig" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dFecExp" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="bExportado" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMotivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nUserDig" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nUserExp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsLogExportadorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsLogExportadorResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProyectoID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageNameResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProyectoID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TemplateID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerTemplateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ptTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXmlData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="proyectoId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXmlDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXmlDataResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceivedXmlData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="proyectoId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="docId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceivedXmlDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceivedXmlDataResult" type="s1:Respuesta" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneHijosPorDocType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="proyectoId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="docId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="docType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneHijosPorDocTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneHijosPorDocTypeResult" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EjecutaSPCondicional">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Condicion1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Condicion2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Condicion3" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutaSPCondicionalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EjecutaSPCondicionalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutaSPparam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pstrValor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EjecutaSPparamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EjecutaSPparamResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SPName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExecuteDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteNonQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SPName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteNonQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteNonQueryResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpedienteOK_MC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFecha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpedienteOK_MCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExpedienteOK_MCResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaExpObligatorios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="intDocID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaExpObligatoriosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidaExpObligatoriosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEstatusExpImg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEstatusExpImgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneEstatusExpImgResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneCifrasControlRecorteGlobal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZonaId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SucursalId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneCifrasControlRecorteGlobalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneCifrasControlRecorteGlobalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneCifrasControlRecorteDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZonaId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SucursalId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneCifrasControlRecorteDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneCifrasControlRecorteDetalleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="Main">
+      <s:complexType name="IDTicket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TicketID" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsrID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VersionAplicacionID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaHoraInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaHoraUltimoAcceso" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoVida" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoRestante" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCompleto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GrupoAdminID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClienteID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PerfilUsuarioID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoVidaPwd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoActualizoPwd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoIdentidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltLogin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DuracionDias" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvisoCaducidadPwdDias" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacionPwd" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Respuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RespuestaID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionCategoria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RespuestaToString" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="BuscaCriterioSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaCriterio" />
+  </wsdl:message>
+  <wsdl:message name="BuscaCriterioSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaCriterioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneExpedientePadreSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneExpedientePadre" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneExpedientePadreSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneExpedientePadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneExpedienteHijoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneExpedienteHijo" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneExpedienteHijoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneExpedienteHijoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtienecamposSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtienecampos" />
+  </wsdl:message>
+  <wsdl:message name="ObtienecamposSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtienecamposResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtienecamposPadreSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtienecamposPadre" />
+  </wsdl:message>
+  <wsdl:message name="ObtienecamposPadreSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtienecamposPadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaCamposCapturaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaCamposCaptura" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaCamposCapturaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaCamposCapturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaDato_ERSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaDato_ER" />
+  </wsdl:message>
+  <wsdl:message name="ValidaDato_ERSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaDato_ERResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaCriterioGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaCriterioGrupo" />
+  </wsdl:message>
+  <wsdl:message name="BuscaCriterioGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaCriterioGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaCriterioGrupoVerificaSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaCriterioGrupoVerifica" />
+  </wsdl:message>
+  <wsdl:message name="BuscaCriterioGrupoVerificaSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaCriterioGrupoVerificaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInfoDocPadreSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoDocPadre" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInfoDocPadreSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoDocPadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInfoDocHijosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoDocHijos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerInfoDocHijosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerInfoDocHijosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaImgExportadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaImgExportado" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaImgExportadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaImgExportadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsLogExportadorSoapIn">
+    <wsdl:part name="parameters" element="tns:InsLogExportador" />
+  </wsdl:message>
+  <wsdl:message name="InsLogExportadorSoapOut">
+    <wsdl:part name="parameters" element="tns:InsLogExportadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImageNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImageName" />
+  </wsdl:message>
+  <wsdl:message name="GetImageNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXmlData" />
+  </wsdl:message>
+  <wsdl:message name="GetXmlDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXmlDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceivedXmlDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceivedXmlData" />
+  </wsdl:message>
+  <wsdl:message name="ReceivedXmlDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceivedXmlDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneHijosPorDocTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneHijosPorDocType" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneHijosPorDocTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneHijosPorDocTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjecutaSPCondicionalSoapIn">
+    <wsdl:part name="parameters" element="tns:EjecutaSPCondicional" />
+  </wsdl:message>
+  <wsdl:message name="EjecutaSPCondicionalSoapOut">
+    <wsdl:part name="parameters" element="tns:EjecutaSPCondicionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjecutaSPparamSoapIn">
+    <wsdl:part name="parameters" element="tns:EjecutaSPparam" />
+  </wsdl:message>
+  <wsdl:message name="EjecutaSPparamSoapOut">
+    <wsdl:part name="parameters" element="tns:EjecutaSPparamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteDataSet" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteNonQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteNonQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpedienteOK_MCSoapIn">
+    <wsdl:part name="parameters" element="tns:ExpedienteOK_MC" />
+  </wsdl:message>
+  <wsdl:message name="ExpedienteOK_MCSoapOut">
+    <wsdl:part name="parameters" element="tns:ExpedienteOK_MCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaExpObligatoriosSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaExpObligatorios" />
+  </wsdl:message>
+  <wsdl:message name="ValidaExpObligatoriosSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaExpObligatoriosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEstatusExpImgSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneEstatusExpImg" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEstatusExpImgSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneEstatusExpImgResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneCifrasControlRecorteGlobalSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneCifrasControlRecorteGlobal" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneCifrasControlRecorteGlobalSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneCifrasControlRecorteGlobalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneCifrasControlRecorteDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneCifrasControlRecorteDetalle" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneCifrasControlRecorteDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneCifrasControlRecorteDetalleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConsultasWebSoap">
+    <wsdl:operation name="BuscaCriterio">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BuscaCriterio. Busca por un criterio de consulta. Devuelve un datset con los datos que coincidieron con el criterio de búsqueda.</wsdl:documentation>
+      <wsdl:input message="tns:BuscaCriterioSoapIn" />
+      <wsdl:output message="tns:BuscaCriterioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedientePadre">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ObtieneExpedientePadre. Devuelve un datset con los datos de los padres de un docid al ejecutar el SP web_ASI_sp_AgregaExpediente.</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneExpedientePadreSoapIn" />
+      <wsdl:output message="tns:ObtieneExpedientePadreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedienteHijo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ObtieneExpedienteHijo. Devuelve un datset con los datos de los hijos de un docid i docpid al ejecutar el SP web_ASI_sp_AgregaExpedienteHijos.</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneExpedienteHijoSoapIn" />
+      <wsdl:output message="tns:ObtieneExpedienteHijoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtienecampos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtienecampos. Devuelve un datset con los datos de los campos de captura de una jerarquia.</wsdl:documentation>
+      <wsdl:input message="tns:ObtienecamposSoapIn" />
+      <wsdl:output message="tns:ObtienecamposSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtienecamposPadre">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ObtienecamposPadre. Devuelve un datset con los datos de los campos de captura Padres de un docid.</wsdl:documentation>
+      <wsdl:input message="tns:ObtienecamposPadreSoapIn" />
+      <wsdl:output message="tns:ObtienecamposPadreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCamposCaptura">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ActualizaCamposCaptura. Actualiza un campo de captura.</wsdl:documentation>
+      <wsdl:input message="tns:ActualizaCamposCapturaSoapIn" />
+      <wsdl:output message="tns:ActualizaCamposCapturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaDato_ER">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ValidaDato_ER. Valida los Datos introducidos, segun la Expresion Regular.</wsdl:documentation>
+      <wsdl:input message="tns:ValidaDato_ERSoapIn" />
+      <wsdl:output message="tns:ValidaDato_ERSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCriterioGrupo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BuscaCriterio. Busca por un criterio de consulta. Devuelve un datset con los datos que coincidieron con el criterio de búsqueda.</wsdl:documentation>
+      <wsdl:input message="tns:BuscaCriterioGrupoSoapIn" />
+      <wsdl:output message="tns:BuscaCriterioGrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCriterioGrupoVerifica">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BuscaCriterio. Busca por un criterio de consulta. Devuelve un datset con los datos que coincidieron con el criterio de búsqueda.</wsdl:documentation>
+      <wsdl:input message="tns:BuscaCriterioGrupoVerificaSoapIn" />
+      <wsdl:output message="tns:BuscaCriterioGrupoVerificaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoDocPadre">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ObtenerInfoDocPadre. Devuelve un datset con los datos de los campos de captura Padres a una fecha.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerInfoDocPadreSoapIn" />
+      <wsdl:output message="tns:ObtenerInfoDocPadreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoDocHijos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ObtenerInfoDocHijos. Devuelve un datset con los datos de los campos de captura Hijos de un documento.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerInfoDocHijosSoapIn" />
+      <wsdl:output message="tns:ObtenerInfoDocHijosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaImgExportado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ActualizaImgExportado. Actualiza una imágen indicando si está ya ha sido exportada o no.</wsdl:documentation>
+      <wsdl:input message="tns:ActualizaImgExportadoSoapIn" />
+      <wsdl:output message="tns:ActualizaImgExportadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsLogExportador">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">InsLogExportador. Guardar registro Log.</wsdl:documentation>
+      <wsdl:input message="tns:InsLogExportadorSoapIn" />
+      <wsdl:output message="tns:InsLogExportadorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el nombre de una imagen dado un docid</wsdl:documentation>
+      <wsdl:input message="tns:GetImageNameSoapIn" />
+      <wsdl:output message="tns:GetImageNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTemplate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para el configurador.</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerTemplateSoapIn" />
+      <wsdl:output message="tns:ObtenerTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para obtener los datos capturados y que ya estan listos.</wsdl:documentation>
+      <wsdl:input message="tns:GetXmlDataSoapIn" />
+      <wsdl:output message="tns:GetXmlDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceivedXmlData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo para indicar que los datos ya fueron recibidos por el cliente.</wsdl:documentation>
+      <wsdl:input message="tns:ReceivedXmlDataSoapIn" />
+      <wsdl:output message="tns:ReceivedXmlDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneHijosPorDocType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que obtiene todos los hijos de un documento que son del tipo indicado.</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneHijosPorDocTypeSoapIn" />
+      <wsdl:output message="tns:ObtieneHijosPorDocTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutaSPCondicional">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ejecucion de SP</wsdl:documentation>
+      <wsdl:input message="tns:EjecutaSPCondicionalSoapIn" />
+      <wsdl:output message="tns:EjecutaSPCondicionalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EjecutaSPparam">
+      <wsdl:input message="tns:EjecutaSPparamSoapIn" />
+      <wsdl:output message="tns:EjecutaSPparamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDataSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ejecuta un StoredProcedure con o sin parametros. Regresa un Objeto de tipo System.Data.DataSet</wsdl:documentation>
+      <wsdl:input message="tns:ExecuteDataSetSoapIn" />
+      <wsdl:output message="tns:ExecuteDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQuery">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ejecuta un StoredProcedure con o sin parametros. Regresa un numero entero de las filas afectadas</wsdl:documentation>
+      <wsdl:input message="tns:ExecuteNonQuerySoapIn" />
+      <wsdl:output message="tns:ExecuteNonQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpedienteOK_MC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta y retorna la info de los expedientes validados por Mesa de Control con Estatus OK. Respuesta correcta: DataSet. Respuesta Incorrecta: Nothing</wsdl:documentation>
+      <wsdl:input message="tns:ExpedienteOK_MCSoapIn" />
+      <wsdl:output message="tns:ExpedienteOK_MCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaExpObligatorios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Valida expedientes con Estatus OK. Respuesta correcta: True. Respuesta Incorrecta: False</wsdl:documentation>
+      <wsdl:input message="tns:ValidaExpObligatoriosSoapIn" />
+      <wsdl:output message="tns:ValidaExpObligatoriosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEstatusExpImg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el estatus de las imagenenes.</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneEstatusExpImgSoapIn" />
+      <wsdl:output message="tns:ObtieneEstatusExpImgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneCifrasControlRecorteGlobal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta por Cifras de Control (Proceso de Recorte - Envío a Procesar)</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneCifrasControlRecorteGlobalSoapIn" />
+      <wsdl:output message="tns:ObtieneCifrasControlRecorteGlobalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneCifrasControlRecorteDetalle">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta por Cifras de Control (Proceso de Recorte - Envío a Procesar)</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneCifrasControlRecorteDetalleSoapIn" />
+      <wsdl:output message="tns:ObtieneCifrasControlRecorteDetalleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultasWebSoap" type="tns:ConsultasWebSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuscaCriterio">
+      <soap:operation soapAction="http://tempuri.org/BuscaCriterio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedientePadre">
+      <soap:operation soapAction="http://tempuri.org/ObtieneExpedientePadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedienteHijo">
+      <soap:operation soapAction="http://tempuri.org/ObtieneExpedienteHijo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtienecampos">
+      <soap:operation soapAction="http://tempuri.org/Obtienecampos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtienecamposPadre">
+      <soap:operation soapAction="http://tempuri.org/ObtienecamposPadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCamposCaptura">
+      <soap:operation soapAction="http://tempuri.org/ActualizaCamposCaptura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaDato_ER">
+      <soap:operation soapAction="http://tempuri.org/ValidaDato_ER" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCriterioGrupo">
+      <soap:operation soapAction="http://tempuri.org/BuscaCriterioGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCriterioGrupoVerifica">
+      <soap:operation soapAction="http://tempuri.org/BuscaCriterioGrupoVerifica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoDocPadre">
+      <soap:operation soapAction="http://tempuri.org/ObtenerInfoDocPadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoDocHijos">
+      <soap:operation soapAction="http://tempuri.org/ObtenerInfoDocHijos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaImgExportado">
+      <soap:operation soapAction="http://tempuri.org/ActualizaImgExportado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsLogExportador">
+      <soap:operation soapAction="http://tempuri.org/InsLogExportador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageName">
+      <soap:operation soapAction="http://tempuri.org/GetImageName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTemplate">
+      <soap:operation soapAction="http://tempuri.org/ObtenerTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlData">
+      <soap:operation soapAction="http://tempuri.org/GetXmlData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivedXmlData">
+      <soap:operation soapAction="http://tempuri.org/ReceivedXmlData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneHijosPorDocType">
+      <soap:operation soapAction="http://tempuri.org/ObtieneHijosPorDocType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutaSPCondicional">
+      <soap:operation soapAction="http://tempuri.org/EjecutaSPCondicional" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutaSPparam">
+      <soap:operation soapAction="http://tempuri.org/EjecutaSPparam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDataSet">
+      <soap:operation soapAction="http://tempuri.org/ExecuteDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQuery">
+      <soap:operation soapAction="http://tempuri.org/ExecuteNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedienteOK_MC">
+      <soap:operation soapAction="http://tempuri.org/ExpedienteOK_MC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaExpObligatorios">
+      <soap:operation soapAction="http://tempuri.org/ValidaExpObligatorios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEstatusExpImg">
+      <soap:operation soapAction="http://tempuri.org/ObtieneEstatusExpImg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneCifrasControlRecorteGlobal">
+      <soap:operation soapAction="http://tempuri.org/ObtieneCifrasControlRecorteGlobal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneCifrasControlRecorteDetalle">
+      <soap:operation soapAction="http://tempuri.org/ObtieneCifrasControlRecorteDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultasWebSoap12" type="tns:ConsultasWebSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuscaCriterio">
+      <soap12:operation soapAction="http://tempuri.org/BuscaCriterio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedientePadre">
+      <soap12:operation soapAction="http://tempuri.org/ObtieneExpedientePadre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedienteHijo">
+      <soap12:operation soapAction="http://tempuri.org/ObtieneExpedienteHijo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtienecampos">
+      <soap12:operation soapAction="http://tempuri.org/Obtienecampos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtienecamposPadre">
+      <soap12:operation soapAction="http://tempuri.org/ObtienecamposPadre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCamposCaptura">
+      <soap12:operation soapAction="http://tempuri.org/ActualizaCamposCaptura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaDato_ER">
+      <soap12:operation soapAction="http://tempuri.org/ValidaDato_ER" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCriterioGrupo">
+      <soap12:operation soapAction="http://tempuri.org/BuscaCriterioGrupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaCriterioGrupoVerifica">
+      <soap12:operation soapAction="http://tempuri.org/BuscaCriterioGrupoVerifica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoDocPadre">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerInfoDocPadre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerInfoDocHijos">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerInfoDocHijos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaImgExportado">
+      <soap12:operation soapAction="http://tempuri.org/ActualizaImgExportado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsLogExportador">
+      <soap12:operation soapAction="http://tempuri.org/InsLogExportador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageName">
+      <soap12:operation soapAction="http://tempuri.org/GetImageName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTemplate">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXmlData">
+      <soap12:operation soapAction="http://tempuri.org/GetXmlData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivedXmlData">
+      <soap12:operation soapAction="http://tempuri.org/ReceivedXmlData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneHijosPorDocType">
+      <soap12:operation soapAction="http://tempuri.org/ObtieneHijosPorDocType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutaSPCondicional">
+      <soap12:operation soapAction="http://tempuri.org/EjecutaSPCondicional" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EjecutaSPparam">
+      <soap12:operation soapAction="http://tempuri.org/EjecutaSPparam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDataSet">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQuery">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteNonQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpedienteOK_MC">
+      <soap12:operation soapAction="http://tempuri.org/ExpedienteOK_MC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaExpObligatorios">
+      <soap12:operation soapAction="http://tempuri.org/ValidaExpObligatorios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEstatusExpImg">
+      <soap12:operation soapAction="http://tempuri.org/ObtieneEstatusExpImg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneCifrasControlRecorteGlobal">
+      <soap12:operation soapAction="http://tempuri.org/ObtieneCifrasControlRecorteGlobal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneCifrasControlRecorteDetalle">
+      <soap12:operation soapAction="http://tempuri.org/ObtieneCifrasControlRecorteDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultasWeb">
+    <wsdl:port name="ConsultasWebSoap" binding="tns:ConsultasWebSoap">
+      <soap:address location="http://localhost/WSConsultasv8/ConsultasWeb.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConsultasWebSoap12" binding="tns:ConsultasWebSoap12">
+      <soap12:address location="http://localhost/WSConsultasv8/ConsultasWeb.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

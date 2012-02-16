@@ -1,0 +1,109 @@
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\bin\Portalv9.dll
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\bin\Portalv9.pdb
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\bin\Portalv9.xml
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\obj\Debug\ResolveAssemblyReference.cache
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\obj\Debug\Portalv9.Resources.resources
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\obj\Debug\Portalv9.Cuadrogral.resources
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\obj\Debug\Portalv9.vbproj.GenerateResource.Cache
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\obj\Debug\Portalv9.dll.licenses
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\obj\Debug\Portalv9.dll
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\obj\Debug\Portalv9.xml
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\obj\Debug\Portalv9.pdb
+C:\Inetpub\wwwroot\osi-2262IDPortal\Portalv9\Portalv9\obj\Debug\Portalv9.Guia_Simple.resources
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\bin\Portalv9.dll
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\bin\Portalv9.pdb
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\bin\Portalv9.xml
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\obj\Debug\Portalv9.Guia_Simple.resources
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\obj\Debug\Portalv9.Resources.resources
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\obj\Debug\Portalv9.Cuadrogral.resources
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\obj\Debug\Portalv9.vbproj.GenerateResource.Cache
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\obj\Debug\Portalv9.dll.licenses
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\obj\Debug\Portalv9.dll
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\obj\Debug\Portalv9.xml
+C:\Proyectos\Digipro\PortalV9Saex\Portalv9\obj\Debug\Portalv9.pdb
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.ASPNET.StarterKit.TimeTracker.Web.Calendar.resources
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.Guia_Simple.resources
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.Resources.resources
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.CuadroGeneral.resources
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.RPT_CatalogoDisposicion.resources
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.RPT_CuadroGenearal.resources
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.Wfrm_EN_RequrimientoDocDet.resources
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.vbproj.GenerateResource.Cache
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.dll.licenses
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.dll
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.xml
+C:\Proyectos\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.pdb
+C:\Proyectos\Digipro\Archivo\Portalv9\bin\Portalv9.dll
+C:\Proyectos\Digipro\Archivo\Portalv9\bin\Portalv9.pdb
+C:\Proyectos\Digipro\Archivo\Portalv9\bin\Portalv9.xml
+D:\Temporal\Archivo\Portalv9\bin\Portalv9.dll
+D:\Temporal\Archivo\Portalv9\bin\Portalv9.pdb
+D:\Temporal\Archivo\Portalv9\bin\Portalv9.xml
+D:\Temporal\Archivo\Portalv9\obj\Debug\ResolveAssemblyReference.cache
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.ASPNET.StarterKit.TimeTracker.Web.Calendar.resources
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.Guia_Simple.resources
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.Resources.resources
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.CuadroGeneral.resources
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.RPT_CatalogoDisposicion.resources
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.RPT_CuadroGenearal.resources
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.Wfrm_EN_RequrimientoDocDet.resources
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.vbproj.GenerateResource.Cache
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.dll.licenses
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.dll
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.xml
+D:\Temporal\Archivo\Portalv9\obj\Debug\Portalv9.pdb
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\bin\Portalv9.dll
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\bin\Portalv9.pdb
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\bin\Portalv9.xml
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.ASPNET.StarterKit.TimeTracker.Web.Calendar.resources
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.Resources.resources
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.RPT_CatalogoDisposicion.resources
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.RPT_CuadroGenearal.resources
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.Wfrm_EN_RequrimientoDocDet.resources
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.vbproj.GenerateResource.Cache
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.dll.licenses
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.dll
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.xml
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.pdb
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Portalv9\obj\Debug\Portalv9.RPT_GuiaSimple.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\ResolveAssemblyReference.cache
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.ASPNET.StarterKit.TimeTracker.Web.Calendar.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.Resources.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_CatalogoDisposicion.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_CuadroGenearal.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_ExpedientesConfidenciales.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_ExpedientesReservados.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_Expurgos.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_GuiaSimple.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_InventarioGeneral.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.Wfrm_EN_RequrimientoDocDet.resources
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.vbproj.GenerateResource.Cache
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.dll.licenses
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.dll
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.xml
+D:\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.pdb
+D:\Tribunal\Archivo 1.0.4\Portalv9\bin\Portalv9.dll
+D:\Tribunal\Archivo 1.0.4\Portalv9\bin\Portalv9.pdb
+D:\Tribunal\Archivo 1.0.4\Portalv9\bin\Portalv9.xml
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\bin\Portalv9.dll
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\bin\Portalv9.pdb
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\bin\Portalv9.xml
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\ResolveAssemblyReference.cache
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.ASPNET.StarterKit.TimeTracker.Web.Calendar.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.Resources.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_CatalogoDisposicion.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_CuadroGenearal.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_ExpedientesConfidenciales.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_ExpedientesReservados.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_Expurgos.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_GuiaSimple.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.RPT_InventarioGeneral.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.Wfrm_EN_RequrimientoDocDet.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.vbproj.GenerateResource.Cache
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.dll.licenses
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.dll
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.xml
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Portalv9\obj\Debug\Portalv9.pdb

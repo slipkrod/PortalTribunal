@@ -1,0 +1,45 @@
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.dll
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.pdb
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.xml
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\ResolveAssemblyReference.cache
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.Resources.resources
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.vbproj.GenerateResource.Cache
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.dll
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.xml
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.pdb
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.dll
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.pdb
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.xml
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\ResolveAssemblyReference.cache
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.Resources.resources
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.vbproj.GenerateResource.Cache
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.dll
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.xml
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Release\Archivo.pdb
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\bin\Archivo.dll
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\bin\Archivo.pdb
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\bin\Archivo.xml
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Release\ResolveAssemblyReference.cache
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Release\Archivo.Resources.resources
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Release\Archivo.vbproj.GenerateResource.Cache
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Release\Archivo.dll
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Release\Archivo.xml
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Release\Archivo.pdb
+C:\Infosyst\Digipro\TEPJF\Actual\Servicios\Archivo\Archivo\bin\Archivo.dll
+C:\Infosyst\Digipro\TEPJF\Actual\Servicios\Archivo\Archivo\bin\Archivo.pdb
+C:\Infosyst\Digipro\TEPJF\Actual\Servicios\Archivo\Archivo\bin\Archivo.xml
+C:\Infosyst\Digipro\TEPJF\Actual\Servicios\Archivo\Archivo\obj\Release\ResolveAssemblyReference.cache
+C:\Infosyst\Digipro\TEPJF\Actual\Servicios\Archivo\Archivo\obj\Release\Archivo.Resources.resources
+C:\Infosyst\Digipro\TEPJF\Actual\Servicios\Archivo\Archivo\obj\Release\Archivo.vbproj.GenerateResource.Cache
+C:\Infosyst\Digipro\TEPJF\Actual\Servicios\Archivo\Archivo\obj\Release\Archivo.dll
+C:\Infosyst\Digipro\TEPJF\Actual\Servicios\Archivo\Archivo\obj\Release\Archivo.xml
+C:\Infosyst\Digipro\TEPJF\Actual\Servicios\Archivo\Archivo\obj\Release\Archivo.pdb
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\bin\Archivo.dll
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\bin\Archivo.pdb
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\bin\Archivo.xml
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Release\ResolveAssemblyReference.cache
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Release\Archivo.Resources.resources
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Release\Archivo.vbproj.GenerateResource.Cache
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Release\Archivo.dll
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Release\Archivo.xml
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Release\Archivo.pdb

@@ -1,0 +1,69 @@
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Admin.Master.vb" Inherits="Portalv9.Admin"%>
+<%@ Register Assembly="DPMenuControl" Namespace="Digipro.Menu" TagPrefix="cc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="generator" content="Microsoft Visual Studio, see http://msdn.microsoft.com/vstudio/" />
+    <meta name="Keywords" content="Digipro, ECM, Digitalización" />
+    <meta name="Description" content="Acerca de Digipro" />
+    <meta name="copyright" content="Copyright (c) 2009 Digipro SA de CV Todos los derechos reservados." />
+    <link href="../css/css-content.css" rel="stylesheet" type="text/css" />
+    <link href ="../css/DPMenu.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/Grids.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <title>Tribunal Electoral</title>
+     <style type="text/css">
+            html,body
+            {
+                height: 100%;
+            }
+            </style>        
+        <script src="DPMenu.js" type="text/javascript" language="javascript"></script>        
+</head>
+<body>
+    <form id="form1" runat="server">
+      <!-- TOP INFORMATION -->
+      
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th width="205" scope="col"><table width="80%" border="0" cellpadding="0" cellspacing="0" background="../Images/barra.jpg">
+            <tr>
+            <td width="500" align="center" valign="bottom">
+                <div align="center">
+                    <table width="700" border="0" cellspacing="0" cellpadding="0">
+                    </table>
+                </div>
+            </td>
+            </tr>
+        </table>
+     </th>
+  </tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" background="../Images/barra.jpg">
+  <tr>
+    <td width="200" align="left" valign="middle" rowspan="2">
+    <div align="center"><img src="../Images/anima_oxxo.gif" alt="logo" width="271" height="80" align="left" />
+    </div>
+    </td>
+    <td align="center" valign="bottom"><cc2:DPMenu ID="DPMenu1" runat="server" />
+    </td>
+    <td>
+    <div style="text-align:right; vertical-align:bottom;">
+        
+    </div>
+    </td>
+  </tr>  
+</table>
+    <asp:ContentPlaceHolder ID="Titulo" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+        <p>&nbsp;</p>
+        <div style="text-align:center;">Copyright &copy; 2009 Digipro SA de CV <a> Nota legal</a><div>
+        &nbsp;</div>
+        </div>
+    </form>
+</body>
+</html>

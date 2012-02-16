@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="Portalv9_SAEX_ServiciosSAEX" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SAEXv9/SAEX.asmx</Value>
+    </Setting>
+    <Setting Name="Portalv9_WSArchivo_Service1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/WSArchivo/Archivo.asmx</Value>
+    </Setting>
+    <Setting Name="Portalv9_WsConsultas_ConsultasWeb" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/WSConsultasv8/ConsultasWeb.asmx</Value>
+    </Setting>
+    <Setting Name="Portalv9_WsImg_WsImagenes" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/WSImagenesv8/WsImagenes.asmx</Value>
+    </Setting>
+    <Setting Name="Portalv9_SvrUsr_Core" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SvrUsrV8/SvrUsrMain.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

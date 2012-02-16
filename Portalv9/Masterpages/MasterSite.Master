@@ -1,0 +1,45 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MasterSite.master.vb" Inherits="Portalv9.MasterSite" %>
+
+<%@ Register Assembly="DPMenuControl" Namespace="Digipro.Menu" TagPrefix="cc2" %>
+<%@ Register TagPrefix="cc1" Namespace="MsgBox" Assembly="MsgBox" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head runat="server">
+        
+        
+        <title>Intranet de Consultas DigiPro</title>
+        <link href="../Styles.css" type="text/css" rel="stylesheet" />    
+        <link href="../DPMenu.css" type="text/css" rel="stylesheet" />
+
+        <style type="text/css">
+            .style1
+            {
+                width: 134px;
+            }
+        </style>
+        
+        <script src="DPMenu.js" type="text/javascript" language="javascript"></script>
+        
+        <asp:ContentPlaceHolder ID="head" runat="server"  >
+        </asp:ContentPlaceHolder> 
+    </head> 
+
+    <body> 
+        <form id="form1" runat="server" >  
+            
+            <cc2:DPMenu ID="DPMenu1" runat="server" />
+            
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <cc1:msgbox id="MsgBox1" runat="server" />&nbsp;<br />
+            
+            <asp:Panel ID="Panel2" runat="server">
+            </asp:Panel>
+            <br />
+        </form>
+    </body>
+</html>

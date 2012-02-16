@@ -1,0 +1,2807 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E67DE35-80B2-4C7F-8505-F5DCE3A8E3D0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Portalv9</RootNamespace>
+    <AssemblyName>Portalv9</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Portalv9.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Portalv9.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ABDArchivos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\IDPortalV8\IDPortalV8\bin\ABDArchivos.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\IDPortalV8\IDPortalV8\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ceTe.DynamicPDF.35, Version=5.0.2.35, Culture=neutral, PublicKeyToken=09b5ce0d5c0a9d8b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\IDPortalV8\IDPortalV8\bin\ceTe.DynamicPDF.35.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v10.1.Core, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\DevExpress 2010.1\Components\Sources\DevExpress.DLL\DevExpress.Web.ASPxEditors.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxGridView.v10.1.Export, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v10.1.Export, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxTreeList.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\DevExpress 2010.1\Components\Sources\DevExpress.DLL\DevExpress.Web.ASPxTreeList.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxTreeList.v10.1.Export, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\DevExpress 2010.1\Components\Sources\DevExpress.DLL\DevExpress.Web.ASPxTreeList.v10.1.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v10.1.Core, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v10.1.Extensions, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v10.1.Web, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\DevExpress 2010.1\Components\Sources\DevExpress.DLL\DevExpress.XtraTreeList.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\DevExpress 2010.1\Components\Sources\DevExpress.DLL\DevExpress.XtraTreeList.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DPMenuControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="msgbox, Version=1.0.1803.22240, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\IDPortalV8\IDPortalV8\bin\msgbox.dll</HintPath>
+    </Reference>
+    <Reference Include="RNArchivos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SAEX\SAEX.disco" />
+    <None Include="Web References\WsConsultas\ConsultasWeb.disco" />
+    <None Include="Web References\WsImg\WsImagenes.disco" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\enter_r2_c2.gif" />
+    <Content Include="Images\enter_r2_c3.gif" />
+    <Content Include="Images\enter_r3_c2.gif" />
+    <Content Include="Images\enter_r4_c2.gif" />
+    <Content Include="Scripts\md5.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ASPxTreeListTemplateReplacementTest.aspx.designer.vb">
+      <DependentUpon>ASPxTreeListTemplateReplacementTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPxTreeListTemplateReplacementTest.aspx.vb">
+      <DependentUpon>ASPxTreeListTemplateReplacementTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Blank_Page.aspx.designer.vb">
+      <DependentUpon>Blank_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blank_Page.aspx.vb">
+      <DependentUpon>Blank_Page.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Calendar.aspx.designer.vb">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar.aspx.vb">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dsRPT_ExpedientesConfidenciales.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRPT_ExpedientesConfidenciales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRPT_ExpedientesReservados.Designer.vb">
+      <DependentUpon>dsRPT_ExpedientesReservados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dsRPT_ExpedientesReservados.vb">
+      <DependentUpon>dsRPT_ExpedientesReservados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRPT_Expurgos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRPT_Expurgos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRPT_InventarioGeneral.Designer.vb">
+      <DependentUpon>dsRPT_InventarioGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dsRPT_InventarioGeneral.vb">
+      <DependentUpon>dsRPT_InventarioGeneral.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Funciones_Archivo.vb" />
+    <Compile Include="Masterpages\Adminmaster1col.master.designer.vb">
+      <DependentUpon>Adminmaster1col.master</DependentUpon>
+    </Compile>
+    <Compile Include="Masterpages\Adminmaster1col.master.vb">
+      <DependentUpon>Adminmaster1col.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RPT_Datos_Paso.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_Datos_Paso.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT_ExpedientesConfidenciales.Designer.vb">
+      <DependentUpon>RPT_ExpedientesConfidenciales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT_ExpedientesConfidenciales.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT_ExpedientesReservados.Designer.vb">
+      <DependentUpon>RPT_ExpedientesReservados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT_ExpedientesReservados.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT_Expurgos.Designer.vb">
+      <DependentUpon>RPT_Expurgos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT_Expurgos.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT_GuiaSimple.Designer.vb">
+      <DependentUpon>RPT_GuiaSimple.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT_GuiaSimple.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT_InventarioGeneral.Designer.vb">
+      <DependentUpon>RPT_InventarioGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT_InventarioGeneral.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TestCampoGrid.aspx.designer.vb">
+      <DependentUpon>TestCampoGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestCampoGrid.aspx.vb">
+      <DependentUpon>TestCampoGrid.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoMultiSelect.ascx.designer.vb">
+      <DependentUpon>CampoMultiSelect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoMultiSelect.ascx.vb">
+      <DependentUpon>CampoMultiSelect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_CapturaIndices.aspx.designer.vb">
+      <DependentUpon>Wfm_CapturaIndices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_CapturaIndices.aspx.vb">
+      <DependentUpon>Wfm_CapturaIndices.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Captura_Documento_Nuevo_Indices.aspx.designer.vb">
+      <DependentUpon>Wfm_Captura_Documento_Nuevo_Indices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Captura_Documento_Nuevo_Indices.aspx.vb">
+      <DependentUpon>Wfm_Captura_Documento_Nuevo_Indices.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Captura_Expediente.aspx.designer.vb">
+      <DependentUpon>Wfm_Captura_Expediente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Captura_Expediente.aspx.vb">
+      <DependentUpon>Wfm_Captura_Expediente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Captura_Expediente_Documentos.aspx.designer.vb">
+      <DependentUpon>Wfm_Captura_Expediente_Documentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Captura_Expediente_Documentos.aspx.vb">
+      <DependentUpon>Wfm_Captura_Expediente_Documentos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Captura_Expediente_Nuevo_Indices.aspx.designer.vb">
+      <DependentUpon>Wfm_Captura_Expediente_Nuevo_Indices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Captura_Expediente_Nuevo_Indices.aspx.vb">
+      <DependentUpon>Wfm_Captura_Expediente_Nuevo_Indices.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Captura_Expediente_Serie.aspx.designer.vb">
+      <DependentUpon>Wfm_Captura_Expediente_Serie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Captura_Expediente_Serie.aspx.vb">
+      <DependentUpon>Wfm_Captura_Expediente_Serie.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Captura_Tipo_documento.aspx.designer.vb">
+      <DependentUpon>Wfm_Captura_Tipo_documento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Captura_Tipo_documento.aspx.vb">
+      <DependentUpon>Wfm_Captura_Tipo_documento.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Captura_Tipo_expediente.aspx.designer.vb">
+      <DependentUpon>Wfm_Captura_Tipo_expediente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Captura_Tipo_expediente.aspx.vb">
+      <DependentUpon>Wfm_Captura_Tipo_expediente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Indices_Editar.aspx.designer.vb">
+      <DependentUpon>Wfm_Indices_Editar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Indices_Editar.aspx.vb">
+      <DependentUpon>Wfm_Indices_Editar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Indices_Lectura.aspx.designer.vb">
+      <DependentUpon>Wfm_Indices_Lectura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Indices_Lectura.aspx.vb">
+      <DependentUpon>Wfm_Indices_Lectura.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfm_Indices_Nuevo.aspx.designer.vb">
+      <DependentUpon>Wfm_Indices_Nuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfm_Indices_Nuevo.aspx.vb">
+      <DependentUpon>Wfm_Indices_Nuevo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Fisico.aspx.designer.vb">
+      <DependentUpon>Wfrm_Archivo_Fisico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Fisico.aspx.vb">
+      <DependentUpon>Wfrm_Archivo_Fisico.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Fisico_Detalle.aspx.designer.vb">
+      <DependentUpon>Wfrm_Archivo_Fisico_Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Fisico_Detalle.aspx.vb">
+      <DependentUpon>Wfrm_Archivo_Fisico_Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Fisico_Elementos.aspx.designer.vb">
+      <DependentUpon>Wfrm_Archivo_Fisico_Elementos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Fisico_Elementos.aspx.vb">
+      <DependentUpon>Wfrm_Archivo_Fisico_Elementos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Fisico_Unidades.aspx.designer.vb">
+      <DependentUpon>Wfrm_Archivo_Fisico_Unidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Fisico_Unidades.aspx.vb">
+      <DependentUpon>Wfrm_Archivo_Fisico_Unidades.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_CambiaPwd.aspx.designer.vb">
+      <DependentUpon>Wfrm_CambiaPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_CambiaPwd.aspx.vb">
+      <DependentUpon>Wfrm_CambiaPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Expurgo_Expedientes.aspx.designer.vb">
+      <DependentUpon>wfrm_Expurgo_Expedientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Expurgo_Expedientes.aspx.vb">
+      <DependentUpon>wfrm_Expurgo_Expedientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Indices_Sistema.aspx.designer.vb">
+      <DependentUpon>Wfrm_Indices_Sistema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Indices_Sistema.aspx.vb">
+      <DependentUpon>Wfrm_Indices_Sistema.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_PlantillaCapturaBak.aspx.designer.vb">
+      <DependentUpon>Wfrm_PlantillaCapturaBak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_PlantillaCapturaBak.aspx.vb">
+      <DependentUpon>Wfrm_PlantillaCapturaBak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_PlantillaCaptura.aspx.designer.vb">
+      <DependentUpon>Wfrm_PlantillaCaptura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_PlantillaCaptura.aspx.vb">
+      <DependentUpon>Wfrm_PlantillaCaptura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Alta_Solicitud.aspx.designer.vb">
+      <DependentUpon>wfrm_Prestamos_Alta_Solicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Alta_Solicitud.aspx.vb">
+      <DependentUpon>wfrm_Prestamos_Alta_Solicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Alta_Solicitud_Frame.aspx.designer.vb">
+      <DependentUpon>wfrm_Prestamos_Alta_Solicitud_Frame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Alta_Solicitud_Frame.aspx.vb">
+      <DependentUpon>wfrm_Prestamos_Alta_Solicitud_Frame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Buscador.aspx.designer.vb">
+      <DependentUpon>wfrm_Prestamos_Buscador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Buscador.aspx.vb">
+      <DependentUpon>wfrm_Prestamos_Buscador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Imprimir_Solicitud.aspx.designer.vb">
+      <DependentUpon>wfrm_Prestamos_Imprimir_Solicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Imprimir_Solicitud.aspx.vb">
+      <DependentUpon>wfrm_Prestamos_Imprimir_Solicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Lista_Solicitudes.aspx.designer.vb">
+      <DependentUpon>wfrm_Prestamos_Lista_Solicitudes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Lista_Solicitudes.aspx.vb">
+      <DependentUpon>wfrm_Prestamos_Lista_Solicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Modifica_Solicitud.aspx.designer.vb">
+      <DependentUpon>wfrm_Prestamos_Modifica_Solicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Prestamos_Modifica_Solicitud.aspx.vb">
+      <DependentUpon>wfrm_Prestamos_Modifica_Solicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteExpedientesConfidenciales.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteExpedientesConfidenciales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteExpedientesConfidenciales.aspx.vb">
+      <DependentUpon>Wfrm_ReporteExpedientesConfidenciales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteExpedientesReservados.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteExpedientesReservados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteExpedientesReservados.aspx.vb">
+      <DependentUpon>Wfrm_ReporteExpedientesReservados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteExpurgos.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteExpurgos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteExpurgos.aspx.vb">
+      <DependentUpon>Wfrm_ReporteExpurgos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteInventarioGeneral.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteInventarioGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteInventarioGeneral.aspx.vb">
+      <DependentUpon>Wfrm_ReporteInventarioGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccion.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccion.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados_Cajas.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados_Cajas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados_Cajas.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados_Cajas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados_Hist.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados_Hist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados_Hist.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados_Hist.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados_OK.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados_OK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados_OK.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados_OK.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados_Upd.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados_Upd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Seleccionados_Upd.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccionados_Upd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TraspasosHistorico.aspx.designer.vb">
+      <DependentUpon>Wfrm_TraspasosHistorico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TraspasosHistorico.aspx.vb">
+      <DependentUpon>Wfrm_TraspasosHistorico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TraspasosConfirmacion.aspx.designer.vb">
+      <DependentUpon>Wfrm_TraspasosConfirmacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TraspasosConfirmacion.aspx.vb">
+      <DependentUpon>Wfrm_TraspasosConfirmacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Traspasos_RptAutorizacion.aspx.designer.vb">
+      <DependentUpon>Wfrm_Traspasos_RptAutorizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Traspasos_RptAutorizacion.aspx.vb">
+      <DependentUpon>Wfrm_Traspasos_RptAutorizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Valorizacion.aspx.designer.vb">
+      <DependentUpon>Wfrm_Valorizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Valorizacion.aspx.vb">
+      <DependentUpon>Wfrm_Valorizacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionArchivos.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionArchivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionArchivos.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionArchivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Filtros.aspx.designer.vb">
+      <DependentUpon>Wfrm_Filtros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Filtros.aspx.vb">
+      <DependentUpon>Wfrm_Filtros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Transferencia_EntreArchivos.aspx.designer.vb">
+      <DependentUpon>wfrm_Transferencia_EntreArchivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Transferencia_EntreArchivos.aspx.vb">
+      <DependentUpon>wfrm_Transferencia_EntreArchivos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Presentation.Helpers.vb">
+    </Compile>
+    <Compile Include="Wfrm_ArchivoBak.aspx.designer.vb">
+      <DependentUpon>Wfrm_ArchivoBak.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ArchivoBak.aspx.vb">
+      <DependentUpon>Wfrm_ArchivoBak.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="dsRPT_CatalogoDisposicion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRPT_CatalogoDisposicion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRPT_CuadroGenearal.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRPT_CuadroGenearal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRPT_CuadroGenearal.vb">
+      <DependentUpon>dsRPT_CuadroGenearal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Masterpages\1.master.designer.vb">
+      <DependentUpon>1.master</DependentUpon>
+    </Compile>
+    <Compile Include="Masterpages\1.master.vb">
+      <DependentUpon>1.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masterpages\Adminmaster2col.master.designer.vb">
+      <DependentUpon>Adminmaster2col.master</DependentUpon>
+    </Compile>
+    <Compile Include="Masterpages\Adminmaster2col.master.vb">
+      <DependentUpon>Adminmaster2col.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RPT_CatalogoDisposicion.Designer.vb">
+      <DependentUpon>RPT_CatalogoDisposicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT_CatalogoDisposicion.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT_CuadroGenearal.Designer.vb">
+      <DependentUpon>RPT_CuadroGenearal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RPT_CuadroGenearal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Web References\SvrUsr\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSArchivo\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfrmQuery.aspx.designer.vb">
+      <DependentUpon>wfrmQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrmQuery.aspx.vb">
+      <DependentUpon>wfrmQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_AC_Monitoreo.aspx.designer.vb">
+      <DependentUpon>Wfrm_AC_Monitoreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_AC_Monitoreo.aspx.vb">
+      <DependentUpon>Wfrm_AC_Monitoreo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_AC_MonitoreoxRecibir.aspx.designer.vb">
+      <DependentUpon>Wfrm_AC_MonitoreoxRecibir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_AC_MonitoreoxRecibir.aspx.vb">
+      <DependentUpon>Wfrm_AC_MonitoreoxRecibir.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_AC_recepfolios.aspx.designer.vb">
+      <DependentUpon>Wfrm_AC_recepfolios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_AC_recepfolios.aspx.vb">
+      <DependentUpon>Wfrm_AC_recepfolios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_Aplicaciones.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_Aplicaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_Aplicaciones.aspx.vb">
+      <DependentUpon>Wfrm_Admin_Aplicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_AppProy.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_AppProy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_AppProy.aspx.vb">
+      <DependentUpon>Wfrm_Admin_AppProy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_CambiaPwd.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_CambiaPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_CambiaPwd.aspx.vb">
+      <DependentUpon>Wfrm_Admin_CambiaPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_ClientesProyecto.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_ClientesProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_ClientesProyecto.aspx.vb">
+      <DependentUpon>Wfrm_Admin_ClientesProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_DynamicUsr.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_DynamicUsr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_DynamicUsr.aspx.vb">
+      <DependentUpon>Wfrm_Admin_DynamicUsr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_EstTrabajo.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_EstTrabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_EstTrabajo.aspx.vb">
+      <DependentUpon>Wfrm_Admin_EstTrabajo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_GrupoAdmin.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_GrupoAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_GrupoAdmin.aspx.vb">
+      <DependentUpon>Wfrm_Admin_GrupoAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_LogEventos.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_LogEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_LogEventos.aspx.vb">
+      <DependentUpon>Wfrm_Admin_LogEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_Perfiles.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_Perfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_Perfiles.aspx.vb">
+      <DependentUpon>Wfrm_Admin_Perfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_PermisosApp.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_PermisosApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_PermisosApp.aspx.vb">
+      <DependentUpon>Wfrm_Admin_PermisosApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_PoliticasPassword.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_PoliticasPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_PoliticasPassword.aspx.vb">
+      <DependentUpon>Wfrm_Admin_PoliticasPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_PoliticasSesion.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_PoliticasSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_PoliticasSesion.aspx.vb">
+      <DependentUpon>Wfrm_Admin_PoliticasSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_ProyectosCli.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_ProyectosCli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_ProyectosCli.aspx.vb">
+      <DependentUpon>Wfrm_Admin_ProyectosCli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_Req.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_Req.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_Req.aspx.vb">
+      <DependentUpon>Wfrm_Admin_Req.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_RequerimentoMod.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_RequerimentoMod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_RequerimentoMod.aspx.vb">
+      <DependentUpon>Wfrm_Admin_RequerimentoMod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_ReseteaPwd.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_ReseteaPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_ReseteaPwd.aspx.vb">
+      <DependentUpon>Wfrm_Admin_ReseteaPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_RptAdminPerfilPermisos.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_RptAdminPerfilPermisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_RptAdminPerfilPermisos.aspx.vb">
+      <DependentUpon>Wfrm_Admin_RptAdminPerfilPermisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_RptAdminUsrXGrupo.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_RptAdminUsrXGrupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_RptAdminUsrXGrupo.aspx.vb">
+      <DependentUpon>Wfrm_Admin_RptAdminUsrXGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_RptAdminUsrXPerfil.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_RptAdminUsrXPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_RptAdminUsrXPerfil.aspx.vb">
+      <DependentUpon>Wfrm_Admin_RptAdminUsrXPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_Usuarios.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_Usuarios.aspx.vb">
+      <DependentUpon>Wfrm_Admin_Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Admin_VersionApp.aspx.designer.vb">
+      <DependentUpon>Wfrm_Admin_VersionApp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Admin_VersionApp.aspx.vb">
+      <DependentUpon>Wfrm_Admin_VersionApp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Series.aspx.designer.vb">
+      <DependentUpon>Wfrm_Archivo_Series.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Series.aspx.vb">
+      <DependentUpon>Wfrm_Archivo_Series.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_SoloLectura.aspx.designer.vb">
+      <DependentUpon>Wfrm_Archivo_SoloLectura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_SoloLectura.aspx.vb">
+      <DependentUpon>Wfrm_Archivo_SoloLectura.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_BE_AutorizaDestruccionEX.aspx.designer.vb">
+      <DependentUpon>Wfrm_BE_AutorizaDestruccionEX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_BE_AutorizaDestruccionEX.aspx.vb">
+      <DependentUpon>Wfrm_BE_AutorizaDestruccionEX.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_BE_AutorizaDestruccionFolio.aspx.designer.vb">
+      <DependentUpon>Wfrm_BE_AutorizaDestruccionFolio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_BE_AutorizaDestruccionFolio.aspx.vb">
+      <DependentUpon>Wfrm_BE_AutorizaDestruccionFolio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_BE_DestruccionFolio.aspx.designer.vb">
+      <DependentUpon>Wfrm_BE_DestruccionFolio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_BE_DestruccionFolio.aspx.vb">
+      <DependentUpon>Wfrm_BE_DestruccionFolio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_BE_FormatoAutorizacion.aspx.designer.vb">
+      <DependentUpon>Wfrm_BE_FormatoAutorizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_BE_FormatoAutorizacion.aspx.vb">
+      <DependentUpon>Wfrm_BE_FormatoAutorizacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_BE_ReporteDestruccionEX.aspx.designer.vb">
+      <DependentUpon>Wfrm_BE_ReporteDestruccionEX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_BE_ReporteDestruccionEX.aspx.vb">
+      <DependentUpon>Wfrm_BE_ReporteDestruccionEX.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_CD_EntregaMensajeroAC.aspx.designer.vb">
+      <DependentUpon>Wfrm_CD_EntregaMensajeroAC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_CD_EntregaMensajeroAC.aspx.vb">
+      <DependentUpon>Wfrm_CD_EntregaMensajeroAC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_CD_Monitoreofolios.aspx.designer.vb">
+      <DependentUpon>Wfrm_CD_Monitoreofolios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_CD_Monitoreofolios.aspx.vb">
+      <DependentUpon>Wfrm_CD_Monitoreofolios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_CD_MonitoreoxRecibir.aspx.designer.vb">
+      <DependentUpon>Wfrm_CD_MonitoreoxRecibir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_CD_MonitoreoxRecibir.aspx.vb">
+      <DependentUpon>Wfrm_CD_MonitoreoxRecibir.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_CD_recepfolios.aspx.designer.vb">
+      <DependentUpon>Wfrm_CD_recepfolios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_CD_recepfolios.aspx.vb">
+      <DependentUpon>Wfrm_CD_recepfolios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Entidades.aspx.designer.vb">
+      <DependentUpon>Wfrm_Entidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Entidades.aspx.vb">
+      <DependentUpon>Wfrm_Entidades.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_ActasPerdidas.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_ActasPerdidas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_ActasPerdidas.aspx.vb">
+      <DependentUpon>Wfrm_EN_ActasPerdidas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_EN_Digitaliza.aspx.designer.vb">
+      <DependentUpon>wfrm_EN_Digitaliza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_EN_Digitaliza.aspx.vb">
+      <DependentUpon>wfrm_EN_Digitaliza.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_EntregaMensajeroAC.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_EntregaMensajeroAC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_EntregaMensajeroAC.aspx.vb">
+      <DependentUpon>Wfrm_EN_EntregaMensajeroAC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_EntregaMensajeroRuta.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_EntregaMensajeroRuta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_EntregaMensajeroRuta.aspx.vb">
+      <DependentUpon>Wfrm_EN_EntregaMensajeroRuta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_envioDoc.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_envioDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_envioDoc.aspx.vb">
+      <DependentUpon>Wfrm_EN_envioDoc.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_envioExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_envioExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_envioExp.aspx.vb">
+      <DependentUpon>Wfrm_EN_envioExp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_ExpFaltantes.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_ExpFaltantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_ExpFaltantes.aspx.vb">
+      <DependentUpon>Wfrm_EN_ExpFaltantes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_FormatoEntrega.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_FormatoEntrega.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_FormatoEntrega.aspx.vb">
+      <DependentUpon>Wfrm_EN_FormatoEntrega.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_FormatoRecepcion.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_FormatoRecepcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_FormatoRecepcion.aspx.vb">
+      <DependentUpon>Wfrm_EN_FormatoRecepcion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_MonitoreoEntregaUsuario.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_MonitoreoEntregaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_MonitoreoEntregaUsuario.aspx.vb">
+      <DependentUpon>Wfrm_EN_MonitoreoEntregaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_MonitoreoExpUsuario.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_MonitoreoExpUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_MonitoreoExpUsuario.aspx.vb">
+      <DependentUpon>Wfrm_EN_MonitoreoExpUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_RequerimientoDoc.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_RequerimientoDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_RequerimientoDoc.aspx.vb">
+      <DependentUpon>Wfrm_EN_RequerimientoDoc.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_RequerimientoExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_RequerimientoExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_RequerimientoExp.aspx.vb">
+      <DependentUpon>Wfrm_EN_RequerimientoExp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_RequerimientoImg.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_RequerimientoImg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_RequerimientoImg.aspx.vb">
+      <DependentUpon>Wfrm_EN_RequerimientoImg.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_RequrimientoDocDet.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_RequrimientoDocDet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_RequrimientoDocDet.aspx.vb">
+      <DependentUpon>Wfrm_EN_RequrimientoDocDet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_RevUsuario.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_RevUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_RevUsuario.aspx.vb">
+      <DependentUpon>Wfrm_EN_RevUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_RevUsuarioContenido.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_RevUsuarioContenido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_RevUsuarioContenido.aspx.vb">
+      <DependentUpon>Wfrm_EN_RevUsuarioContenido.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_EN_SeguimientoIncosistencias.aspx.designer.vb">
+      <DependentUpon>Wfrm_EN_SeguimientoIncosistencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_EN_SeguimientoIncosistencias.aspx.vb">
+      <DependentUpon>Wfrm_EN_SeguimientoIncosistencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Organizacion_indices.aspx.designer.vb">
+      <DependentUpon>Wfrm_Normas_Organizacion_indices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Organizacion_indices.aspx.vb">
+      <DependentUpon>Wfrm_Normas_Organizacion_indices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Organizacion_Series.aspx.designer.vb">
+      <DependentUpon>Wfrm_Normas_Organizacion_Series.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Organizacion_Series.aspx.vb">
+      <DependentUpon>Wfrm_Normas_Organizacion_Series.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Organizacion_SubSeries.aspx.designer.vb">
+      <DependentUpon>Wfrm_Normas_Organizacion_SubSeries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Organizacion_SubSeries.aspx.vb">
+      <DependentUpon>Wfrm_Normas_Organizacion_SubSeries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Oficina_entregaMensajero.aspx.designer.vb">
+      <DependentUpon>Wfrm_Oficina_entregaMensajero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Oficina_entregaMensajero.aspx.vb">
+      <DependentUpon>Wfrm_Oficina_entregaMensajero.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Oficina_monitoreofolios.aspx.designer.vb">
+      <DependentUpon>Wfrm_Oficina_monitoreofolios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Oficina_monitoreofolios.aspx.vb">
+      <DependentUpon>Wfrm_Oficina_monitoreofolios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Oficina_recepfolios.aspx.designer.vb">
+      <DependentUpon>Wfrm_Oficina_recepfolios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Oficina_recepfolios.aspx.vb">
+      <DependentUpon>Wfrm_Oficina_recepfolios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_PantallaCaptura_conPlantillas.aspx.designer.vb">
+      <DependentUpon>Wfrm_PantallaCaptura_conPlantillas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_PantallaCaptura_conPlantillas.aspx.vb">
+      <DependentUpon>Wfrm_PantallaCaptura_conPlantillas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_PlantillaArchivo.aspx.designer.vb">
+      <DependentUpon>Wfrm_PlantillaArchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_PlantillaArchivo.aspx.vb">
+      <DependentUpon>Wfrm_PlantillaArchivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Prueba.aspx.designer.vb">
+      <DependentUpon>wfrm_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Prueba.aspx.vb">
+      <DependentUpon>wfrm_Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteCD.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteCD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteCD.aspx.vb">
+      <DependentUpon>Wfrm_ReporteCD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteCDArchivo.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteCDArchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteCDArchivo.aspx.vb">
+      <DependentUpon>Wfrm_ReporteCDArchivo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_RE_Altabolsa.aspx.designer.vb">
+      <DependentUpon>Wfrm_RE_Altabolsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_RE_Altabolsa.aspx.vb">
+      <DependentUpon>Wfrm_RE_Altabolsa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_RE_Bajabolsa.aspx.designer.vb">
+      <DependentUpon>Wfrm_RE_Bajabolsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_RE_Bajabolsa.aspx.vb">
+      <DependentUpon>Wfrm_RE_Bajabolsa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_RE_FormatoRecepcion.aspx.designer.vb">
+      <DependentUpon>Wfrm_RE_FormatoRecepcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_RE_FormatoRecepcion.aspx.vb">
+      <DependentUpon>Wfrm_RE_FormatoRecepcion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_RE_MonitoreoUsuario.aspx.designer.vb">
+      <DependentUpon>Wfrm_RE_MonitoreoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_RE_MonitoreoUsuario.aspx.vb">
+      <DependentUpon>Wfrm_RE_MonitoreoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_RE_recepAC.aspx.designer.vb">
+      <DependentUpon>Wfrm_RE_recepAC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_RE_recepAC.aspx.vb">
+      <DependentUpon>Wfrm_RE_recepAC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_RE_RevArcCentral.aspx.designer.vb">
+      <DependentUpon>Wfrm_RE_RevArcCentral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_RE_RevArcCentral.aspx.vb">
+      <DependentUpon>Wfrm_RE_RevArcCentral.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_RE_SolicitudExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_RE_SolicitudExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_RE_SolicitudExp.aspx.vb">
+      <DependentUpon>Wfrm_RE_SolicitudExp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_ActasPerdida.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_ActasPerdida.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_ActasPerdida.aspx.vb">
+      <DependentUpon>Wfrm_TE_ActasPerdida.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_Altabolsa.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_Altabolsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_Altabolsa.aspx.vb">
+      <DependentUpon>Wfrm_TE_Altabolsa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_AltadocExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_AltadocExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_AltadocExp.aspx.vb">
+      <DependentUpon>Wfrm_TE_AltadocExp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_AltaDocumentos.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_AltaDocumentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_AltaDocumentos.aspx.vb">
+      <DependentUpon>Wfrm_TE_AltaDocumentos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_AltaExpedientes.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_AltaExpedientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_AltaExpedientes.aspx.vb">
+      <DependentUpon>Wfrm_TE_AltaExpedientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_AperturaExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_AperturaExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_AperturaExp.aspx.vb">
+      <DependentUpon>Wfrm_TE_AperturaExp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_AperturaExpDet.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_AperturaExpDet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_AperturaExpDet.aspx.vb">
+      <DependentUpon>Wfrm_TE_AperturaExpDet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_ArchivoExpDocs.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_ArchivoExpDocs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_ArchivoExpDocs.aspx.vb">
+      <DependentUpon>Wfrm_TE_ArchivoExpDocs.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_ArchivoExpDocsDet.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_ArchivoExpDocsDet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_ArchivoExpDocsDet.aspx.vb">
+      <DependentUpon>Wfrm_TE_ArchivoExpDocsDet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_Aviso.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_Aviso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_Aviso.aspx.vb">
+      <DependentUpon>Wfrm_TE_Aviso.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_Bajabolsa.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_Bajabolsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_Bajabolsa.aspx.vb">
+      <DependentUpon>Wfrm_TE_Bajabolsa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_BajaDocumentosDet.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_BajaDocumentosDet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_BajaDocumentosDet.aspx.vb">
+      <DependentUpon>Wfrm_TE_BajaDocumentosDet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_BuscaExpediente.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_BuscaExpediente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_BuscaExpediente.aspx.vb">
+      <DependentUpon>Wfrm_TE_BuscaExpediente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_BuscaExpedientearbol.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_BuscaExpedientearbol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_BuscaExpedientearbol.aspx.vb">
+      <DependentUpon>Wfrm_TE_BuscaExpedientearbol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_TE_ChecaContenido.aspx.designer.vb">
+      <DependentUpon>wfrm_TE_ChecaContenido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_TE_ChecaContenido.aspx.vb">
+      <DependentUpon>wfrm_TE_ChecaContenido.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_EntregaMensajeroMC.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_EntregaMensajeroMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_EntregaMensajeroMC.aspx.vb">
+      <DependentUpon>Wfrm_TE_EntregaMensajeroMC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_EntregaMensajeroUsu.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_EntregaMensajeroUsu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_EntregaMensajeroUsu.aspx.vb">
+      <DependentUpon>Wfrm_TE_EntregaMensajeroUsu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_ExpFaltantes.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_ExpFaltantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_ExpFaltantes.aspx.vb">
+      <DependentUpon>Wfrm_TE_ExpFaltantes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_ExpIncompletos.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_ExpIncompletos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_ExpIncompletos.aspx.vb">
+      <DependentUpon>Wfrm_TE_ExpIncompletos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_FormatoEntrega.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_FormatoEntrega.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_FormatoEntrega.aspx.vb">
+      <DependentUpon>Wfrm_TE_FormatoEntrega.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_FormatoLiberacion.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_FormatoLiberacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_FormatoLiberacion.aspx.vb">
+      <DependentUpon>Wfrm_TE_FormatoLiberacion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_FormatoPerdida.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_FormatoPerdida.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_FormatoPerdida.aspx.vb">
+      <DependentUpon>Wfrm_TE_FormatoPerdida.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_FormatoRecepcion.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_FormatoRecepcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_FormatoRecepcion.aspx.vb">
+      <DependentUpon>Wfrm_TE_FormatoRecepcion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_IntegraExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_IntegraExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_IntegraExp.aspx.vb">
+      <DependentUpon>Wfrm_TE_IntegraExp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCAltabolsa.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCAltabolsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCAltabolsa.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCAltabolsa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCBolsasSelladas.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCBolsasSelladas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCBolsasSelladas.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCBolsasSelladas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCCierraBolsa.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCCierraBolsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCCierraBolsa.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCCierraBolsa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCIncidencias.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCIncidencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCIncidencias.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCIncidencias.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCRevisados.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCRevisados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCRevisados.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCRevisados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCRevision.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCRevision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCRevision.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCRevision.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCRevisionBolsa.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCRevisionBolsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCRevisionBolsa.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCRevisionBolsa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCRevisionDet.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCRevisionDet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCRevisionDet.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCRevisionDet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCSolicitudDoc.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCSolicitudDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCSolicitudDoc.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCSolicitudDoc.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCSolicitudDocExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCSolicitudDocExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCSolicitudDocExp.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCSolicitudDocExp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCSolicitudExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MCSolicitudExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MCSolicitudExp.aspx.vb">
+      <DependentUpon>Wfrm_TE_MCSolicitudExp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MonitoreoTraslados.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MonitoreoTraslados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MonitoreoTraslados.aspx.vb">
+      <DependentUpon>Wfrm_TE_MonitoreoTraslados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_MonitoreoUsuario.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_MonitoreoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_MonitoreoUsuario.aspx.vb">
+      <DependentUpon>Wfrm_TE_MonitoreoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoCatalogo.ascx.designer.vb">
+      <DependentUpon>CampoCatalogo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoCatalogo.ascx.vb">
+      <DependentUpon>CampoCatalogo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoCatalogoISAAR.ascx.designer.vb">
+      <DependentUpon>CampoCatalogoISAAR.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoCatalogoISAAR.ascx.vb">
+      <DependentUpon>CampoCatalogoISAAR.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoEntero.ascx.designer.vb">
+      <DependentUpon>CampoEntero.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoEntero.ascx.vb">
+      <DependentUpon>CampoEntero.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoFecha.ascx.designer.vb">
+      <DependentUpon>CampoFecha.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoFecha.ascx.vb">
+      <DependentUpon>CampoFecha.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoGrid.ascx.designer.vb">
+      <DependentUpon>CampoGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoGrid.ascx.vb">
+      <DependentUpon>CampoGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoGridISAAR.ascx.designer.vb">
+      <DependentUpon>CampoGridISAAR.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoGridISAAR.ascx.vb">
+      <DependentUpon>CampoGridISAAR.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoPeriodoAno.ascx.designer.vb">
+      <DependentUpon>CampoPeriodoAno.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoPeriodoAno.ascx.vb">
+      <DependentUpon>CampoPeriodoAno.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoPeriodoFechas.ascx.designer.vb">
+      <DependentUpon>CampoPeriodoFechas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoPeriodoFechas.ascx.vb">
+      <DependentUpon>CampoPeriodoFechas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoPeriodoMesAno.ascx.designer.vb">
+      <DependentUpon>CampoPeriodoMesAno.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoPeriodoMesAno.ascx.vb">
+      <DependentUpon>CampoPeriodoMesAno.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CamposElemento.ascx.designer.vb">
+      <DependentUpon>CamposElemento.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CamposElemento.ascx.vb">
+      <DependentUpon>CamposElemento.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CamposElementoSelect.ascx.designer.vb">
+      <DependentUpon>CamposElementoSelect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CamposElementoSelect.ascx.vb">
+      <DependentUpon>CamposElementoSelect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoSI_NO.ascx.designer.vb">
+      <DependentUpon>CampoSI_NO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoSI_NO.ascx.vb">
+      <DependentUpon>CampoSI_NO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoSlectura.ascx.designer.vb">
+      <DependentUpon>CampoSlectura.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoSlectura.ascx.vb">
+      <DependentUpon>CampoSlectura.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoTexto.ascx.designer.vb">
+      <DependentUpon>CampoTexto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoTexto.ascx.vb">
+      <DependentUpon>CampoTexto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoTextoLargo.ascx.designer.vb">
+      <DependentUpon>CampoTextoLargo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\CampoTextoLargo.ascx.vb">
+      <DependentUpon>CampoTextoLargo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\PlantillaHeaderCampo.ascx.designer.vb">
+      <DependentUpon>PlantillaHeaderCampo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\PlantillaHeaderCampo.ascx.vb">
+      <DependentUpon>PlantillaHeaderCampo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clsGlobal.vb" />
+    <Compile Include="conexion.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalDef.vb" />
+    <Compile Include="Logoff.aspx.designer.vb">
+      <DependentUpon>Logoff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logoff.aspx.vb">
+      <DependentUpon>Logoff.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Masterpages\Admin.Master.designer.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Masterpages\Admin.Master.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Web References\SAEX\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsConsultas\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsImg\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\PlantillaHeaderCampoSelect.ascx.designer.vb">
+      <DependentUpon>PlantillaHeaderCampoSelect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\PlantillaHeaderCampoSelect.ascx.vb">
+      <DependentUpon>PlantillaHeaderCampoSelect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUsrCtrls\wucTest.ascx.designer.vb">
+      <DependentUpon>wucTest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUsrCtrls\wucTest.ascx.vb">
+      <DependentUpon>wucTest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Buscador.aspx.designer.vb">
+      <DependentUpon>wfrm_Buscador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Buscador.aspx.vb">
+      <DependentUpon>wfrm_Buscador.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Archivo.aspx.designer.vb">
+      <DependentUpon>Wfrm_Archivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Archivo.aspx.vb">
+      <DependentUpon>Wfrm_Archivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_ArchivoIns.aspx.designer.vb">
+      <DependentUpon>wfrm_ArchivoIns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_ArchivoIns.aspx.vb">
+      <DependentUpon>wfrm_ArchivoIns.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Elementos.aspx.designer.vb">
+      <DependentUpon>Wfrm_Archivo_Elementos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Archivo_Elementos.aspx.vb">
+      <DependentUpon>Wfrm_Archivo_Elementos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Buscador_Resultado.aspx.designer.vb">
+      <DependentUpon>wfrm_Buscador_Resultado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Buscador_Resultado.aspx.vb">
+      <DependentUpon>wfrm_Buscador_Resultado.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Catalogos.aspx.designer.vb">
+      <DependentUpon>Wfrm_Catalogos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Catalogos.aspx.vb">
+      <DependentUpon>Wfrm_Catalogos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Catalogos_Datos.aspx.designer.vb">
+      <DependentUpon>Wfrm_Catalogos_Datos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Catalogos_Datos.aspx.vb">
+      <DependentUpon>Wfrm_Catalogos_Datos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Contenido.aspx.designer.vb">
+      <DependentUpon>Wfrm_Contenido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Contenido.aspx.vb">
+      <DependentUpon>Wfrm_Contenido.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Normas.aspx.designer.vb">
+      <DependentUpon>Wfrm_Normas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Normas.aspx.vb">
+      <DependentUpon>Wfrm_Normas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Areas.aspx.designer.vb">
+      <DependentUpon>Wfrm_Normas_Areas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Areas.aspx.vb">
+      <DependentUpon>Wfrm_Normas_Areas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Elementos.aspx.designer.vb">
+      <DependentUpon>Wfrm_Normas_Elementos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Elementos.aspx.vb">
+      <DependentUpon>Wfrm_Normas_Elementos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Normas_niveles.aspx.designer.vb">
+      <DependentUpon>Wfrm_Normas_niveles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Normas_niveles.aspx.vb">
+      <DependentUpon>Wfrm_Normas_niveles.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Organizacion.aspx.designer.vb">
+      <DependentUpon>Wfrm_Normas_Organizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Normas_Organizacion.aspx.vb">
+      <DependentUpon>Wfrm_Normas_Organizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Organigrama.aspx.designer.vb">
+      <DependentUpon>Wfrm_Organigrama.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Organigrama.aspx.vb">
+      <DependentUpon>Wfrm_Organigrama.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_PantallaCapturaISAAR.aspx.designer.vb">
+      <DependentUpon>Wfrm_PantallaCapturaISAAR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_PantallaCapturaISAAR.aspx.vb">
+      <DependentUpon>Wfrm_PantallaCapturaISAAR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_PlantillaSlectura.aspx.designer.vb">
+      <DependentUpon>Wfrm_PlantillaSlectura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_PlantillaSlectura.aspx.vb">
+      <DependentUpon>Wfrm_PlantillaSlectura.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_RelacionISADISAAR.aspx.designer.vb">
+      <DependentUpon>Wfrm_RelacionISADISAAR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_RelacionISADISAAR.aspx.vb">
+      <DependentUpon>Wfrm_RelacionISADISAAR.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteCGCA.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteCGCA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteCGCA.aspx.vb">
+      <DependentUpon>Wfrm_ReporteCGCA.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteCGCArchivo.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteCGCArchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteCGCArchivo.aspx.vb">
+      <DependentUpon>Wfrm_ReporteCGCArchivo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteGS.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteGS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteGS.aspx.vb">
+      <DependentUpon>Wfrm_ReporteGS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ReporteGSArchivo.aspx.designer.vb">
+      <DependentUpon>Wfrm_ReporteGSArchivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ReporteGSArchivo.aspx.vb">
+      <DependentUpon>Wfrm_ReporteGSArchivo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_RecepMC.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_RecepMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_RecepMC.aspx.vb">
+      <DependentUpon>Wfrm_TE_RecepMC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_REchazoBolsaAC.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_REchazoBolsaAC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_REchazoBolsaAC.aspx.vb">
+      <DependentUpon>Wfrm_TE_REchazoBolsaAC.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_RechazoBolsaACDet.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_RechazoBolsaACDet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_RechazoBolsaACDet.aspx.vb">
+      <DependentUpon>Wfrm_TE_RechazoBolsaACDet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_REchazoBolsaCD.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_REchazoBolsaCD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_REchazoBolsaCD.aspx.vb">
+      <DependentUpon>Wfrm_TE_REchazoBolsaCD.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_RechazoBolsaCDDet.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_RechazoBolsaCDDet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_RechazoBolsaCDDet.aspx.vb">
+      <DependentUpon>Wfrm_TE_RechazoBolsaCDDet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_RevArcCentral.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_RevArcCentral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_RevArcCentral.aspx.vb">
+      <DependentUpon>Wfrm_TE_RevArcCentral.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_TE_SegumientoDevoluciones.aspx.designer.vb">
+      <DependentUpon>wfrm_TE_SegumientoDevoluciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_TE_SegumientoDevoluciones.aspx.vb">
+      <DependentUpon>wfrm_TE_SegumientoDevoluciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_SolicitudDoc.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_SolicitudDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_SolicitudDoc.aspx.vb">
+      <DependentUpon>Wfrm_TE_SolicitudDoc.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_SolicitudDocExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_SolicitudDocExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_SolicitudDocExp.aspx.vb">
+      <DependentUpon>Wfrm_TE_SolicitudDocExp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TE_SolicitudExp.aspx.designer.vb">
+      <DependentUpon>Wfrm_TE_SolicitudExp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TE_SolicitudExp.aspx.vb">
+      <DependentUpon>Wfrm_TE_SolicitudExp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TipoExpediente.aspx.designer.vb">
+      <DependentUpon>Wfrm_TipoExpediente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TipoExpediente.aspx.vb">
+      <DependentUpon>Wfrm_TipoExpediente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TipoExpediente_Indices.aspx.designer.vb">
+      <DependentUpon>Wfrm_TipoExpediente_Indices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TipoExpediente_Indices.aspx.vb">
+      <DependentUpon>Wfrm_TipoExpediente_Indices.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TipoExpediente_Series.aspx.designer.vb">
+      <DependentUpon>Wfrm_TipoExpediente_Series.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TipoExpediente_Series.aspx.vb">
+      <DependentUpon>Wfrm_TipoExpediente_Series.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="wfrm_Transferencia_Int.aspx.designer.vb">
+      <DependentUpon>wfrm_Transferencia_Int.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wfrm_Transferencia_Int.aspx.vb">
+      <DependentUpon>wfrm_Transferencia_Int.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_TR_FormatoPerdida.aspx.designer.vb">
+      <DependentUpon>Wfrm_TR_FormatoPerdida.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_TR_FormatoPerdida.aspx.vb">
+      <DependentUpon>Wfrm_TR_FormatoPerdida.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_Cajas.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_Cajas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_Cajas.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_Cajas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_Hist.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_Hist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_Hist.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_Hist.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_OK.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_OK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_OK.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_OK.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_Recibe.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_Recibe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_Recibe.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_Recibe.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_Upd.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_Upd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionSeleccionados_Upd.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionSeleccionados_Upd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Calendar.aspx.resx">
+      <DependentUpon>Calendar.aspx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT_CatalogoDisposicion.resx">
+      <DependentUpon>RPT_CatalogoDisposicion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT_CuadroGenearal.resx">
+      <DependentUpon>RPT_CuadroGenearal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT_ExpedientesConfidenciales.resx">
+      <DependentUpon>RPT_ExpedientesConfidenciales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT_ExpedientesReservados.resx">
+      <DependentUpon>RPT_ExpedientesReservados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT_Expurgos.resx">
+      <DependentUpon>RPT_Expurgos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT_GuiaSimple.resx">
+      <DependentUpon>RPT_GuiaSimple.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT_InventarioGeneral.resx">
+      <DependentUpon>RPT_InventarioGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wfrm_EN_RequrimientoDocDet.aspx.resx">
+      <DependentUpon>Wfrm_EN_RequrimientoDocDet.aspx.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Editors\edtButtonBack.gif" />
+    <Content Include="App_Themes\Editors\edtButtonBackDis.gif" />
+    <Content Include="App_Themes\Editors\edtButtonCheckedBack.gif" />
+    <Content Include="App_Themes\Editors\edtButtonHoverBack.gif" />
+    <Content Include="App_Themes\Editors\edtButtonPressedBack.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarButtonHoverBack.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarButtonPressedBack.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarFNNextYear.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarFNNextYear.png" />
+    <Content Include="App_Themes\Editors\edtCalendarFNPrevYear.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarFNPrevYear.png" />
+    <Content Include="App_Themes\Editors\edtCalendarFooterBack.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarHeaderBack.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarNextMonth.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarNextMonthDisabled.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarNextYear.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarNextYearDisabled.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarPrevMonth.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarPrevMonthDisabled.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarPrevYear.gif" />
+    <Content Include="App_Themes\Editors\edtCalendarPrevYearDisabled.gif" />
+    <Content Include="App_Themes\Editors\edtDropDown.png" />
+    <Content Include="App_Themes\Editors\edtDropDownBack.gif" />
+    <Content Include="App_Themes\Editors\edtDropDownBackDis.gif" />
+    <Content Include="App_Themes\Editors\edtDropDownButtonHoverBack.gif" />
+    <Content Include="App_Themes\Editors\edtDropDownButtonPressedBack.gif" />
+    <Content Include="App_Themes\Editors\edtDropDownDisabled.png" />
+    <Content Include="App_Themes\Editors\edtDropDownHottracked.png" />
+    <Content Include="App_Themes\Editors\edtDropDownPressed.png" />
+    <Content Include="App_Themes\Editors\edtEllipsis.png" />
+    <Content Include="App_Themes\Editors\edtEllipsisDisabled.png" />
+    <Content Include="App_Themes\Editors\edtEllipsisHottracked.png" />
+    <Content Include="App_Themes\Editors\edtEllipsisPressed.png" />
+    <Content Include="App_Themes\Editors\edtError.png" />
+    <Content Include="App_Themes\Editors\edtProgressBack.gif" />
+    <Content Include="App_Themes\Editors\edtProgressIndicatorBack.gif" />
+    <Content Include="App_Themes\Editors\edtSpinDecBtnBack.gif" />
+    <Content Include="App_Themes\Editors\edtSpinDecButtonHoverBack.gif" />
+    <Content Include="App_Themes\Editors\edtSpinDecButtonPressedBack.gif" />
+    <Content Include="App_Themes\Editors\edtSpinEditDecrementDisabledImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditDecrementHottrackedImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditDecrementImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditIncrementDisabledImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditIncrementHottrackedImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditIncrementImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditLargeDecDisabledImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditLargeDecHottrackedImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditLargeDecImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditLargeIncDisabledImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditLargeIncHottrackedImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinEditLargeIncImage.png" />
+    <Content Include="App_Themes\Editors\edtSpinIncBtnBack.gif" />
+    <Content Include="App_Themes\Editors\edtSpinIncButtonHoverBack.gif" />
+    <Content Include="App_Themes\Editors\edtSpinIncButtonPressedBack.gif" />
+    <Content Include="App_Themes\Editors\fcadd.png" />
+    <Content Include="App_Themes\Editors\fcaddhot.png" />
+    <Content Include="App_Themes\Editors\fcgroupaddcondition.png" />
+    <Content Include="App_Themes\Editors\fcgroupaddgroup.png" />
+    <Content Include="App_Themes\Editors\fcgroupand.png" />
+    <Content Include="App_Themes\Editors\fcgroupnotand.png" />
+    <Content Include="App_Themes\Editors\fcgroupnotor.png" />
+    <Content Include="App_Themes\Editors\fcgroupor.png" />
+    <Content Include="App_Themes\Editors\fcgroupremove.png" />
+    <Content Include="App_Themes\Editors\fcopany.png" />
+    <Content Include="App_Themes\Editors\fcopbegin.png" />
+    <Content Include="App_Themes\Editors\fcopbetween.png" />
+    <Content Include="App_Themes\Editors\fcopblank.png" />
+    <Content Include="App_Themes\Editors\fcopcontain.png" />
+    <Content Include="App_Themes\Editors\fcopend.png" />
+    <Content Include="App_Themes\Editors\fcopequal.png" />
+    <Content Include="App_Themes\Editors\fcopgreater.png" />
+    <Content Include="App_Themes\Editors\fcopgreaterorequal.png" />
+    <Content Include="App_Themes\Editors\fcopless.png" />
+    <Content Include="App_Themes\Editors\fcoplessorequal.png" />
+    <Content Include="App_Themes\Editors\fcoplike.png" />
+    <Content Include="App_Themes\Editors\fcopnotany.png" />
+    <Content Include="App_Themes\Editors\fcopnotbetween.png" />
+    <Content Include="App_Themes\Editors\fcopnotblank.png" />
+    <Content Include="App_Themes\Editors\fcopnotcontain.png" />
+    <Content Include="App_Themes\Editors\fcopnotequal.png" />
+    <Content Include="App_Themes\Editors\fcopnotlike.png" />
+    <Content Include="App_Themes\Editors\fcremove.png" />
+    <Content Include="App_Themes\Editors\fcremovehot.png" />
+    <Content Include="App_Themes\Editors\lbHeaderBackground.gif" />
+    <Content Include="App_Themes\Editors\Loading.gif" />
+    <Content Include="App_Themes\Editors\styles.css" />
+    <Content Include="Archivos\ActaP_226.gif" />
+    <Content Include="Archivos\ActaP_229.gif" />
+    <Content Include="ASPxTreeListTemplateReplacementTest.aspx" />
+    <Content Include="bin\ABDArchivos.dll" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\ceTe.DynamicPDF.35.dll" />
+    <Content Include="bin\DBauer.Web.UI.WebControls.HierarGrid.dll" />
+    <Content Include="bin\DPMenuControl.dll" />
+    <Content Include="bin\DynamicImage.dll" />
+    <Content Include="bin\Interop.ActiveDs.dll" />
+    <Content Include="bin\JFIFImageReader.dll" />
+    <Content Include="bin\msgbox.dll" />
+    <Content Include="bin\Portalv9.dll" />
+    <Content Include="bin\Portalv9.pdb" />
+    <Content Include="bin\Portalv9.xml" />
+    <Content Include="bin\Portalv9.XmlSerializers.dll" />
+    <Content Include="bin\RNArchivos.dll" />
+    <Content Include="Blank_Page.aspx" />
+    <Content Include="cal2.js" />
+    <Content Include="Calendar.aspx" />
+    <Content Include="cal_conf2.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\bg-content-side_centro.jpg" />
+    <Content Include="Images\bg-content-side_der.jpg" />
+    <Content Include="Images\bg-content-side_izq.jpg" />
+    <Content Include="Images\bg-content-side_izq_2.jpg" />
+    <Content Include="Images\bg.gif" />
+    <Content Include="Images\bgError.png" />
+    <Content Include="Images\btn_imprimir.gif" />
+    <Content Include="Images\Cajas.png" />
+    <Content Include="Images\DataListHeader2.gif" />
+    <Content Include="Images\env_apertura_expedientes.png" />
+    <Content Include="Images\env_doc_faltantes.png" />
+    <Content Include="Images\env_entrega_usu.gif" />
+    <Content Include="Images\env_entrega_usu.png" />
+    <Content Include="Images\Folder1.gif" />
+    <Content Include="Images\Folder1.png" />
+    <Content Include="Images\Folder1A.gif" />
+    <Content Include="Images\Folder1A.png" />
+    <Content Include="Images\Folder2.gif" />
+    <Content Include="Images\Folder2.png" />
+    <Content Include="Images\Folder2A.gif" />
+    <Content Include="Images\Folder3.gif" />
+    <Content Include="Images\Folder3.png" />
+    <Content Include="Images\Folder3A.gif" />
+    <Content Include="Images\Folder4.gif" />
+    <Content Include="Images\Folder4.png" />
+    <Content Include="Images\Folder4A.gif" />
+    <Content Include="Images\Folder5.gif" />
+    <Content Include="Images\Folder5.png" />
+    <Content Include="Images\Folder5A.gif" />
+    <Content Include="Images\Folder6.gif" />
+    <Content Include="Images\Folder6.png" />
+    <Content Include="Images\Folder6A.gif" />
+    <Content Include="Images\Folder7.gif" />
+    <Content Include="Images\Folder7.png" />
+    <Content Include="Images\Folder7A.gif" />
+    <Content Include="Images\Folder8.gif" />
+    <Content Include="Images\Folder8.png" />
+    <Content Include="Images\Folder8A.gif" />
+    <Content Include="Images\Folder8A.png" />
+    <Content Include="Images\Folder9.gif" />
+    <Content Include="Images\Folder9.png" />
+    <Content Include="Images\FolderMas.bmp" />
+    <Content Include="Images\folders_abiertos\v_01.gif" />
+    <Content Include="Images\folders_abiertos\v_02.gif" />
+    <Content Include="Images\folders_abiertos\v_03.gif" />
+    <Content Include="Images\folders_abiertos\v_04.gif" />
+    <Content Include="Images\folders_abiertos\v_05.gif" />
+    <Content Include="Images\folders_abiertos\v_06.gif" />
+    <Content Include="Images\folders_abiertos\v_07.gif" />
+    <Content Include="Images\folders_abiertos\v_08.gif" />
+    <Content Include="Images\folders_abiertos\v_09.gif" />
+    <Content Include="Images\folders_abiertos\v_10.gif" />
+    <Content Include="Images\folders_abiertos\v_11.gif" />
+    <Content Include="Images\folders_abiertos\v_12.gif" />
+    <Content Include="Images\folders_abiertos\v_13.gif" />
+    <Content Include="Images\folders_abiertos\v_14.gif" />
+    <Content Include="Images\fondo1.jpg" />
+    <Content Include="Images\fondoItem.jpg" />
+    <Content Include="Images\fondo_r1_c1.jpg" />
+    <Content Include="Images\fondo_r2_c1.jpg" />
+    <Content Include="Images\fondo_r2_c2.jpg" />
+    <Content Include="Images\fondo_r2_c3.jpg" />
+    <Content Include="Images\fondo_r3_c2.jpg" />
+    <Content Include="Images\fondo_r4_c2.jpg" />
+    <Content Include="Images\f_01.gif" />
+    <Content Include="Images\f_02.gif" />
+    <Content Include="Images\f_03.gif" />
+    <Content Include="Images\f_04.gif" />
+    <Content Include="Images\f_05.gif" />
+    <Content Include="Images\f_06.gif" />
+    <Content Include="Images\f_07.gif" />
+    <Content Include="Images\f_08.gif" />
+    <Content Include="Images\f_09.gif" />
+    <Content Include="Images\f_10.gif" />
+    <Content Include="Images\f_11.gif" />
+    <Content Include="Images\lados.gif" />
+    <Content Include="Images\regresar.gif" />
+    <Content Include="Images\v_01.gif" />
+    <Content Include="Images\v_02.gif" />
+    <Content Include="Images\v_03.gif" />
+    <Content Include="Images\v_04.gif" />
+    <Content Include="Images\v_05.gif" />
+    <Content Include="Images\v_06.gif" />
+    <Content Include="Images\v_07.gif" />
+    <Content Include="Images\v_08.gif" />
+    <Content Include="Images\v_09.gif" />
+    <Content Include="Images\v_10.gif" />
+    <Content Include="Images\_cerrados\Folder1.gif" />
+    <Content Include="Images\_cerrados\f_02.gif" />
+    <Content Include="Images\_cerrados\f_03.gif" />
+    <Content Include="Images\_cerrados\f_04.gif" />
+    <Content Include="Images\_cerrados\f_05.gif" />
+    <Content Include="Images\_cerrados\f_06.gif" />
+    <Content Include="Images\_cerrados\f_07.gif" />
+    <Content Include="Images\_cerrados\f_08.gif" />
+    <Content Include="Images\_cerrados\f_09.gif" />
+    <Content Include="Images\_cerrados\f_10.gif" />
+    <Content Include="Images\_cerrados\f_11.gif" />
+    <Content Include="Images\_cerrados\f_12.gif" />
+    <Content Include="TestCampoGrid.aspx" />
+    <Content Include="WebUsrCtrls\CampoMultiSelect.ascx" />
+    <Content Include="Wfm_CapturaIndices.aspx" />
+    <Content Include="Wfm_Captura_Documento_Nuevo_Indices.aspx" />
+    <Content Include="Wfm_Captura_Expediente.aspx" />
+    <Content Include="Wfm_Captura_Expediente_Documentos.aspx" />
+    <Content Include="Wfm_Captura_Expediente_Nuevo_Indices.aspx" />
+    <Content Include="Wfm_Captura_Expediente_Serie.aspx" />
+    <Content Include="Wfm_Captura_Tipo_documento.aspx" />
+    <Content Include="Wfm_Captura_Tipo_expediente.aspx" />
+    <Content Include="Wfm_Indices_Editar.aspx" />
+    <Content Include="Wfm_Indices_Lectura.aspx" />
+    <Content Include="Wfm_Indices_Nuevo.aspx" />
+    <Content Include="Wfrm_Archivo_Fisico.aspx" />
+    <Content Include="Wfrm_Archivo_Fisico_Detalle.aspx" />
+    <Content Include="Wfrm_Archivo_Fisico_Elementos.aspx" />
+    <Content Include="Wfrm_Archivo_Fisico_Unidades.aspx" />
+    <Content Include="Wfrm_CambiaPwd.aspx" />
+    <Content Include="wfrm_Expurgo_Expedientes.aspx" />
+    <Content Include="Wfrm_Indices_Sistema.aspx" />
+    <Content Include="Wfrm_PlantillaCapturaBak.aspx" />
+    <Content Include="Wfrm_PlantillaCaptura.aspx" />
+    <Content Include="wfrm_Prestamos_Alta_Solicitud.aspx" />
+    <Content Include="wfrm_Prestamos_Alta_Solicitud_Frame.aspx" />
+    <Content Include="wfrm_Prestamos_Buscador.aspx" />
+    <Content Include="wfrm_Prestamos_Imprimir_Solicitud.aspx" />
+    <Content Include="wfrm_Prestamos_Lista_Solicitudes.aspx" />
+    <Content Include="wfrm_Prestamos_Modifica_Solicitud.aspx" />
+    <Content Include="Wfrm_ReporteExpedientesConfidenciales.aspx" />
+    <Content Include="Wfrm_ReporteExpedientesReservados.aspx" />
+    <Content Include="Wfrm_ReporteExpurgos.aspx" />
+    <Content Include="Wfrm_ReporteInventarioGeneral.aspx" />
+    <Content Include="Wfrm_Transferencia_Secundaria.aspx" />
+    <Content Include="Wfrm_Transferencia_Secundaria_Seleccion.aspx" />
+    <Content Include="Wfrm_Transferencia_Secundaria_Seleccionados.aspx" />
+    <Content Include="Wfrm_Transferencia_Secundaria_Seleccionados_Cajas.aspx" />
+    <Content Include="Wfrm_Transferencia_Secundaria_Seleccionados_Hist.aspx" />
+    <Content Include="Wfrm_Transferencia_Secundaria_Seleccionados_OK.aspx" />
+    <Content Include="Wfrm_Transferencia_Secundaria_Seleccionados_Upd.aspx" />
+    <Content Include="Wfrm_TraspasosHistorico.aspx" />
+    <Content Include="Wfrm_TraspasosConfirmacion.aspx" />
+    <Content Include="Wfrm_Traspasos_RptAutorizacion.aspx" />
+    <Content Include="Wfrm_Valorizacion.aspx" />
+    <Content Include="Wfrm_ValorizacionArchivos.aspx" />
+    <Content Include="Wfrm_Filtros.aspx" />
+    <Content Include="wfrm_Transferencia_EntreArchivos.aspx" />
+    <Content Include="Wfrm_ArchivoBak.aspx" />
+    <Content Include="css\Grids.css" />
+    <Content Include="DPMenu.css" />
+    <Content Include="Images\30.jpg" />
+    <Content Include="Images\acceso.jpg" />
+    <Content Include="Images\aceptar.gif" />
+    <Content Include="Images\aceptar3.jpg" />
+    <Content Include="Images\actadep.gif" />
+    <Content Include="Images\actualiza.gif" />
+    <Content Include="Images\actualiza.jpg" />
+    <Content Include="Images\adicional.png" />
+    <Content Include="Images\agregar.gif" />
+    <Content Include="Images\agregar_documento.jpg" />
+    <Content Include="Images\alerta.png" />
+    <Content Include="Images\Autorizar.gif" />
+    <Content Include="Images\azules_r2_c2.jpg" />
+    <Content Include="Images\back-line2.jpg" />
+    <Content Include="Images\back.gif" />
+    <Content Include="Images\back.jpg" />
+    <Content Include="Images\back001.gif" />
+    <Content Include="Images\back_generico_r1_c1.jpg" />
+    <Content Include="Images\back_generico_r3_c2.jpg" />
+    <Content Include="Images\back_r2_c2.jpg" />
+    <Content Include="Images\back_r3_c2.jpg" />
+    <Content Include="Images\barratt.jpg" />
+    <Content Include="Images\bg-three-column-main2col.png" />
+    <Content Include="Images\bolsa.png" />
+    <Content Include="Images\Borrar.gif" />
+    <Content Include="Images\Boton.png" />
+    <Content Include="Images\Buscar.gif" />
+    <Content Include="Images\Buscar2.gif" />
+    <Content Include="Images\Caja.gif" />
+    <None Include="App_Themes\Editors\Thumbs.db" />
+    <Content Include="App_Themes\Office2003Olive\ASPxButton.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxButtonEdit.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxCalendar.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxCallbackPanel.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxCaptcha.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxCheckBox.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxCloudControl.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxColorEdit.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxComboBox.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxDataView.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxDateEdit.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxDateNavigator.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxDropDownEdit.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxFilterControl.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxGridView.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxHeadline.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxHtmlEditor.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxHyperLink.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxLabel.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxListBox.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxLoadingPanel.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxMemo.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxMenu.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxNavBar.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxNewsControl.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxPageControl.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxPager.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxPivotGrid.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxPopupControl.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxPopupMenu.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxProgressBar.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxRadioButton.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxRadioButtonList.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxRatingControl.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxRoundPanel.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxScheduler.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxSiteMapControl.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxSpellChecker.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxSpinEdit.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxSplitter.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxTabControl.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxTextBox.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxTimeEdit.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxTitleIndex.skin" />
+    <Content Include="App_Themes\Office2003Olive\ASPxTreeList.skin" />
+    <Content Include="App_Themes\Office2003Olive\MonthEdit.skin" />
+    <Content Include="App_Themes\Office2003Olive\ReportToolbar.skin" />
+    <Content Include="App_Themes\Office2003Olive\ReportViewer.skin" />
+    <Content Include="App_Themes\Office2003Olive\WeekDaysEdit.skin" />
+    <Content Include="App_Themes\Office2003Olive\WeekOfMonthEdit.skin" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <Content Include="Images\cambiar.png" />
+    <Content Include="Images\completo.png" />
+    <Content Include="Images\Crear_Exp.gif" />
+    <Content Include="Images\documento.gif" />
+    <Content Include="Images\edtDropDown.png" />
+    <Content Include="Images\Ejecutar.gif" />
+    <Content Include="Images\enviar.png" />
+    <Content Include="Images\enviar2.png" />
+    <Content Include="Images\env_apertura_expedientes.gif" />
+    <Content Include="Images\env_devolucion.gif" />
+    <Content Include="Images\env_doc_faltantes.gif" />
+    <Content Include="Images\especifico.png" />
+    <Content Include="Images\expedibolsa.png" />
+    <Content Include="Images\expediente.png" />
+    <Content Include="Images\E_bajabolsa.gif" />
+    <Content Include="Images\fcaddhot.png" />
+    <Content Include="Images\fcremovehot.png" />
+    <Content Include="Images\fuera.png" />
+    <Content Include="Images\icon-calendar.gif" />
+    <Content Include="Images\O.gif" />
+    <Content Include="Images\PD.gif" />
+    <Content Include="Images\PI.gif" />
+    <Content Include="Images\Recibir_Bolsa.gif" />
+    <Content Include="Images\salir.png" />
+    <Content Include="Images\Y.gif" />
+    <Content Include="Masterpages\1.master" />
+    <None Include="dsRPT_CatalogoDisposicion.xsc">
+      <DependentUpon>dsRPT_CatalogoDisposicion.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_CatalogoDisposicion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRPT_CatalogoDisposicion.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRPT_CatalogoDisposicion.xss">
+      <DependentUpon>dsRPT_CatalogoDisposicion.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_CuadroGenearal.xsc">
+      <DependentUpon>dsRPT_CuadroGenearal.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_CuadroGenearal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRPT_CuadroGenearal.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRPT_CuadroGenearal.xss">
+      <DependentUpon>dsRPT_CuadroGenearal.xsd</DependentUpon>
+    </None>
+    <Content Include="Masterpages\Adminmaster1col.master" />
+    <None Include="dsRPT_ExpedientesConfidenciales.xsc">
+      <DependentUpon>dsRPT_ExpedientesConfidenciales.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_ExpedientesConfidenciales.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRPT_ExpedientesConfidenciales.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRPT_ExpedientesConfidenciales.xss">
+      <DependentUpon>dsRPT_ExpedientesConfidenciales.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_ExpedientesReservados.xsc">
+      <DependentUpon>dsRPT_ExpedientesReservados.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_ExpedientesReservados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRPT_ExpedientesReservados1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRPT_ExpedientesReservados.xss">
+      <DependentUpon>dsRPT_ExpedientesReservados.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_Expurgos.xsc">
+      <DependentUpon>dsRPT_Expurgos.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_Expurgos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRPT_Expurgos.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRPT_Expurgos.xss">
+      <DependentUpon>dsRPT_Expurgos.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_InventarioGeneral.xsc">
+      <DependentUpon>dsRPT_InventarioGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="dsRPT_InventarioGeneral.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRPT_InventarioGeneral1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsRPT_InventarioGeneral.xss">
+      <DependentUpon>dsRPT_InventarioGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="RPT_Datos_Paso.xsc">
+      <DependentUpon>RPT_Datos_Paso.xsd</DependentUpon>
+    </None>
+    <None Include="RPT_Datos_Paso.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RPT_Datos_Paso.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="RPT_Datos_Paso.xss">
+      <DependentUpon>RPT_Datos_Paso.xsd</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Aplicacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\AppProy.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Cliente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Domicilio.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\DynamicUsr.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\DynamicUsrData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\EstacionTrabajo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\GrupoAdmin.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\HistAcceso.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\IdentidadUsr.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Identificador_sistema.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\IDTicket.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Modulo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\PerfilUsuario.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Permiso.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\PoliticaPwd.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\PoliticaSesion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Proyecto.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SvrUsr\ReqModulo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Requerimiento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\Respuesta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SvrUsr\SvrUsrMain.wsdl" />
+    <None Include="Web References\SvrUsr\VersionAplicacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <Content Include="Images\cancelar.gif" />
+    <Content Include="Images\cancelar.jpg" />
+    <Content Include="Images\cancelar3.jpg" />
+    <Content Include="Images\DataListHeader.gif" />
+    <Content Include="Images\DataListHeaderSel.gif" />
+    <Content Include="Images\Editar.gif" />
+    <Content Include="Images\seleccionar.gif" />
+    <Content Include="script.js" />
+    <Content Include="StyleCal.css" />
+    <None Include="Web References\SvrUsr\SvrUsrMain.disco" />
+    <Content Include="Tres_divs2.aspx" />
+    <None Include="Web References\WSArchivo\Archivo.disco" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="wfrmQuery.aspx" />
+    <Content Include="Wfrm_AC_Monitoreo.aspx" />
+    <Content Include="Wfrm_AC_MonitoreoxRecibir.aspx" />
+    <Content Include="Wfrm_AC_recepfolios.aspx" />
+    <Content Include="Wfrm_Admin_Aplicaciones.aspx" />
+    <Content Include="Wfrm_Admin_AppProy.aspx" />
+    <Content Include="Wfrm_Admin_CambiaPwd.aspx" />
+    <Content Include="Wfrm_Admin_ClientesProyecto.aspx" />
+    <Content Include="Wfrm_Admin_DynamicUsr.aspx" />
+    <Content Include="Wfrm_Admin_EstTrabajo.aspx" />
+    <Content Include="Wfrm_Admin_GrupoAdmin.aspx" />
+    <Content Include="Wfrm_Admin_LogEventos.aspx" />
+    <Content Include="Wfrm_Admin_Perfiles.aspx" />
+    <Content Include="Wfrm_Admin_PermisosApp.aspx" />
+    <Content Include="Wfrm_Admin_PoliticasPassword.aspx" />
+    <Content Include="Wfrm_Admin_PoliticasSesion.aspx" />
+    <Content Include="Wfrm_Admin_ProyectosCli.aspx" />
+    <Content Include="Wfrm_Admin_Req.aspx" />
+    <Content Include="Wfrm_Admin_RequerimentoMod.aspx" />
+    <Content Include="Wfrm_Admin_ReseteaPwd.aspx" />
+    <Content Include="Wfrm_Admin_RptAdminPerfilPermisos.aspx" />
+    <Content Include="Wfrm_Admin_RptAdminUsrXGrupo.aspx" />
+    <Content Include="Wfrm_Admin_RptAdminUsrXPerfil.aspx" />
+    <Content Include="Wfrm_Admin_Usuarios.aspx" />
+    <Content Include="Wfrm_Admin_VersionApp.aspx" />
+    <Content Include="Wfrm_Archivo_Series.aspx" />
+    <Content Include="Wfrm_Archivo_SoloLectura.aspx" />
+    <Content Include="Wfrm_BE_AutorizaDestruccionEX.aspx" />
+    <Content Include="Wfrm_BE_AutorizaDestruccionFolio.aspx" />
+    <Content Include="Wfrm_BE_DestruccionFolio.aspx" />
+    <Content Include="Wfrm_BE_FormatoAutorizacion.aspx" />
+    <Content Include="Wfrm_BE_ReporteDestruccionEX.aspx" />
+    <Content Include="Wfrm_CD_EntregaMensajeroAC.aspx" />
+    <Content Include="Wfrm_CD_Monitoreofolios.aspx" />
+    <Content Include="Wfrm_CD_MonitoreoxRecibir.aspx" />
+    <Content Include="Wfrm_CD_recepfolios.aspx" />
+    <Content Include="Wfrm_Entidades.aspx" />
+    <Content Include="Wfrm_EN_ActasPerdidas.aspx" />
+    <Content Include="wfrm_EN_Digitaliza.aspx" />
+    <Content Include="Wfrm_EN_EntregaMensajeroAC.aspx" />
+    <Content Include="Wfrm_EN_EntregaMensajeroRuta.aspx" />
+    <Content Include="Wfrm_EN_envioDoc.aspx" />
+    <Content Include="Wfrm_EN_envioExp.aspx" />
+    <Content Include="Wfrm_EN_ExpFaltantes.aspx" />
+    <Content Include="Wfrm_EN_FormatoEntrega.aspx" />
+    <Content Include="Wfrm_EN_FormatoRecepcion.aspx" />
+    <Content Include="Wfrm_EN_MonitoreoEntregaUsuario.aspx" />
+    <Content Include="Wfrm_EN_MonitoreoExpUsuario.aspx" />
+    <Content Include="Wfrm_EN_RequerimientoDoc.aspx" />
+    <Content Include="Wfrm_EN_RequerimientoExp.aspx" />
+    <Content Include="Wfrm_EN_RequerimientoImg.aspx" />
+    <Content Include="Wfrm_EN_RequrimientoDocDet.aspx" />
+    <Content Include="Wfrm_EN_RevUsuario.aspx" />
+    <Content Include="Wfrm_EN_RevUsuarioContenido.aspx" />
+    <Content Include="Wfrm_EN_SeguimientoIncosistencias.aspx" />
+    <Content Include="Wfrm_Normas_Organizacion_indices.aspx" />
+    <Content Include="Wfrm_Normas_Organizacion_Series.aspx" />
+    <Content Include="Wfrm_Normas_Organizacion_SubSeries.aspx" />
+    <Content Include="Wfrm_Oficina_entregaMensajero.aspx" />
+    <Content Include="Wfrm_Oficina_monitoreofolios.aspx" />
+    <Content Include="Wfrm_Oficina_recepfolios.aspx" />
+    <Content Include="Wfrm_PantallaCaptura_conPlantillas.aspx" />
+    <Content Include="Wfrm_PlantillaArchivo.aspx" />
+    <Content Include="wfrm_Prueba.aspx" />
+    <Content Include="Wfrm_ReporteCD.aspx" />
+    <Content Include="Wfrm_ReporteCDArchivo.aspx" />
+    <Content Include="Wfrm_RE_Altabolsa.aspx" />
+    <Content Include="Wfrm_RE_Bajabolsa.aspx" />
+    <Content Include="Wfrm_RE_FormatoRecepcion.aspx" />
+    <Content Include="Wfrm_RE_MonitoreoUsuario.aspx" />
+    <Content Include="Wfrm_RE_recepAC.aspx" />
+    <Content Include="Wfrm_RE_RevArcCentral.aspx" />
+    <Content Include="Wfrm_RE_SolicitudExp.aspx" />
+    <Content Include="Wfrm_TE_ActasPerdida.aspx" />
+    <Content Include="Wfrm_TE_Altabolsa.aspx" />
+    <Content Include="Wfrm_TE_AltadocExp.aspx" />
+    <Content Include="Wfrm_TE_AltaDocumentos.aspx" />
+    <Content Include="Wfrm_TE_AltaExpedientes.aspx" />
+    <Content Include="Wfrm_TE_AperturaExp.aspx" />
+    <Content Include="Wfrm_TE_AperturaExpDet.aspx" />
+    <Content Include="Wfrm_TE_ArchivoExpDocs.aspx" />
+    <Content Include="Wfrm_TE_ArchivoExpDocsDet.aspx" />
+    <Content Include="Wfrm_TE_Aviso.aspx" />
+    <Content Include="Wfrm_TE_Bajabolsa.aspx" />
+    <Content Include="Wfrm_TE_BajaDocumentosDet.aspx" />
+    <Content Include="Wfrm_TE_BuscaExpediente.aspx" />
+    <Content Include="Wfrm_TE_BuscaExpedientearbol.aspx" />
+    <Content Include="wfrm_TE_ChecaContenido.aspx" />
+    <Content Include="Wfrm_TE_EntregaMensajeroMC.aspx" />
+    <Content Include="Wfrm_TE_EntregaMensajeroUsu.aspx" />
+    <Content Include="Wfrm_TE_ExpFaltantes.aspx" />
+    <Content Include="Wfrm_TE_ExpIncompletos.aspx" />
+    <Content Include="Wfrm_TE_FormatoEntrega.aspx" />
+    <Content Include="Wfrm_TE_FormatoLiberacion.aspx" />
+    <Content Include="Wfrm_TE_FormatoPerdida.aspx" />
+    <Content Include="Wfrm_TE_FormatoRecepcion.aspx" />
+    <Content Include="Wfrm_TE_IntegraExp.aspx" />
+    <Content Include="Wfrm_TE_MCAltabolsa.aspx" />
+    <Content Include="Wfrm_TE_MCBolsasSelladas.aspx" />
+    <Content Include="Wfrm_TE_MCCierraBolsa.aspx" />
+    <Content Include="Wfrm_TE_MCIncidencias.aspx" />
+    <Content Include="Wfrm_TE_MCRevisados.aspx" />
+    <Content Include="Wfrm_TE_MCRevision.aspx" />
+    <Content Include="Wfrm_TE_MCRevisionBolsa.aspx" />
+    <Content Include="Wfrm_TE_MCRevisionDet.aspx" />
+    <Content Include="Wfrm_TE_MCSolicitudDoc.aspx" />
+    <Content Include="Wfrm_TE_MCSolicitudDocExp.aspx" />
+    <Content Include="Wfrm_TE_MCSolicitudExp.aspx" />
+    <Content Include="Wfrm_TE_MonitoreoTraslados.aspx" />
+    <Content Include="Wfrm_TE_MonitoreoUsuario.aspx" />
+    <Content Include="WebUsrCtrls\CampoCatalogo.ascx" />
+    <Content Include="WebUsrCtrls\CampoCatalogoISAAR.ascx" />
+    <Content Include="WebUsrCtrls\CampoEntero.ascx" />
+    <Content Include="WebUsrCtrls\CampoFecha.ascx" />
+    <Content Include="WebUsrCtrls\CampoGrid.ascx" />
+    <Content Include="WebUsrCtrls\CampoGridISAAR.ascx" />
+    <Content Include="WebUsrCtrls\CampoPeriodoAno.ascx" />
+    <Content Include="WebUsrCtrls\CampoPeriodoFechas.ascx" />
+    <Content Include="WebUsrCtrls\CampoPeriodoMesAno.ascx" />
+    <Content Include="WebUsrCtrls\CamposElemento.ascx" />
+    <Content Include="WebUsrCtrls\CamposElementoSelect.ascx" />
+    <Content Include="WebUsrCtrls\CampoSI_NO.ascx" />
+    <Content Include="WebUsrCtrls\CampoSlectura.ascx" />
+    <Content Include="WebUsrCtrls\CampoTexto.ascx" />
+    <Content Include="WebUsrCtrls\CampoTextoLargo.ascx" />
+    <Content Include="WebUsrCtrls\PlantillaHeaderCampo.ascx" />
+    <Content Include="css\css-content.css" />
+    <Content Include="css\DPMenu.css" />
+    <Content Include="Images\azules_r1_c1.jpg" />
+    <Content Include="Images\azules_r2_c1.jpg" />
+    <Content Include="Images\azules_r2_c3.jpg" />
+    <Content Include="Images\azules_r3_c2.jpg" />
+    <Content Include="Images\azules_r4_c2.jpg" />
+    <Content Include="Images\back_generico_r3_c1.jpg" />
+    <Content Include="Images\bar.gif" />
+    <Content Include="Images\barra01.jpg" />
+    <Content Include="Images\barra02.jpg" />
+    <Content Include="Images\barra03.jpg" />
+    <Content Include="Images\bg-content-side.jpg" />
+    <Content Include="Images\bg-content-side.png" />
+    <Content Include="Images\bg-nav-side.png" />
+    <Content Include="Images\bg-nav.png" />
+    <Content Include="Images\bg-three-column-main.png" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\correcto.GIF" />
+    <Content Include="Images\digipro.jpg" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\fondo.jpg" />
+    <Content Include="Images\Separador.gif" />
+    <Content Include="Images\spacer.gif" />
+    <Content Include="Logoff.aspx" />
+    <Content Include="Masterpages\Admin.Master" />
+    <Content Include="Masterpages\Adminmasteranidada.master" />
+    <Content Include="DPMenu.js" />
+    <Content Include="Masterpages\Adminmaster2col.master" />
+    <Content Include="TreeLineImages\dash.gif" />
+    <Content Include="TreeLineImages\dashminus.gif" />
+    <Content Include="TreeLineImages\dashplus.gif" />
+    <Content Include="TreeLineImages\i.gif" />
+    <Content Include="TreeLineImages\l.gif" />
+    <Content Include="TreeLineImages\lminus.gif" />
+    <Content Include="TreeLineImages\lplus.gif" />
+    <Content Include="TreeLineImages\minus.gif" />
+    <Content Include="TreeLineImages\noexpand.gif" />
+    <Content Include="TreeLineImages\plus.gif" />
+    <Content Include="TreeLineImages\r.gif" />
+    <Content Include="TreeLineImages\rminus.gif" />
+    <Content Include="TreeLineImages\rplus.gif" />
+    <Content Include="TreeLineImages\t.gif" />
+    <Content Include="TreeLineImages\tminus.gif" />
+    <Content Include="TreeLineImages\tplus.gif" />
+    <Content Include="WebUsrCtrls\PlantillaHeaderCampoSelect.ascx" />
+    <Content Include="WebUsrCtrls\wucTest.ascx" />
+    <Content Include="wfrm_Buscador.aspx" />
+    <Content Include="Wfrm_Archivo.aspx" />
+    <Content Include="wfrm_ArchivoIns.aspx" />
+    <Content Include="Wfrm_Archivo_Elementos.aspx" />
+    <Content Include="wfrm_Buscador_Resultado.aspx" />
+    <Content Include="Wfrm_Catalogos.aspx" />
+    <Content Include="Wfrm_Catalogos_Datos.aspx" />
+    <Content Include="Wfrm_Contenido.aspx" />
+    <Content Include="Wfrm_Normas.aspx" />
+    <Content Include="Wfrm_Normas_Areas.aspx" />
+    <Content Include="Wfrm_Normas_Elementos.aspx" />
+    <Content Include="Wfrm_Normas_niveles.aspx" />
+    <Content Include="Wfrm_Normas_Organizacion.aspx" />
+    <Content Include="Wfrm_Organigrama.aspx" />
+    <Content Include="Wfrm_PantallaCapturaISAAR.aspx" />
+    <Content Include="Wfrm_PlantillaSlectura.aspx" />
+    <Content Include="Wfrm_RelacionISADISAAR.aspx" />
+    <Content Include="Wfrm_ReporteCGCA.aspx" />
+    <Content Include="Wfrm_ReporteCGCArchivo.aspx" />
+    <Content Include="Wfrm_ReporteGS.aspx" />
+    <Content Include="Wfrm_ReporteGSArchivo.aspx" />
+    <Content Include="Wfrm_TE_RecepMC.aspx" />
+    <Content Include="Wfrm_TE_REchazoBolsaAC.aspx" />
+    <Content Include="Wfrm_TE_RechazoBolsaACDet.aspx" />
+    <Content Include="Wfrm_TE_REchazoBolsaCD.aspx" />
+    <Content Include="Wfrm_TE_RechazoBolsaCDDet.aspx" />
+    <Content Include="Wfrm_TE_RevArcCentral.aspx" />
+    <Content Include="wfrm_TE_SegumientoDevoluciones.aspx" />
+    <Content Include="Wfrm_TE_SolicitudDoc.aspx" />
+    <Content Include="Wfrm_TE_SolicitudDocExp.aspx" />
+    <Content Include="Wfrm_TE_SolicitudExp.aspx" />
+    <Content Include="Wfrm_TipoExpediente.aspx" />
+    <Content Include="Wfrm_TipoExpediente_Indices.aspx" />
+    <Content Include="Wfrm_TipoExpediente_Series.aspx" />
+    <Content Include="wfrm_Transferencia_Int.aspx" />
+    <Content Include="Wfrm_TR_FormatoPerdida.aspx" />
+    <Content Include="Wfrm_ValorizacionSeleccionados.aspx" />
+    <Content Include="Wfrm_ValorizacionSeleccionados_Cajas.aspx" />
+    <Content Include="Wfrm_ValorizacionSeleccionados_Hist.aspx" />
+    <Content Include="Wfrm_ValorizacionSeleccionados_OK.aspx" />
+    <Content Include="Wfrm_ValorizacionSeleccionados_Recibe.aspx" />
+    <Content Include="Wfrm_ValorizacionSeleccionados_Upd.aspx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAEX\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAEX\Respuesta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAEX\SAEX.wsdl" />
+    <None Include="Web References\WSArchivo\Archivo.wsdl" />
+    <None Include="Web References\WSArchivo\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\WsConsultas\ConsultasWeb.wsdl" />
+    <None Include="Web References\WsConsultas\IDTicket.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsConsultas\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\WsConsultas\Respuesta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsImg\clsExtension.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsImg\clsFileHSM.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsImg\IDTicket.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsImg\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\WsImg\Respuesta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsImg\TiposDocumento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsImg\WsImagenes.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/SAEXv9/SAEX.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAEX\</RelPath>
+      <UpdateFromURL>http://localhost/SAEXv9/SAEX.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Portalv9_SAEX_ServiciosSAEX</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/SvrUsrV8/SvrUsrMain.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SvrUsr\</RelPath>
+      <UpdateFromURL>http://localhost/SvrUsrV8/SvrUsrMain.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Portalv9_SvrUsr_Core</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/WSArchivo/Archivo.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSArchivo\</RelPath>
+      <UpdateFromURL>http://localhost/WSArchivo/Archivo.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Portalv9_WSArchivo_Service1</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/WSConsultasv8/ConsultasWeb.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsConsultas\</RelPath>
+      <UpdateFromURL>http://localhost/WSConsultasv8/ConsultasWeb.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Portalv9_WsConsultas_ConsultasWeb</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/WSImagenesv8/WsImagenes.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsImg\</RelPath>
+      <UpdateFromURL>http://localhost/WSImagenesv8/WsImagenes.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Portalv9_WsImg_WsImagenes</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52123</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Portalv9</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

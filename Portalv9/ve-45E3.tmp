@@ -1,0 +1,97 @@
+﻿Imports Portalv9.SvrUsr
+Imports System.Data
+Imports Portalv9.WSArchivo.Service1
+Imports DevExpress.Web.ASPxGridView
+Partial Class Wfrm_Filtros
+    Inherits System.Web.UI.Page
+
+#Region "Variables privadas"
+    Public tTicket As IDTicket
+#End Region
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not Page.IsPostBack Then
+            Dim objGlobal As New clsGlobal
+            tTicket = CType(Session.Item("GSTR_TICKET"), IDTicket)
+            If Not objGlobal.TicketValido(tTicket) Then 'Is Nothing Then
+                LogOff()
+                Exit Sub
+            End If
+        End If
+
+    End Sub
+
+#Region "  Comunes"
+
+    Private Sub LogOff()
+        Response.Redirect("Logoff.aspx", False)
+    End Sub
+
+    Private Function ObtieneResultado() As String
+        Dim strResultado As String
+        If Session.Item("GSTR_SESSION_RESULT") Is Nothing Then
+            strResultado = String.Empty
+        Else
+            strResultado = Session.Item("GSTR_SESSION_RESULT")
+            Session.Remove("GSTR_SESSION_RESULT")
+        End If
+        Return strResultado
+    End Function
+
+
+#End Region
+    Protected Sub aspxGridFiltros_RowCommand(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.ASPxGridViewRowCommandEventArgs)
+        Try
+            Session("bFiltrosProfile") = Nothing
+            Select Case e.CommandArgs.CommandName.ToString
+                Case "Usuario"
+                    DevExpress.Web.ASPxClasses.ASPxWebControl.RedirectOnCallback("WfrmQuery.aspx?idFiltro=" & e.KeyValue) '& "&Norma=" & e.CommandArgs.CommandArgument.ToString)
+                Case "Admin"
+                    Session("bFiltrosProfile") = "Administrador"
+                    DevExpress.Web.ASPxClasses.ASPxWebControl.RedirectOnCallback("WfrmQuery.aspx?idFiltro=" & e.KeyValue) '& "&Norma=" & e.CommandArgs.CommandArgument.ToString)
+            End Select
+        Catch ex As Exception
+            MsgBox1.ShowMessage(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub aspxGridFiltros_RowValidating(ByVal sender As Object, ByVal e As DevExpress.Web.Data.ASPxDataValidationEventArgs) Handles aspxGridFiltros.RowValidating
+        If e.NewValues("Nombre") = Nothing Then
+            e.RowError = "Debe proporcionar el valor del nombre."
+        End If
+    End Sub
+    Protected Sub dsNivel_Selecting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs) Handles dsNivel.Selecting
+        Try
+            If Not CType(aspxGridFiltros.FindEditFormTemplateControl("cmbArchivo"), DevExpress.Web.ASPxEditors.ASPxComboBox).SelectedItem Is Nothing And Session("dsIdNorma") Is Nothing Then
+                Session("dsIdNorma") = CType(aspxGridFiltros.FindEditFormTemplateControl("cmbArchivo"), DevExpress.Web.ASPxEditors.ASPxComboBox).SelectedItem.GetValue("idNorma")
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Protected Sub dsTipoDeExpediente_Selecting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs) Handles dsTipoDeExpediente.Selecting
+        Try
+            tTicket = CType(Session.Item("GSTR_TICKET"), IDTicket)
+            e.InputParameters("NoIdentidad") = tTicket.NoIdentidad
+        Catch ex As Exception
+            LogOff()
+        End Try
+        Try
+            If Not CType(aspxGridFiltros.FindEditFormTemplateControl("dlNiveles"), DevExpress.Web.ASPxEditors.ASPxComboBox).SelectedItem Is Nothing And Session("dsIdNivel") Is Nothing Then
+                Session("dsIdNivel") = CType(aspxGridFiltros.FindEditFormTemplateControl("dlNiveles"), DevExpress.Web.ASPxEditors.ASPxComboBox).SelectedItem.Value
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Protected Sub dlNiveles_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxClasses.CallbackEventArgsBase)
+        Session("dsIdNorma") = CType(aspxGridFiltros.FindEditFormTemplateControl("cmbArchivo"), DevExpress.Web.ASPxEditors.ASPxComboBox).SelectedItem.GetValue("idNorma")
+        CType(aspxGridFiltros.FindEditFormTemplateControl("dlNiveles"), DevExpress.Web.ASPxEditors.ASPxComboBox).DataBind()
+    End Sub
+
+    Protected Sub cbSerie_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxClasses.CallbackEventArgsBase)
+        Session("dsIdNivel") = e.Parameter
+        CType(aspxGridFiltros.FindEditFormTemplateControl("cbSerie"), DevExpress.Web.ASPxEditors.ASPxComboBox).DataBind()
+    End Sub
+End Class

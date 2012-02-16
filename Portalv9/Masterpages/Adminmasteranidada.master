@@ -1,0 +1,26 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/Masterpages/Admin.Master" AutoEventWireup="false" CodeBehind="Adminmasteranidada.master.vb" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Titulo" runat="server">
+    <div id="TituloBarra">
+        <asp:ContentPlaceHolder ID="TituloBarra" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div id="content-container-three-column" >
+        <div id="content-side1-three-column">
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server" >
+         </asp:ContentPlaceHolder>
+        </div>
+        <div id="content-main-three-column">
+              <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+        </div>
+        <div id="content-side2-three-column">
+              <asp:ContentPlaceHolder ID="ContentPlaceHolder5" runat="server">
+                    </asp:ContentPlaceHolder>
+        </div>
+         <div class="clear">
+        </div>
+     </div>
+</asp:Content>
+

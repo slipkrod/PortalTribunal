@@ -1,0 +1,83 @@
+/* Hoja de estilos CSS predeterminada para los Grids del portal*/
+
+.Encabezados
+/* Titulos del Grid*/
+{
+    font-FAMILY: Verdana;
+    Font-Size:X-Small;
+    font-weight:bold;
+    TEXT-ALIGN: center;
+    color:White; 
+    background-color: #006742;
+}
+
+.EncabezadosText
+/* Color de Letra de los titulos del Grid*/
+{
+color:White; 
+text-align: center;  
+}
+
+.Grid
+{
+    /* Vinculos dentro del Grid*/
+   color:White; 
+ }
+.SelectedItemStyle
+/* Hoja de estilos CSS predeterminada para los Grids del portal*/
+{
+    Font-Size: XX-Small;
+    Font-Family: Verdana;
+    Color: #333333; 
+    background-color: #FFFFFF;
+    
+ }
+.EditItemStyle
+/* Cuando se Edita el Elemento*/
+{
+    Font-Size: xx-small;
+    font-family: Verdana;
+    background-color: #FFFFFF;  
+   
+}
+.AlternatingItemStyle
+/* Interlineado del Grid*/
+{
+    Font-Size: XX-Small;
+    Font-family:Arial;
+    background-color: #FFFFFF; 
+    text-align: center 
+}
+.ItemStyle
+/* Grid Completo*/
+{
+    Font-Size:XX-Small;
+    Font-Family:Verdana;
+    background-color: #FFFFFF;
+    text-align:center ;
+}
+.FooterStyle
+{
+    Font-Size:X-Small;
+    Font-Family: Verdana;
+    text-align:center;
+    color: Black;
+    font-weight:bold;
+}
+.PagerStyle
+{
+Font-Size:XX-Small;
+font-style:oblique;
+Font-Family:Verdana;
+text-align:center;
+color:White;
+background-color: #006742;
+}
+/* Opciones para Grid View
+BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333"
+*/
+.SelectedRowStyle
+{
+
+}
+

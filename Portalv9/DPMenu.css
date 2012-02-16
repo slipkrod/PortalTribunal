@@ -1,0 +1,123 @@
+﻿		div.DPMenuFondo
+        {
+        	width:1025px;
+        	height:40px;
+        	background-image:url(../Images/bg-nav.png);
+            background-color:#094b88;
+            margin-left:115px;
+             
+        }
+        
+        .DPMenuLogo
+        {
+            width:12%;
+        }
+        
+        .DPMenuBarraBotones
+        {
+        	/*background-color:#094b88;
+        	background-image:url(Images/bg-nav.png);
+        	width:77%;
+        	height:38px;
+        	vertical-align:bottom;
+        	align:right;*/
+        	background:#608fc8 url(../images/bg-nav.png) no-repeat;
+			margin-left:auto;
+			margin-right:auto;
+			width:90%;
+			padding:1.8em 0 1em 20px;
+			position:relative;
+			font-size:.8em;
+			font-weight:bolder;
+        }
+        
+        .DPMenuHeader
+        {
+            margin-left:7px;
+            background-color:Transparent;
+            /*background-image:url(Images/bg-nav.png);*/
+            height:18px;
+            width:100px;
+            cursor:default;
+            background-repeat:repeat-x;
+            vertical-align:middle;
+            position:relative;
+        }
+        
+        .DPMenuHeaderText
+        {
+        	font-size:7pt;
+        	font-weight:bold;
+            color:#FFFFFF;
+            font-family:Verdana;
+        }
+        
+        div.DPMenuSubMenu
+        {
+        	position:absolute;
+        	top:100px;
+        	left:100px;
+        	display:none;
+        	z-index:100;
+        }
+        
+        .DPSubMenuButton
+        {
+        	background-color:#094b88;
+        	background-image:url(../Images/barra02.jpg);
+        	height:16px;
+            width:auto;
+            cursor:pointer;
+            background-repeat:repeat-x;
+            vertical-align:middle;
+        }
+        
+        .DPSubMenuButtonText
+        {
+        	vertical-align:middle;
+        	font-size:8pt;
+            color:#002D59;
+            font-family:arial,verdana;
+        }
+        
+        .DPSubMenuHeaderButton
+        {
+        	background-color:#094b88;
+        	background-image:url(../Images/barra02.jpg);
+        	height:16px;
+            width:auto;
+            cursor:default;
+            background-repeat:repeat-x;
+            vertical-align:middle;
+        }
+        
+        .DPSubMenuHeaderButtonText
+        {
+        	vertical-align:middle;
+        	font-weight:bold;
+        	font-size:8pt;
+            color:#D42E14;
+            font-family:arial,verdana;
+        }
+        
+ 
+        .DataList_Aqua
+        {
+            background-color:#E2F0FF;
+            background-image:url(../Images/DataListHeader.gif);
+            background-position:center top;
+            background-repeat:repeat-x;
+            border-bottom: solid 1px #AECAF0
+        }
+
+        .DataList_Aqua_Sel
+        {
+            /*background-color:#E2F0FF; */
+            background-image:url(../Images/DataListHeaderSel.gif);
+            color:#FFFFFF;
+            /*background-position:center top;
+            background-repeat:repeat-x;
+            border-bottom: solid 1px #AECAF0*/
+        }
+        
+        

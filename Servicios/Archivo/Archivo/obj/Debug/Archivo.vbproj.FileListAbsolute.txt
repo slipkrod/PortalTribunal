@@ -1,0 +1,72 @@
+C:\Inetpub\wwwroot\Archivo\Archivo\bin\Archivo.dll
+C:\Inetpub\wwwroot\Archivo\Archivo\bin\Archivo.pdb
+C:\Inetpub\wwwroot\Archivo\Archivo\bin\Archivo.xml
+C:\Inetpub\wwwroot\Archivo\Archivo\obj\Debug\ResolveAssemblyReference.cache
+C:\Inetpub\wwwroot\Archivo\Archivo\obj\Debug\Archivo.Resources.resources
+C:\Inetpub\wwwroot\Archivo\Archivo\obj\Debug\Archivo.vbproj.GenerateResource.Cache
+C:\Inetpub\wwwroot\Archivo\Archivo\obj\Debug\Archivo.dll
+C:\Inetpub\wwwroot\Archivo\Archivo\obj\Debug\Archivo.xml
+C:\Inetpub\wwwroot\Archivo\Archivo\obj\Debug\Archivo.pdb
+C:\Proyectos\Digipro\PortalV9Saex\WebServices\Archivo\Archivo\bin\Archivo.dll
+C:\Proyectos\Digipro\PortalV9Saex\WebServices\Archivo\Archivo\bin\Archivo.pdb
+C:\Proyectos\Digipro\PortalV9Saex\WebServices\Archivo\Archivo\bin\Archivo.xml
+C:\Proyectos\Digipro\PortalV9Saex\WebServices\Archivo\Archivo\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\Digipro\PortalV9Saex\WebServices\Archivo\Archivo\obj\Debug\Archivo.Resources.resources
+C:\Proyectos\Digipro\PortalV9Saex\WebServices\Archivo\Archivo\obj\Debug\Archivo.vbproj.GenerateResource.Cache
+C:\Proyectos\Digipro\PortalV9Saex\WebServices\Archivo\Archivo\obj\Debug\Archivo.dll
+C:\Proyectos\Digipro\PortalV9Saex\WebServices\Archivo\Archivo\obj\Debug\Archivo.xml
+C:\Proyectos\Digipro\PortalV9Saex\WebServices\Archivo\Archivo\obj\Debug\Archivo.pdb
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.dll
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.pdb
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.xml
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.Resources.resources
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.vbproj.GenerateResource.Cache
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.dll
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.xml
+C:\Proyectos\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.pdb
+D:\Temporal\Archivo\Servicios\Archivo\Archivo\bin\Archivo.dll
+D:\Temporal\Archivo\Servicios\Archivo\Archivo\bin\Archivo.pdb
+D:\Temporal\Archivo\Servicios\Archivo\Archivo\bin\Archivo.xml
+D:\Temporal\Archivo\Servicios\Archivo\Archivo\obj\Debug\ResolveAssemblyReference.cache
+D:\Temporal\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.Resources.resources
+D:\Temporal\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.vbproj.GenerateResource.Cache
+D:\Temporal\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.dll
+D:\Temporal\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.xml
+D:\Temporal\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.pdb
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.Resources.resources
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.vbproj.GenerateResource.Cache
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.dll
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.xml
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\obj\Debug\Archivo.pdb
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.dll
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.pdb
+C:\Proyectos\Digipro\Eliu\Digipro\Archivo\Servicios\Archivo\Archivo\bin\Archivo.xml
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\bin\Archivo.dll
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\bin\Archivo.pdb
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\bin\Archivo.xml
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Debug\ResolveAssemblyReference.cache
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Debug\Archivo.Resources.resources
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Debug\Archivo.vbproj.GenerateResource.Cache
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Debug\Archivo.dll
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Debug\Archivo.xml
+D:\Tribunal\Archivo 1.0.3\Servicios\Archivo\Archivo\obj\Debug\Archivo.pdb
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\bin\Archivo.dll
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\bin\Archivo.pdb
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\bin\Archivo.xml
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\ResolveAssemblyReference.cache
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.Resources.resources
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.vbproj.GenerateResource.Cache
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.dll
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.xml
+D:\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.pdb
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\bin\Archivo.dll
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\bin\Archivo.pdb
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\bin\Archivo.xml
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\ResolveAssemblyReference.cache
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.Resources.resources
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.vbproj.GenerateResource.Cache
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.dll
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.xml
+C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.pdb

@@ -1,0 +1,14 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost/WSArchivo/">
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Configuration.dll" publishTime="04/29/2005 10:57:30" />
+    <file relUrl="Archivo.asmx" publishTime="11/02/2008 18:19:28" />
+    <file relUrl="bin/Archivo.dll" publishTime="11/29/2009 23:57:02" />
+    <file relUrl="Web.config" publishTime="11/02/2008 18:26:34" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll" publishTime="05/11/2007 23:09:00" />
+    <file relUrl="bin/Archivo.pdb" publishTime="11/29/2009 23:57:02" />
+    <file relUrl="bin/Microsoft.Practices.ObjectBuilder.dll" publishTime="05/22/2007 11:47:38" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll" publishTime="05/11/2007 23:08:00" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll" publishTime="05/11/2007 23:09:00" />
+    <file relUrl="bin/Archivo.xml" publishTime="11/29/2009 23:57:02" />
+  </publishTarget>
+</publishData>

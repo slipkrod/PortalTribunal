@@ -1,0 +1,169 @@
+<%@ Master Language="VB" MasterPageFile="~/Masterpages/Admin.Master" AutoEventWireup="false" CodeBehind="1.master.vb" Inherits="Portalv9._1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Titulo" runat="server">
+        <asp:ContentPlaceHolder ID="TituloBarra" runat="server">
+        </asp:ContentPlaceHolder>
+ </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div id="content-container-three-column">
+  <div id="apDiv1" >
+  <div align="center">
+       <table cellspacing="4" style="width: 100px">
+        <tr>
+            <td valign="top">
+            <!--    ESTE ES EL MENU -->
+             <table class="style1" style="width: 160px">
+        <tr>
+            <td colspan="2">
+                               <h2>Mis operaciones frecuentes</h2>
+                    </td>
+                </tr>
+                <tr>
+                   <td >
+                  <asp:ImageButton ID="ibtnenviar" runat="server" 
+                           ImageUrl="~/Images/enviar2.png" Visible="False" />
+                   </td> 
+                <td style="width: 100%" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="lblenvio" runat="server" Text="Enviar un expediente nuevo" 
+                        Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+                <tr>
+                   <td >
+                    <asp:ImageButton ID="ibtdocumentos" runat="server" 
+                           ImageUrl="~/Images/adicional.png" Visible="False" />
+                   </td> 
+                <td style="width: 100%" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="lbldoc" runat="server" 
+                        Text="Enviar documentos adicionales de un expediente" Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+                <tr>
+                   <td >
+                   <asp:ImageButton ID="imbbolsas" runat="server" 
+                           ImageUrl="~/Images/expedibolsa.png" Visible="False" />
+                   </td> 
+                <td style="width: 100%" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="lblbolsas" runat="server" 
+                        Text="Incorporar expedientes a una bolsa" Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+<tr>
+                   <td >
+                     <asp:ImageButton ID="imbsolicita" runat="server" 
+                           ImageUrl="~/Images/expediente.png" Visible="False" />
+                   </td> 
+                <td style="width: 100%" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="lblsolicita" runat="server" Text="Solicitar Documentación de un expediente" 
+                        Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+                <tr>
+                   <td >
+                    <asp:ImageButton ID="ibtnmensajeria" runat="server" 
+                           ImageUrl="~/Images/bolsa.png" Visible="False" />
+                  </td> 
+                <td style="width: 100%" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="lblmensajeria" runat="server" Text="Entregar bolsa a mensajería" 
+                        Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+                <tr>
+                   <td >
+                   <asp:ImageButton ID="ibtcpwd" runat="server" 
+                           ImageUrl="~/Images/cambiar.png" Visible="False" />
+                  </td> 
+                <td style="width: 100%" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="lblpwd" runat="server" Text="Cambiar mi password" 
+                        Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+                <tr>
+                   <td >
+                       <asp:ImageButton ID="imbtsalir" runat="server" 
+                           ImageUrl="~/Images/fuera.png" />
+                    </td> 
+                <td style="width: 100%" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="lblsalir" runat="server" Text="Salir del sistema" Onclick=""></asp:Label>
+                    </td> 
+                </tr>
+                </table>
+            </td>
+                    <td valign="top" align="left">
+                        <table cellpadding="4" cellspacing="8" style=" width:50%;">
+                        <tr>
+                        <td>
+                        
+  <div id="apDiv2">
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+      </asp:ContentPlaceHolder>
+      </div>
+                            </td>
+                            </tr>
+                            </table>
+                               </td> 
+                                  <td valign="top" align="left"><div id="Div1">
+  <table style="width: 173px">
+                <tr>
+                   <td >
+                       <asp:Image ID="imexpdoc" runat="server" ImageUrl="~/images/alerta.png" 
+                           Visible="False" />
+                    </td> 
+                <td style="width: 467px;" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="lbldocexp" runat="server" 
+                        Text="Tienes x documentos y x expedientes sin enviar" Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+                <tr>
+                   <td >
+                       <asp:Image ID="imbbolsa" runat="server" ImageUrl="~/images/alerta.png" 
+                           Visible="False" />
+                    </td> 
+                <td style="width: 467px;" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="lblbolsat" runat="server" 
+                        Text="Tienes x bolsas pendientes de entregar mensajería y x en tránsito" 
+                        Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+                <tr>
+                   <td >
+                       <asp:Image ID="Image8" runat="server" ImageUrl="~/images/alerta.png" 
+                           Visible="False" />
+                    </td> 
+                <td style="width: 467px;" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="Label3" runat="server" 
+                        Text="Tienes x documentos y x expedientes solicitados" Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+<tr>
+                   <td >
+                       <asp:Image ID="Image9" runat="server" ImageUrl="~/images/alerta.png" 
+                           Visible="False" />
+                   </td> 
+                <td style="width: 467px;" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="Label4" runat="server" 
+                        Text="Tienes x bolsas pendientes de llegar" Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+                <tr>
+                   <td >
+                       <asp:Image ID="Image10" runat="server" ImageUrl="~/images/alerta.png" 
+                           Visible="False" />
+                    </td> 
+                <td style="width: 467px;" valign="bottom"  class="fuente_label">
+                    <asp:Label ID="Label5" runat="server" 
+                        Text="Tienes x documentos y x expedientes pendientes de devolver al archivo" 
+                        Visible="False"></asp:Label>
+                    </td> 
+                </tr>
+                </table>
+  </div></td>
+                </tr>
+                </table>  
+                         
+    </div>           
+   </div>
+</div> 
+  
+
+</asp:Content>

@@ -1,0 +1,3382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/WsImagenes/WsImagenes" xmlns:s1="Main" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/WsImagenes/WsImagenes" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/WsImagenes/WsImagenes">
+      <s:import namespace="Main" />
+      <s:element name="ValidaCampoLlave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tabla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreCampo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaCampoLlaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContestaImagen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+            <s:element minOccurs="1" maxOccurs="1" name="ExpedienteID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContestaImagenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContestaImagenResult" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContestaImagenURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RutaImagen" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContestaImagenURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContestaImagenURLResult" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContestaImagenProtegida">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContestaImagenProtegidaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContestaImagenProtegidaResult" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContestaFileHSM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ExpedienteID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContestaFileHSMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContestaFileHSMResult" type="tns:clsFileHSM" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsFileHSM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ArrayFile" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ext" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Consecutivo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Separador" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetConfigWebScan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DescScan" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConfigWebScanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConfigWebScanResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumentoConJerarquia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeDoc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumentoConJerarquiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocumentoConJerarquiaResult" type="tns:ArrayOfTiposDocumento" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTiposDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TiposDocumento" nillable="true" type="tns:TiposDocumento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TiposDocumento">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="pTipoDocID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="pDocID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="pDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pTabla" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pJerarquia" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="pObligatorio" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="pOrdenDigital" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="pTipoDocPID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="pCaptura" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="pSeparador" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="pGuardarse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="pActivo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="pImg" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="pTipoDocHijos" type="tns:ArrayOfTiposDocumento" />
+          <s:element minOccurs="0" maxOccurs="1" name="pCampo" type="tns:ArrayOfCamposDocumento" />
+          <s:element minOccurs="0" maxOccurs="1" name="Campos" type="tns:ArrayOfCamposDocumento" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoDocID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tabla" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Jerarquia" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Obligatorio" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrdenDigital" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoDocPID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoDocHijo" type="tns:ArrayOfTiposDocumento" />
+          <s:element minOccurs="1" maxOccurs="1" name="Captura" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Separador" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Guardarse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Activo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Img" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ext" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCamposDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CamposDocumento" nillable="true" type="tns:CamposDocumento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CamposDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tabla" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CampoId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCampo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoDato" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LenghtMax" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LenghtMin" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Obligatorio" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Mostrar" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mascara" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Regla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Accion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProConsulta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TemplateId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PedirScaner" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PermisoID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoDatoConsulta" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Condicion1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Condicion2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Condicion3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoDatoCliente" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CampoLlaveConsulta" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TiposDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TiposDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TiposDocumentoResult" type="tns:ArrayOfTiposDocumento" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumentoConJerarquiaInvercap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeDoc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumentoConJerarquiaInvercapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocumentoConJerarquiaInvercapResult" type="tns:ArrayOfTiposDocumento" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneHijosConDocType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneHijosConDocTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneHijosConDocTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="pRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SpName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneDocInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTiposDocumentoSinJerarquia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTiposDocumentoSinJerarquiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTiposDocumentoSinJerarquiaResult" type="tns:ArrayOfTiposDocumento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumetoReemplazo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeDoc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumetoReemplazoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocumetoReemplazoResult" type="tns:ArrayOfTiposDocumento" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumetoReemplazoInvercap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+            <s:element minOccurs="1" maxOccurs="1" name="TypeDoc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TipoDocumetoReemplazoInvercapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocumetoReemplazoInvercapResult" type="tns:ArrayOfTiposDocumento" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserLoginResult" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSequential">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="proyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSequentialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSequentialResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="respuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateScanStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateScanStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateScanStatusResult" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaDocsId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocsId" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="RemoteStorage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminaDocsIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GuardarImagenSMega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocPID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="digicenter" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumDoctos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumLoteID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdRef" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDatos" type="tns:DocReceive" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RemoteStorage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConsecutivoLocal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MyMimeType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Compression" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DispositivoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocReceive">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tabla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoDoc" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoDocPID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Separador" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Guardarse" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Img" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Campos" type="tns:ArrayOfCampoReceive" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoDocHijo" type="tns:ArrayOfDocReceive" />
+          <s:element minOccurs="1" maxOccurs="1" name="Ext" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SizeFile" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCampoReceive">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CampoReceive" nillable="true" type="tns:CampoReceive" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CampoReceive">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCampo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDocReceive">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DocReceive" nillable="true" type="tns:DocReceive" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GuardarImagenSMegaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarImagenSMegaResult" type="s1:Respuesta" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumLoteID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdRef" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DispositivoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReemplazaImagenDatos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocPID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Folio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Digicenter" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumDoctos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumLoteID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ext" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdRef" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDatos" type="tns:DocReceive" />
+            <s:element minOccurs="0" maxOccurs="1" name="PathImagenLocal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RemoteStorage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConsecutivoLocal" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdReemplazo" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="StatusReemplazo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MyMimeType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Compression" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DispositivoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReemplazaImagenDatosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReemplazaImagenDatosResult" type="s1:Respuesta" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumLoteID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdRef" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="PathImagenLocal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConsecutivoLocal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DispositivoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaCamposCaptura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iDocID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreCampo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaCamposCapturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizaCamposCapturaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarArchivoPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocPID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="digicenter" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumDoctos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumLoteID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdRef" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDatos" type="tns:DocReceive" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RemoteStorage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConsecutivoLocal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DispositivoID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SizeExp" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarArchivoPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarArchivoPackageResult" type="s1:Respuesta" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumLoteID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdRef" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DispositivoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtension">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtensionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExtensionResult" type="tns:ArrayOfClsExtension" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsExtension">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsExtension" nillable="true" type="tns:clsExtension" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsExtension">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ExtID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manejador" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReemplazaArchivoPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocPID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="digicenter" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumDoctos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumLoteID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdRef" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDatos" type="tns:DocReceive" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RemoteStorage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConsecutivoLocal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DispositivoID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SizeExp" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdReemplazo" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="StatusReemplazo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReemplazaArchivoPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReemplazaArchivoPackageResult" type="s1:Respuesta" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumLoteID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DocIdRef" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DispositivoID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetMediosOffLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetMediosOffLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_GetMediosOffLineResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetSolicitudFL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CDID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetSolicitudFLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_GetSolicitudFLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_HSM_AsignaDispositivo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoIDLote" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DigicenterID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoteID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SizePackage" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="StatusLote" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumSolicitud" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_HSM_AsignaDispositivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_HSM_AsignaDispositivoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_UpStatusSolicitudFL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumSolicitud" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usr_atenc" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="statusSolFL" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="obsSolFL" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DigicenterID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoteID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoLoteid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Aplicacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_UpStatusSolicitudFLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Monitor_UpStatusSolicitudFLResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_SaveFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPathDestino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_SaveFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_DelFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strPathDestino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_DelFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_HSM_GetVigenciaLote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DigicenterID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoteID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_HSM_GetVigenciaLoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_HSM_GetVigenciaLoteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_HSM_GetCaducidadlotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_HSM_GetCaducidadlotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WS_HSM_GetCaducidadlotesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_TransitaEdoLote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DigicenterID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoteID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoLoteid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Aplicacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_TransitaEdoLoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HSM_TransitaEdoLoteResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_GetRutaLotePackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DigicenterID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoteID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_GetRutaLotePackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HSM_GetRutaLotePackageResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetCFGLote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DigicenterID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoteID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_GetCFGLoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Monitor_GetCFGLoteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_CheckBD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Monitor_CheckBDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Monitor_CheckBDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_GetUltimoLote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_GetUltimoLoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HSM_GetUltimoLoteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_GetLotesBackup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UltimoLote" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_GetLotesBackupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HSM_GetLotesBackupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_GetParametrosCFG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HSM_GetParametrosCFGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HSM_GetParametrosCFGResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaDocsIdHSM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocsId" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="RemoteStorage" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumDoctos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SizeExp" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaDocsIdHSMResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="BuscaInstanciasXEstadoID_Fecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="estadoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaProc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscaInstanciasXEstadoID_FechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaInstanciasXEstadoID_FechaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreaExpediente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="docID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="procesoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreaExpedienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreaExpedienteResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneExpedientesXEvento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneExpedientesXEventoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneExpedientesXEventoResult" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtieneExpedientesXEvento_Fecha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaProc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneExpedientesXEvento_FechaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneExpedientesXEvento_FechaResult" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReservaExpedientesXEvento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="estadoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="registros" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReservaExpedientesXEventoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReservaExpedientesXEventoResult" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEventosxFlujo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEventosxFlujoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneEventosxFlujoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransitaExpediente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="docID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransitaExpedienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransitaExpedienteResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransitaExpedienteLibre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="docID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransitaExpedienteLibreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransitaExpedienteLibreResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransitaGrupoExpedientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="docID" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransitaGrupoExpedientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransitaGrupoExpedientesResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEventosXprocesoID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProcesoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEventosXprocesoIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneEventosXprocesoIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEventoXEstadoID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="estadoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEventoXEstadoIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneEventoXEstadoIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEstados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEstadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneEstadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEstado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="flujoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneEstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneEstadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneInstanciaXDocID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="docID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneInstanciaXDocIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneInstanciaXDocIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneFlujo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="flujoDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneFlujoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ObtieneFlujoResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneFlujos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtieneFlujosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtieneFlujosResult" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenEventosFlujoVisual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventoInicial" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenEventosFlujoVisualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenEventosFlujoVisualResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorraExpedientesRegistrados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramElimina" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorraExpedientesRegistradosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BorraExpedientesRegistradosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraArcivoFE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombreArchivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idArchivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraArcivoFEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegistraArcivoFEResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registraEXPTransmitido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombreEXP" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registraEXPTransmitidoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProcesaEXPFiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="archivoZip" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rutaSalidaEXP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rutaDescomprime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="esFactura" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="myTicket" type="s1:IDTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcesaEXPFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcesaEXPFilesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaExpedientesRegistrados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaExpedientesRegistradosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaExpedientesRegistradosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Loader_TransitaEdoDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProyectoBD" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+            <s:element minOccurs="1" maxOccurs="1" name="Docid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoDocto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipoCatalogoID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Loader_TransitaEdoDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Loader_TransitaEdoDocumentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="gTicket" type="s1:IDTicket" />
+            <s:element minOccurs="0" maxOccurs="1" name="rRespuesta" type="s1:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="Main">
+      <s:complexType name="Respuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RespuestaID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categoria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionCategoria" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionRespuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RespuestaToString" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IDTicket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TicketID" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsrID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProyectoID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VersionAplicacionID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaHoraInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaHoraUltimoAcceso" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoVida" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoRestante" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCompleto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GrupoAdminID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClienteID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PerfilUsuarioID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoVidaPwd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TiempoActualizoPwd" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoIdentidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltLogin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DuracionDias" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvisoCaducidadPwdDias" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacionPwd" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidaCampoLlaveSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaCampoLlave" />
+  </wsdl:message>
+  <wsdl:message name="ValidaCampoLlaveSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaCampoLlaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContestaImagenSoapIn">
+    <wsdl:part name="parameters" element="tns:ContestaImagen" />
+  </wsdl:message>
+  <wsdl:message name="ContestaImagenSoapOut">
+    <wsdl:part name="parameters" element="tns:ContestaImagenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContestaImagenURLSoapIn">
+    <wsdl:part name="parameters" element="tns:ContestaImagenURL" />
+  </wsdl:message>
+  <wsdl:message name="ContestaImagenURLSoapOut">
+    <wsdl:part name="parameters" element="tns:ContestaImagenURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContestaImagenProtegidaSoapIn">
+    <wsdl:part name="parameters" element="tns:ContestaImagenProtegida" />
+  </wsdl:message>
+  <wsdl:message name="ContestaImagenProtegidaSoapOut">
+    <wsdl:part name="parameters" element="tns:ContestaImagenProtegidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContestaFileHSMSoapIn">
+    <wsdl:part name="parameters" element="tns:ContestaFileHSM" />
+  </wsdl:message>
+  <wsdl:message name="ContestaFileHSMSoapOut">
+    <wsdl:part name="parameters" element="tns:ContestaFileHSMResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigWebScanSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConfigWebScan" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigWebScanSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConfigWebScanResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumentoConJerarquiaSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoDocumentoConJerarquia" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumentoConJerarquiaSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoDocumentoConJerarquiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TiposDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:TiposDocumento" />
+  </wsdl:message>
+  <wsdl:message name="TiposDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:TiposDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumentoConJerarquiaInvercapSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoDocumentoConJerarquiaInvercap" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumentoConJerarquiaInvercapSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoDocumentoConJerarquiaInvercapResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneHijosConDocTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneHijosConDocType" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneHijosConDocTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneHijosConDocTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTiposDocumentoSinJerarquiaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTiposDocumentoSinJerarquia" />
+  </wsdl:message>
+  <wsdl:message name="GetTiposDocumentoSinJerarquiaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTiposDocumentoSinJerarquiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumetoReemplazoSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoDocumetoReemplazo" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumetoReemplazoSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoDocumetoReemplazoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumetoReemplazoInvercapSoapIn">
+    <wsdl:part name="parameters" element="tns:TipoDocumetoReemplazoInvercap" />
+  </wsdl:message>
+  <wsdl:message name="TipoDocumetoReemplazoInvercapSoapOut">
+    <wsdl:part name="parameters" element="tns:TipoDocumetoReemplazoInvercapResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="UserLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSequentialSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSequential" />
+  </wsdl:message>
+  <wsdl:message name="GetSequentialSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSequentialResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateScanStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateScanStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateScanStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateScanStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminaDocsIdSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminaDocsId" />
+  </wsdl:message>
+  <wsdl:message name="EliminaDocsIdSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminaDocsIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenSMegaSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarImagenSMega" />
+  </wsdl:message>
+  <wsdl:message name="GuardarImagenSMegaSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarImagenSMegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReemplazaImagenDatosSoapIn">
+    <wsdl:part name="parameters" element="tns:ReemplazaImagenDatos" />
+  </wsdl:message>
+  <wsdl:message name="ReemplazaImagenDatosSoapOut">
+    <wsdl:part name="parameters" element="tns:ReemplazaImagenDatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaCamposCapturaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaCamposCaptura" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaCamposCapturaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaCamposCapturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArchivoPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarArchivoPackage" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArchivoPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarArchivoPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtensionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtension" />
+  </wsdl:message>
+  <wsdl:message name="GetExtensionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReemplazaArchivoPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:ReemplazaArchivoPackage" />
+  </wsdl:message>
+  <wsdl:message name="ReemplazaArchivoPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:ReemplazaArchivoPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetMediosOffLineSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_GetMediosOffLine" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetMediosOffLineSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_GetMediosOffLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetSolicitudFLSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_GetSolicitudFL" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetSolicitudFLSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_GetSolicitudFLResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_HSM_AsignaDispositivoSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_HSM_AsignaDispositivo" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_HSM_AsignaDispositivoSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_HSM_AsignaDispositivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_UpStatusSolicitudFLSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_UpStatusSolicitudFL" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_UpStatusSolicitudFLSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_UpStatusSolicitudFLResponse" />
+  </wsdl:message>
+  <wsdl:message name="HSM_SaveFileSoapIn">
+    <wsdl:part name="parameters" element="tns:HSM_SaveFile" />
+  </wsdl:message>
+  <wsdl:message name="HSM_SaveFileSoapOut">
+    <wsdl:part name="parameters" element="tns:HSM_SaveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="HSM_DelFileSoapIn">
+    <wsdl:part name="parameters" element="tns:HSM_DelFile" />
+  </wsdl:message>
+  <wsdl:message name="HSM_DelFileSoapOut">
+    <wsdl:part name="parameters" element="tns:HSM_DelFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_HSM_GetVigenciaLoteSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_HSM_GetVigenciaLote" />
+  </wsdl:message>
+  <wsdl:message name="WS_HSM_GetVigenciaLoteSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_HSM_GetVigenciaLoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_HSM_GetCaducidadlotesSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_HSM_GetCaducidadlotes" />
+  </wsdl:message>
+  <wsdl:message name="WS_HSM_GetCaducidadlotesSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_HSM_GetCaducidadlotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="HSM_TransitaEdoLoteSoapIn">
+    <wsdl:part name="parameters" element="tns:HSM_TransitaEdoLote" />
+  </wsdl:message>
+  <wsdl:message name="HSM_TransitaEdoLoteSoapOut">
+    <wsdl:part name="parameters" element="tns:HSM_TransitaEdoLoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="HSM_GetRutaLotePackageSoapIn">
+    <wsdl:part name="parameters" element="tns:HSM_GetRutaLotePackage" />
+  </wsdl:message>
+  <wsdl:message name="HSM_GetRutaLotePackageSoapOut">
+    <wsdl:part name="parameters" element="tns:HSM_GetRutaLotePackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetCFGLoteSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_GetCFGLote" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_GetCFGLoteSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_GetCFGLoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_CheckBDSoapIn">
+    <wsdl:part name="parameters" element="tns:Monitor_CheckBD" />
+  </wsdl:message>
+  <wsdl:message name="Monitor_CheckBDSoapOut">
+    <wsdl:part name="parameters" element="tns:Monitor_CheckBDResponse" />
+  </wsdl:message>
+  <wsdl:message name="HSM_GetUltimoLoteSoapIn">
+    <wsdl:part name="parameters" element="tns:HSM_GetUltimoLote" />
+  </wsdl:message>
+  <wsdl:message name="HSM_GetUltimoLoteSoapOut">
+    <wsdl:part name="parameters" element="tns:HSM_GetUltimoLoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="HSM_GetLotesBackupSoapIn">
+    <wsdl:part name="parameters" element="tns:HSM_GetLotesBackup" />
+  </wsdl:message>
+  <wsdl:message name="HSM_GetLotesBackupSoapOut">
+    <wsdl:part name="parameters" element="tns:HSM_GetLotesBackupResponse" />
+  </wsdl:message>
+  <wsdl:message name="HSM_GetParametrosCFGSoapIn">
+    <wsdl:part name="parameters" element="tns:HSM_GetParametrosCFG" />
+  </wsdl:message>
+  <wsdl:message name="HSM_GetParametrosCFGSoapOut">
+    <wsdl:part name="parameters" element="tns:HSM_GetParametrosCFGResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminaDocsIdHSMSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminaDocsIdHSM" />
+  </wsdl:message>
+  <wsdl:message name="EliminaDocsIdHSMSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminaDocsIdHSMResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscaInstanciasXEstadoID_FechaSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscaInstanciasXEstadoID_Fecha" />
+  </wsdl:message>
+  <wsdl:message name="BuscaInstanciasXEstadoID_FechaSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscaInstanciasXEstadoID_FechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreaExpedienteSoapIn">
+    <wsdl:part name="parameters" element="tns:CreaExpediente" />
+  </wsdl:message>
+  <wsdl:message name="CreaExpedienteSoapOut">
+    <wsdl:part name="parameters" element="tns:CreaExpedienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneExpedientesXEventoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneExpedientesXEvento" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneExpedientesXEventoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneExpedientesXEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneExpedientesXEvento_FechaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneExpedientesXEvento_Fecha" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneExpedientesXEvento_FechaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneExpedientesXEvento_FechaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReservaExpedientesXEventoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReservaExpedientesXEvento" />
+  </wsdl:message>
+  <wsdl:message name="ReservaExpedientesXEventoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReservaExpedientesXEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEventosxFlujoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneEventosxFlujo" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEventosxFlujoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneEventosxFlujoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransitaExpedienteSoapIn">
+    <wsdl:part name="parameters" element="tns:TransitaExpediente" />
+  </wsdl:message>
+  <wsdl:message name="TransitaExpedienteSoapOut">
+    <wsdl:part name="parameters" element="tns:TransitaExpedienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransitaExpedienteLibreSoapIn">
+    <wsdl:part name="parameters" element="tns:TransitaExpedienteLibre" />
+  </wsdl:message>
+  <wsdl:message name="TransitaExpedienteLibreSoapOut">
+    <wsdl:part name="parameters" element="tns:TransitaExpedienteLibreResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransitaGrupoExpedientesSoapIn">
+    <wsdl:part name="parameters" element="tns:TransitaGrupoExpedientes" />
+  </wsdl:message>
+  <wsdl:message name="TransitaGrupoExpedientesSoapOut">
+    <wsdl:part name="parameters" element="tns:TransitaGrupoExpedientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEventosXprocesoIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneEventosXprocesoID" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEventosXprocesoIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneEventosXprocesoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEventoXEstadoIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneEventoXEstadoID" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEventoXEstadoIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneEventoXEstadoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEstadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneEstados" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEstadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneEstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneEstado" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneEstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneInstanciaXDocIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneInstanciaXDocID" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneInstanciaXDocIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneInstanciaXDocIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneFlujoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneFlujo" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneFlujoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneFlujoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneFlujosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtieneFlujos" />
+  </wsdl:message>
+  <wsdl:message name="ObtieneFlujosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtieneFlujosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenEventosFlujoVisualSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenEventosFlujoVisual" />
+  </wsdl:message>
+  <wsdl:message name="ObtenEventosFlujoVisualSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenEventosFlujoVisualResponse" />
+  </wsdl:message>
+  <wsdl:message name="BorraExpedientesRegistradosSoapIn">
+    <wsdl:part name="parameters" element="tns:BorraExpedientesRegistrados" />
+  </wsdl:message>
+  <wsdl:message name="BorraExpedientesRegistradosSoapOut">
+    <wsdl:part name="parameters" element="tns:BorraExpedientesRegistradosResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraArcivoFESoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraArcivoFE" />
+  </wsdl:message>
+  <wsdl:message name="RegistraArcivoFESoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraArcivoFEResponse" />
+  </wsdl:message>
+  <wsdl:message name="registraEXPTransmitidoSoapIn">
+    <wsdl:part name="parameters" element="tns:registraEXPTransmitido" />
+  </wsdl:message>
+  <wsdl:message name="registraEXPTransmitidoSoapOut">
+    <wsdl:part name="parameters" element="tns:registraEXPTransmitidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcesaEXPFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcesaEXPFiles" />
+  </wsdl:message>
+  <wsdl:message name="ProcesaEXPFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcesaEXPFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaExpedientesRegistradosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaExpedientesRegistrados" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaExpedientesRegistradosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaExpedientesRegistradosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Loader_TransitaEdoDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:Loader_TransitaEdoDocumento" />
+  </wsdl:message>
+  <wsdl:message name="Loader_TransitaEdoDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:Loader_TransitaEdoDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsImagenesSoap">
+    <wsdl:operation name="ValidaCampoLlave">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WS|Intra - Valida campo llave</wsdl:documentation>
+      <wsdl:input message="tns:ValidaCampoLlaveSoapIn" />
+      <wsdl:output message="tns:ValidaCampoLlaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ContestaImagen">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">VISOR- Contesta Imagen como Byte[]</wsdl:documentation>
+      <wsdl:input message="tns:ContestaImagenSoapIn" />
+      <wsdl:output message="tns:ContestaImagenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ContestaImagenURL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">VISOR- Contesta Imagen como Byte[]</wsdl:documentation>
+      <wsdl:input message="tns:ContestaImagenURLSoapIn" />
+      <wsdl:output message="tns:ContestaImagenURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ContestaImagenProtegida">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">VISOR- Contesta Imagen Protegidacomo Byte[]</wsdl:documentation>
+      <wsdl:input message="tns:ContestaImagenProtegidaSoapIn" />
+      <wsdl:output message="tns:ContestaImagenProtegidaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ContestaFileHSM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Constesta clsFileHSM --&gt; byte[], ext</wsdl:documentation>
+      <wsdl:input message="tns:ContestaFileHSMSoapIn" />
+      <wsdl:output message="tns:ContestaFileHSMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigWebScan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene la configuraciones del scanner (Control Digitalización Ver. 2008 ).</wsdl:documentation>
+      <wsdl:input message="tns:GetConfigWebScanSoapIn" />
+      <wsdl:output message="tns:GetConfigWebScanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumentoConJerarquia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Control Digitalización Ver. 2008</wsdl:documentation>
+      <wsdl:input message="tns:TipoDocumentoConJerarquiaSoapIn" />
+      <wsdl:output message="tns:TipoDocumentoConJerarquiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TiposDocumento">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Control Digitalización Ver. 2008</wsdl:documentation>
+      <wsdl:input message="tns:TiposDocumentoSoapIn" />
+      <wsdl:output message="tns:TiposDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumentoConJerarquiaInvercap">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Control Digitalización Ver. 2008</wsdl:documentation>
+      <wsdl:input message="tns:TipoDocumentoConJerarquiaInvercapSoapIn" />
+      <wsdl:output message="tns:TipoDocumentoConJerarquiaInvercapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneHijosConDocType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Visor - Método para obtener los hijos de cierto tipo de un documento</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneHijosConDocTypeSoapIn" />
+      <wsdl:output message="tns:ObtieneHijosConDocTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneDocInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene informacion de los campos del tipo de documento.</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneDocInfoSoapIn" />
+      <wsdl:output message="tns:ObtieneDocInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposDocumentoSinJerarquia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Control Digitalización Ver. 2003</wsdl:documentation>
+      <wsdl:input message="tns:GetTiposDocumentoSinJerarquiaSoapIn" />
+      <wsdl:output message="tns:GetTiposDocumentoSinJerarquiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumetoReemplazo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reemplazo de Documentos</wsdl:documentation>
+      <wsdl:input message="tns:TipoDocumetoReemplazoSoapIn" />
+      <wsdl:output message="tns:TipoDocumetoReemplazoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumetoReemplazoInvercap">
+      <wsdl:input message="tns:TipoDocumetoReemplazoInvercapSoapIn" />
+      <wsdl:output message="tns:TipoDocumetoReemplazoInvercapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input message="tns:UserLoginSoapIn" />
+      <wsdl:output message="tns:UserLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSequential">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene un número consecutivo.</wsdl:documentation>
+      <wsdl:input message="tns:GetSequentialSoapIn" />
+      <wsdl:output message="tns:GetSequentialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScanStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualiza el estatus para digitalización.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateScanStatusSoapIn" />
+      <wsdl:output message="tns:UpdateScanStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaDocsId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina Documentos en caso de Error - WebScan</wsdl:documentation>
+      <wsdl:input message="tns:EliminaDocsIdSoapIn" />
+      <wsdl:output message="tns:EliminaDocsIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenSMega">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GuardaImagenSMega</wsdl:documentation>
+      <wsdl:input message="tns:GuardarImagenSMegaSoapIn" />
+      <wsdl:output message="tns:GuardarImagenSMegaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReemplazaImagenDatos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reemplaza una Imágen y sus datos relacionados en una sola transacción.</wsdl:documentation>
+      <wsdl:input message="tns:ReemplazaImagenDatosSoapIn" />
+      <wsdl:output message="tns:ReemplazaImagenDatosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCamposCaptura">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Publicador - Actualiza Campos</wsdl:documentation>
+      <wsdl:input message="tns:ActualizaCamposCapturaSoapIn" />
+      <wsdl:output message="tns:ActualizaCamposCapturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivoPackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GuardarArchivoPackage</wsdl:documentation>
+      <wsdl:input message="tns:GuardarArchivoPackageSoapIn" />
+      <wsdl:output message="tns:GuardarArchivoPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtension">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Catalogo de Extiones (tipo de archivos)</wsdl:documentation>
+      <wsdl:input message="tns:GetExtensionSoapIn" />
+      <wsdl:output message="tns:GetExtensionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReemplazaArchivoPackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reemplazo de Archivos HSM</wsdl:documentation>
+      <wsdl:input message="tns:ReemplazaArchivoPackageSoapIn" />
+      <wsdl:output message="tns:ReemplazaArchivoPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetMediosOffLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene los Dispositivos Extraibles para las Solicitudes pendientes - Monitor Fuera de Linea</wsdl:documentation>
+      <wsdl:input message="tns:Monitor_GetMediosOffLineSoapIn" />
+      <wsdl:output message="tns:Monitor_GetMediosOffLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetSolicitudFL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el Detalle de las solicitudes pendientes para Monitor Fuera de Linea</wsdl:documentation>
+      <wsdl:input message="tns:Monitor_GetSolicitudFLSoapIn" />
+      <wsdl:output message="tns:Monitor_GetSolicitudFLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_HSM_AsignaDispositivo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el Dispostivo asignado por el HSM y  transita el lote a COPIANDO...</wsdl:documentation>
+      <wsdl:input message="tns:Monitor_HSM_AsignaDispositivoSoapIn" />
+      <wsdl:output message="tns:Monitor_HSM_AsignaDispositivoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_UpStatusSolicitudFL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar el Estatus de la Solicitud</wsdl:documentation>
+      <wsdl:input message="tns:Monitor_UpStatusSolicitudFLSoapIn" />
+      <wsdl:output message="tns:Monitor_UpStatusSolicitudFLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HSM_SaveFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Guardar Imagen - Fuera de Línea</wsdl:documentation>
+      <wsdl:input message="tns:HSM_SaveFileSoapIn" />
+      <wsdl:output message="tns:HSM_SaveFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HSM_DelFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina Archivos Lote - Fuera de Línea</wsdl:documentation>
+      <wsdl:input message="tns:HSM_DelFileSoapIn" />
+      <wsdl:output message="tns:HSM_DelFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_HSM_GetVigenciaLote">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener la vigencia de lote</wsdl:documentation>
+      <wsdl:input message="tns:WS_HSM_GetVigenciaLoteSoapIn" />
+      <wsdl:output message="tns:WS_HSM_GetVigenciaLoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_HSM_GetCaducidadlotes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener caducidad Lotes</wsdl:documentation>
+      <wsdl:input message="tns:WS_HSM_GetCaducidadlotesSoapIn" />
+      <wsdl:output message="tns:WS_HSM_GetCaducidadlotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HSM_TransitaEdoLote">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transita el estado del lote</wsdl:documentation>
+      <wsdl:input message="tns:HSM_TransitaEdoLoteSoapIn" />
+      <wsdl:output message="tns:HSM_TransitaEdoLoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetRutaLotePackage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obten Ruta Lote - Package</wsdl:documentation>
+      <wsdl:input message="tns:HSM_GetRutaLotePackageSoapIn" />
+      <wsdl:output message="tns:HSM_GetRutaLotePackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetCFGLote">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene la configuracion del tipo de Lote para Monitor Fuera de Linea</wsdl:documentation>
+      <wsdl:input message="tns:Monitor_GetCFGLoteSoapIn" />
+      <wsdl:output message="tns:Monitor_GetCFGLoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_CheckBD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Valida BD</wsdl:documentation>
+      <wsdl:input message="tns:Monitor_CheckBDSoapIn" />
+      <wsdl:output message="tns:Monitor_CheckBDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetUltimoLote">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener el ultimo lote</wsdl:documentation>
+      <wsdl:input message="tns:HSM_GetUltimoLoteSoapIn" />
+      <wsdl:output message="tns:HSM_GetUltimoLoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetLotesBackup">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener lotes disponibles para Backup</wsdl:documentation>
+      <wsdl:input message="tns:HSM_GetLotesBackupSoapIn" />
+      <wsdl:output message="tns:HSM_GetLotesBackupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetParametrosCFG">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener parametros de configuracion HSM</wsdl:documentation>
+      <wsdl:input message="tns:HSM_GetParametrosCFGSoapIn" />
+      <wsdl:output message="tns:HSM_GetParametrosCFGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaDocsIdHSM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Elimina Documentos en caso de Error - WebScan HSM</wsdl:documentation>
+      <wsdl:input message="tns:EliminaDocsIdHSMSoapIn" />
+      <wsdl:output message="tns:EliminaDocsIdHSMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscaInstanciasXEstadoID_Fecha">
+      <wsdl:input message="tns:BuscaInstanciasXEstadoID_FechaSoapIn" />
+      <wsdl:output message="tns:BuscaInstanciasXEstadoID_FechaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreaExpediente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agrega un nuevo expediente que inicia el flujo</wsdl:documentation>
+      <wsdl:input message="tns:CreaExpedienteSoapIn" />
+      <wsdl:output message="tns:CreaExpedienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedientesXEvento">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene una lista de todos los expedientes con un estado específico</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneExpedientesXEventoSoapIn" />
+      <wsdl:output message="tns:ObtieneExpedientesXEventoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedientesXEvento_Fecha">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene una lista de todos los expedientes con un estado específico a una fecha</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneExpedientesXEvento_FechaSoapIn" />
+      <wsdl:output message="tns:ObtieneExpedientesXEvento_FechaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReservaExpedientesXEvento">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene una lista de acuerdo al número de expedientes solicitados con un estado específico, y los transita automáticamente al estado final para ese mismo evento</wsdl:documentation>
+      <wsdl:input message="tns:ReservaExpedientesXEventoSoapIn" />
+      <wsdl:output message="tns:ReservaExpedientesXEventoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEventosxFlujo">
+      <wsdl:input message="tns:ObtieneEventosxFlujoSoapIn" />
+      <wsdl:output message="tns:ObtieneEventosxFlujoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransitaExpediente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transita un expediente dentro del Tracking a un estado</wsdl:documentation>
+      <wsdl:input message="tns:TransitaExpedienteSoapIn" />
+      <wsdl:output message="tns:TransitaExpedienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransitaExpedienteLibre">
+      <wsdl:input message="tns:TransitaExpedienteLibreSoapIn" />
+      <wsdl:output message="tns:TransitaExpedienteLibreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransitaGrupoExpedientes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Transita un grupo de expedientes dentro del Tracking a un estado</wsdl:documentation>
+      <wsdl:input message="tns:TransitaGrupoExpedientesSoapIn" />
+      <wsdl:output message="tns:TransitaGrupoExpedientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEventosXprocesoID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene una lista de todos los posibles eventos y sus estados finales con un permiso deterinado dentro del flujo</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneEventosXprocesoIDSoapIn" />
+      <wsdl:output message="tns:ObtieneEventosXprocesoIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEventoXEstadoID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el estado relacionado con un estado final perteneciente a un flujoe específico</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneEventoXEstadoIDSoapIn" />
+      <wsdl:output message="tns:ObtieneEventoXEstadoIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEstados">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene una lista de todos los  posibles estados del flujo</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneEstadosSoapIn" />
+      <wsdl:output message="tns:ObtieneEstadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEstado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene la descripción de un estado dentro del flujo</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneEstadoSoapIn" />
+      <wsdl:output message="tns:ObtieneEstadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneInstanciaXDocID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene todos los datos de una instancia para un DOCID </wsdl:documentation>
+      <wsdl:input message="tns:ObtieneInstanciaXDocIDSoapIn" />
+      <wsdl:output message="tns:ObtieneInstanciaXDocIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneFlujo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene el id de un flujo determinado</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneFlujoSoapIn" />
+      <wsdl:output message="tns:ObtieneFlujoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneFlujos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene todos los flujos configurados dentro del tracking</wsdl:documentation>
+      <wsdl:input message="tns:ObtieneFlujosSoapIn" />
+      <wsdl:output message="tns:ObtieneFlujosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenEventosFlujoVisual">
+      <wsdl:input message="tns:ObtenEventosFlujoVisualSoapIn" />
+      <wsdl:output message="tns:ObtenEventosFlujoVisualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorraExpedientesRegistrados">
+      <wsdl:input message="tns:BorraExpedientesRegistradosSoapIn" />
+      <wsdl:output message="tns:BorraExpedientesRegistradosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraArcivoFE">
+      <wsdl:input message="tns:RegistraArcivoFESoapIn" />
+      <wsdl:output message="tns:RegistraArcivoFESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registraEXPTransmitido">
+      <wsdl:input message="tns:registraEXPTransmitidoSoapIn" />
+      <wsdl:output message="tns:registraEXPTransmitidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesaEXPFiles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Recibe un arreglo de bytes,lo escribe en disco como el archivo ZIP ennviado originalmente e invoca al método de descompresión </wsdl:documentation>
+      <wsdl:input message="tns:ProcesaEXPFilesSoapIn" />
+      <wsdl:output message="tns:ProcesaEXPFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaExpedientesRegistrados">
+      <wsdl:input message="tns:ConsultaExpedientesRegistradosSoapIn" />
+      <wsdl:output message="tns:ConsultaExpedientesRegistradosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Loader_TransitaEdoDocumento">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">LoaderV8 - Transita el estado por Imagen</wsdl:documentation>
+      <wsdl:input message="tns:Loader_TransitaEdoDocumentoSoapIn" />
+      <wsdl:output message="tns:Loader_TransitaEdoDocumentoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsImagenesSoap" type="tns:WsImagenesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidaCampoLlave">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ValidaCampoLlave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContestaImagen">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ContestaImagen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContestaImagenURL">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ContestaImagenURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContestaImagenProtegida">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ContestaImagenProtegida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContestaFileHSM">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ContestaFileHSM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigWebScan">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GetConfigWebScan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumentoConJerarquia">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TipoDocumentoConJerarquia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposDocumento">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TiposDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumentoConJerarquiaInvercap">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TipoDocumentoConJerarquiaInvercap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneHijosConDocType">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneHijosConDocType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneDocInfo">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposDocumentoSinJerarquia">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GetTiposDocumentoSinJerarquia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumetoReemplazo">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TipoDocumetoReemplazo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumetoReemplazoInvercap">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TipoDocumetoReemplazoInvercap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/UserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSequential">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GetSequential" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScanStatus">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/UpdateScanStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaDocsId">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/EliminaDocsId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenSMega">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GuardarImagenSMega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReemplazaImagenDatos">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ReemplazaImagenDatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCamposCaptura">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ActualizaCamposCaptura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivoPackage">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GuardarArchivoPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtension">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GetExtension" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReemplazaArchivoPackage">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ReemplazaArchivoPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetMediosOffLine">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_GetMediosOffLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetSolicitudFL">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_GetSolicitudFL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_HSM_AsignaDispositivo">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_HSM_AsignaDispositivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_UpStatusSolicitudFL">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_UpStatusSolicitudFL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_SaveFile">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_SaveFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_DelFile">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_DelFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_HSM_GetVigenciaLote">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/WS_HSM_GetVigenciaLote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_HSM_GetCaducidadlotes">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/WS_HSM_GetCaducidadlotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_TransitaEdoLote">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_TransitaEdoLote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetRutaLotePackage">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_GetRutaLotePackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetCFGLote">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_GetCFGLote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_CheckBD">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_CheckBD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetUltimoLote">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_GetUltimoLote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetLotesBackup">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_GetLotesBackup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetParametrosCFG">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_GetParametrosCFG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaDocsIdHSM">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/EliminaDocsIdHSM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaInstanciasXEstadoID_Fecha">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/BuscaInstanciasXEstadoID_Fecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreaExpediente">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/CreaExpediente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedientesXEvento">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneExpedientesXEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedientesXEvento_Fecha">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneExpedientesXEvento_Fecha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReservaExpedientesXEvento">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ReservaExpedientesXEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEventosxFlujo">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEventosxFlujo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransitaExpediente">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TransitaExpediente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransitaExpedienteLibre">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TransitaExpedienteLibre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransitaGrupoExpedientes">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TransitaGrupoExpedientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEventosXprocesoID">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEventosXprocesoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEventoXEstadoID">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEventoXEstadoID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEstados">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEstados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEstado">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneInstanciaXDocID">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneInstanciaXDocID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneFlujo">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneFlujo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneFlujos">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneFlujos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenEventosFlujoVisual">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtenEventosFlujoVisual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorraExpedientesRegistrados">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/BorraExpedientesRegistrados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraArcivoFE">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/RegistraArcivoFE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registraEXPTransmitido">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/registraEXPTransmitido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesaEXPFiles">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ProcesaEXPFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaExpedientesRegistrados">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ConsultaExpedientesRegistrados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Loader_TransitaEdoDocumento">
+      <soap:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Loader_TransitaEdoDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsImagenesSoap12" type="tns:WsImagenesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidaCampoLlave">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ValidaCampoLlave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContestaImagen">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ContestaImagen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContestaImagenURL">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ContestaImagenURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContestaImagenProtegida">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ContestaImagenProtegida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContestaFileHSM">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ContestaFileHSM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigWebScan">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GetConfigWebScan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumentoConJerarquia">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TipoDocumentoConJerarquia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TiposDocumento">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TiposDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumentoConJerarquiaInvercap">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TipoDocumentoConJerarquiaInvercap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneHijosConDocType">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneHijosConDocType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneDocInfo">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposDocumentoSinJerarquia">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GetTiposDocumentoSinJerarquia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumetoReemplazo">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TipoDocumetoReemplazo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoDocumetoReemplazoInvercap">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TipoDocumetoReemplazoInvercap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/UserLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSequential">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GetSequential" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateScanStatus">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/UpdateScanStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaDocsId">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/EliminaDocsId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarImagenSMega">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GuardarImagenSMega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReemplazaImagenDatos">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ReemplazaImagenDatos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCamposCaptura">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ActualizaCamposCaptura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArchivoPackage">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GuardarArchivoPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtension">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/GetExtension" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReemplazaArchivoPackage">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ReemplazaArchivoPackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetMediosOffLine">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_GetMediosOffLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetSolicitudFL">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_GetSolicitudFL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_HSM_AsignaDispositivo">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_HSM_AsignaDispositivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_UpStatusSolicitudFL">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_UpStatusSolicitudFL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_SaveFile">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_SaveFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_DelFile">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_DelFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_HSM_GetVigenciaLote">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/WS_HSM_GetVigenciaLote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_HSM_GetCaducidadlotes">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/WS_HSM_GetCaducidadlotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_TransitaEdoLote">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_TransitaEdoLote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetRutaLotePackage">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_GetRutaLotePackage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_GetCFGLote">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_GetCFGLote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Monitor_CheckBD">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Monitor_CheckBD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetUltimoLote">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_GetUltimoLote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetLotesBackup">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_GetLotesBackup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HSM_GetParametrosCFG">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/HSM_GetParametrosCFG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaDocsIdHSM">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/EliminaDocsIdHSM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscaInstanciasXEstadoID_Fecha">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/BuscaInstanciasXEstadoID_Fecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreaExpediente">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/CreaExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedientesXEvento">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneExpedientesXEvento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneExpedientesXEvento_Fecha">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneExpedientesXEvento_Fecha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReservaExpedientesXEvento">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ReservaExpedientesXEvento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEventosxFlujo">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEventosxFlujo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransitaExpediente">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TransitaExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransitaExpedienteLibre">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TransitaExpedienteLibre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransitaGrupoExpedientes">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/TransitaGrupoExpedientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEventosXprocesoID">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEventosXprocesoID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEventoXEstadoID">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEventoXEstadoID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEstados">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEstados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneEstado">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneInstanciaXDocID">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneInstanciaXDocID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneFlujo">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneFlujo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtieneFlujos">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtieneFlujos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenEventosFlujoVisual">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ObtenEventosFlujoVisual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorraExpedientesRegistrados">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/BorraExpedientesRegistrados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraArcivoFE">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/RegistraArcivoFE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registraEXPTransmitido">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/registraEXPTransmitido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesaEXPFiles">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ProcesaEXPFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaExpedientesRegistrados">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/ConsultaExpedientesRegistrados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Loader_TransitaEdoDocumento">
+      <soap12:operation soapAction="http://tempuri.org/WsImagenes/WsImagenes/Loader_TransitaEdoDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsImagenes">
+    <wsdl:port name="WsImagenesSoap" binding="tns:WsImagenesSoap">
+      <soap:address location="http://localhost/WSImagenesv8/WsImagenes.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsImagenesSoap12" binding="tns:WsImagenesSoap12">
+      <soap12:address location="http://localhost/WSImagenesv8/WsImagenes.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

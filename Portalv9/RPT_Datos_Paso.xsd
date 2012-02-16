@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RPT_Datos_Paso" targetNamespace="http://tempuri.org/RPT_Datos_Paso.xsd" xmlns:mstns="http://tempuri.org/RPT_Datos_Paso.xsd" xmlns="http://tempuri.org/RPT_Datos_Paso.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Archivo_DatosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Archivo_DatosConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Archivo_DatosConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=ALFREDO-PC;Initial Catalog=Archivo_Datos;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="alfredo-pc.Archivo_Datos.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Reportecgca_datosTableAdapter" GeneratorDataComponentClassName="Reportecgca_datosTableAdapter" Name="Reportecgca_datos" UserDataComponentName="Reportecgca_datosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="alfredo-pc.Archivo_Datos.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select idArchivo, idDescripcion, Archivo_Descripciones_Archivisticas.idNivel, niveles.Nivel_Descripcion, Codigo_clasificacion, Descripcion
+from  Archivo_Descripciones_Archivisticas, niveles
+where 
+Archivo_Descripciones_Archivisticas.idNivel = niveles.idNivel and
+Nivel_Logico_Fisico=0 and 
+idNorma=1 and
+Archivo_Descripciones_Archivisticas.idArchivo = 1
+order by  idDescripcion,Descripcion,idnivel,Archivo_Descripciones_Archivisticas.idDocumentoPID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idArchivo" DataSetColumn="idArchivo" />
+              <Mapping SourceColumn="idDescripcion" DataSetColumn="idDescripcion" />
+              <Mapping SourceColumn="idNivel" DataSetColumn="idNivel" />
+              <Mapping SourceColumn="Nivel_Descripcion" DataSetColumn="Nivel_Descripcion" />
+              <Mapping SourceColumn="Codigo_clasificacion" DataSetColumn="Codigo_clasificacion" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReporteGS_DatosTableAdapter" GeneratorDataComponentClassName="ReporteGS_DatosTableAdapter" Name="ReporteGS_Datos" UserDataComponentName="ReporteGS_DatosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Archivo_DatosConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select idArchivo, idDescripcion, Archivo_Descripciones_Archivisticas.idNivel, niveles.Nivel_Descripcion, Codigo_clasificacion, Descripcion,
+dbo.getValorDeIndiceDeSistema(idArchivo,idDescripcion,18) as 'Alcance_Contenido', 
+dbo.getValorDeIndiceDeSistema(idArchivo,idDescripcion,3) as 'Inicio_Recepción', 
+dbo.getValorDeIndiceDeSistema(idArchivo,idDescripcion,4) as 'Conclusión_Resolución' 
+from  Archivo_Descripciones_Archivisticas, niveles
+where 
+Archivo_Descripciones_Archivisticas.idNivel = niveles.idNivel and
+Nivel_Logico_Fisico=0 and 
+idNorma=1 and
+Archivo_Descripciones_Archivisticas.idArchivo = 1
+order by  idDescripcion,Descripcion,idnivel,Archivo_Descripciones_Archivisticas.idDocumentoPID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idArchivo" DataSetColumn="idArchivo" />
+              <Mapping SourceColumn="idDescripcion" DataSetColumn="idDescripcion" />
+              <Mapping SourceColumn="idNivel" DataSetColumn="idNivel" />
+              <Mapping SourceColumn="Nivel_Descripcion" DataSetColumn="Nivel_Descripcion" />
+              <Mapping SourceColumn="Codigo_clasificacion" DataSetColumn="Codigo_clasificacion" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Alcance_Contenido" DataSetColumn="Alcance_Contenido" />
+              <Mapping SourceColumn="Inicio_Recepción" DataSetColumn="Inicio_Recepción" />
+              <Mapping SourceColumn="Conclusión_Resolución" DataSetColumn="Conclusión_Resolución" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RPT_Datos_Paso" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="RPT_Datos_Paso" msprop:Generator_DataSetName="RPT_Datos_Paso" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Reportecgca_datos" msprop:Generator_UserTableName="Reportecgca_datos" msprop:Generator_RowDeletedName="Reportecgca_datosRowDeleted" msprop:Generator_RowChangedName="Reportecgca_datosRowChanged" msprop:Generator_RowClassName="Reportecgca_datosRow" msprop:Generator_RowChangingName="Reportecgca_datosRowChanging" msprop:Generator_RowEvArgName="Reportecgca_datosRowChangeEvent" msprop:Generator_RowEvHandlerName="Reportecgca_datosRowChangeEventHandler" msprop:Generator_TableClassName="Reportecgca_datosDataTable" msprop:Generator_TableVarName="tableReportecgca_datos" msprop:Generator_RowDeletingName="Reportecgca_datosRowDeleting" msprop:Generator_TablePropName="Reportecgca_datos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idArchivo" msprop:Generator_UserColumnName="idArchivo" msprop:Generator_ColumnPropNameInRow="idArchivo" msprop:Generator_ColumnVarNameInTable="columnidArchivo" msprop:Generator_ColumnPropNameInTable="idArchivoColumn" type="xs:int" />
+              <xs:element name="idDescripcion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="idDescripcion" msprop:Generator_ColumnPropNameInRow="idDescripcion" msprop:Generator_ColumnVarNameInTable="columnidDescripcion" msprop:Generator_ColumnPropNameInTable="idDescripcionColumn" type="xs:int" />
+              <xs:element name="idNivel" msprop:Generator_UserColumnName="idNivel" msprop:Generator_ColumnPropNameInRow="idNivel" msprop:Generator_ColumnVarNameInTable="columnidNivel" msprop:Generator_ColumnPropNameInTable="idNivelColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Nivel_Descripcion" msprop:Generator_UserColumnName="Nivel_Descripcion" msprop:Generator_ColumnPropNameInRow="Nivel_Descripcion" msprop:Generator_ColumnVarNameInTable="columnNivel_Descripcion" msprop:Generator_ColumnPropNameInTable="Nivel_DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Codigo_clasificacion" msprop:Generator_UserColumnName="Codigo_clasificacion" msprop:Generator_ColumnPropNameInRow="Codigo_clasificacion" msprop:Generator_ColumnVarNameInTable="columnCodigo_clasificacion" msprop:Generator_ColumnPropNameInTable="Codigo_clasificacionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReporteGS_Datos" msprop:Generator_UserTableName="ReporteGS_Datos" msprop:Generator_RowDeletedName="ReporteGS_DatosRowDeleted" msprop:Generator_TableClassName="ReporteGS_DatosDataTable" msprop:Generator_RowChangedName="ReporteGS_DatosRowChanged" msprop:Generator_RowClassName="ReporteGS_DatosRow" msprop:Generator_RowChangingName="ReporteGS_DatosRowChanging" msprop:Generator_RowEvArgName="ReporteGS_DatosRowChangeEvent" msprop:Generator_RowEvHandlerName="ReporteGS_DatosRowChangeEventHandler" msprop:Generator_TablePropName="ReporteGS_Datos" msprop:Generator_TableVarName="tableReporteGS_Datos" msprop:Generator_RowDeletingName="ReporteGS_DatosRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idArchivo" msprop:Generator_UserColumnName="idArchivo" msprop:Generator_ColumnPropNameInRow="idArchivo" msprop:Generator_ColumnVarNameInTable="columnidArchivo" msprop:Generator_ColumnPropNameInTable="idArchivoColumn" type="xs:int" />
+              <xs:element name="idDescripcion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="idDescripcion" msprop:Generator_ColumnPropNameInRow="idDescripcion" msprop:Generator_ColumnVarNameInTable="columnidDescripcion" msprop:Generator_ColumnPropNameInTable="idDescripcionColumn" type="xs:int" />
+              <xs:element name="idNivel" msprop:Generator_UserColumnName="idNivel" msprop:Generator_ColumnPropNameInRow="idNivel" msprop:Generator_ColumnVarNameInTable="columnidNivel" msprop:Generator_ColumnPropNameInTable="idNivelColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Nivel_Descripcion" msprop:Generator_UserColumnName="Nivel_Descripcion" msprop:Generator_ColumnPropNameInRow="Nivel_Descripcion" msprop:Generator_ColumnVarNameInTable="columnNivel_Descripcion" msprop:Generator_ColumnPropNameInTable="Nivel_DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Codigo_clasificacion" msprop:Generator_UserColumnName="Codigo_clasificacion" msprop:Generator_ColumnPropNameInRow="Codigo_clasificacion" msprop:Generator_ColumnVarNameInTable="columnCodigo_clasificacion" msprop:Generator_ColumnPropNameInTable="Codigo_clasificacionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Alcance_Contenido" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Alcance_Contenido" msprop:Generator_ColumnPropNameInRow="Alcance_Contenido" msprop:Generator_ColumnVarNameInTable="columnAlcance_Contenido" msprop:Generator_ColumnPropNameInTable="Alcance_ContenidoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Inicio_Recepción" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Inicio_Recepción" msprop:Generator_ColumnPropNameInRow="Inicio_Recepción" msprop:Generator_ColumnVarNameInTable="columnInicio_Recepción" msprop:Generator_ColumnPropNameInTable="Inicio_RecepciónColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Conclusión_Resolución" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Conclusión_Resolución" msprop:Generator_ColumnPropNameInRow="Conclusión_Resolución" msprop:Generator_ColumnVarNameInTable="columnConclusión_Resolución" msprop:Generator_ColumnPropNameInTable="Conclusión_ResoluciónColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Reportecgca_datos" />
+      <xs:field xpath="mstns:idArchivo" />
+      <xs:field xpath="mstns:idDescripcion" />
+    </xs:unique>
+    <xs:unique name="ReporteGS_Datos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReporteGS_Datos" />
+      <xs:field xpath="mstns:idArchivo" />
+      <xs:field xpath="mstns:idDescripcion" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
