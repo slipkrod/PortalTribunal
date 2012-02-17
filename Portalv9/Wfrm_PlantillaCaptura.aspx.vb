@@ -243,9 +243,14 @@ Partial Public Class Wfrm_PlantillaCaptura
 
         If (e.ButtonType = TreeListCommandColumnButtonType.Custom) Then
             Dim node As TreeListNode = aspxtreenivel.FindNodeByKeyValue(e.NodeKey)
+            'If node("idNivel").ToString() = "8" Then
+            '    e.Visible = DevExpress.Web.ASPxClasses.DefaultBoolean.True
+            'End If
+
             If node("idNivel").ToString() = "8" Then
                 e.Visible = DevExpress.Web.ASPxClasses.DefaultBoolean.True
             End If
+
         End If
 
         If (e.ButtonType = TreeListCommandColumnButtonType.Delete) Then
@@ -255,8 +260,12 @@ Partial Public Class Wfrm_PlantillaCaptura
             End If
         End If
 
-
     End Sub
 
+    'Metodo de prueba
+
+    Protected Sub Test()
+
+    End Sub
 
 End Class
