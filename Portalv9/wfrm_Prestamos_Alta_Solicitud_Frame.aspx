@@ -25,7 +25,7 @@
 
     <center>
         <form runat="server">
-        <table width="800" style="text-align: left">
+        <table width="800" style="text-align: left; font-family:Arial;font-size:9pt;">
             <tr>
                 <td>
                     <div>

@@ -30,6 +30,8 @@ Partial Public Class RPT_ExpedientesReservados
         Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand
+        Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo
+        Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo
         Me.DsRPT_ExpedientesReservados1 = New Portalv9.dsRPT_ExpedientesReservados
         Me.Reporte_Expedientes_ReservadosTableAdapter = New Portalv9.dsRPT_ExpedientesReservadosTableAdapters.Reporte_Expedientes_ReservadosTableAdapter
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand
@@ -53,6 +55,7 @@ Partial Public Class RPT_ExpedientesReservados
         'Detail
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable2})
+        Me.Detail.HeightF = 25.0!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -79,14 +82,18 @@ Partial Public Class RPT_ExpedientesReservados
         'XrTableCell4
         '
         Me.XrTableCell4.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Reporte_Expedientes_Reservados.Codigo_clasificacion")})
+        Me.XrTableCell4.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.XrTableCell4.Name = "XrTableCell4"
+        Me.XrTableCell4.StylePriority.UseFont = False
         Me.XrTableCell4.Text = "XrTableCell4"
         Me.XrTableCell4.Weight = 0.92615277197902657
         '
         'XrTableCell5
         '
         Me.XrTableCell5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Reporte_Expedientes_Reservados.Fecha_Clasificacion")})
+        Me.XrTableCell5.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.XrTableCell5.Name = "XrTableCell5"
+        Me.XrTableCell5.StylePriority.UseFont = False
         Me.XrTableCell5.Text = "XrTableCell5"
         Me.XrTableCell5.Weight = 0.46417108345402147
         '
@@ -100,30 +107,54 @@ Partial Public Class RPT_ExpedientesReservados
         'XrTableCell9
         '
         Me.XrTableCell9.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Reporte_Expedientes_Reservados.Plazo_Reserva")})
+        Me.XrTableCell9.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.XrTableCell9.Name = "XrTableCell9"
+        Me.XrTableCell9.StylePriority.UseFont = False
         Me.XrTableCell9.Text = "XrTableCell9"
         Me.XrTableCell9.Weight = 0.34560461148855159
         '
         'XrTableCell10
         '
         Me.XrTableCell10.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Reporte_Expedientes_Reservados.Column1")})
+        Me.XrTableCell10.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.XrTableCell10.Name = "XrTableCell10"
+        Me.XrTableCell10.StylePriority.UseFont = False
         Me.XrTableCell10.Text = "XrTableCell10"
         Me.XrTableCell10.Weight = 0.533810182306632
         '
         'TopMargin
         '
-        Me.TopMargin.HeightF = 49.0!
+        Me.TopMargin.HeightF = 30.0!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
         'BottomMargin
         '
+        Me.BottomMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrPageInfo2, Me.XrPageInfo1})
         Me.BottomMargin.Name = "BottomMargin"
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 2, 0, 100.0!)
         Me.BottomMargin.StylePriority.UsePadding = False
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrPageInfo2
+        '
+        Me.XrPageInfo2.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.XrPageInfo2.Format = "Page {0} of {1}"
+        Me.XrPageInfo2.LocationFloat = New DevExpress.Utils.PointFloat(458.9167!, 37.5!)
+        Me.XrPageInfo2.Name = "XrPageInfo2"
+        Me.XrPageInfo2.SizeF = New System.Drawing.SizeF(337.0833!, 23.0!)
+        Me.XrPageInfo2.StylePriority.UseFont = False
+        Me.XrPageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
+        '
+        'XrPageInfo1
+        '
+        Me.XrPageInfo1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 37.5!)
+        Me.XrPageInfo1.Name = "XrPageInfo1"
+        Me.XrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime
+        Me.XrPageInfo1.SizeF = New System.Drawing.SizeF(307.7917!, 23.0!)
+        Me.XrPageInfo1.StylePriority.UseFont = False
         '
         'DsRPT_ExpedientesReservados1
         '
@@ -142,10 +173,12 @@ Partial Public Class RPT_ExpedientesReservados
         '
         'XrLabel23
         '
+        Me.XrLabel23.Font = New System.Drawing.Font("Arial", 13.0!)
         Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(104.7918!, 38.20832!)
         Me.XrLabel23.Name = "XrLabel23"
         Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel23.SizeF = New System.Drawing.SizeF(691.2082!, 23.0!)
+        Me.XrLabel23.StylePriority.UseFont = False
         Me.XrLabel23.StylePriority.UseTextAlignment = False
         Me.XrLabel23.Text = "DIRECCIÓN DE ARCHIVOS"
         Me.XrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
@@ -212,13 +245,15 @@ Partial Public Class RPT_ExpedientesReservados
         '
         'XrTableCell1
         '
+        Me.XrTableCell1.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.XrTableCell1.Name = "XrTableCell1"
+        Me.XrTableCell1.StylePriority.UseFont = False
         Me.XrTableCell1.Text = "COD. REFERENCIA"
         Me.XrTableCell1.Weight = 0.60982383070726909
         '
         'XrTableCell2
         '
-        Me.XrTableCell2.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell2.Font = New System.Drawing.Font("Arial", 10.0!)
         Me.XrTableCell2.Multiline = True
         Me.XrTableCell2.Name = "XrTableCell2"
         Me.XrTableCell2.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 2, 0, 100.0!)
@@ -229,21 +264,27 @@ Partial Public Class RPT_ExpedientesReservados
         '
         'XrTableCell3
         '
+        Me.XrTableCell3.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.XrTableCell3.Name = "XrTableCell3"
+        Me.XrTableCell3.StylePriority.UseFont = False
         Me.XrTableCell3.Text = "FUNDAMENTO LEGAL"
         Me.XrTableCell3.Weight = 0.47836130596166088
         '
         'XrTableCell7
         '
+        Me.XrTableCell7.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.XrTableCell7.Multiline = True
         Me.XrTableCell7.Name = "XrTableCell7"
+        Me.XrTableCell7.StylePriority.UseFont = False
         Me.XrTableCell7.Text = "PLAZO DE" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "RESERVA"
         Me.XrTableCell7.Weight = 0.22756268087026937
         '
         'XrTableCell8
         '
+        Me.XrTableCell8.Font = New System.Drawing.Font("Arial", 9.75!)
         Me.XrTableCell8.Multiline = True
         Me.XrTableCell8.Name = "XrTableCell8"
+        Me.XrTableCell8.StylePriority.UseFont = False
         Me.XrTableCell8.Text = "FECHA" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "DESCLASIFICACIÓN"
         Me.XrTableCell8.Weight = 0.351486695615396
         '
@@ -253,7 +294,7 @@ Partial Public Class RPT_ExpedientesReservados
         Me.DataAdapter = Me.Reporte_Expedientes_ReservadosTableAdapter
         Me.DataMember = "Reporte_Expedientes_Reservados"
         Me.DataSource = Me.DsRPT_ExpedientesReservados1
-        Me.Margins = New System.Drawing.Printing.Margins(26, 28, 49, 100)
+        Me.Margins = New System.Drawing.Printing.Margins(26, 28, 30, 100)
         Me.Version = "10.1"
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DsRPT_ExpedientesReservados1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -286,4 +327,6 @@ Partial Public Class RPT_ExpedientesReservados
     Friend WithEvents XrTableCell10 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell7 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell8 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrPageInfo2 As DevExpress.XtraReports.UI.XRPageInfo
+    Friend WithEvents XrPageInfo1 As DevExpress.XtraReports.UI.XRPageInfo
 End Class

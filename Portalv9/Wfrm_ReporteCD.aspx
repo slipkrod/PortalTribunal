@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
     <dxxr:ReportToolbar ID="ReportToolgs" runat='server' ShowDefaultButtons='False' 
-            ReportViewer="<%# Reportgs %>" >
+            ReportViewer="<%# Reportgs %>" style="text-align: center" >
         <Items>
             <dxxr:ReportToolbarButton ItemKind='Search' ToolTip="Buscar" />
             <dxxr:ReportToolbarSeparator />
@@ -46,8 +46,7 @@
         </Styles>
     </dxxr:ReportToolbar>
 
-    <dxxr:ReportViewer ID="Reportgs" runat="server" AutoSize="False" Height="700px" 
-            Width="857px" >
+    <dxxr:ReportViewer ID="Reportgs" runat="server" >
     </dxxr:ReportViewer>
 
 </div>

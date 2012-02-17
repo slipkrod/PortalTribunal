@@ -19,6 +19,7 @@ Partial Public Class RPT_InventarioGeneral
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RPT_InventarioGeneral))
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand
         Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable
         Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow
@@ -58,7 +59,13 @@ Partial Public Class RPT_InventarioGeneral
         Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell
         Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand
+        Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel
+        Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel
+        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox
+        Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand
+        Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo
+        Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo
         Me.DsRPT_InventarioGeneral1 = New Portalv9.dsRPT_InventarioGeneral
         Me.Archivo_Descripciones_ArchivisticasTableAdapter = New Portalv9.dsRPT_InventarioGeneralTableAdapters.Archivo_Descripciones_ArchivisticasTableAdapter
         Me.DetailReport = New DevExpress.XtraReports.UI.DetailReportBand
@@ -284,7 +291,7 @@ Partial Public Class RPT_InventarioGeneral
         '
         'XrTableCell1
         '
-        Me.XrTableCell1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell1.Name = "XrTableCell1"
         Me.XrTableCell1.StylePriority.UseFont = False
         Me.XrTableCell1.Text = "SECCIÓN"
@@ -293,13 +300,15 @@ Partial Public Class RPT_InventarioGeneral
         'XrTableCell2
         '
         Me.XrTableCell2.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Archivo_Descripciones_Archivisticas.secciionDescripcion")})
+        Me.XrTableCell2.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.XrTableCell2.Name = "XrTableCell2"
+        Me.XrTableCell2.StylePriority.UseFont = False
         Me.XrTableCell2.Text = "XrTableCell2"
         Me.XrTableCell2.Weight = 1.0461440440676073
         '
         'XrTableCell3
         '
-        Me.XrTableCell3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell3.Name = "XrTableCell3"
         Me.XrTableCell3.StylePriority.UseFont = False
         Me.XrTableCell3.Text = "SERIE"
@@ -308,7 +317,9 @@ Partial Public Class RPT_InventarioGeneral
         'XrTableCell4
         '
         Me.XrTableCell4.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Archivo_Descripciones_Archivisticas.serieDescripcion")})
+        Me.XrTableCell4.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.XrTableCell4.Name = "XrTableCell4"
+        Me.XrTableCell4.StylePriority.UseFont = False
         Me.XrTableCell4.Text = "XrTableCell4"
         Me.XrTableCell4.Weight = 1.2897269869747876
         '
@@ -320,7 +331,7 @@ Partial Public Class RPT_InventarioGeneral
         '
         'XrTableCell5
         '
-        Me.XrTableCell5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell5.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell5.Name = "XrTableCell5"
         Me.XrTableCell5.StylePriority.UseFont = False
         Me.XrTableCell5.Text = "SUBSECCIÓN"
@@ -329,13 +340,15 @@ Partial Public Class RPT_InventarioGeneral
         'XrTableCell6
         '
         Me.XrTableCell6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "Archivo_Descripciones_Archivisticas.subSeccionDescripcion")})
+        Me.XrTableCell6.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.XrTableCell6.Name = "XrTableCell6"
+        Me.XrTableCell6.StylePriority.UseFont = False
         Me.XrTableCell6.Text = "XrTableCell6"
         Me.XrTableCell6.Weight = 1.046143946396483
         '
         'XrTableCell7
         '
-        Me.XrTableCell7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.XrTableCell7.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.XrTableCell7.Name = "XrTableCell7"
         Me.XrTableCell7.StylePriority.UseFont = False
         Me.XrTableCell7.Text = "SUBSERIE"
@@ -348,17 +361,85 @@ Partial Public Class RPT_InventarioGeneral
         '
         'TopMargin
         '
-        Me.TopMargin.HeightF = 27.0!
+        Me.TopMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel23, Me.XrLabel5, Me.XrPictureBox1, Me.XrLabel22})
+        Me.TopMargin.HeightF = 159.5!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
+        'XrLabel23
+        '
+        Me.XrLabel23.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(120.8333!, 75.0!)
+        Me.XrLabel23.Name = "XrLabel23"
+        Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel23.SizeF = New System.Drawing.SizeF(663.125!, 23.0!)
+        Me.XrLabel23.StylePriority.UseFont = False
+        Me.XrLabel23.StylePriority.UseTextAlignment = False
+        Me.XrLabel23.Text = "DIRECCIÓN DE ARCHIVOS"
+        Me.XrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        '
+        'XrLabel5
+        '
+        Me.XrLabel5.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.XrLabel5.ForeColor = System.Drawing.Color.Black
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(120.8333!, 100.0!)
+        Me.XrLabel5.Name = "XrLabel5"
+        Me.XrLabel5.SizeF = New System.Drawing.SizeF(664.1666!, 23.62499!)
+        Me.XrLabel5.StylePriority.UseFont = False
+        Me.XrLabel5.StylePriority.UseForeColor = False
+        Me.XrLabel5.StylePriority.UseTextAlignment = False
+        Me.XrLabel5.Text = "ÍNDICE DE EXPEDIENTES RESERVADOS"
+        Me.XrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        '
+        'XrPictureBox1
+        '
+        Me.XrPictureBox1.Image = CType(resources.GetObject("XrPictureBox1.Image"), System.Drawing.Image)
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 37.5!)
+        Me.XrPictureBox1.Name = "XrPictureBox1"
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(110.8333!, 122.0!)
+        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage
+        '
+        'XrLabel22
+        '
+        Me.XrLabel22.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(120.8333!, 50.0!)
+        Me.XrLabel22.Name = "XrLabel22"
+        Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel22.SizeF = New System.Drawing.SizeF(663.125!, 23.0!)
+        Me.XrLabel22.StylePriority.UseFont = False
+        Me.XrLabel22.StylePriority.UseTextAlignment = False
+        Me.XrLabel22.Text = "COORDINACIÓN DE INFORMACIÓN, DOCUMENTACIÓN Y TRANSPARENCIA"
+        Me.XrLabel22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
+        '
         'BottomMargin
         '
-        Me.BottomMargin.HeightF = 158.0!
+        Me.BottomMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrPageInfo1, Me.XrPageInfo2})
+        Me.BottomMargin.Font = New System.Drawing.Font("Times New Roman", 9.75!)
+        Me.BottomMargin.HeightF = 78.0!
         Me.BottomMargin.Name = "BottomMargin"
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
+        Me.BottomMargin.StylePriority.UseFont = False
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrPageInfo1
+        '
+        Me.XrPageInfo1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(4.419327!, 22.91667!)
+        Me.XrPageInfo1.Name = "XrPageInfo1"
+        Me.XrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime
+        Me.XrPageInfo1.SizeF = New System.Drawing.SizeF(277.5833!, 23.0!)
+        Me.XrPageInfo1.StylePriority.UseFont = False
+        '
+        'XrPageInfo2
+        '
+        Me.XrPageInfo2.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.XrPageInfo2.Format = "Page {0} of {1}"
+        Me.XrPageInfo2.LocationFloat = New DevExpress.Utils.PointFloat(335.4167!, 22.91667!)
+        Me.XrPageInfo2.Name = "XrPageInfo2"
+        Me.XrPageInfo2.SizeF = New System.Drawing.SizeF(449.5833!, 23.0!)
+        Me.XrPageInfo2.StylePriority.UseFont = False
+        Me.XrPageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
         '
         'DsRPT_InventarioGeneral1
         '
@@ -382,7 +463,7 @@ Partial Public Class RPT_InventarioGeneral
         'Detail1
         '
         Me.Detail1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable3})
-        Me.Detail1.HeightF = 16.0!
+        Me.Detail1.HeightF = 19.0!
         Me.Detail1.Name = "Detail1"
         '
         'XrTable3
@@ -555,7 +636,11 @@ Partial Public Class RPT_InventarioGeneral
         Me.DataAdapter = Me.Archivo_Descripciones_ArchivisticasTableAdapter
         Me.DataMember = "Archivo_Descripciones_Archivisticas"
         Me.DataSource = Me.DsRPT_InventarioGeneral1
-        Me.Margins = New System.Drawing.Printing.Margins(41, 24, 27, 158)
+        Me.ExportOptions.Image.Format = System.Drawing.Imaging.ImageFormat.Jpeg
+        Me.ExportOptions.Xls.ExportHyperlinks = False
+        Me.ExportOptions.Xls.SheetName = "InventarioGeneral"
+        Me.ExportOptions.Xlsx.SheetName = "InventarioGeneral"
+        Me.Margins = New System.Drawing.Printing.Margins(41, 24, 160, 78)
         Me.Version = "10.1"
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -628,4 +713,10 @@ Partial Public Class RPT_InventarioGeneral
     Friend WithEvents XrTableCell87 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell88 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents Reporte_Inventario_GeneralTableAdapter As Portalv9.dsRPT_InventarioGeneralTableAdapters.Reporte_Inventario_GeneralTableAdapter
+    Friend WithEvents XrPageInfo1 As DevExpress.XtraReports.UI.XRPageInfo
+    Friend WithEvents XrPageInfo2 As DevExpress.XtraReports.UI.XRPageInfo
+    Friend WithEvents XrLabel23 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel5 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrPictureBox1 As DevExpress.XtraReports.UI.XRPictureBox
+    Friend WithEvents XrLabel22 As DevExpress.XtraReports.UI.XRLabel
 End Class

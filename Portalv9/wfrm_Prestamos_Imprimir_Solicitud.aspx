@@ -15,9 +15,177 @@
 <html>
 <head runat="server">
     <title>Solicitud de prestamo</title>
+    <style type="text/css">
+table.solicitud {
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: none;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+table.solicitud th {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+table.solicitud td {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+</style>
 </head>
+
+
 <body>
-    <div style="margin-left: auto; margin-right: auto; text-align: center">
+    <center>
+        <div style="text-align:justify">
+            <table width="800px">
+                <tr>
+                    <td>
+                        <table width="100%">
+                            <tr>
+                                <td style="width: 50%">
+                                    <img alt="logo" src="Images/logo_nvo_balanza.jpg" height="120px" /></td>
+                                <td>
+                                    <p>
+                                        COORDINACIÓN DE INFORMACIÓN, DOCUMENTACIÓN Y TRANSFERENCIA<br />
+                                        DIRECCION DE ARCHIVOS.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #006742; color:White" align="center">
+                        VALE DE PRÉSTAMO
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        FOLIO: <%=String.Format("{000000}", folio)%>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #006742; color:White" align="center">
+                        DATOS DEL SOLICITANTE
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="100%" class="solicitud">
+                            <tr>
+                                <td>
+                                    NOMBRE: <%=usuarioSolicitante%>
+                                </td>
+                                <td>
+                                    FECHA DE PRÉSTAMO: <%=fechaConsulta%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    CARGO:
+                                </td>
+                                <td>
+                                    FECHA COMPROMISO DEVOLUCIÓN: <%=fechaConsulta.AddDays(dias)%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    FECHA DEL PRIMER REFRENDO:
+                                </td>
+                                <td>
+                                    FECHA DEL SEGUNDO REFRENDO:
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #006742; color:White" align="center">
+                        INFORMACIÓN SOLICITADA
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="100%" class="solicitud" style="text-align:center">
+                            <tr style="vertical-align:top" >
+                                <th>
+                                    CÓD. REFERENCIA 
+                                </th>
+                                <th>
+                                    TÍTULO
+                                </th>
+                                <th>
+                                    FECHAS EXTREMAS
+                                </th>
+                                <th>
+                                    FOJAS
+                                </th>
+                                <th>
+                                    SIG. TOPOGRÁFICA
+                                </th>
+                            </tr>
+                            <tr style="height:120px;">
+                                <td><%= codigoClasificacion %></td>
+                                <td><%= descripcion %></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #006742; color:White" align="center">
+                        OBSERVACIONES
+                    </td>
+                </tr>
+                <tr style="height:80px">
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="100%" class="solicitud">
+                            <tr>
+                                <th style="background-color: #006742; color:White; width: 50%">
+                                    RECIBE UNIDAD
+                                </th>
+                                <th style="background-color: #006742; color:White; width: 50%">
+                                    APRUEBA Y ENTREGA DIRECCIÓN DE ARCHIVOS
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="height: 120px">
+                                </td>
+                                <td style="height: 120px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    NOMBRE Y FIRMA
+                                </td>
+                                <td align="center">
+                                    NOMBRE Y FIRMA
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </center>
+
+    <%--<div style="margin-left: auto; margin-right: auto; text-align: center">
         <table style="width: 780px;">
             <tr>
                 <td align="center">
@@ -95,6 +263,6 @@
             </tr>
         </table>
         <br />
-    </div>
+    </div>--%>
 </body>
 </html>

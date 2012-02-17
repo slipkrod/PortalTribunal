@@ -16,8 +16,6 @@
 <%@ Register Assembly="DevExpress.Web.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxCallbackPanel" TagPrefix="dxcp" %>
 <%@ Register Assembly="MsgBox" Namespace="MsgBox" TagPrefix="cc1" %>
-<%@ Register assembly="DevExpress.Web.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
-<%@ Register assembly="DevExpress.Web.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TituloBarra" runat="server">
     <div id="pagetitle">
         <asp:Label ID="lbltitulo" runat="server" Text="Administración de áreas, elementos e indices"></asp:Label>
@@ -75,7 +73,7 @@
                                 <dxwtl:ASPxTreeList ID="aspxtreenivel" runat="server" AutoGenerateColumns="False"
                                     DataSourceID="ObjectDataSource1" KeyFieldName="idDescripcion" ParentFieldName="idDocumentoPID"
                                     ClientInstanceName="aspxtreenivel" EnableViewState="False" SettingsText-CommandCancel="Cancelar"
-                                     SettingsText-CommandNew="Insertar" SettingsText-CommandEdit="Editar" SettingsText-CommandDelete="Eliminar" 
+                                    SettingsText-CommandDelete="Eliminar" SettingsText-CommandEdit="Editar" SettingsText-CommandNew="Insertar"
                                     SettingsText-CommandUpdate="Actualizar" SettingsText-ConfirmDelete="Esta seguro que quiere eliminar ?"
                                     Height="300px" Width="960px">
                                     <Settings GridLines="Horizontal" />
@@ -185,15 +183,7 @@
                                             </CellStyle>
                                         </dxwtl:TreeListTextColumn>
                                         <dxwtl:TreeListCommandColumn ShowNewButtonInHeader="True" VisibleIndex="3" ButtonType="Image"
-                                            ToolTip="Botones de Editar, Agregar y Eliminar" Width="30px" >
-                                            <EditButton>
-                                                <Image Url="~/Images/editar.gif" AlternateText="Editar" Width="13" Height="13">
-                                                </Image>
-                                            </EditButton>
-                                            <NewButton Text="Agregar">
-                                                <Image Url="~/App_Themes/Editors/fcaddhot.png">
-                                                </Image>
-                                            </NewButton>
+                                            ToolTip="Botones de Editar, Agregar y Eliminar" Width="30px">                                            
                                             <CustomButtons>
                                                 <dxwtl:TreeListCommandColumnCustomButton ID="btnAgregar" Text="Agregar">
                                                     <Image Url="~/Images/fcaddhot.png">
@@ -203,24 +193,32 @@
                                                     <Image Url="~/Images/editar.gif" Height="13" Width="13">
                                                     </Image>
                                                 </dxwtl:TreeListCommandColumnCustomButton>
+                                                
                                                 <dxwtl:TreeListCommandColumnCustomButton Text="Solicitar" ID="btnSolicitar" Visibility="Hidden">
                                                     <Image Url="~/Images/adicional.png" Height="13" Width="13" ToolTip="Solicitar prestamo de expediente">
                                                     </Image>
                                                 </dxwtl:TreeListCommandColumnCustomButton>
                                             </CustomButtons>
-                                            
+                                            <NewButton Text="Agregar">
+                                                <Image Url="~/App_Themes/Editors/fcaddhot.png">
+                                                </Image>
+                                            </NewButton>
+                                            <EditButton>
+                                                <Image Url="~/Images/editar.gif" AlternateText="Editar" Width="13" Height="13">
+                                                </Image>
+                                            </EditButton>
                                             <CancelButton Text="Cancelar" Visible="True">
                                             </CancelButton>
                                             
+                                            
                                         </dxwtl:TreeListCommandColumn>
-                                          <dxwtl:TreeListCommandColumn ShowNewButtonInHeader="false" VisibleIndex="4" ButtonType="Image"
-                                            ToolTip="Boton Eliminar" Width="10px" >
+                                       <dxwtl:TreeListCommandColumn ShowNewButtonInHeader="False" VisibleIndex="4" ButtonType="Image"
+                                            ToolTip="Boton Eliminar" Width="10px" Caption=" ">  
                                             <DeleteButton Visible="True">
                                                 <Image Url="~/App_Themes/Editors/fcremovehot.png" AlternateText="Eliminar">
                                                 </Image>
                                             </DeleteButton>
                                             </dxwtl:TreeListCommandColumn>
-                                        
                                         <dxwtl:TreeListTextColumn Caption="valuePath" FieldName="valuePath" ReadOnly="True"
                                             Visible="False">
                                         </dxwtl:TreeListTextColumn>

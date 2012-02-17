@@ -196,6 +196,7 @@ Partial Public Class Wfrm_PlantillaCaptura
                 Session("idNivel") = e.GetValue("idNivel")
                 ''ShowViewStateControlsIndices()
             End If
+
         Catch ex As Exception
             MsgBox1.ShowMessage(ex.Message.ToString)
         End Try
@@ -240,17 +241,13 @@ Partial Public Class Wfrm_PlantillaCaptura
     End Function
 
     Protected Sub aspxtreenivel_CommandColumnButtonInitialize(ByVal sender As Object, ByVal e As TreeListCommandColumnButtonEventArgs) Handles aspxtreenivel.CommandColumnButtonInitialize
-
         If (e.ButtonType = TreeListCommandColumnButtonType.Custom) Then
-            Dim node As TreeListNode = aspxtreenivel.FindNodeByKeyValue(e.NodeKey)
-            'If node("idNivel").ToString() = "8" Then
-            '    e.Visible = DevExpress.Web.ASPxClasses.DefaultBoolean.True
-            'End If
 
+            Dim node As TreeListNode = aspxtreenivel.FindNodeByKeyValue(e.NodeKey)
             If node("idNivel").ToString() = "8" Then
                 e.Visible = DevExpress.Web.ASPxClasses.DefaultBoolean.True
-            End If
 
+            End If
         End If
 
         If (e.ButtonType = TreeListCommandColumnButtonType.Delete) Then
@@ -260,12 +257,8 @@ Partial Public Class Wfrm_PlantillaCaptura
             End If
         End If
 
-    End Sub
-
-    'Metodo de prueba
-
-    Protected Sub Test()
 
     End Sub
+
 
 End Class
