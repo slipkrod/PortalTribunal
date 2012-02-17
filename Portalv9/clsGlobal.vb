@@ -2,6 +2,7 @@ Imports Portalv9.SvrUsr
 
 Friend Class clsGlobal
     'Inherits System.Web.HttpApplication
+	'Comentario de prueba
     Friend Function TicketValido(ByRef pTicket As IDTicket) As Boolean
         Dim db As New Core
         Dim rRespuesta As Respuesta = Nothing
