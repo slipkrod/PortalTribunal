@@ -70,3 +70,12 @@ C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\A
 C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.dll
 C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.xml
 C:\Infosyst\Digipro\Tribunal\Archivo 1.0.4\Servicios\Archivo\Archivo\obj\Debug\Archivo.pdb
+C:\Proyectos\Digipro\Portal Trife\trunk\Servicios\Archivo\Archivo\bin\Archivo.dll
+C:\Proyectos\Digipro\Portal Trife\trunk\Servicios\Archivo\Archivo\bin\Archivo.pdb
+C:\Proyectos\Digipro\Portal Trife\trunk\Servicios\Archivo\Archivo\bin\Archivo.xml
+C:\Proyectos\Digipro\Portal Trife\trunk\Servicios\Archivo\Archivo\obj\Debug\ResolveAssemblyReference.cache
+C:\Proyectos\Digipro\Portal Trife\trunk\Servicios\Archivo\Archivo\obj\Debug\Archivo.Resources.resources
+C:\Proyectos\Digipro\Portal Trife\trunk\Servicios\Archivo\Archivo\obj\Debug\Archivo.vbproj.GenerateResource.Cache
+C:\Proyectos\Digipro\Portal Trife\trunk\Servicios\Archivo\Archivo\obj\Debug\Archivo.dll
+C:\Proyectos\Digipro\Portal Trife\trunk\Servicios\Archivo\Archivo\obj\Debug\Archivo.xml
+C:\Proyectos\Digipro\Portal Trife\trunk\Servicios\Archivo\Archivo\obj\Debug\Archivo.pdb

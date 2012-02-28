@@ -2,6 +2,206 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListaBajas_Archivo_Tramite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Baja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_Archivo_TramiteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaBajas_Archivo_TramiteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_Archivo_Tramite_Seleccionados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Baja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_Archivo_Tramite_SeleccionadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaBajas_Archivo_Tramite_SeleccionadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_Archivo_Concentracion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Baja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_Archivo_ConcentracionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaBajas_Archivo_ConcentracionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_Archivo_Concentracion_Seleccionados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Baja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_Archivo_Concentracion_SeleccionadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaBajas_Archivo_Concentracion_SeleccionadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaVencimientos_Archivo_Concentracion_Seleccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Baja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaVencimientos_Archivo_Concentracion_SeleccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaVencimientos_Archivo_Concentracion_SeleccionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalle" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaTransferencia_Primaria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaTransferencia_PrimariaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaTransferencia_PrimariaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaTransferencia_Secundaria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaTransferencia_SecundariaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaTransferencia_SecundariaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transfiere_Archivo_Descripciones_primarias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDescripcion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idArchivoNew" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDocumentoPIDNew" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalle" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transfiere_Archivo_Descripciones_primariasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Transfiere_Archivo_Descripciones_primariasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="ListaVencimientos_Archivo_Tramite_Recepcion">
         <s:complexType>
           <s:sequence>
@@ -143,6 +343,22 @@
         </s:complexType>
       </s:element>
       <s:element name="ABC_Transferencias_Secundarias_ExpedientesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ABC_Transferencias_Secundarias_Documentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="op" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalleDocumento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDescripcion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDocumentoPID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idStatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABC_Transferencias_Secundarias_DocumentosResponse">
         <s:complexType />
       </s:element>
       <s:element name="Transfiere_Archivo_Descripciones_Secundarias">
@@ -389,6 +605,122 @@
         </s:complexType>
       </s:element>
       <s:element name="Prepara_Vencimientos_Archivo_ConcentracionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListaBajas_Tramite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_TramiteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaBajas_TramiteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBaja_Tramite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBaja_TramiteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaBaja_TramiteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_Concentracion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBajas_ConcentracionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaBajas_ConcentracionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBaja_Concentracion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaBaja_ConcentracionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaBaja_ConcentracionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABC_Transferencias_Primarias_Bajas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="op" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Usrid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha_Solicitud" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="idArchivoOrigen" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Notas_Solicitud" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABC_Transferencias_Primarias_BajasResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ABC_Transferencias_Secundarias_Bajas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="op" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Usrid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha_Solicitud" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="idArchivoOrigen" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Notas_Solicitud" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABC_Transferencias_Secundarias_BajasResponse">
         <s:complexType />
       </s:element>
       <s:element name="Lista_Expedientes_Expurgo">
@@ -2038,6 +2370,30 @@
       <s:element name="Prepara_Vencimientos_Archivo_TramiteResponse">
         <s:complexType />
       </s:element>
+      <s:element name="Prepara_Vencimientos_Archivo_Tramite_Bajas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha_Corte" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Prepara_Vencimientos_Archivo_Tramite_BajasResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Prepara_Vencimientos_Concentracion_Bajas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha_Corte" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Prepara_Vencimientos_Concentracion_BajasResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="ListaTransferencias_Primarias">
         <s:complexType>
           <s:sequence>
@@ -2091,6 +2447,52 @@
       <s:element name="ABC_Transferencias_Primarias_ExpedientesResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ABC_Transferencias_Primarias_Documentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="op" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalleDocumento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDescripcion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDocumentoPID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idStatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABC_Transferencias_Primarias_DocumentosResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ABC_Transferencias_Primarias_Bajas_Documentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="op" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDescripcion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDocumentoPID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idStatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABC_Transferencias_Primarias_Bajas_DocumentosResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ABC_Transferencias_Secundarias_Bajas_Documentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="op" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalle" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDescripcion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDocumentoPID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idStatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ABC_Transferencias_Secundarias_Bajas_DocumentosResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="ListaArchivo_Descripciones_Transferencia_Filtro">
         <s:complexType>
           <s:sequence>
@@ -2125,118 +2527,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="ListaVencimientos_Archivo_Tramite_SeleccionResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaVencimientos_Archivo_Concentracion_Seleccion">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="Baja" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaVencimientos_Archivo_Concentracion_SeleccionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListaVencimientos_Archivo_Concentracion_SeleccionResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalle" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaTransferencia_Primaria">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaTransferencia_PrimariaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListaTransferencia_PrimariaResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaTransferencia_Secundaria">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaTransferencia_SecundariaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListaTransferencia_SecundariaResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Transfiere_Archivo_Descripciones_primarias">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idDescripcion" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idArchivoNew" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idDocumentoPIDNew" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idFolioDetalle" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Transfiere_Archivo_Descripciones_primariasResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Transfiere_Archivo_Descripciones_primariasResult">
               <s:complexType>
                 <s:sequence>
                   <s:element ref="s:schema" />
@@ -2912,6 +3202,9 @@
             <s:element minOccurs="1" maxOccurs="1" name="Indice_EsAutoincremental" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="IndiceReadOnly" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="Indice_Visible" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Indice_Visible_Concentracion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Indice_Visible_Historico" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Indice_Hereda_valor" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="relacion_con_normaPID" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="folio_norma" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="Muestra_padres" type="s:int" />
@@ -3059,6 +3352,7 @@
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="idSerie" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="idElemento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Tipo_Archivo" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -3979,6 +4273,60 @@
       </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="ListaBajas_Archivo_TramiteSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Archivo_Tramite" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_Archivo_TramiteSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Archivo_TramiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_Archivo_Tramite_SeleccionadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Archivo_Tramite_Seleccionados" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_Archivo_Tramite_SeleccionadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Archivo_Tramite_SeleccionadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_Archivo_ConcentracionSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Archivo_Concentracion" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_Archivo_ConcentracionSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Archivo_ConcentracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_Archivo_Concentracion_SeleccionadosSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Archivo_Concentracion_Seleccionados" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_Archivo_Concentracion_SeleccionadosSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Archivo_Concentracion_SeleccionadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaVencimientos_Archivo_Concentracion_SeleccionSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Concentracion_Seleccion" />
+  </wsdl:message>
+  <wsdl:message name="ListaVencimientos_Archivo_Concentracion_SeleccionSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Concentracion_SeleccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion" />
+  </wsdl:message>
+  <wsdl:message name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaTransferencia_PrimariaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaTransferencia_Primaria" />
+  </wsdl:message>
+  <wsdl:message name="ListaTransferencia_PrimariaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaTransferencia_PrimariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaTransferencia_SecundariaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaTransferencia_Secundaria" />
+  </wsdl:message>
+  <wsdl:message name="ListaTransferencia_SecundariaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaTransferencia_SecundariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Transfiere_Archivo_Descripciones_primariasSoapIn">
+    <wsdl:part name="parameters" element="tns:Transfiere_Archivo_Descripciones_primarias" />
+  </wsdl:message>
+  <wsdl:message name="Transfiere_Archivo_Descripciones_primariasSoapOut">
+    <wsdl:part name="parameters" element="tns:Transfiere_Archivo_Descripciones_primariasResponse" />
+  </wsdl:message>
   <wsdl:message name="ListaVencimientos_Archivo_Tramite_RecepcionSoapIn">
     <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_Recepcion" />
   </wsdl:message>
@@ -4020,6 +4368,12 @@
   </wsdl:message>
   <wsdl:message name="ABC_Transferencias_Secundarias_ExpedientesSoapOut">
     <wsdl:part name="parameters" element="tns:ABC_Transferencias_Secundarias_ExpedientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Secundarias_DocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Secundarias_Documentos" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Secundarias_DocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Secundarias_DocumentosResponse" />
   </wsdl:message>
   <wsdl:message name="Transfiere_Archivo_Descripciones_SecundariasSoapIn">
     <wsdl:part name="parameters" element="tns:Transfiere_Archivo_Descripciones_Secundarias" />
@@ -4098,6 +4452,42 @@
   </wsdl:message>
   <wsdl:message name="Prepara_Vencimientos_Archivo_ConcentracionSoapOut">
     <wsdl:part name="parameters" element="tns:Prepara_Vencimientos_Archivo_ConcentracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_TramiteSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Tramite" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_TramiteSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaBajas_TramiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaBaja_TramiteSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaBaja_Tramite" />
+  </wsdl:message>
+  <wsdl:message name="ListaBaja_TramiteSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaBaja_TramiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_ConcentracionSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaBajas_Concentracion" />
+  </wsdl:message>
+  <wsdl:message name="ListaBajas_ConcentracionSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaBajas_ConcentracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaBaja_ConcentracionSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaBaja_Concentracion" />
+  </wsdl:message>
+  <wsdl:message name="ListaBaja_ConcentracionSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaBaja_ConcentracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Primarias_BajasSoapIn">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Primarias_Bajas" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Primarias_BajasSoapOut">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Primarias_BajasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Secundarias_BajasSoapIn">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Secundarias_Bajas" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Secundarias_BajasSoapOut">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Secundarias_BajasResponse" />
   </wsdl:message>
   <wsdl:message name="Lista_Expedientes_ExpurgoSoapIn">
     <wsdl:part name="parameters" element="tns:Lista_Expedientes_Expurgo" />
@@ -4567,6 +4957,18 @@
   <wsdl:message name="Prepara_Vencimientos_Archivo_TramiteSoapOut">
     <wsdl:part name="parameters" element="tns:Prepara_Vencimientos_Archivo_TramiteResponse" />
   </wsdl:message>
+  <wsdl:message name="Prepara_Vencimientos_Archivo_Tramite_BajasSoapIn">
+    <wsdl:part name="parameters" element="tns:Prepara_Vencimientos_Archivo_Tramite_Bajas" />
+  </wsdl:message>
+  <wsdl:message name="Prepara_Vencimientos_Archivo_Tramite_BajasSoapOut">
+    <wsdl:part name="parameters" element="tns:Prepara_Vencimientos_Archivo_Tramite_BajasResponse" />
+  </wsdl:message>
+  <wsdl:message name="Prepara_Vencimientos_Concentracion_BajasSoapIn">
+    <wsdl:part name="parameters" element="tns:Prepara_Vencimientos_Concentracion_Bajas" />
+  </wsdl:message>
+  <wsdl:message name="Prepara_Vencimientos_Concentracion_BajasSoapOut">
+    <wsdl:part name="parameters" element="tns:Prepara_Vencimientos_Concentracion_BajasResponse" />
+  </wsdl:message>
   <wsdl:message name="ListaTransferencias_PrimariasSoapIn">
     <wsdl:part name="parameters" element="tns:ListaTransferencias_Primarias" />
   </wsdl:message>
@@ -4585,6 +4987,24 @@
   <wsdl:message name="ABC_Transferencias_Primarias_ExpedientesSoapOut">
     <wsdl:part name="parameters" element="tns:ABC_Transferencias_Primarias_ExpedientesResponse" />
   </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Primarias_DocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Primarias_Documentos" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Primarias_DocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Primarias_DocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Primarias_Bajas_DocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Primarias_Bajas_Documentos" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Primarias_Bajas_DocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Primarias_Bajas_DocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Secundarias_Bajas_DocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Secundarias_Bajas_Documentos" />
+  </wsdl:message>
+  <wsdl:message name="ABC_Transferencias_Secundarias_Bajas_DocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:ABC_Transferencias_Secundarias_Bajas_DocumentosResponse" />
+  </wsdl:message>
   <wsdl:message name="ListaArchivo_Descripciones_Transferencia_FiltroSoapIn">
     <wsdl:part name="parameters" element="tns:ListaArchivo_Descripciones_Transferencia_Filtro" />
   </wsdl:message>
@@ -4596,36 +5016,6 @@
   </wsdl:message>
   <wsdl:message name="ListaVencimientos_Archivo_Tramite_SeleccionSoapOut">
     <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_SeleccionResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListaVencimientos_Archivo_Concentracion_SeleccionSoapIn">
-    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Concentracion_Seleccion" />
-  </wsdl:message>
-  <wsdl:message name="ListaVencimientos_Archivo_Concentracion_SeleccionSoapOut">
-    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Concentracion_SeleccionResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionSoapIn">
-    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion" />
-  </wsdl:message>
-  <wsdl:message name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionSoapOut">
-    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListaTransferencia_PrimariaSoapIn">
-    <wsdl:part name="parameters" element="tns:ListaTransferencia_Primaria" />
-  </wsdl:message>
-  <wsdl:message name="ListaTransferencia_PrimariaSoapOut">
-    <wsdl:part name="parameters" element="tns:ListaTransferencia_PrimariaResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListaTransferencia_SecundariaSoapIn">
-    <wsdl:part name="parameters" element="tns:ListaTransferencia_Secundaria" />
-  </wsdl:message>
-  <wsdl:message name="ListaTransferencia_SecundariaSoapOut">
-    <wsdl:part name="parameters" element="tns:ListaTransferencia_SecundariaResponse" />
-  </wsdl:message>
-  <wsdl:message name="Transfiere_Archivo_Descripciones_primariasSoapIn">
-    <wsdl:part name="parameters" element="tns:Transfiere_Archivo_Descripciones_primarias" />
-  </wsdl:message>
-  <wsdl:message name="Transfiere_Archivo_Descripciones_primariasSoapOut">
-    <wsdl:part name="parameters" element="tns:Transfiere_Archivo_Descripciones_primariasResponse" />
   </wsdl:message>
   <wsdl:message name="ABC_Archivo_FisicoSoapIn">
     <wsdl:part name="parameters" element="tns:ABC_Archivo_Fisico" />
@@ -5132,6 +5522,42 @@
     <wsdl:part name="parameters" element="tns:Reportecgca_datosResponse" />
   </wsdl:message>
   <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="ListaBajas_Archivo_Tramite">
+      <wsdl:input message="tns:ListaBajas_Archivo_TramiteSoapIn" />
+      <wsdl:output message="tns:ListaBajas_Archivo_TramiteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Archivo_Tramite_Seleccionados">
+      <wsdl:input message="tns:ListaBajas_Archivo_Tramite_SeleccionadosSoapIn" />
+      <wsdl:output message="tns:ListaBajas_Archivo_Tramite_SeleccionadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Archivo_Concentracion">
+      <wsdl:input message="tns:ListaBajas_Archivo_ConcentracionSoapIn" />
+      <wsdl:output message="tns:ListaBajas_Archivo_ConcentracionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Archivo_Concentracion_Seleccionados">
+      <wsdl:input message="tns:ListaBajas_Archivo_Concentracion_SeleccionadosSoapIn" />
+      <wsdl:output message="tns:ListaBajas_Archivo_Concentracion_SeleccionadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaVencimientos_Archivo_Concentracion_Seleccion">
+      <wsdl:input message="tns:ListaVencimientos_Archivo_Concentracion_SeleccionSoapIn" />
+      <wsdl:output message="tns:ListaVencimientos_Archivo_Concentracion_SeleccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion">
+      <wsdl:input message="tns:ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionSoapIn" />
+      <wsdl:output message="tns:ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTransferencia_Primaria">
+      <wsdl:input message="tns:ListaTransferencia_PrimariaSoapIn" />
+      <wsdl:output message="tns:ListaTransferencia_PrimariaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaTransferencia_Secundaria">
+      <wsdl:input message="tns:ListaTransferencia_SecundariaSoapIn" />
+      <wsdl:output message="tns:ListaTransferencia_SecundariaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transfiere_Archivo_Descripciones_primarias">
+      <wsdl:input message="tns:Transfiere_Archivo_Descripciones_primariasSoapIn" />
+      <wsdl:output message="tns:Transfiere_Archivo_Descripciones_primariasSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Recepcion">
       <wsdl:input message="tns:ListaVencimientos_Archivo_Tramite_RecepcionSoapIn" />
       <wsdl:output message="tns:ListaVencimientos_Archivo_Tramite_RecepcionSoapOut" />
@@ -5159,6 +5585,10 @@
     <wsdl:operation name="ABC_Transferencias_Secundarias_Expedientes">
       <wsdl:input message="tns:ABC_Transferencias_Secundarias_ExpedientesSoapIn" />
       <wsdl:output message="tns:ABC_Transferencias_Secundarias_ExpedientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Secundarias_Documentos">
+      <wsdl:input message="tns:ABC_Transferencias_Secundarias_DocumentosSoapIn" />
+      <wsdl:output message="tns:ABC_Transferencias_Secundarias_DocumentosSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Transfiere_Archivo_Descripciones_Secundarias">
       <wsdl:input message="tns:Transfiere_Archivo_Descripciones_SecundariasSoapIn" />
@@ -5211,6 +5641,30 @@
     <wsdl:operation name="Prepara_Vencimientos_Archivo_Concentracion">
       <wsdl:input message="tns:Prepara_Vencimientos_Archivo_ConcentracionSoapIn" />
       <wsdl:output message="tns:Prepara_Vencimientos_Archivo_ConcentracionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Tramite">
+      <wsdl:input message="tns:ListaBajas_TramiteSoapIn" />
+      <wsdl:output message="tns:ListaBajas_TramiteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBaja_Tramite">
+      <wsdl:input message="tns:ListaBaja_TramiteSoapIn" />
+      <wsdl:output message="tns:ListaBaja_TramiteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Concentracion">
+      <wsdl:input message="tns:ListaBajas_ConcentracionSoapIn" />
+      <wsdl:output message="tns:ListaBajas_ConcentracionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaBaja_Concentracion">
+      <wsdl:input message="tns:ListaBaja_ConcentracionSoapIn" />
+      <wsdl:output message="tns:ListaBaja_ConcentracionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Primarias_Bajas">
+      <wsdl:input message="tns:ABC_Transferencias_Primarias_BajasSoapIn" />
+      <wsdl:output message="tns:ABC_Transferencias_Primarias_BajasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Secundarias_Bajas">
+      <wsdl:input message="tns:ABC_Transferencias_Secundarias_BajasSoapIn" />
+      <wsdl:output message="tns:ABC_Transferencias_Secundarias_BajasSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Lista_Expedientes_Expurgo">
       <wsdl:input message="tns:Lista_Expedientes_ExpurgoSoapIn" />
@@ -5524,6 +5978,14 @@
       <wsdl:input message="tns:Prepara_Vencimientos_Archivo_TramiteSoapIn" />
       <wsdl:output message="tns:Prepara_Vencimientos_Archivo_TramiteSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Prepara_Vencimientos_Archivo_Tramite_Bajas">
+      <wsdl:input message="tns:Prepara_Vencimientos_Archivo_Tramite_BajasSoapIn" />
+      <wsdl:output message="tns:Prepara_Vencimientos_Archivo_Tramite_BajasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Prepara_Vencimientos_Concentracion_Bajas">
+      <wsdl:input message="tns:Prepara_Vencimientos_Concentracion_BajasSoapIn" />
+      <wsdl:output message="tns:Prepara_Vencimientos_Concentracion_BajasSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ListaTransferencias_Primarias">
       <wsdl:input message="tns:ListaTransferencias_PrimariasSoapIn" />
       <wsdl:output message="tns:ListaTransferencias_PrimariasSoapOut" />
@@ -5536,6 +5998,18 @@
       <wsdl:input message="tns:ABC_Transferencias_Primarias_ExpedientesSoapIn" />
       <wsdl:output message="tns:ABC_Transferencias_Primarias_ExpedientesSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Primarias_Documentos">
+      <wsdl:input message="tns:ABC_Transferencias_Primarias_DocumentosSoapIn" />
+      <wsdl:output message="tns:ABC_Transferencias_Primarias_DocumentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Primarias_Bajas_Documentos">
+      <wsdl:input message="tns:ABC_Transferencias_Primarias_Bajas_DocumentosSoapIn" />
+      <wsdl:output message="tns:ABC_Transferencias_Primarias_Bajas_DocumentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Secundarias_Bajas_Documentos">
+      <wsdl:input message="tns:ABC_Transferencias_Secundarias_Bajas_DocumentosSoapIn" />
+      <wsdl:output message="tns:ABC_Transferencias_Secundarias_Bajas_DocumentosSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ListaArchivo_Descripciones_Transferencia_Filtro">
       <wsdl:input message="tns:ListaArchivo_Descripciones_Transferencia_FiltroSoapIn" />
       <wsdl:output message="tns:ListaArchivo_Descripciones_Transferencia_FiltroSoapOut" />
@@ -5543,26 +6017,6 @@
     <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion">
       <wsdl:input message="tns:ListaVencimientos_Archivo_Tramite_SeleccionSoapIn" />
       <wsdl:output message="tns:ListaVencimientos_Archivo_Tramite_SeleccionSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListaVencimientos_Archivo_Concentracion_Seleccion">
-      <wsdl:input message="tns:ListaVencimientos_Archivo_Concentracion_SeleccionSoapIn" />
-      <wsdl:output message="tns:ListaVencimientos_Archivo_Concentracion_SeleccionSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion">
-      <wsdl:input message="tns:ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionSoapIn" />
-      <wsdl:output message="tns:ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListaTransferencia_Primaria">
-      <wsdl:input message="tns:ListaTransferencia_PrimariaSoapIn" />
-      <wsdl:output message="tns:ListaTransferencia_PrimariaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListaTransferencia_Secundaria">
-      <wsdl:input message="tns:ListaTransferencia_SecundariaSoapIn" />
-      <wsdl:output message="tns:ListaTransferencia_SecundariaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Transfiere_Archivo_Descripciones_primarias">
-      <wsdl:input message="tns:Transfiere_Archivo_Descripciones_primariasSoapIn" />
-      <wsdl:output message="tns:Transfiere_Archivo_Descripciones_primariasSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ABC_Archivo_Fisico">
       <wsdl:input message="tns:ABC_Archivo_FisicoSoapIn" />
@@ -5903,6 +6357,87 @@
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaBajas_Archivo_Tramite">
+      <soap:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Tramite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Archivo_Tramite_Seleccionados">
+      <soap:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Tramite_Seleccionados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Archivo_Concentracion">
+      <soap:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Concentracion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Archivo_Concentracion_Seleccionados">
+      <soap:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Concentracion_Seleccionados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaVencimientos_Archivo_Concentracion_Seleccion">
+      <soap:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Concentracion_Seleccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion">
+      <soap:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTransferencia_Primaria">
+      <soap:operation soapAction="http://tempuri.org/ListaTransferencia_Primaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTransferencia_Secundaria">
+      <soap:operation soapAction="http://tempuri.org/ListaTransferencia_Secundaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transfiere_Archivo_Descripciones_primarias">
+      <soap:operation soapAction="http://tempuri.org/Transfiere_Archivo_Descripciones_primarias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Recepcion">
       <soap:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Recepcion" style="document" />
       <wsdl:input>
@@ -5959,6 +6494,15 @@
     </wsdl:operation>
     <wsdl:operation name="ABC_Transferencias_Secundarias_Expedientes">
       <soap:operation soapAction="http://tempuri.org/ABC_Transferencias_Secundarias_Expedientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Secundarias_Documentos">
+      <soap:operation soapAction="http://tempuri.org/ABC_Transferencias_Secundarias_Documentos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -6076,6 +6620,60 @@
     </wsdl:operation>
     <wsdl:operation name="Prepara_Vencimientos_Archivo_Concentracion">
       <soap:operation soapAction="http://tempuri.org/Prepara_Vencimientos_Archivo_Concentracion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Tramite">
+      <soap:operation soapAction="http://tempuri.org/ListaBajas_Tramite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBaja_Tramite">
+      <soap:operation soapAction="http://tempuri.org/ListaBaja_Tramite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Concentracion">
+      <soap:operation soapAction="http://tempuri.org/ListaBajas_Concentracion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBaja_Concentracion">
+      <soap:operation soapAction="http://tempuri.org/ListaBaja_Concentracion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Primarias_Bajas">
+      <soap:operation soapAction="http://tempuri.org/ABC_Transferencias_Primarias_Bajas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Secundarias_Bajas">
+      <soap:operation soapAction="http://tempuri.org/ABC_Transferencias_Secundarias_Bajas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -6785,6 +7383,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Prepara_Vencimientos_Archivo_Tramite_Bajas">
+      <soap:operation soapAction="http://tempuri.org/Prepara_Vencimientos_Archivo_Tramite_Bajas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Prepara_Vencimientos_Concentracion_Bajas">
+      <soap:operation soapAction="http://tempuri.org/Prepara_Vencimientos_Concentracion_Bajas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListaTransferencias_Primarias">
       <soap:operation soapAction="http://tempuri.org/ListaTransferencias_Primarias" style="document" />
       <wsdl:input>
@@ -6812,6 +7428,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Primarias_Documentos">
+      <soap:operation soapAction="http://tempuri.org/ABC_Transferencias_Primarias_Documentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Primarias_Bajas_Documentos">
+      <soap:operation soapAction="http://tempuri.org/ABC_Transferencias_Primarias_Bajas_Documentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Secundarias_Bajas_Documentos">
+      <soap:operation soapAction="http://tempuri.org/ABC_Transferencias_Secundarias_Bajas_Documentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListaArchivo_Descripciones_Transferencia_Filtro">
       <soap:operation soapAction="http://tempuri.org/ListaArchivo_Descripciones_Transferencia_Filtro" style="document" />
       <wsdl:input>
@@ -6823,51 +7466,6 @@
     </wsdl:operation>
     <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion">
       <soap:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaVencimientos_Archivo_Concentracion_Seleccion">
-      <soap:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Concentracion_Seleccion" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion">
-      <soap:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaTransferencia_Primaria">
-      <soap:operation soapAction="http://tempuri.org/ListaTransferencia_Primaria" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaTransferencia_Secundaria">
-      <soap:operation soapAction="http://tempuri.org/ListaTransferencia_Secundaria" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Transfiere_Archivo_Descripciones_primarias">
-      <soap:operation soapAction="http://tempuri.org/Transfiere_Archivo_Descripciones_primarias" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -7634,6 +8232,87 @@
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaBajas_Archivo_Tramite">
+      <soap12:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Tramite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Archivo_Tramite_Seleccionados">
+      <soap12:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Tramite_Seleccionados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Archivo_Concentracion">
+      <soap12:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Concentracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Archivo_Concentracion_Seleccionados">
+      <soap12:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Concentracion_Seleccionados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaVencimientos_Archivo_Concentracion_Seleccion">
+      <soap12:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Concentracion_Seleccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion">
+      <soap12:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTransferencia_Primaria">
+      <soap12:operation soapAction="http://tempuri.org/ListaTransferencia_Primaria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaTransferencia_Secundaria">
+      <soap12:operation soapAction="http://tempuri.org/ListaTransferencia_Secundaria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transfiere_Archivo_Descripciones_primarias">
+      <soap12:operation soapAction="http://tempuri.org/Transfiere_Archivo_Descripciones_primarias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Recepcion">
       <soap12:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Recepcion" style="document" />
       <wsdl:input>
@@ -7690,6 +8369,15 @@
     </wsdl:operation>
     <wsdl:operation name="ABC_Transferencias_Secundarias_Expedientes">
       <soap12:operation soapAction="http://tempuri.org/ABC_Transferencias_Secundarias_Expedientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Secundarias_Documentos">
+      <soap12:operation soapAction="http://tempuri.org/ABC_Transferencias_Secundarias_Documentos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -7807,6 +8495,60 @@
     </wsdl:operation>
     <wsdl:operation name="Prepara_Vencimientos_Archivo_Concentracion">
       <soap12:operation soapAction="http://tempuri.org/Prepara_Vencimientos_Archivo_Concentracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Tramite">
+      <soap12:operation soapAction="http://tempuri.org/ListaBajas_Tramite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBaja_Tramite">
+      <soap12:operation soapAction="http://tempuri.org/ListaBaja_Tramite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBajas_Concentracion">
+      <soap12:operation soapAction="http://tempuri.org/ListaBajas_Concentracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaBaja_Concentracion">
+      <soap12:operation soapAction="http://tempuri.org/ListaBaja_Concentracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Primarias_Bajas">
+      <soap12:operation soapAction="http://tempuri.org/ABC_Transferencias_Primarias_Bajas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Secundarias_Bajas">
+      <soap12:operation soapAction="http://tempuri.org/ABC_Transferencias_Secundarias_Bajas" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -8516,6 +9258,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Prepara_Vencimientos_Archivo_Tramite_Bajas">
+      <soap12:operation soapAction="http://tempuri.org/Prepara_Vencimientos_Archivo_Tramite_Bajas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Prepara_Vencimientos_Concentracion_Bajas">
+      <soap12:operation soapAction="http://tempuri.org/Prepara_Vencimientos_Concentracion_Bajas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListaTransferencias_Primarias">
       <soap12:operation soapAction="http://tempuri.org/ListaTransferencias_Primarias" style="document" />
       <wsdl:input>
@@ -8543,6 +9303,33 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Primarias_Documentos">
+      <soap12:operation soapAction="http://tempuri.org/ABC_Transferencias_Primarias_Documentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Primarias_Bajas_Documentos">
+      <soap12:operation soapAction="http://tempuri.org/ABC_Transferencias_Primarias_Bajas_Documentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ABC_Transferencias_Secundarias_Bajas_Documentos">
+      <soap12:operation soapAction="http://tempuri.org/ABC_Transferencias_Secundarias_Bajas_Documentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListaArchivo_Descripciones_Transferencia_Filtro">
       <soap12:operation soapAction="http://tempuri.org/ListaArchivo_Descripciones_Transferencia_Filtro" style="document" />
       <wsdl:input>
@@ -8554,51 +9341,6 @@
     </wsdl:operation>
     <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion">
       <soap12:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaVencimientos_Archivo_Concentracion_Seleccion">
-      <soap12:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Concentracion_Seleccion" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion">
-      <soap12:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaTransferencia_Primaria">
-      <soap12:operation soapAction="http://tempuri.org/ListaTransferencia_Primaria" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaTransferencia_Secundaria">
-      <soap12:operation soapAction="http://tempuri.org/ListaTransferencia_Secundaria" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Transfiere_Archivo_Descripciones_primarias">
-      <soap12:operation soapAction="http://tempuri.org/Transfiere_Archivo_Descripciones_primarias" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

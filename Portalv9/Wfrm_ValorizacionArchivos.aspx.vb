@@ -42,7 +42,7 @@ Partial Public Class Wfrm_ValorizacionArchivos
     End Sub
 
     Protected Sub butTransferir_Click(ByVal sender As Object, ByVal e As EventArgs) Handles butTransferir.Click
-        If gdbuscadorresultado.Selection.Count + gdbuscadorBajas.Selection.Count > 0 Then
+        If gdbuscadorresultado.Selection.Count > 0 Then
             Dim iRow As Integer
             Dim svr = New Portalv9.WSArchivo.Service1
             Dim objGlobal As New clsGlobal
@@ -59,15 +59,6 @@ Partial Public Class Wfrm_ValorizacionArchivos
                     svr.ABC_Transferencias_Primarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorresultado.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorresultado.GetRowValues(iRow, "idDescripcion"), gdbuscadorresultado.GetRowValues(iRow, "idDocumentoPID"), 0)
                 End If
             Next
-
-            For iRow = 0 To gdbuscadorBajas.VisibleRowCount - 1
-                If gdbuscadorBajas.Selection.IsRowSelected(iRow) Then
-                    svr.ABC_Transferencias_Primarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorBajas.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorBajas.GetRowValues(iRow, "idDescripcion"), gdbuscadorBajas.GetRowValues(iRow, "idDocumentoPID"), 1)
-                Else
-                    svr.ABC_Transferencias_Primarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorBajas.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorBajas.GetRowValues(iRow, "idDescripcion"), gdbuscadorBajas.GetRowValues(iRow, "idDocumentoPID"), 0)
-                End If
-            Next
-
 
             svr.ABC_Transferencias_Primarias(3, Request.QueryString("idFolio"), 0, Now.Date, 0, 0, "", 1)
             Response.Redirect("Wfrm_ValorizacionSeleccionados.aspx?idArchivo=" & Request.QueryString("idArchivo") & _
@@ -101,16 +92,16 @@ Partial Public Class Wfrm_ValorizacionArchivos
 
 
     Protected Sub btnBuscar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBuscar.Click
-        sv.Prepara_Vencimientos_Archivo_Tramite(Request.QueryString("idArchivo"), Request.QueryString("idFolio"), deFechaCorte.Date)
-        dsExpedientesTraspaso.SelectParameters("idFolio").DefaultValue = Request.QueryString("idFolio")
-        dsExpedientesTraspaso.SelectParameters("Baja").DefaultValue = 0
-        dsExpedientesTraspaso.Select()
-        gdbuscadorresultado.DataBind()
+        If deFechaCorte.Text <> "" Then
+            sv.Prepara_Vencimientos_Archivo_Tramite(Request.QueryString("idArchivo"), Request.QueryString("idFolio"), deFechaCorte.Date)
+            dsExpedientesTraspaso.SelectParameters("idFolio").DefaultValue = Request.QueryString("idFolio")
+            dsExpedientesTraspaso.SelectParameters("Baja").DefaultValue = 0
+            dsExpedientesTraspaso.Select()
+            gdbuscadorresultado.DataBind()
+        Else
+            MsgBox1.ShowMessage("Debe capturar la fecha de corte")
+        End If
 
-        dsExpedientesBaja.SelectParameters("idFolio").DefaultValue = Request.QueryString("idFolio")
-        dsExpedientesBaja.SelectParameters("Baja").DefaultValue = 1
-        dsExpedientesBaja.Select()
-        gdbuscadorBajas.DataBind()
     End Sub
 
     Protected Sub ASPxCallbackPanel1_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxClasses.CallbackEventArgsBase) Handles ASPxCallbackPanel1.Callback
@@ -121,12 +112,6 @@ Partial Public Class Wfrm_ValorizacionArchivos
                     "&idSerie=" & gdbuscadorresultado.GetDataRow(gdbuscadorresultado.FocusedRowIndex)("idSerie") & _
                     "&idNivel=" & gdbuscadorresultado.GetDataRow(gdbuscadorresultado.FocusedRowIndex)("idNivel") & _
                     "&idDescripcion=" & gdbuscadorresultado.GetDataRow(gdbuscadorresultado.FocusedRowIndex)("idDescripcion") & "&Logico=-1"
-            Case 2
-                iframeIndices.Attributes("src") = "Wfm_Indices_Lectura.aspx?idNorma=" & gdbuscadorBajas.GetDataRow(gdbuscadorBajas.FocusedRowIndex)("idNorma") & _
-                    "&idArchivo=" & gdbuscadorBajas.GetDataRow(gdbuscadorBajas.FocusedRowIndex)("idArchivo") & _
-                    "&idSerie=" & gdbuscadorBajas.GetDataRow(gdbuscadorBajas.FocusedRowIndex)("idSerie") & _
-                    "&idNivel=" & gdbuscadorBajas.GetDataRow(gdbuscadorBajas.FocusedRowIndex)("idNivel") & _
-                    "&idDescripcion=" & gdbuscadorBajas.GetDataRow(gdbuscadorBajas.FocusedRowIndex)("idDescripcion") & "&Logico=-1"
         End Select
     End Sub
 End Class

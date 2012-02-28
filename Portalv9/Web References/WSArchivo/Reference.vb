@@ -32,6 +32,24 @@ Namespace WSArchivo
     Partial Public Class Service1
         Inherits System.Web.Services.Protocols.SoapHttpClientProtocol
         
+        Private ListaBajas_Archivo_TramiteOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaBajas_Archivo_Tramite_SeleccionadosOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaBajas_Archivo_ConcentracionOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaBajas_Archivo_Concentracion_SeleccionadosOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaTransferencia_PrimariaOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaTransferencia_SecundariaOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private Transfiere_Archivo_Descripciones_primariasOperationCompleted As System.Threading.SendOrPostCallback
+        
         Private ListaVencimientos_Archivo_Tramite_RecepcionOperationCompleted As System.Threading.SendOrPostCallback
         
         Private ListaTransferencias_SecunariasOperationCompleted As System.Threading.SendOrPostCallback
@@ -45,6 +63,8 @@ Namespace WSArchivo
         Private ListaVencimientos_Archivo_Tramite_SeleccionadosOperationCompleted As System.Threading.SendOrPostCallback
         
         Private ABC_Transferencias_Secundarias_ExpedientesOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ABC_Transferencias_Secundarias_DocumentosOperationCompleted As System.Threading.SendOrPostCallback
         
         Private Transfiere_Archivo_Descripciones_SecundariasOperationCompleted As System.Threading.SendOrPostCallback
         
@@ -71,6 +91,18 @@ Namespace WSArchivo
         Private Lista_Transferencias_Secundarias_Documentos_CajasxidFolioDetalleDocumentoOperationCompleted As System.Threading.SendOrPostCallback
         
         Private Prepara_Vencimientos_Archivo_ConcentracionOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaBajas_TramiteOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaBaja_TramiteOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaBajas_ConcentracionOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ListaBaja_ConcentracionOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ABC_Transferencias_Primarias_BajasOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ABC_Transferencias_Secundarias_BajasOperationCompleted As System.Threading.SendOrPostCallback
         
         Private Lista_Expedientes_ExpurgoOperationCompleted As System.Threading.SendOrPostCallback
         
@@ -228,25 +260,25 @@ Namespace WSArchivo
         
         Private Prepara_Vencimientos_Archivo_TramiteOperationCompleted As System.Threading.SendOrPostCallback
         
+        Private Prepara_Vencimientos_Archivo_Tramite_BajasOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private Prepara_Vencimientos_Concentracion_BajasOperationCompleted As System.Threading.SendOrPostCallback
+        
         Private ListaTransferencias_PrimariasOperationCompleted As System.Threading.SendOrPostCallback
         
         Private ABC_Transferencias_PrimariasOperationCompleted As System.Threading.SendOrPostCallback
         
         Private ABC_Transferencias_Primarias_ExpedientesOperationCompleted As System.Threading.SendOrPostCallback
         
+        Private ABC_Transferencias_Primarias_DocumentosOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ABC_Transferencias_Primarias_Bajas_DocumentosOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ABC_Transferencias_Secundarias_Bajas_DocumentosOperationCompleted As System.Threading.SendOrPostCallback
+        
         Private ListaArchivo_Descripciones_Transferencia_FiltroOperationCompleted As System.Threading.SendOrPostCallback
         
         Private ListaVencimientos_Archivo_Tramite_SeleccionOperationCompleted As System.Threading.SendOrPostCallback
-        
-        Private ListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted As System.Threading.SendOrPostCallback
-        
-        Private ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted As System.Threading.SendOrPostCallback
-        
-        Private ListaTransferencia_PrimariaOperationCompleted As System.Threading.SendOrPostCallback
-        
-        Private ListaTransferencia_SecundariaOperationCompleted As System.Threading.SendOrPostCallback
-        
-        Private Transfiere_Archivo_Descripciones_primariasOperationCompleted As System.Threading.SendOrPostCallback
         
         Private ABC_Archivo_FisicoOperationCompleted As System.Threading.SendOrPostCallback
         
@@ -455,6 +487,33 @@ Namespace WSArchivo
         End Property
         
         '''<remarks/>
+        Public Event ListaBajas_Archivo_TramiteCompleted As ListaBajas_Archivo_TramiteCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaBajas_Archivo_Tramite_SeleccionadosCompleted As ListaBajas_Archivo_Tramite_SeleccionadosCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaBajas_Archivo_ConcentracionCompleted As ListaBajas_Archivo_ConcentracionCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaBajas_Archivo_Concentracion_SeleccionadosCompleted As ListaBajas_Archivo_Concentracion_SeleccionadosCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaVencimientos_Archivo_Concentracion_SeleccionCompleted As ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompleted As ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaTransferencia_PrimariaCompleted As ListaTransferencia_PrimariaCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaTransferencia_SecundariaCompleted As ListaTransferencia_SecundariaCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event Transfiere_Archivo_Descripciones_primariasCompleted As Transfiere_Archivo_Descripciones_primariasCompletedEventHandler
+        
+        '''<remarks/>
         Public Event ListaVencimientos_Archivo_Tramite_RecepcionCompleted As ListaVencimientos_Archivo_Tramite_RecepcionCompletedEventHandler
         
         '''<remarks/>
@@ -474,6 +533,9 @@ Namespace WSArchivo
         
         '''<remarks/>
         Public Event ABC_Transferencias_Secundarias_ExpedientesCompleted As ABC_Transferencias_Secundarias_ExpedientesCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ABC_Transferencias_Secundarias_DocumentosCompleted As ABC_Transferencias_Secundarias_DocumentosCompletedEventHandler
         
         '''<remarks/>
         Public Event Transfiere_Archivo_Descripciones_SecundariasCompleted As Transfiere_Archivo_Descripciones_SecundariasCompletedEventHandler
@@ -513,6 +575,24 @@ Namespace WSArchivo
         
         '''<remarks/>
         Public Event Prepara_Vencimientos_Archivo_ConcentracionCompleted As Prepara_Vencimientos_Archivo_ConcentracionCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaBajas_TramiteCompleted As ListaBajas_TramiteCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaBaja_TramiteCompleted As ListaBaja_TramiteCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaBajas_ConcentracionCompleted As ListaBajas_ConcentracionCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ListaBaja_ConcentracionCompleted As ListaBaja_ConcentracionCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ABC_Transferencias_Primarias_BajasCompleted As ABC_Transferencias_Primarias_BajasCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ABC_Transferencias_Secundarias_BajasCompleted As ABC_Transferencias_Secundarias_BajasCompletedEventHandler
         
         '''<remarks/>
         Public Event Lista_Expedientes_ExpurgoCompleted As Lista_Expedientes_ExpurgoCompletedEventHandler
@@ -749,6 +829,12 @@ Namespace WSArchivo
         Public Event Prepara_Vencimientos_Archivo_TramiteCompleted As Prepara_Vencimientos_Archivo_TramiteCompletedEventHandler
         
         '''<remarks/>
+        Public Event Prepara_Vencimientos_Archivo_Tramite_BajasCompleted As Prepara_Vencimientos_Archivo_Tramite_BajasCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event Prepara_Vencimientos_Concentracion_BajasCompleted As Prepara_Vencimientos_Concentracion_BajasCompletedEventHandler
+        
+        '''<remarks/>
         Public Event ListaTransferencias_PrimariasCompleted As ListaTransferencias_PrimariasCompletedEventHandler
         
         '''<remarks/>
@@ -758,25 +844,19 @@ Namespace WSArchivo
         Public Event ABC_Transferencias_Primarias_ExpedientesCompleted As ABC_Transferencias_Primarias_ExpedientesCompletedEventHandler
         
         '''<remarks/>
+        Public Event ABC_Transferencias_Primarias_DocumentosCompleted As ABC_Transferencias_Primarias_DocumentosCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ABC_Transferencias_Primarias_Bajas_DocumentosCompleted As ABC_Transferencias_Primarias_Bajas_DocumentosCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ABC_Transferencias_Secundarias_Bajas_DocumentosCompleted As ABC_Transferencias_Secundarias_Bajas_DocumentosCompletedEventHandler
+        
+        '''<remarks/>
         Public Event ListaArchivo_Descripciones_Transferencia_FiltroCompleted As ListaArchivo_Descripciones_Transferencia_FiltroCompletedEventHandler
         
         '''<remarks/>
         Public Event ListaVencimientos_Archivo_Tramite_SeleccionCompleted As ListaVencimientos_Archivo_Tramite_SeleccionCompletedEventHandler
-        
-        '''<remarks/>
-        Public Event ListaVencimientos_Archivo_Concentracion_SeleccionCompleted As ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventHandler
-        
-        '''<remarks/>
-        Public Event ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompleted As ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventHandler
-        
-        '''<remarks/>
-        Public Event ListaTransferencia_PrimariaCompleted As ListaTransferencia_PrimariaCompletedEventHandler
-        
-        '''<remarks/>
-        Public Event ListaTransferencia_SecundariaCompleted As ListaTransferencia_SecundariaCompletedEventHandler
-        
-        '''<remarks/>
-        Public Event Transfiere_Archivo_Descripciones_primariasCompleted As Transfiere_Archivo_Descripciones_primariasCompletedEventHandler
         
         '''<remarks/>
         Public Event ABC_Archivo_FisicoCompleted As ABC_Archivo_FisicoCompletedEventHandler
@@ -1031,6 +1111,249 @@ Namespace WSArchivo
         Public Event Reportecgca_datosCompleted As Reportecgca_datosCompletedEventHandler
         
         '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaBajas_Archivo_Tramite", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaBajas_Archivo_Tramite(ByVal idFolio As Integer, ByVal Baja As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaBajas_Archivo_Tramite", New Object() {idFolio, Baja})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_Archivo_TramiteAsync(ByVal idFolio As Integer, ByVal Baja As Integer)
+            Me.ListaBajas_Archivo_TramiteAsync(idFolio, Baja, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_Archivo_TramiteAsync(ByVal idFolio As Integer, ByVal Baja As Integer, ByVal userState As Object)
+            If (Me.ListaBajas_Archivo_TramiteOperationCompleted Is Nothing) Then
+                Me.ListaBajas_Archivo_TramiteOperationCompleted = AddressOf Me.OnListaBajas_Archivo_TramiteOperationCompleted
+            End If
+            Me.InvokeAsync("ListaBajas_Archivo_Tramite", New Object() {idFolio, Baja}, Me.ListaBajas_Archivo_TramiteOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaBajas_Archivo_TramiteOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaBajas_Archivo_TramiteCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaBajas_Archivo_TramiteCompleted(Me, New ListaBajas_Archivo_TramiteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaBajas_Archivo_Tramite_Seleccionados", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaBajas_Archivo_Tramite_Seleccionados(ByVal idFolio As Integer, ByVal Baja As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaBajas_Archivo_Tramite_Seleccionados", New Object() {idFolio, Baja})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_Archivo_Tramite_SeleccionadosAsync(ByVal idFolio As Integer, ByVal Baja As Integer)
+            Me.ListaBajas_Archivo_Tramite_SeleccionadosAsync(idFolio, Baja, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_Archivo_Tramite_SeleccionadosAsync(ByVal idFolio As Integer, ByVal Baja As Integer, ByVal userState As Object)
+            If (Me.ListaBajas_Archivo_Tramite_SeleccionadosOperationCompleted Is Nothing) Then
+                Me.ListaBajas_Archivo_Tramite_SeleccionadosOperationCompleted = AddressOf Me.OnListaBajas_Archivo_Tramite_SeleccionadosOperationCompleted
+            End If
+            Me.InvokeAsync("ListaBajas_Archivo_Tramite_Seleccionados", New Object() {idFolio, Baja}, Me.ListaBajas_Archivo_Tramite_SeleccionadosOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaBajas_Archivo_Tramite_SeleccionadosOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaBajas_Archivo_Tramite_SeleccionadosCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaBajas_Archivo_Tramite_SeleccionadosCompleted(Me, New ListaBajas_Archivo_Tramite_SeleccionadosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaBajas_Archivo_Concentracion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaBajas_Archivo_Concentracion(ByVal idFolio As Integer, ByVal Baja As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaBajas_Archivo_Concentracion", New Object() {idFolio, Baja})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_Archivo_ConcentracionAsync(ByVal idFolio As Integer, ByVal Baja As Integer)
+            Me.ListaBajas_Archivo_ConcentracionAsync(idFolio, Baja, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_Archivo_ConcentracionAsync(ByVal idFolio As Integer, ByVal Baja As Integer, ByVal userState As Object)
+            If (Me.ListaBajas_Archivo_ConcentracionOperationCompleted Is Nothing) Then
+                Me.ListaBajas_Archivo_ConcentracionOperationCompleted = AddressOf Me.OnListaBajas_Archivo_ConcentracionOperationCompleted
+            End If
+            Me.InvokeAsync("ListaBajas_Archivo_Concentracion", New Object() {idFolio, Baja}, Me.ListaBajas_Archivo_ConcentracionOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaBajas_Archivo_ConcentracionOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaBajas_Archivo_ConcentracionCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaBajas_Archivo_ConcentracionCompleted(Me, New ListaBajas_Archivo_ConcentracionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaBajas_Archivo_Concentracion_Seleccionados", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaBajas_Archivo_Concentracion_Seleccionados(ByVal idFolio As Integer, ByVal Baja As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaBajas_Archivo_Concentracion_Seleccionados", New Object() {idFolio, Baja})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_Archivo_Concentracion_SeleccionadosAsync(ByVal idFolio As Integer, ByVal Baja As Integer)
+            Me.ListaBajas_Archivo_Concentracion_SeleccionadosAsync(idFolio, Baja, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_Archivo_Concentracion_SeleccionadosAsync(ByVal idFolio As Integer, ByVal Baja As Integer, ByVal userState As Object)
+            If (Me.ListaBajas_Archivo_Concentracion_SeleccionadosOperationCompleted Is Nothing) Then
+                Me.ListaBajas_Archivo_Concentracion_SeleccionadosOperationCompleted = AddressOf Me.OnListaBajas_Archivo_Concentracion_SeleccionadosOperationCompleted
+            End If
+            Me.InvokeAsync("ListaBajas_Archivo_Concentracion_Seleccionados", New Object() {idFolio, Baja}, Me.ListaBajas_Archivo_Concentracion_SeleccionadosOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaBajas_Archivo_Concentracion_SeleccionadosOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaBajas_Archivo_Concentracion_SeleccionadosCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaBajas_Archivo_Concentracion_SeleccionadosCompleted(Me, New ListaBajas_Archivo_Concentracion_SeleccionadosCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaVencimientos_Archivo_Concentracion_Seleccion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaVencimientos_Archivo_Concentracion_Seleccion(ByVal idFolio As Integer, ByVal Baja As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaVencimientos_Archivo_Concentracion_Seleccion", New Object() {idFolio, Baja})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaVencimientos_Archivo_Concentracion_SeleccionAsync(ByVal idFolio As Integer, ByVal Baja As Integer)
+            Me.ListaVencimientos_Archivo_Concentracion_SeleccionAsync(idFolio, Baja, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaVencimientos_Archivo_Concentracion_SeleccionAsync(ByVal idFolio As Integer, ByVal Baja As Integer, ByVal userState As Object)
+            If (Me.ListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted Is Nothing) Then
+                Me.ListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted = AddressOf Me.OnListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted
+            End If
+            Me.InvokeAsync("ListaVencimientos_Archivo_Concentracion_Seleccion", New Object() {idFolio, Baja}, Me.ListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaVencimientos_Archivo_Concentracion_SeleccionCompleted(Me, New ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion", New Object() {idArchivo, idFolio, idFolioDetalle})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionAsync(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer)
+            Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionAsync(idArchivo, idFolio, idFolioDetalle, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionAsync(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal userState As Object)
+            If (Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted Is Nothing) Then
+                Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted = AddressOf Me.OnListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted
+            End If
+            Me.InvokeAsync("ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion", New Object() {idArchivo, idFolio, idFolioDetalle}, Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompleted(Me, New ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaTransferencia_Primaria", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaTransferencia_Primaria(ByVal idFolio As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaTransferencia_Primaria", New Object() {idFolio})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaTransferencia_PrimariaAsync(ByVal idFolio As Integer)
+            Me.ListaTransferencia_PrimariaAsync(idFolio, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaTransferencia_PrimariaAsync(ByVal idFolio As Integer, ByVal userState As Object)
+            If (Me.ListaTransferencia_PrimariaOperationCompleted Is Nothing) Then
+                Me.ListaTransferencia_PrimariaOperationCompleted = AddressOf Me.OnListaTransferencia_PrimariaOperationCompleted
+            End If
+            Me.InvokeAsync("ListaTransferencia_Primaria", New Object() {idFolio}, Me.ListaTransferencia_PrimariaOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaTransferencia_PrimariaOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaTransferencia_PrimariaCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaTransferencia_PrimariaCompleted(Me, New ListaTransferencia_PrimariaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaTransferencia_Secundaria", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaTransferencia_Secundaria(ByVal idFolio As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaTransferencia_Secundaria", New Object() {idFolio})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaTransferencia_SecundariaAsync(ByVal idFolio As Integer)
+            Me.ListaTransferencia_SecundariaAsync(idFolio, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaTransferencia_SecundariaAsync(ByVal idFolio As Integer, ByVal userState As Object)
+            If (Me.ListaTransferencia_SecundariaOperationCompleted Is Nothing) Then
+                Me.ListaTransferencia_SecundariaOperationCompleted = AddressOf Me.OnListaTransferencia_SecundariaOperationCompleted
+            End If
+            Me.InvokeAsync("ListaTransferencia_Secundaria", New Object() {idFolio}, Me.ListaTransferencia_SecundariaOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaTransferencia_SecundariaOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaTransferencia_SecundariaCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaTransferencia_SecundariaCompleted(Me, New ListaTransferencia_SecundariaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Transfiere_Archivo_Descripciones_primarias", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function Transfiere_Archivo_Descripciones_primarias(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idArchivoNew As Integer, ByVal idDocumentoPIDNew As Integer, ByVal idFolioDetalle As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("Transfiere_Archivo_Descripciones_primarias", New Object() {idArchivo, idDescripcion, idArchivoNew, idDocumentoPIDNew, idFolioDetalle})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub Transfiere_Archivo_Descripciones_primariasAsync(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idArchivoNew As Integer, ByVal idDocumentoPIDNew As Integer, ByVal idFolioDetalle As Integer)
+            Me.Transfiere_Archivo_Descripciones_primariasAsync(idArchivo, idDescripcion, idArchivoNew, idDocumentoPIDNew, idFolioDetalle, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub Transfiere_Archivo_Descripciones_primariasAsync(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idArchivoNew As Integer, ByVal idDocumentoPIDNew As Integer, ByVal idFolioDetalle As Integer, ByVal userState As Object)
+            If (Me.Transfiere_Archivo_Descripciones_primariasOperationCompleted Is Nothing) Then
+                Me.Transfiere_Archivo_Descripciones_primariasOperationCompleted = AddressOf Me.OnTransfiere_Archivo_Descripciones_primariasOperationCompleted
+            End If
+            Me.InvokeAsync("Transfiere_Archivo_Descripciones_primarias", New Object() {idArchivo, idDescripcion, idArchivoNew, idDocumentoPIDNew, idFolioDetalle}, Me.Transfiere_Archivo_Descripciones_primariasOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnTransfiere_Archivo_Descripciones_primariasOperationCompleted(ByVal arg As Object)
+            If (Not (Me.Transfiere_Archivo_Descripciones_primariasCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent Transfiere_Archivo_Descripciones_primariasCompleted(Me, New Transfiere_Archivo_Descripciones_primariasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
         <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaVencimientos_Archivo_Tramite_Recepcion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
         Public Function ListaVencimientos_Archivo_Tramite_Recepcion(ByVal idFolio As Integer, ByVal idStatus As Integer) As System.Data.DataSet
             Dim results() As Object = Me.Invoke("ListaVencimientos_Archivo_Tramite_Recepcion", New Object() {idFolio, idStatus})
@@ -1214,6 +1537,32 @@ Namespace WSArchivo
             If (Not (Me.ABC_Transferencias_Secundarias_ExpedientesCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
                 RaiseEvent ABC_Transferencias_Secundarias_ExpedientesCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ABC_Transferencias_Secundarias_Documentos", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub ABC_Transferencias_Secundarias_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+            Me.Invoke("ABC_Transferencias_Secundarias_Documentos", New Object() {op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Secundarias_DocumentosAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+            Me.ABC_Transferencias_Secundarias_DocumentosAsync(op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Secundarias_DocumentosAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer, ByVal userState As Object)
+            If (Me.ABC_Transferencias_Secundarias_DocumentosOperationCompleted Is Nothing) Then
+                Me.ABC_Transferencias_Secundarias_DocumentosOperationCompleted = AddressOf Me.OnABC_Transferencias_Secundarias_DocumentosOperationCompleted
+            End If
+            Me.InvokeAsync("ABC_Transferencias_Secundarias_Documentos", New Object() {op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus}, Me.ABC_Transferencias_Secundarias_DocumentosOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnABC_Transferencias_Secundarias_DocumentosOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ABC_Transferencias_Secundarias_DocumentosCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ABC_Transferencias_Secundarias_DocumentosCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -1563,6 +1912,166 @@ Namespace WSArchivo
             If (Not (Me.Prepara_Vencimientos_Archivo_ConcentracionCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
                 RaiseEvent Prepara_Vencimientos_Archivo_ConcentracionCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaBajas_Tramite", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaBajas_Tramite(ByVal Status As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaBajas_Tramite", New Object() {Status})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_TramiteAsync(ByVal Status As Integer)
+            Me.ListaBajas_TramiteAsync(Status, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_TramiteAsync(ByVal Status As Integer, ByVal userState As Object)
+            If (Me.ListaBajas_TramiteOperationCompleted Is Nothing) Then
+                Me.ListaBajas_TramiteOperationCompleted = AddressOf Me.OnListaBajas_TramiteOperationCompleted
+            End If
+            Me.InvokeAsync("ListaBajas_Tramite", New Object() {Status}, Me.ListaBajas_TramiteOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaBajas_TramiteOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaBajas_TramiteCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaBajas_TramiteCompleted(Me, New ListaBajas_TramiteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaBaja_Tramite", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaBaja_Tramite(ByVal idFolio As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaBaja_Tramite", New Object() {idFolio})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBaja_TramiteAsync(ByVal idFolio As Integer)
+            Me.ListaBaja_TramiteAsync(idFolio, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBaja_TramiteAsync(ByVal idFolio As Integer, ByVal userState As Object)
+            If (Me.ListaBaja_TramiteOperationCompleted Is Nothing) Then
+                Me.ListaBaja_TramiteOperationCompleted = AddressOf Me.OnListaBaja_TramiteOperationCompleted
+            End If
+            Me.InvokeAsync("ListaBaja_Tramite", New Object() {idFolio}, Me.ListaBaja_TramiteOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaBaja_TramiteOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaBaja_TramiteCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaBaja_TramiteCompleted(Me, New ListaBaja_TramiteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaBajas_Concentracion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaBajas_Concentracion(ByVal Status As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaBajas_Concentracion", New Object() {Status})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_ConcentracionAsync(ByVal Status As Integer)
+            Me.ListaBajas_ConcentracionAsync(Status, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBajas_ConcentracionAsync(ByVal Status As Integer, ByVal userState As Object)
+            If (Me.ListaBajas_ConcentracionOperationCompleted Is Nothing) Then
+                Me.ListaBajas_ConcentracionOperationCompleted = AddressOf Me.OnListaBajas_ConcentracionOperationCompleted
+            End If
+            Me.InvokeAsync("ListaBajas_Concentracion", New Object() {Status}, Me.ListaBajas_ConcentracionOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaBajas_ConcentracionOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaBajas_ConcentracionCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaBajas_ConcentracionCompleted(Me, New ListaBajas_ConcentracionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaBaja_Concentracion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ListaBaja_Concentracion(ByVal idFolio As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaBaja_Concentracion", New Object() {idFolio})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBaja_ConcentracionAsync(ByVal idFolio As Integer)
+            Me.ListaBaja_ConcentracionAsync(idFolio, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ListaBaja_ConcentracionAsync(ByVal idFolio As Integer, ByVal userState As Object)
+            If (Me.ListaBaja_ConcentracionOperationCompleted Is Nothing) Then
+                Me.ListaBaja_ConcentracionOperationCompleted = AddressOf Me.OnListaBaja_ConcentracionOperationCompleted
+            End If
+            Me.InvokeAsync("ListaBaja_Concentracion", New Object() {idFolio}, Me.ListaBaja_ConcentracionOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnListaBaja_ConcentracionOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ListaBaja_ConcentracionCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ListaBaja_ConcentracionCompleted(Me, New ListaBaja_ConcentracionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ABC_Transferencias_Primarias_Bajas", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub ABC_Transferencias_Primarias_Bajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
+            Me.Invoke("ABC_Transferencias_Primarias_Bajas", New Object() {op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Primarias_BajasAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
+            Me.ABC_Transferencias_Primarias_BajasAsync(op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Primarias_BajasAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer, ByVal userState As Object)
+            If (Me.ABC_Transferencias_Primarias_BajasOperationCompleted Is Nothing) Then
+                Me.ABC_Transferencias_Primarias_BajasOperationCompleted = AddressOf Me.OnABC_Transferencias_Primarias_BajasOperationCompleted
+            End If
+            Me.InvokeAsync("ABC_Transferencias_Primarias_Bajas", New Object() {op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status}, Me.ABC_Transferencias_Primarias_BajasOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnABC_Transferencias_Primarias_BajasOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ABC_Transferencias_Primarias_BajasCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ABC_Transferencias_Primarias_BajasCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ABC_Transferencias_Secundarias_Bajas", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub ABC_Transferencias_Secundarias_Bajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
+            Me.Invoke("ABC_Transferencias_Secundarias_Bajas", New Object() {op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Secundarias_BajasAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
+            Me.ABC_Transferencias_Secundarias_BajasAsync(op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Secundarias_BajasAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer, ByVal userState As Object)
+            If (Me.ABC_Transferencias_Secundarias_BajasOperationCompleted Is Nothing) Then
+                Me.ABC_Transferencias_Secundarias_BajasOperationCompleted = AddressOf Me.OnABC_Transferencias_Secundarias_BajasOperationCompleted
+            End If
+            Me.InvokeAsync("ABC_Transferencias_Secundarias_Bajas", New Object() {op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status}, Me.ABC_Transferencias_Secundarias_BajasOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnABC_Transferencias_Secundarias_BajasOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ABC_Transferencias_Secundarias_BajasCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ABC_Transferencias_Secundarias_BajasCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -3878,6 +4387,58 @@ Namespace WSArchivo
         End Sub
         
         '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Prepara_Vencimientos_Archivo_Tramite_Bajas", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub Prepara_Vencimientos_Archivo_Tramite_Bajas(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
+            Me.Invoke("Prepara_Vencimientos_Archivo_Tramite_Bajas", New Object() {idArchivo, idFolio, Fecha_Corte})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub Prepara_Vencimientos_Archivo_Tramite_BajasAsync(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
+            Me.Prepara_Vencimientos_Archivo_Tramite_BajasAsync(idArchivo, idFolio, Fecha_Corte, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub Prepara_Vencimientos_Archivo_Tramite_BajasAsync(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date, ByVal userState As Object)
+            If (Me.Prepara_Vencimientos_Archivo_Tramite_BajasOperationCompleted Is Nothing) Then
+                Me.Prepara_Vencimientos_Archivo_Tramite_BajasOperationCompleted = AddressOf Me.OnPrepara_Vencimientos_Archivo_Tramite_BajasOperationCompleted
+            End If
+            Me.InvokeAsync("Prepara_Vencimientos_Archivo_Tramite_Bajas", New Object() {idArchivo, idFolio, Fecha_Corte}, Me.Prepara_Vencimientos_Archivo_Tramite_BajasOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnPrepara_Vencimientos_Archivo_Tramite_BajasOperationCompleted(ByVal arg As Object)
+            If (Not (Me.Prepara_Vencimientos_Archivo_Tramite_BajasCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent Prepara_Vencimientos_Archivo_Tramite_BajasCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Prepara_Vencimientos_Concentracion_Bajas", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub Prepara_Vencimientos_Concentracion_Bajas(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
+            Me.Invoke("Prepara_Vencimientos_Concentracion_Bajas", New Object() {idArchivo, idFolio, Fecha_Corte})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub Prepara_Vencimientos_Concentracion_BajasAsync(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
+            Me.Prepara_Vencimientos_Concentracion_BajasAsync(idArchivo, idFolio, Fecha_Corte, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub Prepara_Vencimientos_Concentracion_BajasAsync(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date, ByVal userState As Object)
+            If (Me.Prepara_Vencimientos_Concentracion_BajasOperationCompleted Is Nothing) Then
+                Me.Prepara_Vencimientos_Concentracion_BajasOperationCompleted = AddressOf Me.OnPrepara_Vencimientos_Concentracion_BajasOperationCompleted
+            End If
+            Me.InvokeAsync("Prepara_Vencimientos_Concentracion_Bajas", New Object() {idArchivo, idFolio, Fecha_Corte}, Me.Prepara_Vencimientos_Concentracion_BajasOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnPrepara_Vencimientos_Concentracion_BajasOperationCompleted(ByVal arg As Object)
+            If (Not (Me.Prepara_Vencimientos_Concentracion_BajasCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent Prepara_Vencimientos_Concentracion_BajasCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
         <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaTransferencias_Primarias", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
         Public Function ListaTransferencias_Primarias(ByVal Status As Integer) As System.Data.DataSet
             Dim results() As Object = Me.Invoke("ListaTransferencias_Primarias", New Object() {Status})
@@ -3957,6 +4518,84 @@ Namespace WSArchivo
         End Sub
         
         '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ABC_Transferencias_Primarias_Documentos", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub ABC_Transferencias_Primarias_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+            Me.Invoke("ABC_Transferencias_Primarias_Documentos", New Object() {op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Primarias_DocumentosAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+            Me.ABC_Transferencias_Primarias_DocumentosAsync(op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Primarias_DocumentosAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer, ByVal userState As Object)
+            If (Me.ABC_Transferencias_Primarias_DocumentosOperationCompleted Is Nothing) Then
+                Me.ABC_Transferencias_Primarias_DocumentosOperationCompleted = AddressOf Me.OnABC_Transferencias_Primarias_DocumentosOperationCompleted
+            End If
+            Me.InvokeAsync("ABC_Transferencias_Primarias_Documentos", New Object() {op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus}, Me.ABC_Transferencias_Primarias_DocumentosOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnABC_Transferencias_Primarias_DocumentosOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ABC_Transferencias_Primarias_DocumentosCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ABC_Transferencias_Primarias_DocumentosCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ABC_Transferencias_Primarias_Bajas_Documentos", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub ABC_Transferencias_Primarias_Bajas_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+            Me.Invoke("ABC_Transferencias_Primarias_Bajas_Documentos", New Object() {op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Primarias_Bajas_DocumentosAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+            Me.ABC_Transferencias_Primarias_Bajas_DocumentosAsync(op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Primarias_Bajas_DocumentosAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer, ByVal userState As Object)
+            If (Me.ABC_Transferencias_Primarias_Bajas_DocumentosOperationCompleted Is Nothing) Then
+                Me.ABC_Transferencias_Primarias_Bajas_DocumentosOperationCompleted = AddressOf Me.OnABC_Transferencias_Primarias_Bajas_DocumentosOperationCompleted
+            End If
+            Me.InvokeAsync("ABC_Transferencias_Primarias_Bajas_Documentos", New Object() {op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus}, Me.ABC_Transferencias_Primarias_Bajas_DocumentosOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnABC_Transferencias_Primarias_Bajas_DocumentosOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ABC_Transferencias_Primarias_Bajas_DocumentosCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ABC_Transferencias_Primarias_Bajas_DocumentosCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ABC_Transferencias_Secundarias_Bajas_Documentos", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub ABC_Transferencias_Secundarias_Bajas_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+            Me.Invoke("ABC_Transferencias_Secundarias_Bajas_Documentos", New Object() {op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Secundarias_Bajas_DocumentosAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+            Me.ABC_Transferencias_Secundarias_Bajas_DocumentosAsync(op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ABC_Transferencias_Secundarias_Bajas_DocumentosAsync(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer, ByVal userState As Object)
+            If (Me.ABC_Transferencias_Secundarias_Bajas_DocumentosOperationCompleted Is Nothing) Then
+                Me.ABC_Transferencias_Secundarias_Bajas_DocumentosOperationCompleted = AddressOf Me.OnABC_Transferencias_Secundarias_Bajas_DocumentosOperationCompleted
+            End If
+            Me.InvokeAsync("ABC_Transferencias_Secundarias_Bajas_Documentos", New Object() {op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus}, Me.ABC_Transferencias_Secundarias_Bajas_DocumentosOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnABC_Transferencias_Secundarias_Bajas_DocumentosOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ABC_Transferencias_Secundarias_Bajas_DocumentosCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ABC_Transferencias_Secundarias_Bajas_DocumentosCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
         <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaArchivo_Descripciones_Transferencia_Filtro", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
         Public Function ListaArchivo_Descripciones_Transferencia_Filtro(ByVal idArchivo As Integer, ByVal idFolio As Integer) As System.Data.DataSet
             Dim results() As Object = Me.Invoke("ListaArchivo_Descripciones_Transferencia_Filtro", New Object() {idArchivo, idFolio})
@@ -4007,141 +4646,6 @@ Namespace WSArchivo
             If (Not (Me.ListaVencimientos_Archivo_Tramite_SeleccionCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
                 RaiseEvent ListaVencimientos_Archivo_Tramite_SeleccionCompleted(Me, New ListaVencimientos_Archivo_Tramite_SeleccionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
-            End If
-        End Sub
-        
-        '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaVencimientos_Archivo_Concentracion_Seleccion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Function ListaVencimientos_Archivo_Concentracion_Seleccion(ByVal idFolio As Integer, ByVal Baja As Integer) As System.Data.DataSet
-            Dim results() As Object = Me.Invoke("ListaVencimientos_Archivo_Concentracion_Seleccion", New Object() {idFolio, Baja})
-            Return CType(results(0),System.Data.DataSet)
-        End Function
-        
-        '''<remarks/>
-        Public Overloads Sub ListaVencimientos_Archivo_Concentracion_SeleccionAsync(ByVal idFolio As Integer, ByVal Baja As Integer)
-            Me.ListaVencimientos_Archivo_Concentracion_SeleccionAsync(idFolio, Baja, Nothing)
-        End Sub
-        
-        '''<remarks/>
-        Public Overloads Sub ListaVencimientos_Archivo_Concentracion_SeleccionAsync(ByVal idFolio As Integer, ByVal Baja As Integer, ByVal userState As Object)
-            If (Me.ListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted Is Nothing) Then
-                Me.ListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted = AddressOf Me.OnListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted
-            End If
-            Me.InvokeAsync("ListaVencimientos_Archivo_Concentracion_Seleccion", New Object() {idFolio, Baja}, Me.ListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted, userState)
-        End Sub
-        
-        Private Sub OnListaVencimientos_Archivo_Concentracion_SeleccionOperationCompleted(ByVal arg As Object)
-            If (Not (Me.ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEvent) Is Nothing) Then
-                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent ListaVencimientos_Archivo_Concentracion_SeleccionCompleted(Me, New ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
-            End If
-        End Sub
-        
-        '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Function ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer) As System.Data.DataSet
-            Dim results() As Object = Me.Invoke("ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion", New Object() {idArchivo, idFolio, idFolioDetalle})
-            Return CType(results(0),System.Data.DataSet)
-        End Function
-        
-        '''<remarks/>
-        Public Overloads Sub ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionAsync(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer)
-            Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionAsync(idArchivo, idFolio, idFolioDetalle, Nothing)
-        End Sub
-        
-        '''<remarks/>
-        Public Overloads Sub ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionAsync(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal userState As Object)
-            If (Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted Is Nothing) Then
-                Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted = AddressOf Me.OnListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted
-            End If
-            Me.InvokeAsync("ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcion", New Object() {idArchivo, idFolio, idFolioDetalle}, Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted, userState)
-        End Sub
-        
-        Private Sub OnListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionOperationCompleted(ByVal arg As Object)
-            If (Not (Me.ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEvent) Is Nothing) Then
-                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompleted(Me, New ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
-            End If
-        End Sub
-        
-        '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaTransferencia_Primaria", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Function ListaTransferencia_Primaria(ByVal idFolio As Integer) As System.Data.DataSet
-            Dim results() As Object = Me.Invoke("ListaTransferencia_Primaria", New Object() {idFolio})
-            Return CType(results(0),System.Data.DataSet)
-        End Function
-        
-        '''<remarks/>
-        Public Overloads Sub ListaTransferencia_PrimariaAsync(ByVal idFolio As Integer)
-            Me.ListaTransferencia_PrimariaAsync(idFolio, Nothing)
-        End Sub
-        
-        '''<remarks/>
-        Public Overloads Sub ListaTransferencia_PrimariaAsync(ByVal idFolio As Integer, ByVal userState As Object)
-            If (Me.ListaTransferencia_PrimariaOperationCompleted Is Nothing) Then
-                Me.ListaTransferencia_PrimariaOperationCompleted = AddressOf Me.OnListaTransferencia_PrimariaOperationCompleted
-            End If
-            Me.InvokeAsync("ListaTransferencia_Primaria", New Object() {idFolio}, Me.ListaTransferencia_PrimariaOperationCompleted, userState)
-        End Sub
-        
-        Private Sub OnListaTransferencia_PrimariaOperationCompleted(ByVal arg As Object)
-            If (Not (Me.ListaTransferencia_PrimariaCompletedEvent) Is Nothing) Then
-                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent ListaTransferencia_PrimariaCompleted(Me, New ListaTransferencia_PrimariaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
-            End If
-        End Sub
-        
-        '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaTransferencia_Secundaria", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Function ListaTransferencia_Secundaria(ByVal idFolio As Integer) As System.Data.DataSet
-            Dim results() As Object = Me.Invoke("ListaTransferencia_Secundaria", New Object() {idFolio})
-            Return CType(results(0),System.Data.DataSet)
-        End Function
-        
-        '''<remarks/>
-        Public Overloads Sub ListaTransferencia_SecundariaAsync(ByVal idFolio As Integer)
-            Me.ListaTransferencia_SecundariaAsync(idFolio, Nothing)
-        End Sub
-        
-        '''<remarks/>
-        Public Overloads Sub ListaTransferencia_SecundariaAsync(ByVal idFolio As Integer, ByVal userState As Object)
-            If (Me.ListaTransferencia_SecundariaOperationCompleted Is Nothing) Then
-                Me.ListaTransferencia_SecundariaOperationCompleted = AddressOf Me.OnListaTransferencia_SecundariaOperationCompleted
-            End If
-            Me.InvokeAsync("ListaTransferencia_Secundaria", New Object() {idFolio}, Me.ListaTransferencia_SecundariaOperationCompleted, userState)
-        End Sub
-        
-        Private Sub OnListaTransferencia_SecundariaOperationCompleted(ByVal arg As Object)
-            If (Not (Me.ListaTransferencia_SecundariaCompletedEvent) Is Nothing) Then
-                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent ListaTransferencia_SecundariaCompleted(Me, New ListaTransferencia_SecundariaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
-            End If
-        End Sub
-        
-        '''<remarks/>
-        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Transfiere_Archivo_Descripciones_primarias", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Function Transfiere_Archivo_Descripciones_primarias(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idArchivoNew As Integer, ByVal idDocumentoPIDNew As Integer, ByVal idFolioDetalle As Integer) As System.Data.DataSet
-            Dim results() As Object = Me.Invoke("Transfiere_Archivo_Descripciones_primarias", New Object() {idArchivo, idDescripcion, idArchivoNew, idDocumentoPIDNew, idFolioDetalle})
-            Return CType(results(0),System.Data.DataSet)
-        End Function
-        
-        '''<remarks/>
-        Public Overloads Sub Transfiere_Archivo_Descripciones_primariasAsync(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idArchivoNew As Integer, ByVal idDocumentoPIDNew As Integer, ByVal idFolioDetalle As Integer)
-            Me.Transfiere_Archivo_Descripciones_primariasAsync(idArchivo, idDescripcion, idArchivoNew, idDocumentoPIDNew, idFolioDetalle, Nothing)
-        End Sub
-        
-        '''<remarks/>
-        Public Overloads Sub Transfiere_Archivo_Descripciones_primariasAsync(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idArchivoNew As Integer, ByVal idDocumentoPIDNew As Integer, ByVal idFolioDetalle As Integer, ByVal userState As Object)
-            If (Me.Transfiere_Archivo_Descripciones_primariasOperationCompleted Is Nothing) Then
-                Me.Transfiere_Archivo_Descripciones_primariasOperationCompleted = AddressOf Me.OnTransfiere_Archivo_Descripciones_primariasOperationCompleted
-            End If
-            Me.InvokeAsync("Transfiere_Archivo_Descripciones_primarias", New Object() {idArchivo, idDescripcion, idArchivoNew, idDocumentoPIDNew, idFolioDetalle}, Me.Transfiere_Archivo_Descripciones_primariasOperationCompleted, userState)
-        End Sub
-        
-        Private Sub OnTransfiere_Archivo_Descripciones_primariasOperationCompleted(ByVal arg As Object)
-            If (Not (Me.Transfiere_Archivo_Descripciones_primariasCompletedEvent) Is Nothing) Then
-                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
-                RaiseEvent Transfiere_Archivo_Descripciones_primariasCompleted(Me, New Transfiere_Archivo_Descripciones_primariasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -5116,6 +5620,9 @@ Namespace WSArchivo
                     ByVal Indice_EsAutoincremental As Integer,  _
                     ByVal IndiceReadOnly As Integer,  _
                     ByVal Indice_Visible As Integer,  _
+                    ByVal Indice_Visible_Concentracion As Integer,  _
+                    ByVal Indice_Visible_Historico As Integer,  _
+                    ByVal Indice_Hereda_valor As Integer,  _
                     ByVal relacion_con_normaPID As Integer,  _
                     ByVal folio_norma As String,  _
                     ByVal Muestra_padres As Integer,  _
@@ -5124,7 +5631,7 @@ Namespace WSArchivo
                     ByVal Asigned_value As String,  _
                     ByVal Indice_Sistema As Integer,  _
                     ByVal idIndice_Sistema As Integer)
-            Me.Invoke("ABC_Normas_Elementos_Campos", New Object() {op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema})
+            Me.Invoke("ABC_Normas_Elementos_Campos", New Object() {op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, Indice_Visible_Concentracion, Indice_Visible_Historico, Indice_Hereda_valor, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema})
         End Sub
         
         '''<remarks/>
@@ -5148,6 +5655,9 @@ Namespace WSArchivo
                     ByVal Indice_EsAutoincremental As Integer,  _
                     ByVal IndiceReadOnly As Integer,  _
                     ByVal Indice_Visible As Integer,  _
+                    ByVal Indice_Visible_Concentracion As Integer,  _
+                    ByVal Indice_Visible_Historico As Integer,  _
+                    ByVal Indice_Hereda_valor As Integer,  _
                     ByVal relacion_con_normaPID As Integer,  _
                     ByVal folio_norma As String,  _
                     ByVal Muestra_padres As Integer,  _
@@ -5156,7 +5666,7 @@ Namespace WSArchivo
                     ByVal Asigned_value As String,  _
                     ByVal Indice_Sistema As Integer,  _
                     ByVal idIndice_Sistema As Integer)
-            Me.ABC_Normas_Elementos_CamposAsync(op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema, Nothing)
+            Me.ABC_Normas_Elementos_CamposAsync(op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, Indice_Visible_Concentracion, Indice_Visible_Historico, Indice_Hereda_valor, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema, Nothing)
         End Sub
         
         '''<remarks/>
@@ -5180,6 +5690,9 @@ Namespace WSArchivo
                     ByVal Indice_EsAutoincremental As Integer,  _
                     ByVal IndiceReadOnly As Integer,  _
                     ByVal Indice_Visible As Integer,  _
+                    ByVal Indice_Visible_Concentracion As Integer,  _
+                    ByVal Indice_Visible_Historico As Integer,  _
+                    ByVal Indice_Hereda_valor As Integer,  _
                     ByVal relacion_con_normaPID As Integer,  _
                     ByVal folio_norma As String,  _
                     ByVal Muestra_padres As Integer,  _
@@ -5192,7 +5705,7 @@ Namespace WSArchivo
             If (Me.ABC_Normas_Elementos_CamposOperationCompleted Is Nothing) Then
                 Me.ABC_Normas_Elementos_CamposOperationCompleted = AddressOf Me.OnABC_Normas_Elementos_CamposOperationCompleted
             End If
-            Me.InvokeAsync("ABC_Normas_Elementos_Campos", New Object() {op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema}, Me.ABC_Normas_Elementos_CamposOperationCompleted, userState)
+            Me.InvokeAsync("ABC_Normas_Elementos_Campos", New Object() {op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, Indice_Visible_Concentracion, Indice_Visible_Historico, Indice_Hereda_valor, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema}, Me.ABC_Normas_Elementos_CamposOperationCompleted, userState)
         End Sub
         
         Private Sub OnABC_Normas_Elementos_CamposOperationCompleted(ByVal arg As Object)
@@ -5366,22 +5879,22 @@ Namespace WSArchivo
         
         '''<remarks/>
         <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ListaNormas_Elementos_CamposxSeriexElemento_Visible", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Function ListaNormas_Elementos_CamposxSeriexElemento_Visible(ByVal idSerie As Integer, ByVal idElemento As Integer) As System.Data.DataSet
-            Dim results() As Object = Me.Invoke("ListaNormas_Elementos_CamposxSeriexElemento_Visible", New Object() {idSerie, idElemento})
+        Public Function ListaNormas_Elementos_CamposxSeriexElemento_Visible(ByVal idSerie As Integer, ByVal idElemento As Integer, ByVal Tipo_Archivo As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ListaNormas_Elementos_CamposxSeriexElemento_Visible", New Object() {idSerie, idElemento, Tipo_Archivo})
             Return CType(results(0),System.Data.DataSet)
         End Function
         
         '''<remarks/>
-        Public Overloads Sub ListaNormas_Elementos_CamposxSeriexElemento_VisibleAsync(ByVal idSerie As Integer, ByVal idElemento As Integer)
-            Me.ListaNormas_Elementos_CamposxSeriexElemento_VisibleAsync(idSerie, idElemento, Nothing)
+        Public Overloads Sub ListaNormas_Elementos_CamposxSeriexElemento_VisibleAsync(ByVal idSerie As Integer, ByVal idElemento As Integer, ByVal Tipo_Archivo As Integer)
+            Me.ListaNormas_Elementos_CamposxSeriexElemento_VisibleAsync(idSerie, idElemento, Tipo_Archivo, Nothing)
         End Sub
         
         '''<remarks/>
-        Public Overloads Sub ListaNormas_Elementos_CamposxSeriexElemento_VisibleAsync(ByVal idSerie As Integer, ByVal idElemento As Integer, ByVal userState As Object)
+        Public Overloads Sub ListaNormas_Elementos_CamposxSeriexElemento_VisibleAsync(ByVal idSerie As Integer, ByVal idElemento As Integer, ByVal Tipo_Archivo As Integer, ByVal userState As Object)
             If (Me.ListaNormas_Elementos_CamposxSeriexElemento_VisibleOperationCompleted Is Nothing) Then
                 Me.ListaNormas_Elementos_CamposxSeriexElemento_VisibleOperationCompleted = AddressOf Me.OnListaNormas_Elementos_CamposxSeriexElemento_VisibleOperationCompleted
             End If
-            Me.InvokeAsync("ListaNormas_Elementos_CamposxSeriexElemento_Visible", New Object() {idSerie, idElemento}, Me.ListaNormas_Elementos_CamposxSeriexElemento_VisibleOperationCompleted, userState)
+            Me.InvokeAsync("ListaNormas_Elementos_CamposxSeriexElemento_Visible", New Object() {idSerie, idElemento, Tipo_Archivo}, Me.ListaNormas_Elementos_CamposxSeriexElemento_VisibleOperationCompleted, userState)
         End Sub
         
         Private Sub OnListaNormas_Elementos_CamposxSeriexElemento_VisibleOperationCompleted(ByVal arg As Object)
@@ -6661,6 +7174,249 @@ Namespace WSArchivo
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaBajas_Archivo_TramiteCompletedEventHandler(ByVal sender As Object, ByVal e As ListaBajas_Archivo_TramiteCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaBajas_Archivo_TramiteCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaBajas_Archivo_Tramite_SeleccionadosCompletedEventHandler(ByVal sender As Object, ByVal e As ListaBajas_Archivo_Tramite_SeleccionadosCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaBajas_Archivo_Tramite_SeleccionadosCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaBajas_Archivo_ConcentracionCompletedEventHandler(ByVal sender As Object, ByVal e As ListaBajas_Archivo_ConcentracionCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaBajas_Archivo_ConcentracionCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaBajas_Archivo_Concentracion_SeleccionadosCompletedEventHandler(ByVal sender As Object, ByVal e As ListaBajas_Archivo_Concentracion_SeleccionadosCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaBajas_Archivo_Concentracion_SeleccionadosCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventHandler(ByVal sender As Object, ByVal e As ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventHandler(ByVal sender As Object, ByVal e As ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaTransferencia_PrimariaCompletedEventHandler(ByVal sender As Object, ByVal e As ListaTransferencia_PrimariaCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaTransferencia_PrimariaCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaTransferencia_SecundariaCompletedEventHandler(ByVal sender As Object, ByVal e As ListaTransferencia_SecundariaCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaTransferencia_SecundariaCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub Transfiere_Archivo_Descripciones_primariasCompletedEventHandler(ByVal sender As Object, ByVal e As Transfiere_Archivo_Descripciones_primariasCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class Transfiere_Archivo_Descripciones_primariasCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
     Public Delegate Sub ListaVencimientos_Archivo_Tramite_RecepcionCompletedEventHandler(ByVal sender As Object, ByVal e As ListaVencimientos_Archivo_Tramite_RecepcionCompletedEventArgs)
     
     '''<remarks/>
@@ -6801,6 +7557,10 @@ Namespace WSArchivo
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
     Public Delegate Sub ABC_Transferencias_Secundarias_ExpedientesCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ABC_Transferencias_Secundarias_DocumentosCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
@@ -7037,6 +7797,122 @@ Namespace WSArchivo
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
     Public Delegate Sub Prepara_Vencimientos_Archivo_ConcentracionCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaBajas_TramiteCompletedEventHandler(ByVal sender As Object, ByVal e As ListaBajas_TramiteCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaBajas_TramiteCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaBaja_TramiteCompletedEventHandler(ByVal sender As Object, ByVal e As ListaBaja_TramiteCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaBaja_TramiteCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaBajas_ConcentracionCompletedEventHandler(ByVal sender As Object, ByVal e As ListaBajas_ConcentracionCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaBajas_ConcentracionCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ListaBaja_ConcentracionCompletedEventHandler(ByVal sender As Object, ByVal e As ListaBaja_ConcentracionCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ListaBaja_ConcentracionCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ABC_Transferencias_Primarias_BajasCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ABC_Transferencias_Secundarias_BajasCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
@@ -8962,6 +9838,14 @@ Namespace WSArchivo
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub Prepara_Vencimientos_Archivo_Tramite_BajasCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub Prepara_Vencimientos_Concentracion_BajasCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
     Public Delegate Sub ListaTransferencias_PrimariasCompletedEventHandler(ByVal sender As Object, ByVal e As ListaTransferencias_PrimariasCompletedEventArgs)
     
     '''<remarks/>
@@ -8994,6 +9878,18 @@ Namespace WSArchivo
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
     Public Delegate Sub ABC_Transferencias_Primarias_ExpedientesCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ABC_Transferencias_Primarias_DocumentosCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ABC_Transferencias_Primarias_Bajas_DocumentosCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ABC_Transferencias_Secundarias_Bajas_DocumentosCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
@@ -9031,141 +9927,6 @@ Namespace WSArchivo
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class ListaVencimientos_Archivo_Tramite_SeleccionCompletedEventArgs
-        Inherits System.ComponentModel.AsyncCompletedEventArgs
-        
-        Private results() As Object
-        
-        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
-            MyBase.New(exception, cancelled, userState)
-            Me.results = results
-        End Sub
-        
-        '''<remarks/>
-        Public ReadOnly Property Result() As System.Data.DataSet
-            Get
-                Me.RaiseExceptionIfNecessary
-                Return CType(Me.results(0),System.Data.DataSet)
-            End Get
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
-    Public Delegate Sub ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventHandler(ByVal sender As Object, ByVal e As ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventArgs)
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ListaVencimientos_Archivo_Concentracion_SeleccionCompletedEventArgs
-        Inherits System.ComponentModel.AsyncCompletedEventArgs
-        
-        Private results() As Object
-        
-        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
-            MyBase.New(exception, cancelled, userState)
-            Me.results = results
-        End Sub
-        
-        '''<remarks/>
-        Public ReadOnly Property Result() As System.Data.DataSet
-            Get
-                Me.RaiseExceptionIfNecessary
-                Return CType(Me.results(0),System.Data.DataSet)
-            End Get
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
-    Public Delegate Sub ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventHandler(ByVal sender As Object, ByVal e As ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventArgs)
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ListaVencimientos_Archivo_Tramite_Seleccion_idDescripcionCompletedEventArgs
-        Inherits System.ComponentModel.AsyncCompletedEventArgs
-        
-        Private results() As Object
-        
-        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
-            MyBase.New(exception, cancelled, userState)
-            Me.results = results
-        End Sub
-        
-        '''<remarks/>
-        Public ReadOnly Property Result() As System.Data.DataSet
-            Get
-                Me.RaiseExceptionIfNecessary
-                Return CType(Me.results(0),System.Data.DataSet)
-            End Get
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
-    Public Delegate Sub ListaTransferencia_PrimariaCompletedEventHandler(ByVal sender As Object, ByVal e As ListaTransferencia_PrimariaCompletedEventArgs)
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ListaTransferencia_PrimariaCompletedEventArgs
-        Inherits System.ComponentModel.AsyncCompletedEventArgs
-        
-        Private results() As Object
-        
-        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
-            MyBase.New(exception, cancelled, userState)
-            Me.results = results
-        End Sub
-        
-        '''<remarks/>
-        Public ReadOnly Property Result() As System.Data.DataSet
-            Get
-                Me.RaiseExceptionIfNecessary
-                Return CType(Me.results(0),System.Data.DataSet)
-            End Get
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
-    Public Delegate Sub ListaTransferencia_SecundariaCompletedEventHandler(ByVal sender As Object, ByVal e As ListaTransferencia_SecundariaCompletedEventArgs)
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class ListaTransferencia_SecundariaCompletedEventArgs
-        Inherits System.ComponentModel.AsyncCompletedEventArgs
-        
-        Private results() As Object
-        
-        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
-            MyBase.New(exception, cancelled, userState)
-            Me.results = results
-        End Sub
-        
-        '''<remarks/>
-        Public ReadOnly Property Result() As System.Data.DataSet
-            Get
-                Me.RaiseExceptionIfNecessary
-                Return CType(Me.results(0),System.Data.DataSet)
-            End Get
-        End Property
-    End Class
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
-    Public Delegate Sub Transfiere_Archivo_Descripciones_primariasCompletedEventHandler(ByVal sender As Object, ByVal e As Transfiere_Archivo_Descripciones_primariasCompletedEventArgs)
-    
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code")>  _
-    Partial Public Class Transfiere_Archivo_Descripciones_primariasCompletedEventArgs
         Inherits System.ComponentModel.AsyncCompletedEventArgs
         
         Private results() As Object

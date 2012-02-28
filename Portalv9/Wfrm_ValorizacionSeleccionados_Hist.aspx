@@ -15,7 +15,8 @@
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-    <dxe:ASPxHyperLink ID="Regresar" runat="server" ImageUrl="~/Images/regresar.gif" />
+    <dxe:ASPxHyperLink ID="Regresar" runat="server" ImageUrl="~/Images/regresar.gif" 
+            NavigateUrl="~/Wfrm_Valorizacion.aspx" />
     <asp:label id="lblTitle" runat="server" Font-Size="Small" Height="16px" Font-Names="Arial" Font-Bold="True" Font-Italic="True">Seleccione el archivo a transferir</asp:label>
     <br />
     <dxrp:ASPxRoundPanel ID="rpHeader" Width="100%" HeaderText="Datos de la trasferencia " 
@@ -76,7 +77,7 @@
         <tr>
             <td style="width: 737px" colspan="2">
                 <dxwgv:ASPxGridView ID="gdbuscadorresultado" runat="server" ClientInstanceName="grid" 
-                    AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" Width="134%" 
+                    AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" Width="1000px" 
                     KeyFieldName="idFolioDetalle" EnableCallBacks="False">
                     <SettingsBehavior ProcessFocusedRowChangedOnServer="true" />
                     <Columns>
@@ -123,14 +124,34 @@
                         <dxwgv:GridViewDataTextColumn Caption="Plazo AC" FieldName="Plazo_AC" 
                             VisibleIndex="7">
                         </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Acceso" FieldName="Acceso" 
-                            VisibleIndex="8">
-                        </dxwgv:GridViewDataTextColumn>
                         <dxwgv:GridViewDataTextColumn Caption="idSerie" FieldName="idSerie" Visible="False" VisibleIndex="13">
                         </dxwgv:GridViewDataTextColumn>
                         <dxwgv:GridViewDataTextColumn FieldName="idDocumentoPID" Visible="False" 
                             VisibleIndex="9">
                         </dxwgv:GridViewDataTextColumn>
+                        <dxwgv:GridViewDataCheckColumn Caption="Valor &lt;br/&gt;Administrativo" 
+                            FieldName="Valor_administrativo" VisibleIndex="8">
+                            <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" 
+                                ValueUnchecked="0">
+                            </PropertiesCheckEdit>
+                        </dxwgv:GridViewDataCheckColumn>
+                        <dxwgv:GridViewDataCheckColumn Caption="Valor &lt;br/&gt;Fiscal" 
+                            FieldName="Valor_contable" VisibleIndex="9">
+                            <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" 
+                                ValueUnchecked="0">
+                            </PropertiesCheckEdit>
+                        </dxwgv:GridViewDataCheckColumn>
+                        <dxwgv:GridViewDataCheckColumn Caption="Valor &lt;br/&gt;Legal" 
+                            FieldName="Valor_legal" VisibleIndex="10">
+                            <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" 
+                                ValueUnchecked="0">
+                            </PropertiesCheckEdit>
+                        </dxwgv:GridViewDataCheckColumn>
+                        
+                        <dxwgv:GridViewDataTextColumn Caption="Acceso" FieldName="Acceso" 
+                            VisibleIndex="11">
+                        </dxwgv:GridViewDataTextColumn>
+                        
                     </Columns>
                 </dxwgv:ASPxGridView>
             </td>
@@ -156,13 +177,13 @@
     <cc1:msgbox id="MsgBox1" runat="server" ForeColor="Red"></cc1:msgbox>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
             SelectMethod="ListaVencimientos_Archivo_Tramite_Seleccionados" 
-        TypeName="Portalv9.WSArchivo.Service1">
+        TypeName="Portalv9.WSArchivo.Service1" 
+        OldValuesParameterFormatString="original_{0}">
         <SelectParameters>
-            <asp:QueryStringParameter Name="idArchivo" QueryStringField="idArchivo" 
-                Type="Int32"  />
             <asp:QueryStringParameter Name="idFolio" QueryStringField="idFolio" 
                 Type="Int32"  />
             <asp:Parameter DefaultValue="2" Name="idStatus" Type="Int32" />
+            <asp:Parameter DefaultValue="0" Name="Baja" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="dsTransferenciaActiva" runat="server" 

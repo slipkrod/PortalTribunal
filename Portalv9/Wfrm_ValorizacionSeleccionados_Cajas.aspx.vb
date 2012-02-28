@@ -4,12 +4,22 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Cajas
     Inherits System.Web.UI.Page
     Dim sv As New WSArchivo.Service1
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim rsDatosArchivo As DataSet
+        Dim rsDatosTransferencia As DataSet
         If Not IsPostBack Then
             Regresar.NavigateUrl = "Wfrm_ValorizacionSeleccionados.aspx?idArchivo=" & Request.QueryString("idArchivo") & _
                       "&idNorma=" & lblidNorma.Text & _
                       "&idFolio=" & Request.QueryString("idFolio") & _
                       "&sTitulo=Valoración primaria del archivo " & lblidArchivoOrigen.Text
 
+            rsDatosArchivo = sv.ListaArchivo(Request.QueryString("idArchivo"))
+            lblidNorma.Text = rsDatosArchivo.Tables(0).Rows(0).Item("idNorma")
+            lblFolio.Text = Request.QueryString("idFolio")
+            lblidArchivoOrigen.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
+            rsDatosTransferencia = sv.ListaTransferencia_Primaria(Request.QueryString("idFolio"))
+            lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
+            rsDatosArchivo = sv.ListaArchivo(rsDatosTransferencia.Tables(0).Rows(0).Item("idArchivoDestino"))
+            lblidArchivoDestino.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
         End If
     End Sub
     Protected Function GetNodeGlyph(ByVal container As TreeListDataCellTemplateContainer) As String

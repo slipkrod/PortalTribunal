@@ -38,7 +38,7 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccion
 
 
     Protected Sub butTransferir_Click(ByVal sender As Object, ByVal e As EventArgs) Handles butTransferir.Click
-        If gdbuscadorresultado.Selection.Count + gdbuscadorBajas.Selection.Count > 0 Then
+        If gdbuscadorresultado.Selection.Count > 0 Then
             Dim iRow As Integer
             Dim svr = New Portalv9.WSArchivo.Service1
             Dim objGlobal As New clsGlobal
@@ -53,14 +53,6 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccion
                     svr.ABC_Transferencias_Secundarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorresultado.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorresultado.GetRowValues(iRow, "idDescripcion_Concentracion"), gdbuscadorresultado.GetRowValues(iRow, "idDocumentoPID"), 1)
                 Else
                     svr.ABC_Transferencias_Secundarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorresultado.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorresultado.GetRowValues(iRow, "idDescripcion_Concentracion"), gdbuscadorresultado.GetRowValues(iRow, "idDocumentoPID"), 0)
-                End If
-            Next
-
-            For iRow = 0 To gdbuscadorBajas.VisibleRowCount - 1
-                If gdbuscadorBajas.Selection.IsRowSelected(iRow) Then
-                    svr.ABC_Transferencias_Secundarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorBajas.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorBajas.GetRowValues(iRow, "idDescripcion_Concentracion"), gdbuscadorBajas.GetRowValues(iRow, "idDocumentoPID"), 1)
-                Else
-                    svr.ABC_Transferencias_Secundarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorBajas.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorBajas.GetRowValues(iRow, "idDescripcion_Concentracion"), gdbuscadorBajas.GetRowValues(iRow, "idDocumentoPID"), 0)
                 End If
             Next
 
@@ -102,10 +94,5 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccion
         dsExpedientesTraspaso.SelectParameters("Baja").DefaultValue = 0
         dsExpedientesTraspaso.Select()
         gdbuscadorresultado.DataBind()
-
-        dsExpedientesBaja.SelectParameters("idFolio").DefaultValue = Request.QueryString("idFolio")
-        dsExpedientesBaja.SelectParameters("Baja").DefaultValue = 1
-        dsExpedientesBaja.Select()
-        gdbuscadorBajas.DataBind()
     End Sub
 End Class

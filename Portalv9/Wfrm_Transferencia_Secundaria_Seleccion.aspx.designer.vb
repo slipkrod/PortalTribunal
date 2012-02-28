@@ -79,15 +79,6 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccion
     Protected WithEvents gdbuscadorresultado As Global.DevExpress.Web.ASPxGridView.ASPxGridView
 
     '''<summary>
-    '''Control gdbuscadorBajas.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents gdbuscadorBajas As Global.DevExpress.Web.ASPxGridView.ASPxGridView
-
-    '''<summary>
     '''Control butTransferir.
     '''</summary>
     '''<remarks>
@@ -122,15 +113,6 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents dsExpedientesTraspaso As Global.System.Web.UI.WebControls.ObjectDataSource
-
-    '''<summary>
-    '''Control dsExpedientesBaja.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents dsExpedientesBaja As Global.System.Web.UI.WebControls.ObjectDataSource
 
     '''<summary>
     '''Control dsArchivos.

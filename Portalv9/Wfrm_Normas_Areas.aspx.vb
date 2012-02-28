@@ -208,6 +208,9 @@ Partial Class Wfrm_Normas_Areas
                 e.NewValues("Indice_Mascara") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Mascara")
                 e.NewValues("Indice_Obligatorio") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Obligatorio")
                 e.NewValues("Indice_Visible") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible")
+                e.NewValues("Indice_Visible_Concentracion") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Concentracion")
+                e.NewValues("Indice_Visible_Historico") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Historico")
+                e.NewValues("Indice_Hereda_valor") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Hereda_valor")
             End If
         Else
             e.NewValues("idIndice_Sistema") = 0
@@ -241,6 +244,9 @@ Partial Class Wfrm_Normas_Areas
             e.NewValues("Indice_Mascara") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Mascara")
             e.NewValues("Indice_Obligatorio") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Obligatorio")
             e.NewValues("Indice_Visible") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible")
+            e.NewValues("Indice_Visible_Concentracion") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Concentracion")
+            e.NewValues("Indice_Visible_Historico") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Historico")
+            e.NewValues("Indice_Hereda_valor") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Hereda_valor")
         Else
             Select Case e.NewValues("Indice_Tipo")
                 Case 1
@@ -333,8 +339,20 @@ Partial Class Wfrm_Normas_Areas
                         lblIndiceSistema.Text += "<BR>Obligatorio"
                         txtIndiceSistema.Text += "<BR>" & CType(sender, ASPxGridView).GetRowValues(CType(sender, ASPxGridView).EditingRowVisibleIndex, "Indice_Obligatorio")
                     End If
-                    lblIndiceSistema.Text += "<BR>Visible"
+                    lblIndiceSistema.Text += "<BR>Visible Archivo de Trámite"
                     txtIndiceSistema.Text += "<BR>" & CType(sender, ASPxGridView).GetRowValues(CType(sender, ASPxGridView).EditingRowVisibleIndex, "Indice_Visible")
+                    txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
+
+                    lblIndiceSistema.Text += "<BR>Visible Archivo de Concentración"
+                    txtIndiceSistema.Text += "<BR>" & CType(sender, ASPxGridView).GetRowValues(CType(sender, ASPxGridView).EditingRowVisibleIndex, "Indice_Visible_Concentracion")
+                    txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
+
+                    lblIndiceSistema.Text += "<BR>Visible Archivo Histórico"
+                    txtIndiceSistema.Text += "<BR>" & CType(sender, ASPxGridView).GetRowValues(CType(sender, ASPxGridView).EditingRowVisibleIndex, "Indice_Visible_Historico")
+                    txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
+
+                    lblIndiceSistema.Text += "<BR>Hereda Valor"
+                    txtIndiceSistema.Text += "<BR>" & CType(sender, ASPxGridView).GetRowValues(CType(sender, ASPxGridView).EditingRowVisibleIndex, "Indice_Hereda_valor")
                     txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
                 End If
             Else
@@ -382,8 +400,20 @@ Partial Class Wfrm_Normas_Areas
             lblIndiceSistema.Text += "<BR>Obligatorio"
             txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Obligatorio").ToString()
         End If
-        lblIndiceSistema.Text += "<BR>Visible"
+        lblIndiceSistema.Text += "<BR>Visible Archivo de Trámite"
         txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible").ToString()
+        txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
+
+        lblIndiceSistema.Text += "<BR>Visible Archivo de Concentración"
+        txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Concentracion").ToString()
+        txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
+
+        lblIndiceSistema.Text += "<BR>Visible Archivo Histórico"
+        txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Historico").ToString()
+        txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
+
+        lblIndiceSistema.Text += "<BR>Hereda Valor"
+        txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Hereda_valor").ToString()
         txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
     End Sub
     Protected Sub cbpEC_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxClasses.CallbackEventArgsBase)

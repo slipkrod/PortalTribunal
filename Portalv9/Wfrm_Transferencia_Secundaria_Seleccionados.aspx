@@ -183,97 +183,6 @@
             </td>
         </tr>
         <tr>
-            <td style="width: 737px" colspan="2">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 737px" colspan="2">
-                <dxwgv:ASPxGridView ID="gdbuscadorEliminar" runat="server" ClientInstanceName="grid" 
-                    AutoGenerateColumns="False" DataSourceID="dsExpedientesEliminar" Width="1000px" 
-                    KeyFieldName="idFolioDetalle" EnableCallBacks="False">
-                    <SettingsBehavior ProcessFocusedRowChangedOnServer="true" />
-                    <SettingsText Title="Expedientes a dar de Baja" />
-                    <Columns>
-                        <dxwgv:GridViewDataTextColumn Caption="idArchivo" FieldName="idArchivo" Visible="False" VisibleIndex="1">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn FieldName="idFolioDetalle" Visible="False" 
-                            VisibleIndex="1">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="idDescripcion" FieldName="idDescripcion" Visible="False" VisibleIndex="3">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="idNivel" FieldName="idNivel" Visible="False" VisibleIndex="4">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Nivel" FieldName="Nivel_Descripcion" 
-                            VisibleIndex="1" Visible="False"></dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Código de clasificación" 
-                            FieldName="Codigo_clasificacion" VisibleIndex="0"></dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Descripcion" FieldName="Descripcion" 
-                            VisibleIndex="1">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Alcance y Contenido" 
-                            FieldName="Alcance_Contenido" VisibleIndex="4">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataColumn Caption="Tipo" VisibleIndex="3" Visible="False">
-                             <DataItemTemplate>
-                                 <%#IIf(Eval("Nivel_Logico_Fisico") = 0, "Logico", "Fisico")%>
-                             </DataItemTemplate>
-                        </dxwgv:GridViewDataColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Apertura" FieldName="Apertura" 
-                            VisibleIndex="2">
-                            <PropertiesTextEdit DisplayFormatString="d">
-                            </PropertiesTextEdit>
-                            <HeaderStyle HorizontalAlign="Center" />
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Cierre" FieldName="Cierre" 
-                            VisibleIndex="3">
-                            <PropertiesTextEdit DisplayFormatString="d">
-                            </PropertiesTextEdit>
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Volumen y Soporte" VisibleIndex="5">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Plazo AT" FieldName="Plazo_AT" 
-                            VisibleIndex="6">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Plazo AC" FieldName="Plazo_AC" 
-                            VisibleIndex="7">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataCheckColumn Caption="Valor &lt;br/&gt;Informativo" 
-                            FieldName="Valor_informativo" VisibleIndex="8">
-                            <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" 
-                                ValueUnchecked="0">
-                            </PropertiesCheckEdit>
-                        </dxwgv:GridViewDataCheckColumn>
-                        <dxwgv:GridViewDataCheckColumn Caption="Valor &lt;br/&gt;Testimonial" 
-                            FieldName="Valor_testimonial" VisibleIndex="9">
-                            <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" 
-                                ValueUnchecked="0">
-                            </PropertiesCheckEdit>
-                        </dxwgv:GridViewDataCheckColumn>
-                        <dxwgv:GridViewDataCheckColumn Caption="Valor &lt;br/&gt;Evidencial" 
-                            FieldName="Valor_evidencial" VisibleIndex="10">
-                            <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" 
-                                ValueUnchecked="0">
-                            </PropertiesCheckEdit>
-                        </dxwgv:GridViewDataCheckColumn>
-                        
-                        <dxwgv:GridViewDataTextColumn Caption="Cajas" FieldName="Cajas" 
-                            VisibleIndex="12">
-                        </dxwgv:GridViewDataTextColumn>
-                        
-                        <dxwgv:GridViewDataTextColumn Caption="Acceso" FieldName="Acceso" 
-                            VisibleIndex="11">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="idSerie" FieldName="idSerie" Visible="False" VisibleIndex="13">
-                        </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn FieldName="idDocumentoPID" Visible="False" 
-                            VisibleIndex="9">
-                        </dxwgv:GridViewDataTextColumn>
-                    </Columns>
-                    <Settings ShowTitlePanel="True" />
-                </dxwgv:ASPxGridView>
-            </td>
-        </tr>
-        <tr>
             <td valign="top" colspan="2" style="text-align: right">
                 <dxe:ASPxButton ID="butRepAutorizacion" runat="server" 
                     Text="Reporte de Autorización" Width="190px"></dxe:ASPxButton>
@@ -303,17 +212,6 @@
                 Type="Int32"  />
             <asp:Parameter DefaultValue="1" Name="idStatus" Type="Int32" />
             <asp:Parameter DefaultValue="0" Name="Baja" Type="Int32" />
-        </SelectParameters>
-    </asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="dsExpedientesEliminar" runat="server" 
-            SelectMethod="ListaVencimientos_Archivo_Concentracion_Seleccionados" 
-        TypeName="Portalv9.WSArchivo.Service1" 
-        OldValuesParameterFormatString="original_{0}">
-        <SelectParameters>
-            <asp:QueryStringParameter Name="idFolio" QueryStringField="idFolio" 
-                Type="Int32"  />
-            <asp:Parameter DefaultValue="1" Name="idStatus" Type="Int32" />
-            <asp:Parameter DefaultValue="1" Name="Baja" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="dsTransferenciaActiva" runat="server" 

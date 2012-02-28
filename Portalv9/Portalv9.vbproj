@@ -480,6 +480,55 @@
       <DependentUpon>Wfrm_Transferencia_Secundaria.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccion.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccion.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccionados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccionados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados_Hist.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccionados_Hist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados_Hist.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccionados_Hist.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados_OK.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccionados_OK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados_OK.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccionados_OK.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados_Upd.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccionados_Upd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados_Upd.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_SecundariaBajas_Seleccionados_Upd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Recibe.aspx.designer.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Recibe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_Transferencia_Secundaria_Recibe.aspx.vb">
+      <DependentUpon>Wfrm_Transferencia_Secundaria_Recibe.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Wfrm_Transferencia_Secundaria_Seleccion.aspx.designer.vb">
       <DependentUpon>Wfrm_Transferencia_Secundaria_Seleccion.aspx</DependentUpon>
     </Compile>
@@ -1838,6 +1887,48 @@
       <DependentUpon>Wfrm_TR_FormatoPerdida.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccion.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccion.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccionados.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccionados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccionados.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccionados.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccionados_Hist.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccionados_Hist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccionados_Hist.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccionados_Hist.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccionados_OK.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccionados_OK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccionados_OK.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccionados_OK.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccionados_Upd.aspx.designer.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccionados_Upd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wfrm_ValorizacionBajas_Seleccionados_Upd.aspx.vb">
+      <DependentUpon>Wfrm_ValorizacionBajas_Seleccionados_Upd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Wfrm_ValorizacionSeleccionados.aspx.designer.vb">
       <DependentUpon>Wfrm_ValorizacionSeleccionados.aspx</DependentUpon>
     </Compile>
@@ -2158,6 +2249,13 @@
     <Content Include="Wfrm_ReporteExpurgos.aspx" />
     <Content Include="Wfrm_ReporteInventarioGeneral.aspx" />
     <Content Include="Wfrm_Transferencia_Secundaria.aspx" />
+    <Content Include="Wfrm_Transferencia_SecundariaBajas.aspx" />
+    <Content Include="Wfrm_Transferencia_SecundariaBajas_Seleccion.aspx" />
+    <Content Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados.aspx" />
+    <Content Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados_Hist.aspx" />
+    <Content Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados_OK.aspx" />
+    <Content Include="Wfrm_Transferencia_SecundariaBajas_Seleccionados_Upd.aspx" />
+    <Content Include="Wfrm_Transferencia_Secundaria_Recibe.aspx" />
     <Content Include="Wfrm_Transferencia_Secundaria_Seleccion.aspx" />
     <Content Include="Wfrm_Transferencia_Secundaria_Seleccionados.aspx" />
     <Content Include="Wfrm_Transferencia_Secundaria_Seleccionados_Cajas.aspx" />
@@ -2653,6 +2751,12 @@
     <Content Include="Wfrm_TipoExpediente_Series.aspx" />
     <Content Include="wfrm_Transferencia_Int.aspx" />
     <Content Include="Wfrm_TR_FormatoPerdida.aspx" />
+    <Content Include="Wfrm_ValorizacionBajas.aspx" />
+    <Content Include="Wfrm_ValorizacionBajas_Seleccion.aspx" />
+    <Content Include="Wfrm_ValorizacionBajas_Seleccionados.aspx" />
+    <Content Include="Wfrm_ValorizacionBajas_Seleccionados_Hist.aspx" />
+    <Content Include="Wfrm_ValorizacionBajas_Seleccionados_OK.aspx" />
+    <Content Include="Wfrm_ValorizacionBajas_Seleccionados_Upd.aspx" />
     <Content Include="Wfrm_ValorizacionSeleccionados.aspx" />
     <Content Include="Wfrm_ValorizacionSeleccionados_Cajas.aspx" />
     <Content Include="Wfrm_ValorizacionSeleccionados_Hist.aspx" />

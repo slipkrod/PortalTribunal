@@ -196,15 +196,6 @@ Partial Public Class Wfrm_ValorizacionSeleccionados
     Protected WithEvents gdbuscadorresultado As Global.DevExpress.Web.ASPxGridView.ASPxGridView
 
     '''<summary>
-    '''Control gdbuscadorEliminar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents gdbuscadorEliminar As Global.DevExpress.Web.ASPxGridView.ASPxGridView
-
-    '''<summary>
     '''Control butRepAutorizacion.
     '''</summary>
     '''<remarks>

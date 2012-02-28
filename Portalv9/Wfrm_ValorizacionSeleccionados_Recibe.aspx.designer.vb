@@ -25,15 +25,6 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control Regresar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Regresar As Global.DevExpress.Web.ASPxEditors.ASPxHyperLink
-
-    '''<summary>
     '''Control lblTitle.
     '''</summary>
     '''<remarks>
@@ -196,13 +187,13 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
     Protected WithEvents lblFecha_Aplicacion As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control gdbuscadorresultado.
+    '''Control aspxtreeDocumentos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gdbuscadorresultado As Global.DevExpress.Web.ASPxGridView.ASPxGridView
+    Protected WithEvents aspxtreeDocumentos As Global.DevExpress.Web.ASPxTreeList.ASPxTreeList
 
     '''<summary>
     '''Control butTransferir.
@@ -241,15 +232,6 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
     Protected WithEvents MsgBox1 As Global.MsgBox.MsgBox
 
     '''<summary>
-    '''Control dsExpedientes.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents dsExpedientes As Global.System.Web.UI.WebControls.ObjectDataSource
-
-    '''<summary>
     '''Control dsArchivos.
     '''</summary>
     '''<remarks>
@@ -257,4 +239,13 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents dsArchivos As Global.System.Web.UI.WebControls.ObjectDataSource
+
+    '''<summary>
+    '''Control dsExpedientesTransferir.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dsExpedientesTransferir As Global.System.Web.UI.WebControls.ObjectDataSource
 End Class

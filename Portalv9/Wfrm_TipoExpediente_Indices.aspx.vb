@@ -100,8 +100,10 @@ Partial Public Class Wfrm_TipoExpediente_Indices
             e.NewValues("Indice_LongitudMax") = cmbIndiceSistema.SelectedItem.GetValue("Indice_LongitudMax")
             e.NewValues("Indice_Mascara") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Mascara")
             e.NewValues("Indice_Obligatorio") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Obligatorio")
-
             e.NewValues("Indice_Visible") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible")
+            e.NewValues("Indice_Visible_Concentracion") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Concentracion")
+            e.NewValues("Indice_Visible_Historico") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Historico")
+            e.NewValues("Indice_Hereda_valor") = cmbIndiceSistema.SelectedItem.GetValue("Indice_Hereda_valor")
         Else
             Select Case e.NewValues("Indice_Tipo")
                 Case 1
@@ -190,8 +192,20 @@ Partial Public Class Wfrm_TipoExpediente_Indices
             lblIndiceSistema.Text += "<BR>Obligatorio"
             txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Obligatorio").ToString()
         End If
-        lblIndiceSistema.Text += "<BR>Visible"
+        lblIndiceSistema.Text += "<BR>Visible Archivo de Trámite"
         txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible").ToString()
+        txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
+
+        lblIndiceSistema.Text += "<BR>Visible Archivo de Concentración"
+        txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Concentracion").ToString()
+        txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
+
+        lblIndiceSistema.Text += "<BR>Visible Archivo Histórico"
+        txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Visible_Historico").ToString()
+        txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
+
+        lblIndiceSistema.Text += "<BR>Hereda valor"
+        txtIndiceSistema.Text += "<BR>" & cmbIndiceSistema.SelectedItem.GetValue("Indice_Hereda_valor").ToString()
         txtIndiceSistema.Text = txtIndiceSistema.Text.Replace("True", "Si").Replace("False", "No")
     End Sub
 

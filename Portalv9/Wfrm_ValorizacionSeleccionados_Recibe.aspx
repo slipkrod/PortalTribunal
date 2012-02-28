@@ -15,7 +15,6 @@
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-    <dxe:ASPxHyperLink ID="Regresar" runat="server" ImageUrl="~/Images/regresar.gif" />
     <asp:label id="lblTitle" runat="server" Font-Size="Small" Height="16px" Font-Names="Arial" Font-Bold="True" Font-Italic="True">Recepción</asp:label>
 </div>
 <br />
@@ -104,104 +103,108 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <dxwgv:ASPxGridView ID="gdbuscadorresultado" runat="server" 
-                            AutoGenerateColumns="False" ClientInstanceName="grid" 
-                            DataSourceID="dsExpedientes" EnableCallBacks="False" 
-                            KeyFieldName="idFolioDetalle" Width="900px">
+                        <dxwtl:ASPxTreeList ID="aspxtreeDocumentos" runat="server" 
+                            AutoGenerateColumns="False" ClientInstanceName="aspxtreeDocumentos" 
+                            DataSourceID="dsExpedientesTransferir" EnableViewState="False" Height="300px" 
+                            KeyFieldName="idDescripcion" ParentFieldName="idDocumentoPID" Width="960px">
                             <Columns>
-                                <dxwgv:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0">
-                                    <HeaderStyle HorizontalAlign="Center" />
-                                    <HeaderTemplate>
-                                        &nbsp;
-                                    </HeaderTemplate>
-                                </dxwgv:GridViewCommandColumn>
-                                <dxwgv:GridViewDataTextColumn FieldName="idFolioDetalle" Visible="False" 
-                                    VisibleIndex="1">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="idArchivo" FieldName="idArchivo" 
-                                    Visible="False" VisibleIndex="1">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="idDescripcion" FieldName="idDescripcion" 
-                                    Visible="False" VisibleIndex="3">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="idNivel" FieldName="idNivel" 
-                                    Visible="False" VisibleIndex="4">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Nivel" FieldName="Nivel_Descripcion" 
-                                    Visible="False" VisibleIndex="1">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Código de clasificación" 
-                                    FieldName="Codigo_clasificacion" VisibleIndex="1">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Descripcion" FieldName="Descripcion" 
+                                <dxwtl:TreeListTextColumn Caption="idDocumentoPID" FieldName="idDocumentoPID" 
+                                    ReadOnly="True" Visible="False">
+                                </dxwtl:TreeListTextColumn>
+                                <dxwtl:TreeListTextColumn Caption="Niveles" VisibleIndex="0">
+                                    <DataCellTemplate>
+                                        <dxe:ASPxImage ID="ASPxImage2" runat="server" 
+                                            ImageUrl="<%# GetNodeGlyph(Container) %>">
+                                        </dxe:ASPxImage>
+                                    </DataCellTemplate>
+                                </dxwtl:TreeListTextColumn>
+                                <dxwtl:TreeListTextColumn Caption="Código de clasificación" 
+                                    FieldName="Codigo_clasificacion" VisibleIndex="1" Width="260px">
+                                </dxwtl:TreeListTextColumn>
+                                <dxwtl:TreeListTextColumn Caption="Descripción" FieldName="Descripcion" 
                                     VisibleIndex="2">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Alcance y Contenido" 
-                                    FieldName="Alcance_Contenido" VisibleIndex="5">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataColumn Caption="Tipo" Visible="False" VisibleIndex="3">
-                                    <DataItemTemplate>
-                                        <%#IIf(Eval("Nivel_Logico_Fisico") = 0, "Logico", "Fisico")%>
-                                    </DataItemTemplate>
-                                </dxwgv:GridViewDataColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Apertura" FieldName="Apertura" 
-                                    VisibleIndex="3">
-                                    <PropertiesTextEdit DisplayFormatString="d">
-                                    </PropertiesTextEdit>
-                                    <HeaderStyle HorizontalAlign="Center" />
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Cierre" FieldName="Cierre" 
-                                    VisibleIndex="4">
-                                    <PropertiesTextEdit DisplayFormatString="d">
-                                    </PropertiesTextEdit>
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Volumen y Soporte" VisibleIndex="6">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Plazo AT" FieldName="Plazo_AT" 
-                                    VisibleIndex="7">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Plazo AC" FieldName="Plazo_AC" 
-                                    VisibleIndex="8">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataCheckColumn Caption="Valor &lt;br/&gt;Administrativo" 
-                                    FieldName="Valor_administrativo" VisibleIndex="8">
-                                    <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" 
-                                        ValueUnchecked="0">
-                                    </PropertiesCheckEdit>
-                                </dxwgv:GridViewDataCheckColumn>
-                                <dxwgv:GridViewDataCheckColumn Caption="Valor &lt;br/&gt;Fiscal" 
-                                    FieldName="Valor_contable" VisibleIndex="9">
-                                    <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" 
-                                        ValueUnchecked="0">
-                                    </PropertiesCheckEdit>
-                                </dxwgv:GridViewDataCheckColumn>
-                                <dxwgv:GridViewDataCheckColumn Caption="Valor &lt;br/&gt;Legal" 
-                                    FieldName="Valor_legal" VisibleIndex="11">
-                                    <PropertiesCheckEdit ValueChecked="1" ValueType="System.Int32" 
-                                        ValueUnchecked="0">
-                                    </PropertiesCheckEdit>
-                                </dxwgv:GridViewDataCheckColumn>
-                                
-                                <dxwgv:GridViewDataTextColumn Caption="Cajas" FieldName="Cajas" 
-                                    VisibleIndex="12">
-                                </dxwgv:GridViewDataTextColumn>                                
-                                <dxwgv:GridViewDataTextColumn Caption="Acceso" FieldName="Acceso" 
-                                    VisibleIndex="13">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="idSerie" FieldName="idSerie" 
-                                    Visible="False" VisibleIndex="13">
-                                </dxwgv:GridViewDataTextColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="idDocumentoPID" 
-                                    FieldName="idDocumentoPID" Visible="False" VisibleIndex="10">
-                                </dxwgv:GridViewDataTextColumn>
+                                    <CellStyle Wrap="True">
+                                    </CellStyle>
+                                </dxwtl:TreeListTextColumn>
+                                <dxwtl:TreeListTextColumn Caption="idDocumentoPID" FieldName="idDocumentoPID" 
+                                    ReadOnly="True" Visible="False">
+                                </dxwtl:TreeListTextColumn>
+                                <dxwtl:TreeListTextColumn Caption="Cajas" FieldName="Cajas" VisibleIndex="3" 
+                                    AllowSort="True">
+                                </dxwtl:TreeListTextColumn>
                             </Columns>
-                            <Settings ShowHorizontalScrollBar="True" />
-                        </dxwgv:ASPxGridView>
+                            <Settings GridLines="Horizontal" />
+                            <SettingsBehavior AllowFocusedNode="True" />
+                            <SettingsSelection AllowSelectAll="True" Enabled="True" Recursive="True" />
+                            <SettingsEditing Mode="EditFormAndDisplayNode" />
+                            <SettingsText CommandCancel="Cancelar" CommandDelete="Eliminar" 
+                                CommandEdit="Editar" CommandNew="Insertar" CommandUpdate="Actualizar" 
+                                ConfirmDelete="¿ Estás seguro de querer eliminar este nivel ?" 
+                                RecursiveDeleteError="El nivel no puede ser borrado ya que tiene subniveles." />
+                            <Templates>
+                                <EditForm>
+                                    <table style="width:315px;">
+                                        <tr>
+                                            <td style="width:150px">
+                                                <dxe:ASPxLabel ID="Label7" runat="server" Text="Tipo de Nivel" Width="150px">
+                                                </dxe:ASPxLabel>
+                                            </td>
+                                            <td style="width:160px">
+                                                <dxe:ASPxComboBox ID="dlNiveles" runat="server" ClientInstanceName="dlNiveles" 
+                                                    DataSourceID="ObjectDataSource3" DropDownStyle="DropDown" 
+                                                    TextField="Nivel_Descripcion" Value='<%# Bind("idNivel") %>' 
+                                                    ValueField="idNivel" ValueType="System.Int32" Width="160px">
+                                                    <ClientSideEvents SelectedIndexChanged="function(s, e) {
+                                                      cbSerie.PerformCallback(dlNiveles.GetValue().toString()); 
+                                                      }" />
+                                                </dxe:ASPxComboBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="width:150px">
+                                                <dxe:ASPxLabel ID="AspxLabel2" runat="server" Text="Tipo de Expediente" 
+                                                    Width="150px">
+                                                </dxe:ASPxLabel>
+                                            </td>
+                                            <td style="width:160px">
+                                                <dxe:ASPxComboBox ID="cbSerie" runat="server" ClientInstanceName="cbSerie" 
+                                                    DataSourceID="dsTipoDeExpediente" DropDownStyle="DropDown" 
+                                                    TextField="Serie_nombre" Value='<%# Bind("idSerie") %>' ValueField="idSerie" 
+                                                    ValueType="System.Int32" Width="160px">
+                                                </dxe:ASPxComboBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <dxe:ASPxLabel ID="AspxLabel1" runat="server" Text="Titulo">
+                                                </dxe:ASPxLabel>
+                                            </td>
+                                            <td>
+                                                <dxe:ASPxTextBox ID="txtDescripcion" runat="server" 
+                                                    Value='<%# Bind("Descripcion") %>' Width="160px">
+                                                </dxe:ASPxTextBox>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br />
+                                    <div style="width:322px;">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <dxe:ASPxButton ID="btnUpdtae" runat="server" Text="Actualizar">
+                                                    </dxe:ASPxButton>
+                                                </td>
+                                                <td>
+                                                    <dxe:ASPxButton ID="btnCancelar" runat="server" Text="Cancelar">
+                                                    </dxe:ASPxButton>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </EditForm>
+                            </Templates>
+                        </dxwtl:ASPxTreeList>
                     </td>
-                </tr>
-                <tr>
-                    <td colspan="4">
-                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td colspan="4">
@@ -227,8 +230,12 @@
     </table>
     <asp:Label ID="lblidNorma" runat="server" Visible="False"></asp:Label>
     <cc1:msgbox id="MsgBox1" runat="server"></cc1:msgbox>
-    <asp:ObjectDataSource ID="dsExpedientes" runat="server" 
-            SelectMethod="ListaVencimientos_Archivo_Tramite_Recepcion" 
+    <asp:ObjectDataSource ID="dsArchivos" runat="server" 
+            SelectMethod="ListaArchivos" TypeName="Portalv9.WSArchivo.Service1" 
+        OldValuesParameterFormatString="{0}">
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="dsExpedientesTransferir" runat="server" 
+            SelectMethod="Lista_Transferencias_Primarias_Documentos" 
         TypeName="Portalv9.WSArchivo.Service1" 
         OldValuesParameterFormatString="original_{0}">
         <SelectParameters>
@@ -236,10 +243,6 @@
             <asp:Parameter DefaultValue="2" Name="idStatus" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="dsArchivos" runat="server" 
-            SelectMethod="ListaArchivos" TypeName="Portalv9.WSArchivo.Service1" 
-        OldValuesParameterFormatString="{0}">
-    </asp:ObjectDataSource>
-</asp:Content>
+    </asp:Content>
 
 

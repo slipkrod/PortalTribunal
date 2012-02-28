@@ -275,11 +275,11 @@
     <asp:ObjectDataSource ID="dsExpedientesTransferir" runat="server" 
             SelectMethod="Lista_Transferencias_Primarias_Documentos" 
         TypeName="Portalv9.WSArchivo.Service1" 
-        OldValuesParameterFormatString="original_{0}">
+        OldValuesParameterFormatString="{0}">
         <SelectParameters>
             <asp:QueryStringParameter Name="idFolio" QueryStringField="idFolio" 
                 Type="Int32"  />
-            <asp:Parameter DefaultValue="0" Name="idStatus" Type="Int32" />
+            <asp:Parameter DefaultValue="1" Name="idStatus" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="dsTransferenciaActiva" runat="server" 

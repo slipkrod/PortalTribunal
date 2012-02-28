@@ -163,11 +163,10 @@
         TypeName="Portalv9.WSArchivo.Service1" 
         OldValuesParameterFormatString="original_{0}">
         <SelectParameters>
-            <asp:QueryStringParameter Name="idArchivo" QueryStringField="idArchivo" 
-                Type="Int32"  />
             <asp:QueryStringParameter Name="idFolio" QueryStringField="idFolio" 
                 Type="Int32"  />                
             <asp:Parameter DefaultValue="2" Name="idStatus" Type="Int32" />
+            <asp:Parameter DefaultValue="1" Name="Baja" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="dsTransferenciaActiva" runat="server" 

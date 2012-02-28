@@ -423,11 +423,11 @@ Public Class Service1
         Return ds
     End Function
 
-    <WebMethod()> Public Sub ABC_Normas_Elementos_Campos(ByVal op As OperacionesABC, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal idIndice As Integer, ByVal Indice_descripcion As String, ByVal Indice_Tipo As Integer, ByVal Indice_LongitudMax As Integer, ByVal Indice_Mascara As String, ByVal Indice_PK As Integer, ByVal Indice_Obligatorio As Integer, ByVal Indice_Unico As Integer, ByVal Indice_buscar As Integer, ByVal Indice_CopiarValor As Integer, ByVal Indice_EsAutoincremental As Integer, ByVal IndiceReadOnly As Integer, ByVal Indice_Visible As Integer, ByVal relacion_con_normaPID As Integer, ByVal folio_norma As String, ByVal Muestra_padres As Integer, ByVal Multi_valor As Integer, ByVal Asigned As Integer, ByVal Asigned_value As String, ByVal Indice_Sistema As Integer, ByVal idIndice_Sistema As Integer)
+    <WebMethod()> Public Sub ABC_Normas_Elementos_Campos(ByVal op As OperacionesABC, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal idIndice As Integer, ByVal Indice_descripcion As String, ByVal Indice_Tipo As Integer, ByVal Indice_LongitudMax As Integer, ByVal Indice_Mascara As String, ByVal Indice_PK As Integer, ByVal Indice_Obligatorio As Integer, ByVal Indice_Unico As Integer, ByVal Indice_buscar As Integer, ByVal Indice_CopiarValor As Integer, ByVal Indice_EsAutoincremental As Integer, ByVal IndiceReadOnly As Integer, ByVal Indice_Visible As Integer, ByVal Indice_Visible_Concentracion As Integer, ByVal Indice_Visible_Historico As Integer, ByVal Indice_Hereda_valor As Integer, ByVal relacion_con_normaPID As Integer, ByVal folio_norma As String, ByVal Muestra_padres As Integer, ByVal Multi_valor As Integer, ByVal Asigned As Integer, ByVal Asigned_value As String, ByVal Indice_Sistema As Integer, ByVal idIndice_Sistema As Integer)
         Const strProcName As String = "ABC_Normas_Elementos_Campos"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Try
-            pBD.ABC_Normas_Elementos_Campos(op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema)
+            pBD.ABC_Normas_Elementos_Campos(op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, Indice_Visible_Concentracion, Indice_Visible_Historico, Indice_Hereda_valor, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
@@ -517,13 +517,13 @@ Public Class Service1
         Return ds
     End Function
 
-    <WebMethod()> Public Function ListaNormas_Elementos_CamposxSeriexElemento_Visible(ByVal idSerie As Integer, ByVal idElemento As Integer) As System.Data.DataSet
+    <WebMethod()> Public Function ListaNormas_Elementos_CamposxSeriexElemento_Visible(ByVal idSerie As Integer, ByVal idElemento As Integer, ByVal Tipo_Archivo As Integer) As System.Data.DataSet
         Const strProcName As String = "ListaNormas_Elementos_CamposxSeriexElemento_Visible"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Dim ds As DataSet
 
         Try
-            ds = pBD.ListaNormas_Elementos_CamposxSeriexElemento_Visible(idSerie, idElemento)
+            ds = pBD.ListaNormas_Elementos_CamposxSeriexElemento_Visible(idSerie, idElemento, Tipo_Archivo)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
@@ -2149,11 +2149,33 @@ Public Class Service1
 
     <WebMethod()> Public Sub Prepara_Vencimientos_Archivo_Tramite(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
         Const strProcName As String = "Prepara_Vencimientos_Archivo_Tramite"
-
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
-        Dim resultado As DataSet
         Try
             pBD.Prepara_Vencimientos_Archivo_Tramite(idArchivo, idFolio, Fecha_Corte)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+    End Sub
+
+    <WebMethod()> Public Sub Prepara_Vencimientos_Archivo_Tramite_Bajas(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
+        Const strProcName As String = "Prepara_Vencimientos_Archivo_Tramite_Bajas"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            pBD.Prepara_Vencimientos_Archivo_Tramite_Bajas(idArchivo, idFolio, Fecha_Corte)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+    End Sub
+
+
+    <WebMethod()> Public Sub Prepara_Vencimientos_Concentracion_Bajas(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
+        Const strProcName As String = "Prepara_Vencimientos_Concentracion_Bajas"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            pBD.Prepara_Vencimientos_Concentracion_Bajas(idArchivo, idFolio, Fecha_Corte)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
@@ -2202,6 +2224,40 @@ Public Class Service1
         End Try
     End Sub
 
+    <WebMethod()> Public Sub ABC_Transferencias_Primarias_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+        Const strProcName As String = "ABC_Transferencias_Primarias_Documentos"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            pBD.ABC_Transferencias_Primarias_Documentos(op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+    End Sub
+
+
+    <WebMethod()> Public Sub ABC_Transferencias_Primarias_Bajas_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+        Const strProcName As String = "ABC_Transferencias_Primarias_Bajas_Documentos"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            pBD.ABC_Transferencias_Primarias_Bajas_Documentos(op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+    End Sub
+
+    <WebMethod()> Public Sub ABC_Transferencias_Secundarias_Bajas_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+        Const strProcName As String = "ABC_Transferencias_Secundarias_Bajas_Documentos"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            pBD.ABC_Transferencias_Secundarias_Bajas_Documentos(op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+    End Sub
+
     <WebMethod()> Public Function ListaArchivo_Descripciones_Transferencia_Filtro(ByVal idArchivo As Integer, ByVal idFolio As Integer) As DataSet
         Const strProcName As String = "ListaArchivo_Descripciones_Transferencia_Filtro"
 
@@ -2224,6 +2280,67 @@ Public Class Service1
         Dim resultado As DataSet
         Try
             resultado = pBD.ListaVencimientos_Archivo_Tramite_Seleccion(idFolio, Baja)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+
+    End Function
+
+
+    <WebMethod()> Public Function ListaBajas_Archivo_Tramite(ByVal idFolio As Integer, ByVal Baja As Integer) As DataSet
+        Const strProcName As String = "ListaBajas_Archivo_Tramite"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ListaBajas_Archivo_Tramite(idFolio, Baja)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+
+    End Function
+
+    <WebMethod()> Public Function ListaBajas_Archivo_Tramite_Seleccionados(ByVal idFolio As Integer, ByVal Baja As Integer) As DataSet
+        Const strProcName As String = "ListaBajas_Archivo_Tramite_Seleccionados"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ListaBajas_Archivo_Tramite_Seleccionados(idFolio, Baja)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+
+    End Function
+
+    <WebMethod()> Public Function ListaBajas_Archivo_Concentracion(ByVal idFolio As Integer, ByVal Baja As Integer) As DataSet
+        Const strProcName As String = "ListaBajas_Archivo_Concentracion"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ListaBajas_Archivo_Concentracion(idFolio, Baja)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+
+    End Function
+
+    <WebMethod()> Public Function ListaBajas_Archivo_Concentracion_Seleccionados(ByVal idFolio As Integer, ByVal Baja As Integer) As DataSet
+        Const strProcName As String = "ListaBajas_Archivo_Concentracion_Seleccionados"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ListaBajas_Archivo_Concentracion_Seleccionados(idFolio, Baja)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
@@ -2402,6 +2519,17 @@ Public Class Service1
         End Try
     End Sub
 
+    <WebMethod()> Public Sub ABC_Transferencias_Secundarias_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+        Const strProcName As String = "ABC_Transferencias_Secundarias_Documentos"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            pBD.ABC_Transferencias_Secundarias_Documentos(op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+    End Sub
+
 
     <WebMethod()> Public Function Transfiere_Archivo_Descripciones_Secundarias(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idArchivoNew As Integer, ByVal idDocumentoPIDNew As Integer, ByVal idFolioDetalle As Integer) As DataSet
         Const strProcName As String = "Transfiere_Archivo_Descripciones_Secundarias"
@@ -2571,6 +2699,83 @@ Public Class Service1
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+    End Sub
+
+    <WebMethod()> Public Function ListaBajas_Tramite(ByVal Status As Integer) As DataSet
+        Const strProcName As String = "ListaBajas_Tramite"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ListaBajas_Tramite(Status)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function ListaBaja_Tramite(ByVal idFolio As Integer) As DataSet
+        Const strProcName As String = "ListaBaja_Tramite"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ListaBaja_Tramite(idFolio)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+    <WebMethod()> Public Function ListaBajas_Concentracion(ByVal Status As Integer) As DataSet
+        Const strProcName As String = "ListaBajas_Concentracion"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ListaBajas_Concentracion(Status)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function ListaBaja_Concentracion(ByVal idFolio As Integer) As DataSet
+        Const strProcName As String = "ListaBaja_Tramite"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ListaBaja_Concentracion(idFolio)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Sub ABC_Transferencias_Primarias_Bajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
+        Const strProcName As String = "ABC_Transferencias_Primarias_Bajas"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            pBD.ABC_Transferencias_Primarias_Bajas(op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+    End Sub
+
+    <WebMethod()> Public Sub ABC_Transferencias_Secundarias_Bajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
+        Const strProcName As String = "ABC_Transferencias_Secundarias_Bajas"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            pBD.ABC_Transferencias_Secundarias_Bajas(op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
         End Try
     End Sub
 

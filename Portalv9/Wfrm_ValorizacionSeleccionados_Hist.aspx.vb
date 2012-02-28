@@ -29,8 +29,14 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Hist
             lblidNorma.Text = rsDatosArchivo.Tables(0).Rows(0).Item("idNorma")
             lblFolio.Text = Request.QueryString("idFolio")
             lblidArchivoOrigen.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
-            rsDatosTransferencia = sv.ListaTransferencias_Primarias(1)
+            rsDatosTransferencia = sv.ListaTransferencia_Primaria(Request.QueryString("idFolio"))
             lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
+            rsDatosArchivo = sv.ListaArchivo(rsDatosTransferencia.Tables(0).Rows(0).Item("idArchivoDestino"))
+            lblidArchivoDestino.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
+            If Not rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Aplicacion") Is DBNull.Value Then
+                lblFecha_Aplicacion.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Aplicacion")
+            End If
+
         End If
     End Sub
 

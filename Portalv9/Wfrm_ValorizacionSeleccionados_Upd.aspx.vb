@@ -23,20 +23,15 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Upd
             lblidNorma.Text = rsDatosArchivo.Tables(0).Rows(0).Item("idNorma")
             lblFolio.Text = Request.QueryString("idFolio")
             lblidArchivoOrigen.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
-            rsDatosTransferencia = sv.ListaTransferencias_Primarias(1)
+            rsDatosTransferencia = sv.ListaTransferencia_Primaria(Request.QueryString("idFolio"))
             lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
+            rsDatosArchivo = sv.ListaArchivo(rsDatosTransferencia.Tables(0).Rows(0).Item("idArchivoDestino"))
+            lblidArchivoDestino.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
 
             dsSeleccion = dsExpedientesTraspaso.Select()
             For intI = 0 To dsSeleccion.Table.Rows.Count - 1
                 If dsSeleccion.Table.Rows(intI).Item("idStatus") = 1 Then
                     gdbuscadorresultado.Selection.SelectRowByKey(dsSeleccion.Table.Rows(intI).Item("idFolioDetalle"))
-                End If
-            Next
-
-            dsSeleccion = dsExpedientesBaja.Select()
-            For intI = 0 To dsSeleccion.Table.Rows.Count - 1
-                If dsSeleccion.Table.Rows(intI).Item("idStatus") = 1 Then
-                    gdbuscadorBajas.Selection.SelectRowByKey(dsSeleccion.Table.Rows(intI).Item("idFolioDetalle"))
                 End If
             Next
 
@@ -67,14 +62,6 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Upd
                     svr.ABC_Transferencias_Primarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorresultado.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorresultado.GetRowValues(iRow, "idDescripcion"), gdbuscadorresultado.GetRowValues(iRow, "idDocumentoPID"), 1)
                 Else
                     svr.ABC_Transferencias_Primarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorresultado.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorresultado.GetRowValues(iRow, "idDescripcion"), gdbuscadorresultado.GetRowValues(iRow, "idDocumentoPID"), 0)
-                End If
-            Next
-
-            For iRow = 0 To gdbuscadorBajas.VisibleRowCount - 1
-                If gdbuscadorBajas.Selection.IsRowSelected(iRow) Then
-                    svr.ABC_Transferencias_Primarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorBajas.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorBajas.GetRowValues(iRow, "idDescripcion"), gdbuscadorBajas.GetRowValues(iRow, "idDocumentoPID"), 1)
-                Else
-                    svr.ABC_Transferencias_Primarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorBajas.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorBajas.GetRowValues(iRow, "idDescripcion"), gdbuscadorBajas.GetRowValues(iRow, "idDocumentoPID"), 0)
                 End If
             Next
 

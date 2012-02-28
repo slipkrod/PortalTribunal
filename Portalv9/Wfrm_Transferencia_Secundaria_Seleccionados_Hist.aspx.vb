@@ -29,8 +29,10 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccionados_Hist
             lblidNorma.Text = rsDatosArchivo.Tables(0).Rows(0).Item("idNorma")
             lblFolio.Text = Request.QueryString("idFolio")
             lblidArchivoOrigen.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
-            rsDatosTransferencia = sv.ListaTransferencias_Primarias(1)
-            lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
+            rsDatosTransferencia = sv.ListaTransferencia_Secundaria(Request.QueryString("idFolio"))
+            If Not rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud") Is DBNull.Value Then
+                lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
+            End If
         End If
     End Sub
 

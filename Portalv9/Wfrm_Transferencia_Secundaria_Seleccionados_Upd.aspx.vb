@@ -23,8 +23,10 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccionados_Upd
             lblidNorma.Text = rsDatosArchivo.Tables(0).Rows(0).Item("idNorma")
             lblFolio.Text = Request.QueryString("idFolio")
             lblidArchivoOrigen.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
-            'rsDatosTransferencia = sv.ListaTransferencias_Secunarias(1)
-            'lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
+            rsDatosTransferencia = sv.ListaTransferencia_Secundaria(Request.QueryString("idFolio"))
+            lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
+            rsDatosArchivo = sv.ListaArchivo(rsDatosTransferencia.Tables(0).Rows(0).Item("idArchivoDestino"))
+            lblidArchivoDestino.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
 
             dsSeleccion = dsExpedientesTraspaso.Select()
             For intI = 0 To dsSeleccion.Table.Rows.Count - 1
@@ -33,12 +35,6 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccionados_Upd
                 End If
             Next
 
-            dsSeleccion = dsExpedientesBaja.Select()
-            For intI = 0 To dsSeleccion.Table.Rows.Count - 1
-                If dsSeleccion.Table.Rows(intI).Item("idStatus") = 1 Then
-                    gdbuscadorBajas.Selection.SelectRowByKey(dsSeleccion.Table.Rows(intI).Item("idFolioDetalle"))
-                End If
-            Next
 
             Regresar.NavigateUrl = "Wfrm_Transferencia_Secundaria_Seleccionados.aspx?idArchivo=" & Request.QueryString("idArchivo") & _
                                   "&idNorma=" & lblidNorma.Text & _

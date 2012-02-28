@@ -11,13 +11,15 @@ Public Class Funciones_Archivo
         Dim dsElementos As DataSet
         Dim intI As Integer
         Dim intJ As Integer
+        Dim rsDatosArchivo As DataSet
 
+        rsDatosArchivo = sv.ListaArchivo(idArchivo)
         dsElementos = sv.ListaNormas_ElementosxSeriexElemento_Visible(idNorma, idArea, idSerie)
         For intI = 0 To dsElementos.Tables(0).Rows.Count - 1
             Dim TBCampos As New Table
             Dim dsCampos As DataSet
 
-            dsCampos = sv.ListaNormas_Elementos_CamposxSeriexElemento_Visible(idSerie, dsElementos.Tables(0).Rows(intI).Item("idElemento"))
+            dsCampos = sv.ListaNormas_Elementos_CamposxSeriexElemento_Visible(idSerie, dsElementos.Tables(0).Rows(intI).Item("idElemento"), rsDatosArchivo.Tables(0).Rows(0).Item("Tipo_Archivo"))
             TBCampos.ID = "TBCampos" & dsElementos.Tables(0).Rows(intI).Item("idElemento")
             TBCampos.BorderColor = Drawing.Color.AliceBlue
             TBCampos.BorderWidth = 0.5
@@ -41,11 +43,27 @@ Public Class Funciones_Archivo
                 Dim nFilaC As New TableRow
                 Dim nCeldaC As New TableCell
 
-                If dsCampos.Tables(0).Rows(intJ).Item("Indice_Visible") = "1" Then
-                    nFilaC.Visible = True
-                Else
-                    nFilaC.Visible = False
-                End If
+                Select Case rsDatosArchivo.Tables(0).Rows(0).Item("Tipo_Archivo")
+                    Case 0
+                        If dsCampos.Tables(0).Rows(intJ).Item("Indice_Visible") = "1" Then
+                            nFilaC.Visible = True
+                        Else
+                            nFilaC.Visible = False
+                        End If
+                    Case 1
+                        If dsCampos.Tables(0).Rows(intJ).Item("Indice_Visible_Concentracion") = "1" Then
+                            nFilaC.Visible = True
+                        Else
+                            nFilaC.Visible = False
+                        End If
+                    Case 2
+                        If dsCampos.Tables(0).Rows(intJ).Item("Indice_Visible_Historico") = "1" Then
+                            nFilaC.Visible = True
+                        Else
+                            nFilaC.Visible = False
+                        End If
+                End Select
+
                 Select Case dsCampos.Tables(0).Rows(intJ).Item("Indice_Tipo")
                     Case 0
                         Dim nCampoT As New CampoTexto
@@ -525,14 +543,13 @@ Public Class Funciones_Archivo
             End If
         End If
 
-
         dsIndiceSerie = sv.ListaSeries_Modelo_indice_sistema(17, idSerie)
         dsIndiceCodigo = sv.ListaNorma_Nivel(idNorma, idNivel)
 
         If dsIndiceCodigo.Tables(0).Rows.Count > 0 Then
             If Not dsIndiceCodigo.Tables(0).Rows(0).Item("Nivel_Descripcion") Is DBNull.Value Then
-                Dim valro As String = dsIndiceCodigo.Tables(0).Rows(0).Item("Nivel_Descripcion")
-                CType(PnlElementos.FindControl("C" & dsIndiceSerie.Tables(0).Rows(0).Item("idIndice")), CampoTexto).ValorCampo = valro
+                Dim valor As String = dsIndiceCodigo.Tables(0).Rows(0).Item("Nivel_Descripcion")
+                CType(PnlElementos.FindControl("C" & dsIndiceSerie.Tables(0).Rows(0).Item("idIndice")), CampoTexto).ValorCampo = valor
             End If
         End If
     End Sub
@@ -799,13 +816,15 @@ Public Class Funciones_Archivo
         Dim dsElementos As DataSet
         Dim intI As Integer
         Dim intJ As Integer
+        Dim rsDatosArchivo As DataSet
 
+        rsDatosArchivo = sv.ListaArchivo(idArchivo)
         dsElementos = sv.ListaNormas_ElementosxSeriexElemento_Visible(idNorma, idArea, idSerie)
         For intI = 0 To dsElementos.Tables(0).Rows.Count - 1
             Dim TBCampos As New Table
             Dim dsCampos As DataSet
 
-            dsCampos = sv.ListaNormas_Elementos_CamposxSeriexElemento_Visible(idSerie, dsElementos.Tables(0).Rows(intI).Item("idElemento"))
+            dsCampos = sv.ListaNormas_Elementos_CamposxSeriexElemento_Visible(idSerie, dsElementos.Tables(0).Rows(intI).Item("idElemento"), rsDatosArchivo.Tables(0).Rows(0).Item("Tipo_Archivo"))
             TBCampos.ID = "TBCampos" & dsElementos.Tables(0).Rows(intI).Item("idElemento")
             TBCampos.BorderColor = Drawing.Color.AliceBlue
             TBCampos.BorderWidth = 0.5
@@ -828,12 +847,26 @@ Public Class Funciones_Archivo
             For intJ = 0 To dsCampos.Tables(0).Rows.Count - 1
                 Dim nFilaC As New TableRow
                 Dim nCeldaC As New TableCell
-
-                If dsCampos.Tables(0).Rows(intJ).Item("Indice_Visible") = "1" Then
-                    nFilaC.Visible = True
-                Else
-                    nFilaC.Visible = False
-                End If
+                Select Case rsDatosArchivo.Tables(0).Rows(0).Item("Tipo_Archivo")
+                    Case 0
+                        If dsCampos.Tables(0).Rows(intJ).Item("Indice_Visible") = "1" Then
+                            nFilaC.Visible = True
+                        Else
+                            nFilaC.Visible = False
+                        End If
+                    Case 1
+                        If dsCampos.Tables(0).Rows(intJ).Item("Indice_Visible_Concentracion") = "1" Then
+                            nFilaC.Visible = True
+                        Else
+                            nFilaC.Visible = False
+                        End If
+                    Case 2
+                        If dsCampos.Tables(0).Rows(intJ).Item("Indice_Visible_Historico") = "1" Then
+                            nFilaC.Visible = True
+                        Else
+                            nFilaC.Visible = False
+                        End If
+                End Select
 
                 Dim nCampoTview As New CampoSlectura
                 nCampoTview = CType(sourcePage.LoadControl("~/WebUsrCtrls/CampoSlectura.ascx"), CampoSlectura)

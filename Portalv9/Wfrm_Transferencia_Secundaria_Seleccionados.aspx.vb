@@ -17,7 +17,7 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccionados
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim rsDatosArchivo As DataSet
-        'Dim rsDatosTransferencia As DataSet
+        Dim rsDatosTransferencia As DataSet
         If Not Page.IsPostBack Then
             Dim objGlobal As New clsGlobal
             tTicket = CType(Session.Item("GSTR_TICKET"), IDTicket)
@@ -29,8 +29,10 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccionados
             lblidNorma.Text = rsDatosArchivo.Tables(0).Rows(0).Item("idNorma")
             lblFolio.Text = Request.QueryString("idFolio")
             lblidArchivoOrigen.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
-            'rsDatosTransferencia = sv.ListaTransferencias_Secunarias(1)
-            'lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
+            rsDatosTransferencia = sv.ListaTransferencia_Secundaria(Request.QueryString("idFolio"))
+            lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
+            rsDatosArchivo = sv.ListaArchivo(rsDatosTransferencia.Tables(0).Rows(0).Item("idArchivoDestino"))
+            lblidArchivoDestino.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
         End If
     End Sub
 

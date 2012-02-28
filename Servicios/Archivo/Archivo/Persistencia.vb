@@ -97,7 +97,6 @@ Public Class Persistencia
 
     Private Const SP_ListaNormas_Elementos_CamposxSerie_Defaults As String = "ListaNormas_Elementos_CamposxSerie_Defaults"
     Private Const SP_ListaNormas_Elementos_CamposxSeriexElemento As String = "ListaNormas_Elementos_CamposxSeriexElemento"
-    Private Const SP_ListaNormas_Elementos_CamposxSeriexElemento_Visible As String = "ListaNormas_Elementos_CamposxSeriexElemento_Visible"
 
     Private Const SP_ListaNormas_Elementos_Campos_Especial As String = "ListaNormas_Elementos_Campos_Especial"
     Private Const SP_ListaNormas_Elementos_Campo As String = "ListaNormas_Elementos_Campo"
@@ -774,15 +773,15 @@ Public Class Persistencia
         ds = db.ExecuteDataSet(dbCW)
         Return ds
     End Function
-    Public Function ListaNormas_Elementos_CamposxSeriexElemento_Visible(ByVal idSerie As Integer, ByVal idElemento As Integer) As DataSet
+    Public Function ListaNormas_Elementos_CamposxSeriexElemento_Visible(ByVal idSerie As Integer, ByVal idElemento As Integer, ByVal Tipo_Archivo As Integer) As DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim ds As DataSet
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand(SP_ListaNormas_Elementos_CamposxSeriexElemento_Visible, idSerie, idElemento, Nothing)
+                dbCW = db.GetStoredProcCommand("ListaNormas_Elementos_CamposxSeriexElemento_Visible", idSerie, idElemento, Tipo_Archivo, Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand(SP_ListaNormas_Elementos_CamposxSeriexElemento_Visible, idSerie, idElemento)
+                dbCW = db.GetStoredProcCommand("ListaNormas_Elementos_CamposxSeriexElemento_Visible", idSerie, idElemento, Tipo_Archivo)
         End Select
         ds = db.ExecuteDataSet(dbCW)
         Return ds
@@ -828,15 +827,15 @@ Public Class Persistencia
         Return ds
     End Function
 
-    Public Sub ABC_Normas_Elementos_Campos(ByVal op As OperacionesABC, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal idIndice As Integer, ByVal Indice_descripcion As String, ByVal Indice_Tipo As Integer, ByVal Indice_LongitudMax As Integer, ByVal Indice_Mascara As String, ByVal Indice_PK As Integer, ByVal Indice_Obligatorio As Integer, ByVal Indice_Unico As Integer, ByVal Indice_buscar As Integer, ByVal Indice_CopiarValor As Integer, ByVal Indice_EsAutoincremental As Integer, ByVal IndiceReadOnly As Integer, ByVal Indice_Visible As Integer, ByVal relacion_con_normaPID As Integer, ByVal folio_norma As String, ByVal Muestra_padres As Integer, ByVal Multi_valor As Integer, ByVal Asigned As Integer, ByVal Asigned_value As String, ByVal Indice_Sistema As Integer, ByVal idIndice_Sistema As Integer)
+    Public Sub ABC_Normas_Elementos_Campos(ByVal op As OperacionesABC, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal idIndice As Integer, ByVal Indice_descripcion As String, ByVal Indice_Tipo As Integer, ByVal Indice_LongitudMax As Integer, ByVal Indice_Mascara As String, ByVal Indice_PK As Integer, ByVal Indice_Obligatorio As Integer, ByVal Indice_Unico As Integer, ByVal Indice_buscar As Integer, ByVal Indice_CopiarValor As Integer, ByVal Indice_EsAutoincremental As Integer, ByVal IndiceReadOnly As Integer, ByVal Indice_Visible As Integer, ByVal Indice_Visible_Concentracion As Integer, ByVal Indice_Visible_Historico As Integer, ByVal Indice_Hereda_valor As Integer, ByVal relacion_con_normaPID As Integer, ByVal folio_norma As String, ByVal Muestra_padres As Integer, ByVal Multi_valor As Integer, ByVal Asigned As Integer, ByVal Asigned_value As String, ByVal Indice_Sistema As Integer, ByVal idIndice_Sistema As Integer)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
 
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand(SP_ABC_Normas_Elementos_Campos, op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema, Nothing)
+                dbCW = db.GetStoredProcCommand(SP_ABC_Normas_Elementos_Campos, op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, Indice_Visible_Concentracion, Indice_Visible_Historico, Indice_Hereda_valor, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema, Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand(SP_ABC_Normas_Elementos_Campos, op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema)
+                dbCW = db.GetStoredProcCommand(SP_ABC_Normas_Elementos_Campos, op, idNorma, idArea, idElemento, idNivel, idSerie, idIndice, Indice_descripcion, Indice_Tipo, Indice_LongitudMax, Indice_Mascara, Indice_PK, Indice_Obligatorio, Indice_Unico, Indice_buscar, Indice_CopiarValor, Indice_EsAutoincremental, IndiceReadOnly, Indice_Visible, Indice_Visible_Concentracion, Indice_Visible_Historico, Indice_Hereda_valor, relacion_con_normaPID, folio_norma, Muestra_padres, Multi_valor, Asigned, Asigned_value, Indice_Sistema, idIndice_Sistema)
         End Select
         db.ExecuteDataSet(dbCW)
     End Sub
@@ -2544,6 +2543,31 @@ Public Class Persistencia
         End Select
         db.ExecuteDataSet(dbCW)
     End Sub
+    Public Sub Prepara_Vencimientos_Archivo_Tramite_Bajas(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("Prepara_Vencimientos_Archivo_Tramite_Bajas", idArchivo, idFolio, Fecha_Corte, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("Prepara_Vencimientos_Archivo_Tramite_Bajas", idArchivo, idFolio, Fecha_Corte)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
+
+    Public Sub Prepara_Vencimientos_Concentracion_Bajas(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("Prepara_Vencimientos_Concentracion_Bajas", idArchivo, idFolio, Fecha_Corte, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("Prepara_Vencimientos_Concentracion_Bajas", idArchivo, idFolio, Fecha_Corte)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
 
     Public Function ListaTransferencias_Primarias(ByVal Status As Integer) As DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
@@ -2573,6 +2597,63 @@ Public Class Persistencia
         Return ds
     End Function
 
+    Public Function ListaBajas_Archivo_Tramite(ByVal idFolio As Integer, ByVal Baja As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaBajas_Archivo_Tramite", idFolio, Baja, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaBajas_Archivo_Tramite", idFolio, Baja)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+    Public Function ListaBajas_Archivo_Tramite_Seleccionados(ByVal idFolio As Integer, ByVal Baja As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaBajas_Archivo_Tramite_Seleccionados", idFolio, Baja, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaBajas_Archivo_Tramite_Seleccionados", idFolio, Baja)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+    Public Function ListaBajas_Archivo_Concentracion(ByVal idFolio As Integer, ByVal Baja As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaBajas_Archivo_Concentracion", idFolio, Baja, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaBajas_Archivo_Concentracion", idFolio, Baja)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+    Public Function ListaBajas_Archivo_Concentracion_Seleccionados(ByVal idFolio As Integer, ByVal Baja As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaBajas_Archivo_Concentracion_Seleccionados", idFolio, Baja, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaBajas_Archivo_Concentracion_Seleccionados", idFolio, Baja)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+
     Public Function ListaVencimientos_Archivo_Concentracion_Seleccionados(ByVal idFolio As Integer, ByVal idStatus As Integer, ByVal Baja As Integer) As DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
@@ -2601,6 +2682,18 @@ Public Class Persistencia
     End Sub
 
 
+    Public Sub ABC_Transferencias_Primarias_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Documentos", op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Documentos", op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
+
     Public Sub ABC_Transferencias_Primarias_Expedientes(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
@@ -2609,6 +2702,30 @@ Public Class Persistencia
                 dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Expedientes", op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus, Nothing)
             Case eTipoBD.SQLServer
                 dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Expedientes", op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
+
+    Public Sub ABC_Transferencias_Primarias_Bajas_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Bajas_Documentos", op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Bajas_Documentos", op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
+
+    Public Sub ABC_Transferencias_Secundarias_Bajas_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Secundarias_Bajas_Documentos", op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Secundarias_Bajas_Documentos", op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus)
         End Select
         db.ExecuteDataSet(dbCW)
     End Sub
@@ -2757,6 +2874,19 @@ Public Class Persistencia
         End Select
         db.ExecuteDataSet(dbCW)
     End Sub
+
+    Public Sub ABC_Transferencias_Secundarias_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Secundarias_Documentos", op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Secundarias_Documentos", op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
+
 
     Public Function ListaVencimientos_Archivo_Tramite_Seleccion(ByVal idFolio As Integer, ByVal Baja As Integer) As DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
@@ -2965,7 +3095,85 @@ Public Class Persistencia
     End Sub
 
 
+    Public Function ListaBajas_Tramite(ByVal Status As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaBajas_Tramite", Status, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaBajas_Tramite", Status)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
 
+    Public Function ListaBaja_Tramite(ByVal idFolio As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaBaja_Tramite", idFolio, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaBaja_Tramite", idFolio)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+    Public Function ListaBajas_Concentracion(ByVal Status As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaBajas_Concentracion", Status, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaBajas_Concentracion", Status)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+    Public Function ListaBaja_Concentracion(ByVal idFolio As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaBaja_Concentracion", idFolio, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaBaja_Concentracion", idFolio)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+    Public Sub ABC_Transferencias_Primarias_Bajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Bajas", op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Bajas", op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
+
+    Public Sub ABC_Transferencias_Secundarias_Bajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Secundarias_Bajas", op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Secundarias_Bajas", op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, Notas_Solicitud, Status)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
     'Reporte Expurgo de Expedientes
     Public Function Lista_Expedientes_Expurgo(ByVal idArchivo As Integer, ByVal fechaInicio As Date, ByVal fechaFin As Date) As DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)

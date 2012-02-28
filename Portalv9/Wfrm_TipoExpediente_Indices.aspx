@@ -73,16 +73,16 @@
                                                 <td colspan="3">
                                                     <table>
                                                         <tr id="trIndice_descripcion">
-                                                            <td class="style1" style="width: 161px">Nombre del campo</td>
-                                                            <td colspan="2">
+                                                            <td class="style1" style="width: 208px">Nombre del campo</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxTextBox ID="CampoNombre" runat="server" 
                                                                     Text='<%# Bind("Indice_descripcion") %>' Width="300px">
                                                                 </dxe:ASPxTextBox>
                                                             </td>
                                                         </tr>
                                                         <tr id="trIndice_Tipo">
-                                                            <td style="width: 161px" class="style1">Tipo de dato</td>
-                                                            <td colspan="2">
+                                                            <td style="width: 208px" class="style1">Tipo de dato</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxComboBox ID="Tipo" runat="server" ClientInstanceName="cmbTipo" 
                                                                     ValueType="System.Byte" Width="200px" 
                                                                     Value='<%# Bind("Indice_Tipo") %>'>
@@ -158,8 +158,8 @@
                                                             </td>
                                                         </tr>
                                                         <tr id="trCatalogo" style="display:none;" >
-                                                            <td class="style1" style="width: 161px">Tipo de Catalogo</td>
-                                                            <td colspan="2">
+                                                            <td class="style1" style="width: 208px">Tipo de Catalogo</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxComboBox ID="cmbCatalogos" runat="server" ClientInstanceName="cmbCatalogos" 
                                                                     TextField="Descripcion" ValueField="IDCatalogo" ValueType="System.Int32"
                                                                     Width="200px" DataSourceID="dsCatalogos" Value='<%# Bind("relacion_con_normaPID") %>'>
@@ -170,8 +170,8 @@
                                                             </td>
                                                         </tr>
                                                         <tr id="trAsigned">
-                                                            <td class="style1" style="width: 161px">Valor por default</td>
-                                                            <td colspan="2">
+                                                            <td class="style1" style="width: 208px">Valor por default</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxCheckBox ID="ASPxCheckBox2" runat="server" 
                                                                     Value='<%# Bind("Asigned") %>' ClientInstanceName="ASPxCheckBox2">
                                                                     <ClientSideEvents ValueChanged="function(s, e) {
@@ -194,8 +194,8 @@
                                                             </td>
                                                         </tr>
                                                         <tr id="trAsigned_value">
-                                                            <td class="style1" style="width: 161px">Valor</td>
-                                                            <td colspan="2">
+                                                            <td class="style1" style="width: 208px">Valor</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxTextBox ID="CampoValor" runat="server" Text='<%# Bind("Asigned_value") %>' Width="300px" ClientInstanceName="CampoValor"></dxe:ASPxTextBox>
                                                                 <dxe:ASPxComboBox ID="cmbCatalogoValues" runat="server" SelectedIndex="-1" ClientInstanceName="cmbCatalogoValues" 
                                                                     Width="200px" DataSourceID="dsCatalogoValues" DropDownStyle="DropDown" 
@@ -214,8 +214,8 @@
                                                             </td>
                                                         </tr>
                                                         <tr id="trLongitud">
-                                                            <td style="width: 74px;">Longitud</td>
-                                                            <td colspan="2">
+                                                            <td style="width: 208px;">Longitud</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxSpinEdit ID="Longitud" runat="server" AllowNull="False" 
                                                                     ClientInstanceName="Longitud" Number='<%# Bind("Indice_LongitudMax") %>' 
                                                                     NumberType="Integer" Width="70px">
@@ -223,44 +223,71 @@
                                                             </td>
                                                         </tr>
                                                         <tr id="trMascara">
-                                                            <td style="width: 74px">Mascara</td>
-                                                            <td colspan="2">
+                                                            <td style="width: 208px">Mascara</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxTextBox ID="Mascara" runat="server" Width="300px" 
                                                                     Text="<%# Bind('Indice_Mascara') %>">
                                                                 </dxe:ASPxTextBox>
                                                             </td>
                                                         </tr>
                                                         <tr id="trObligatorio">
-                                                            <td style="width: 74px">Obligatorio</td>
-                                                            <td colspan="2">
+                                                            <td style="width: 208px">Obligatorio</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxCheckBox ID="Obligatorio" runat="server" 
                                                                     Value="<%# Bind('Indice_Obligatorio') %>">
                                                                 </dxe:ASPxCheckBox>
                                                             </td>
                                                         </tr>
                                                         <tr id="trLlavePrimaria">
-                                                            <td style="width: 161px" class="style1">Llave primaria</td>
-                                                            <td colspan="2">
+                                                            <td style="width: 208px" class="style1">Llave primaria</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxCheckBox ID="PK" runat="server" Value='<%# Bind("Indice_PK") %>'>
                                                                 </dxe:ASPxCheckBox>
                                                             </td>
                                                         </tr>
                                                         <tr id="tdIndiceUnico">
-                                                            <td style="width: 161px" class="style1">Indice único&nbsp;</td>
-                                                            <td colspan="2">
+                                                            <td style="width: 208px" class="style1">Indice único&nbsp;</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxCheckBox ID="vUnico" runat="server" 
                                                                     Value='<%# Bind("Indice_Unico") %>'>
                                                                 </dxe:ASPxCheckBox>
                                                             </td>
                                                         </tr>
                                                         <tr id="trIndice_Visible">
-                                                            <td style="width: 161px" class="style1">Visible&nbsp;</td>
-                                                            <td colspan="2">
+                                                            <td style="width: 208px" class="style1">Visible&nbsp;Archivo de Trámite</td>
+                                                            <td style="width: 357px">
                                                                 <dxe:ASPxCheckBox ID="vVisible" runat="server" 
                                                                     Value='<%# Bind("Indice_Visible") %>'>
                                                                 </dxe:ASPxCheckBox>
                                                             </td>
                                                         </tr>   
+                                                        <tr ID="trIndice_Visible">
+                                                            <td class="style1" style="width: 208px">
+                                                                Visible&nbsp;Archivo de Concentración</td>
+                                                            <td style="width: 357px">
+                                                                <dxe:ASPxCheckBox ID="vVisibleC" runat="server" 
+                                                                    Value='<%# Bind("Indice_Visible_Concentracion") %>'>
+                                                                </dxe:ASPxCheckBox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr ID="trIndice_Visible">
+                                                            <td class="style1" style="width: 208px">
+                                                                Visible&nbsp;Archivo Histórico</td>
+                                                            <td style="width: 357px">
+                                                                <dxe:ASPxCheckBox ID="vVisibleH" runat="server" 
+                                                                    Value='<%# Bind("Indice_Visible_Historico") %>'>
+                                                                </dxe:ASPxCheckBox>
+                                                            </td>
+                                                        </tr>
+                                                        <tr ID="trIndice_Visible">
+                                                            <td class="style1" style="width: 208px">
+                                                                Hereda valor</td>
+                                                            <td style="width: 357px">
+                                                                <dxe:ASPxCheckBox ID="vHereda" runat="server" 
+                                                                    Value='<%# Bind("Indice_Hereda_valor") %>'>
+                                                                </dxe:ASPxCheckBox>
+                                                            </td>
+                                                        </tr>
                                                     </table>
                                                 </td>
                                             </tr>
@@ -312,6 +339,8 @@
                                         <dxwgv:ASPxGridViewTemplateReplacement ID="CancelButton" ReplacementType="EditFormCancelButton" runat="server"></dxwgv:ASPxGridViewTemplateReplacement>
                                     </EditForm>
                                 </Templates>
+                                <SettingsPager Mode="ShowAllRecords">
+                                </SettingsPager>
                                 <SettingsEditing EditFormColumnCount="1" NewItemRowPosition="Bottom" />
                                 <SettingsText CommandCancel="Cancelar" CommandDelete="Borrar" 
                                     CommandEdit="Editar" CommandNew="Nuevo" CommandUpdate="Actualizar" 
@@ -446,14 +475,24 @@
                                     <dxwgv:GridViewDataCheckColumn caption="Indice único" fieldname="Indice_Unico" visibleindex="7">
                                         <propertiescheckedit valuechecked="1" valuetype="System.Byte" valueunchecked="0"></propertiescheckedit>
                                     </dxwgv:GridViewDataCheckColumn>
-                                    <dxwgv:GridViewDataCheckColumn caption="Visible" fieldname="Indice_Visible" visibleindex="8"></dxwgv:GridViewDataCheckColumn>
-                                    <dxwgv:GridViewCommandColumn Visibleindex="9" Caption="Comandos">
+                                    <dxwgv:GridViewDataCheckColumn caption="Visible AT" fieldname="Indice_Visible" 
+                                        visibleindex="8"></dxwgv:GridViewDataCheckColumn>
+                                    <dxwgv:GridViewDataCheckColumn Caption="Visible AC" 
+                                        FieldName="Indice_Visible_Concentracion" VisibleIndex="10">
+                                    </dxwgv:GridViewDataCheckColumn>
+                                    <dxwgv:GridViewDataCheckColumn Caption="Visible AH" 
+                                        FieldName="Indice_Visible_Historico" VisibleIndex="11">
+                                    </dxwgv:GridViewDataCheckColumn>
+                                    <dxwgv:GridViewCommandColumn Visibleindex="12" Caption="Comandos">
                                         <newbutton visible="True"></newbutton>
                                         <EditButton visible="True"></EditButton>
                                         <deletebutton visible="True"></deletebutton>
                                     </dxwgv:GridViewCommandColumn>                                    
                                     <dxwgv:GridViewDataTextColumn caption="relacion_con_normaPID" fieldname="relacion_con_normaPID" visible="False"></dxwgv:GridViewDataTextColumn>
                                     <dxwgv:GridViewDataTextColumn caption="Mascara" fieldname="Indice_Mascara" visible="False" ></dxwgv:GridViewDataTextColumn>                                            
+                                    <dxwgv:GridViewDataTextColumn Caption="Hereda Valor" 
+                                        FieldName="Indice_Hereda_valor" Visible="False" VisibleIndex="13">
+                                    </dxwgv:GridViewDataTextColumn>
                                 </Columns>
                                 <SettingsDetail IsDetailGrid="True" />
                             </dxwgv:ASPxGridView>
@@ -509,6 +548,9 @@
                         <asp:Parameter Name="Indice_EsAutoincremental" Type="Int32" />
                         <asp:Parameter Name="IndiceReadOnly" Type="Int32" />
                         <asp:Parameter Name="Indice_Visible" Type="Int32" />
+                        <asp:Parameter Name="Indice_Visible_Concentracion" Type="Int32" />
+                        <asp:Parameter Name="Indice_Visible_Historico" Type="Int32" />
+                        <asp:Parameter Name="Indice_Hereda_valor" Type="Int32" />
                         <asp:Parameter Name="relacion_con_normaPID" Type="Int32" />
                         <asp:Parameter Name="folio_norma" Type="String" />
                         <asp:Parameter Name="Muestra_padres" Type="Int32" />
@@ -539,6 +581,9 @@
                         <asp:Parameter Name="Indice_EsAutoincremental" Type="Int32" />
                         <asp:Parameter Name="IndiceReadOnly" Type="Int32" />
                         <asp:Parameter Name="Indice_Visible" Type="Int32" />
+                        <asp:Parameter Name="Indice_Visible_Concentracion" Type="Int32" />
+                        <asp:Parameter Name="Indice_Visible_Historico" Type="Int32" />
+                        <asp:Parameter Name="Indice_Hereda_valor" Type="Int32" />
                         <asp:Parameter Name="relacion_con_normaPID" Type="Int32" />
                         <asp:Parameter Name="folio_norma" Type="String" />
                         <asp:Parameter Name="Muestra_padres" Type="Int32" />
@@ -572,6 +617,9 @@
                         <asp:Parameter Name="Indice_EsAutoincremental" Type="Int32" />
                         <asp:Parameter Name="IndiceReadOnly" Type="Int32" />
                         <asp:Parameter Name="Indice_Visible" Type="Int32" />
+                        <asp:Parameter Name="Indice_Visible_Concentracion" Type="Int32" />
+                        <asp:Parameter Name="Indice_Visible_Historico" Type="Int32" />
+                        <asp:Parameter Name="Indice_Hereda_valor" Type="Int32" />
                         <asp:Parameter Name="relacion_con_normaPID" Type="Int32" />
                         <asp:Parameter Name="folio_norma" Type="String" />
                         <asp:Parameter Name="Muestra_padres" Type="Int32" />

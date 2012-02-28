@@ -290,7 +290,7 @@
         <SelectParameters>
             <asp:QueryStringParameter Name="idFolio" QueryStringField="idFolio" 
                 Type="Int32"  />
-            <asp:Parameter DefaultValue="0" Name="idStatus" Type="Int32" />
+            <asp:Parameter DefaultValue="1" Name="idStatus" Type="Int32" />
         </SelectParameters>
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="dsCajas" runat="server" 
