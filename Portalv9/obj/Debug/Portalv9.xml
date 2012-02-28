@@ -7988,6 +7988,10 @@ To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="M:Portalv9.WSArchivo.Service1.#ctor">
 	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_FiltroCompleted">
+	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.ListaVencimientos_Archivo_Tramite_SeleccionCompleted">
+	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ListaBajas_Archivo_TramiteCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ListaBajas_Archivo_Tramite_SeleccionadosCompleted">
@@ -8065,6 +8069,10 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="E:Portalv9.WSArchivo.Service1.Activa_NivelCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.CuentaElementosNivelCompleted">
+	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.ListaArchivo_val_Campo_busCompleted">
+	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.Reportecgca_datosCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.Reportegs_datosCompleted">
 	<remarks/>
@@ -8232,10 +8240,6 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_DocumentosCompleted">
 	<remarks/>
-</member><member name="E:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_FiltroCompleted">
-	<remarks/>
-</member><member name="E:Portalv9.WSArchivo.Service1.ListaVencimientos_Archivo_Tramite_SeleccionCompleted">
-	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ABC_Archivo_FisicoCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ABC_Archivo_Fisico_UnidadesCompleted">
@@ -8309,6 +8313,10 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="E:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_VisiblesCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_DefaultsCompleted">
+	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_HeredarCompleted">
+	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_idIndiceNormaCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposXArea_SerieCompleted">
 	<remarks/>
@@ -8400,9 +8408,17 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ABC_BajaElementos_CamposCompleted">
 	<remarks/>
-</member><member name="E:Portalv9.WSArchivo.Service1.ListaArchivo_val_Campo_busCompleted">
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_Filtro(System.Int32,System.Int32)">
 	<remarks/>
-</member><member name="E:Portalv9.WSArchivo.Service1.Reportecgca_datosCompleted">
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_FiltroAsync(System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_FiltroAsync(System.Int32,System.Int32,System.Object)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaVencimientos_Archivo_Tramite_Seleccion(System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaVencimientos_Archivo_Tramite_SeleccionAsync(System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaVencimientos_Archivo_Tramite_SeleccionAsync(System.Int32,System.Int32,System.Object)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ListaBajas_Archivo_Tramite(System.Int32,System.Int32)">
 	<remarks/>
@@ -8637,6 +8653,18 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="M:Portalv9.WSArchivo.Service1.CuentaElementosNivelAsync(System.Int32,System.Int32)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.CuentaElementosNivelAsync(System.Int32,System.Int32,System.Object)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_val_Campo_bus(System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_val_Campo_busAsync(System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_val_Campo_busAsync(System.Int32,System.Int32,System.Object)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.Reportecgca_datos(System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.Reportecgca_datosAsync(System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.Reportecgca_datosAsync(System.Int32,System.Int32,System.Object)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.Reportegs_datos(System.Int32,System.Int32)">
 	<remarks/>
@@ -9136,18 +9164,6 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
 	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_Filtro(System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_FiltroAsync(System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_FiltroAsync(System.Int32,System.Int32,System.Object)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ListaVencimientos_Archivo_Tramite_Seleccion(System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ListaVencimientos_Archivo_Tramite_SeleccionAsync(System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ListaVencimientos_Archivo_Tramite_SeleccionAsync(System.Int32,System.Int32,System.Object)">
-	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ABC_Archivo_Fisico(Portalv9.WSArchivo.OperacionesABC,System.Int32,System.String)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ABC_Archivo_FisicoAsync(Portalv9.WSArchivo.OperacionesABC,System.Int32,System.String)">
@@ -9369,6 +9385,18 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="M:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_DefaultsAsync(System.Int32)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_DefaultsAsync(System.Int32,System.Object)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_Heredar(System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_HeredarAsync(System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_HeredarAsync(System.Int32,System.Object)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_idIndiceNorma(System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_idIndiceNormaAsync(System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposxSerie_idIndiceNormaAsync(System.Int32,System.Int32,System.Object)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ListaNormas_Elementos_CamposXArea_Serie(System.Int32,System.Int32)">
 	<remarks/>
@@ -9640,18 +9668,6 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ABC_BajaElementos_CamposAsync(System.Int32,System.Object)">
 	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_val_Campo_bus(System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_val_Campo_busAsync(System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_val_Campo_busAsync(System.Int32,System.Int32,System.Object)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.Reportecgca_datos(System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.Reportecgca_datosAsync(System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.Reportecgca_datosAsync(System.Int32,System.Int32,System.Object)">
-	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.CancelAsync(System.Object)">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.Service1">
@@ -9664,6 +9680,18 @@ To modify move field declaration from designer file to code-behind file.
 	<comentarios/>
 </member><member name="T:Portalv9.WSArchivo.OperacionesABC">
 	<comentarios/>
+</member><member name="T:Portalv9.WSArchivo.ListaArchivo_Descripciones_Transferencia_FiltroCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Portalv9.WSArchivo.ListaArchivo_Descripciones_Transferencia_FiltroCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ListaArchivo_Descripciones_Transferencia_FiltroCompletedEventArgs">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ListaVencimientos_Archivo_Tramite_SeleccionCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Portalv9.WSArchivo.ListaVencimientos_Archivo_Tramite_SeleccionCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ListaVencimientos_Archivo_Tramite_SeleccionCompletedEventArgs">
+	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ListaBajas_Archivo_TramiteCompletedEventHandler">
 	<remarks/>
 </member><member name="P:Portalv9.WSArchivo.ListaBajas_Archivo_TramiteCompletedEventArgs.Result">
@@ -9857,6 +9885,18 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="P:Portalv9.WSArchivo.CuentaElementosNivelCompletedEventArgs.Result">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.CuentaElementosNivelCompletedEventArgs">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ListaArchivo_val_Campo_busCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Portalv9.WSArchivo.ListaArchivo_val_Campo_busCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ListaArchivo_val_Campo_busCompletedEventArgs">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.Reportecgca_datosCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Portalv9.WSArchivo.Reportecgca_datosCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.Reportecgca_datosCompletedEventArgs">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.Reportegs_datosCompletedEventHandler">
 	<remarks/>
@@ -10296,18 +10336,6 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ABC_Transferencias_Secundarias_Bajas_DocumentosCompletedEventHandler">
 	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.ListaArchivo_Descripciones_Transferencia_FiltroCompletedEventHandler">
-	<remarks/>
-</member><member name="P:Portalv9.WSArchivo.ListaArchivo_Descripciones_Transferencia_FiltroCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.ListaArchivo_Descripciones_Transferencia_FiltroCompletedEventArgs">
-	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.ListaVencimientos_Archivo_Tramite_SeleccionCompletedEventHandler">
-	<remarks/>
-</member><member name="P:Portalv9.WSArchivo.ListaVencimientos_Archivo_Tramite_SeleccionCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.ListaVencimientos_Archivo_Tramite_SeleccionCompletedEventArgs">
-	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ABC_Archivo_FisicoCompletedEventHandler">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ABC_Archivo_Fisico_UnidadesCompletedEventHandler">
@@ -10497,6 +10525,18 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="P:Portalv9.WSArchivo.ListaNormas_Elementos_CamposxSerie_DefaultsCompletedEventArgs.Result">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ListaNormas_Elementos_CamposxSerie_DefaultsCompletedEventArgs">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ListaNormas_Elementos_CamposxSerie_HeredarCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Portalv9.WSArchivo.ListaNormas_Elementos_CamposxSerie_HeredarCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ListaNormas_Elementos_CamposxSerie_HeredarCompletedEventArgs">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ListaNormas_Elementos_CamposxSerie_idIndiceNormaCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Portalv9.WSArchivo.ListaNormas_Elementos_CamposxSerie_idIndiceNormaCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ListaNormas_Elementos_CamposxSerie_idIndiceNormaCompletedEventArgs">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ListaNormas_Elementos_CamposXArea_SerieCompletedEventHandler">
 	<remarks/>
@@ -10739,18 +10779,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="P:Portalv9.WSArchivo.ABC_BajaElementos_CamposCompletedEventArgs.Result">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ABC_BajaElementos_CamposCompletedEventArgs">
-	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.ListaArchivo_val_Campo_busCompletedEventHandler">
-	<remarks/>
-</member><member name="P:Portalv9.WSArchivo.ListaArchivo_val_Campo_busCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.ListaArchivo_val_Campo_busCompletedEventArgs">
-	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.Reportecgca_datosCompletedEventHandler">
-	<remarks/>
-</member><member name="P:Portalv9.WSArchivo.Reportecgca_datosCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.Reportecgca_datosCompletedEventArgs">
 	<remarks/>
 </member><member name="F:Portalv9.Wfrm_Perfiles.Panel2">
 	<summary>

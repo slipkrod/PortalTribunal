@@ -746,6 +746,35 @@ Public Class Persistencia
         ds = db.ExecuteDataSet(dbCW)
         Return ds
     End Function
+
+    Public Function ListaNormas_Elementos_CamposxSerie_Heredar(ByVal idSerie As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaNormas_Elementos_CamposxSerie_Heredar", idSerie, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaNormas_Elementos_CamposxSerie_Heredar", idSerie)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+    Public Function ListaNormas_Elementos_CamposxSerie_idIndiceNorma(ByVal idSerie As Integer, ByVal idIndice_Norma As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ListaNormas_Elementos_CamposxSerie_idIndiceNorma", idSerie, idIndice_Norma, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ListaNormas_Elementos_CamposxSerie_idIndiceNorma", idSerie, idIndice_Norma)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
     Public Function ListaNormas_Elementos_CamposXArea_Serie(ByVal idArea As Integer, ByVal idSerie As Integer) As System.Data.DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing

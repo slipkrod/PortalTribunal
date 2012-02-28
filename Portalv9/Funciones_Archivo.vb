@@ -504,7 +504,6 @@ Public Class Funciones_Archivo
                             End If
 
                         Case 10
-
                             dsFuncCampoValor = sv.Func_Suma_valor_hijos(idArchivo, dsNomraCampos.Tables(0).Rows(0).Item("idIndice"), dsNomraCampos.Tables(0).Rows(0).Item("idDescripcioncion"))
                             If dsFuncCampoValor.Tables(0).Rows.Count > 0 Then
                                 If Not dsFuncCampoValor.Tables(0).Rows(0).Item("Suma") Is DBNull.Value Then
@@ -526,10 +525,15 @@ Public Class Funciones_Archivo
     End Sub
 
     Shared Sub llenaCamposCodigo(ByVal PnlElementos As ASPxPanel, ByVal idArchivo As Integer, ByVal idSeriePadre As Integer, ByVal idDescripcioncion As Integer, ByVal idSerie As Integer, ByVal idNivel As Integer, ByVal idNorma As Integer)
+        Dim intI As Integer
         Dim sv As New WSArchivo.Service1
         Dim dsIndiceCodigo As DataSet
         Dim dsIndiceCodigoSerie As DataSet
         Dim dsIndiceSerie As DataSet
+        Dim dsIndicesHeredados As DataSet
+        Dim dsIndicesHeredadosPID As DataSet
+        Dim dsIndicesHeredadosPID_indice As DataSet
+
 
         dsIndiceSerie = sv.ListaSeries_Modelo_indice_sistema(1, idSerie)
         dsIndiceCodigoSerie = sv.ListaSeries_Modelo_indice_sistema(idArchivo, idSeriePadre)
@@ -545,13 +549,55 @@ Public Class Funciones_Archivo
 
         dsIndiceSerie = sv.ListaSeries_Modelo_indice_sistema(17, idSerie)
         dsIndiceCodigo = sv.ListaNorma_Nivel(idNorma, idNivel)
-
         If dsIndiceCodigo.Tables(0).Rows.Count > 0 Then
             If Not dsIndiceCodigo.Tables(0).Rows(0).Item("Nivel_Descripcion") Is DBNull.Value Then
                 Dim valor As String = dsIndiceCodigo.Tables(0).Rows(0).Item("Nivel_Descripcion")
                 CType(PnlElementos.FindControl("C" & dsIndiceSerie.Tables(0).Rows(0).Item("idIndice")), CampoTexto).ValorCampo = valor
             End If
         End If
+
+        'LLenar campos que heredan valor del padre
+        dsIndicesHeredados = sv.ListaNormas_Elementos_CamposxSerie_Heredar(idSerie)
+        For intI = 0 To dsIndicesHeredados.Tables(0).Rows.Count - 1
+            dsIndicesHeredadosPID = sv.ListaNormas_Elementos_CamposxSerie_idIndiceNorma(idSeriePadre, dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice_Norma"))
+            dsIndicesHeredadosPID_indice = sv.ListaArchivo_indicexidDescripcion_idIndice(idArchivo, idDescripcioncion, dsIndicesHeredadosPID.Tables(0).Rows(0).Item("idIndice"))
+            If Not dsIndicesHeredadosPID_indice.Tables(0).Rows(0).Item("valor") Is DBNull.Value Then
+                Dim valor As String = dsIndicesHeredadosPID_indice.Tables(0).Rows(0).Item("valor")
+                Select Case dsIndicesHeredados.Tables(0).Rows(intI).Item("Indice_Tipo")
+                    Case 0
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoTexto).ValorCampo = valor
+                    Case 1
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoTextoLargo).ValorCampo = valor
+                    Case 2
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoFecha).ValorCampo = valor
+                    Case 3
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoPeriodoFechas).Fecha_Ini = Split(valor, "-")(0)
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoPeriodoFechas).Fecha_Fin = Split(valor, "-")(1)
+                    Case 4
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoPeriodoMesAno).Mes_Ini = Split(valor, "-")(0).Split("/")(0)
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoPeriodoMesAno).Año_Ini = Split(valor, "-")(0).Split("/")(1)
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoPeriodoMesAno).Mes_Fin = Split(valor, "-")(1).Split("/")(0)
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoPeriodoMesAno).Año_Fin = Split(valor, "-")(1).Split("/")(1)
+                    Case 5
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoPeriodoAno).Año_Ini = Split(valor, "-")(0)
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoPeriodoAno).Año_Fin = Split(valor, "-")(1)
+                    Case 6
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoSI_NO).ValorCampo = valor
+                    Case 7
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoEntero).ValorCampo = valor
+                    Case 8
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoSlectura).ValorCampo = valor
+                    Case 9
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoSlectura).ValorCampo = valor
+                    Case 10
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoSlectura).ValorCampo = valor
+                    Case 11
+                        CType(PnlElementos.FindControl("C" & dsIndicesHeredados.Tables(0).Rows(intI).Item("idIndice")), CampoCatalogo).ValorCampo = valor
+                End Select
+
+            End If
+        Next
+
     End Sub
 
     Shared Sub llenaCamposValor(ByVal PnlElementos As ASPxPanel, ByVal idArchivo As Integer, ByVal idNorma As Integer, ByVal idDescripcion As Integer, ByVal idSerie As Integer, ByVal idNivel As Integer)

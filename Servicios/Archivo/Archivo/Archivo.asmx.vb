@@ -477,12 +477,40 @@ Public Class Service1
     End Function
 
     <WebMethod()> Public Function ListaNormas_Elementos_CamposxSerie_Defaults(ByVal idSerie As Integer) As System.Data.DataSet
-        Const strProcName As String = "ListaNormas_Elementos_Campos"
+        Const strProcName As String = "ListaNormas_Elementos_CamposxSerie_Defaults"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Dim ds As DataSet
 
         Try
             ds = pBD.ListaNormas_Elementos_CamposxSerie_Defaults(idSerie)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+        Return ds
+    End Function
+
+    <WebMethod()> Public Function ListaNormas_Elementos_CamposxSerie_Heredar(ByVal idSerie As Integer) As System.Data.DataSet
+        Const strProcName As String = "ListaNormas_Elementos_CamposxSerie_Heredar"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim ds As DataSet
+
+        Try
+            ds = pBD.ListaNormas_Elementos_CamposxSerie_Heredar(idSerie)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+        Return ds
+    End Function
+
+    <WebMethod()> Public Function ListaNormas_Elementos_CamposxSerie_idIndiceNorma(ByVal idSerie As Integer, ByVal idIndice_Norma As Integer) As System.Data.DataSet
+        Const strProcName As String = "ListaNormas_Elementos_CamposxSerie_idIndiceNorma"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim ds As DataSet
+
+        Try
+            ds = pBD.ListaNormas_Elementos_CamposxSerie_idIndiceNorma(idSerie, idIndice_Norma)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)

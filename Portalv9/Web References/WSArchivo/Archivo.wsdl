@@ -2,6 +2,50 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListaArchivo_Descripciones_Transferencia_Filtro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaArchivo_Descripciones_Transferencia_FiltroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaArchivo_Descripciones_Transferencia_FiltroResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaVencimientos_Archivo_Tramite_Seleccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Baja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaVencimientos_Archivo_Tramite_SeleccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaVencimientos_Archivo_Tramite_SeleccionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="ListaBajas_Archivo_Tramite">
         <s:complexType>
           <s:sequence>
@@ -773,6 +817,50 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="CuentaElementosNivelResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaArchivo_val_Campo_bus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idElemento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idIndice" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaArchivo_val_Campo_busResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaArchivo_val_Campo_busResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reportecgca_datos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idNorma" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reportecgca_datosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reportecgca_datosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2493,50 +2581,6 @@
       <s:element name="ABC_Transferencias_Secundarias_Bajas_DocumentosResponse">
         <s:complexType />
       </s:element>
-      <s:element name="ListaArchivo_Descripciones_Transferencia_Filtro">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaArchivo_Descripciones_Transferencia_FiltroResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListaArchivo_Descripciones_Transferencia_FiltroResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaVencimientos_Archivo_Tramite_Seleccion">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idFolio" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="Baja" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaVencimientos_Archivo_Tramite_SeleccionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListaVencimientos_Archivo_Tramite_SeleccionResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="ABC_Archivo_Fisico">
         <s:complexType>
           <s:sequence>
@@ -3293,6 +3337,49 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="ListaNormas_Elementos_CamposxSerie_DefaultsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaNormas_Elementos_CamposxSerie_Heredar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSerie" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaNormas_Elementos_CamposxSerie_HeredarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaNormas_Elementos_CamposxSerie_HeredarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaNormas_Elementos_CamposxSerie_idIndiceNorma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSerie" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idIndice_Norma" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListaNormas_Elementos_CamposxSerie_idIndiceNormaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListaNormas_Elementos_CamposxSerie_idIndiceNormaResult">
               <s:complexType>
                 <s:sequence>
                   <s:element ref="s:schema" />
@@ -4227,52 +4314,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="ListaArchivo_val_Campo_bus">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idElemento" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idIndice" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ListaArchivo_val_Campo_busResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListaArchivo_val_Campo_busResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Reportecgca_datos">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idNorma" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="idArchivo" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Reportecgca_datosResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Reportecgca_datosResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="ListaArchivo_Descripciones_Transferencia_FiltroSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaArchivo_Descripciones_Transferencia_Filtro" />
+  </wsdl:message>
+  <wsdl:message name="ListaArchivo_Descripciones_Transferencia_FiltroSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaArchivo_Descripciones_Transferencia_FiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaVencimientos_Archivo_Tramite_SeleccionSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_Seleccion" />
+  </wsdl:message>
+  <wsdl:message name="ListaVencimientos_Archivo_Tramite_SeleccionSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_SeleccionResponse" />
+  </wsdl:message>
   <wsdl:message name="ListaBajas_Archivo_TramiteSoapIn">
     <wsdl:part name="parameters" element="tns:ListaBajas_Archivo_Tramite" />
   </wsdl:message>
@@ -4506,6 +4561,18 @@
   </wsdl:message>
   <wsdl:message name="CuentaElementosNivelSoapOut">
     <wsdl:part name="parameters" element="tns:CuentaElementosNivelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaArchivo_val_Campo_busSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaArchivo_val_Campo_bus" />
+  </wsdl:message>
+  <wsdl:message name="ListaArchivo_val_Campo_busSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaArchivo_val_Campo_busResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reportecgca_datosSoapIn">
+    <wsdl:part name="parameters" element="tns:Reportecgca_datos" />
+  </wsdl:message>
+  <wsdl:message name="Reportecgca_datosSoapOut">
+    <wsdl:part name="parameters" element="tns:Reportecgca_datosResponse" />
   </wsdl:message>
   <wsdl:message name="Reportegs_datosSoapIn">
     <wsdl:part name="parameters" element="tns:Reportegs_datos" />
@@ -5005,18 +5072,6 @@
   <wsdl:message name="ABC_Transferencias_Secundarias_Bajas_DocumentosSoapOut">
     <wsdl:part name="parameters" element="tns:ABC_Transferencias_Secundarias_Bajas_DocumentosResponse" />
   </wsdl:message>
-  <wsdl:message name="ListaArchivo_Descripciones_Transferencia_FiltroSoapIn">
-    <wsdl:part name="parameters" element="tns:ListaArchivo_Descripciones_Transferencia_Filtro" />
-  </wsdl:message>
-  <wsdl:message name="ListaArchivo_Descripciones_Transferencia_FiltroSoapOut">
-    <wsdl:part name="parameters" element="tns:ListaArchivo_Descripciones_Transferencia_FiltroResponse" />
-  </wsdl:message>
-  <wsdl:message name="ListaVencimientos_Archivo_Tramite_SeleccionSoapIn">
-    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_Seleccion" />
-  </wsdl:message>
-  <wsdl:message name="ListaVencimientos_Archivo_Tramite_SeleccionSoapOut">
-    <wsdl:part name="parameters" element="tns:ListaVencimientos_Archivo_Tramite_SeleccionResponse" />
-  </wsdl:message>
   <wsdl:message name="ABC_Archivo_FisicoSoapIn">
     <wsdl:part name="parameters" element="tns:ABC_Archivo_Fisico" />
   </wsdl:message>
@@ -5238,6 +5293,18 @@
   </wsdl:message>
   <wsdl:message name="ListaNormas_Elementos_CamposxSerie_DefaultsSoapOut">
     <wsdl:part name="parameters" element="tns:ListaNormas_Elementos_CamposxSerie_DefaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaNormas_Elementos_CamposxSerie_HeredarSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaNormas_Elementos_CamposxSerie_Heredar" />
+  </wsdl:message>
+  <wsdl:message name="ListaNormas_Elementos_CamposxSerie_HeredarSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaNormas_Elementos_CamposxSerie_HeredarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListaNormas_Elementos_CamposxSerie_idIndiceNormaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListaNormas_Elementos_CamposxSerie_idIndiceNorma" />
+  </wsdl:message>
+  <wsdl:message name="ListaNormas_Elementos_CamposxSerie_idIndiceNormaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListaNormas_Elementos_CamposxSerie_idIndiceNormaResponse" />
   </wsdl:message>
   <wsdl:message name="ListaNormas_Elementos_CamposXArea_SerieSoapIn">
     <wsdl:part name="parameters" element="tns:ListaNormas_Elementos_CamposXArea_Serie" />
@@ -5509,19 +5576,15 @@
   <wsdl:message name="ABC_BajaElementos_CamposSoapOut">
     <wsdl:part name="parameters" element="tns:ABC_BajaElementos_CamposResponse" />
   </wsdl:message>
-  <wsdl:message name="ListaArchivo_val_Campo_busSoapIn">
-    <wsdl:part name="parameters" element="tns:ListaArchivo_val_Campo_bus" />
-  </wsdl:message>
-  <wsdl:message name="ListaArchivo_val_Campo_busSoapOut">
-    <wsdl:part name="parameters" element="tns:ListaArchivo_val_Campo_busResponse" />
-  </wsdl:message>
-  <wsdl:message name="Reportecgca_datosSoapIn">
-    <wsdl:part name="parameters" element="tns:Reportecgca_datos" />
-  </wsdl:message>
-  <wsdl:message name="Reportecgca_datosSoapOut">
-    <wsdl:part name="parameters" element="tns:Reportecgca_datosResponse" />
-  </wsdl:message>
   <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="ListaArchivo_Descripciones_Transferencia_Filtro">
+      <wsdl:input message="tns:ListaArchivo_Descripciones_Transferencia_FiltroSoapIn" />
+      <wsdl:output message="tns:ListaArchivo_Descripciones_Transferencia_FiltroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion">
+      <wsdl:input message="tns:ListaVencimientos_Archivo_Tramite_SeleccionSoapIn" />
+      <wsdl:output message="tns:ListaVencimientos_Archivo_Tramite_SeleccionSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ListaBajas_Archivo_Tramite">
       <wsdl:input message="tns:ListaBajas_Archivo_TramiteSoapIn" />
       <wsdl:output message="tns:ListaBajas_Archivo_TramiteSoapOut" />
@@ -5677,6 +5740,14 @@
     <wsdl:operation name="CuentaElementosNivel">
       <wsdl:input message="tns:CuentaElementosNivelSoapIn" />
       <wsdl:output message="tns:CuentaElementosNivelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaArchivo_val_Campo_bus">
+      <wsdl:input message="tns:ListaArchivo_val_Campo_busSoapIn" />
+      <wsdl:output message="tns:ListaArchivo_val_Campo_busSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reportecgca_datos">
+      <wsdl:input message="tns:Reportecgca_datosSoapIn" />
+      <wsdl:output message="tns:Reportecgca_datosSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Reportegs_datos">
       <wsdl:input message="tns:Reportegs_datosSoapIn" />
@@ -6010,14 +6081,6 @@
       <wsdl:input message="tns:ABC_Transferencias_Secundarias_Bajas_DocumentosSoapIn" />
       <wsdl:output message="tns:ABC_Transferencias_Secundarias_Bajas_DocumentosSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ListaArchivo_Descripciones_Transferencia_Filtro">
-      <wsdl:input message="tns:ListaArchivo_Descripciones_Transferencia_FiltroSoapIn" />
-      <wsdl:output message="tns:ListaArchivo_Descripciones_Transferencia_FiltroSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion">
-      <wsdl:input message="tns:ListaVencimientos_Archivo_Tramite_SeleccionSoapIn" />
-      <wsdl:output message="tns:ListaVencimientos_Archivo_Tramite_SeleccionSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="ABC_Archivo_Fisico">
       <wsdl:input message="tns:ABC_Archivo_FisicoSoapIn" />
       <wsdl:output message="tns:ABC_Archivo_FisicoSoapOut" />
@@ -6165,6 +6228,14 @@
     <wsdl:operation name="ListaNormas_Elementos_CamposxSerie_Defaults">
       <wsdl:input message="tns:ListaNormas_Elementos_CamposxSerie_DefaultsSoapIn" />
       <wsdl:output message="tns:ListaNormas_Elementos_CamposxSerie_DefaultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaNormas_Elementos_CamposxSerie_Heredar">
+      <wsdl:input message="tns:ListaNormas_Elementos_CamposxSerie_HeredarSoapIn" />
+      <wsdl:output message="tns:ListaNormas_Elementos_CamposxSerie_HeredarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaNormas_Elementos_CamposxSerie_idIndiceNorma">
+      <wsdl:input message="tns:ListaNormas_Elementos_CamposxSerie_idIndiceNormaSoapIn" />
+      <wsdl:output message="tns:ListaNormas_Elementos_CamposxSerie_idIndiceNormaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ListaNormas_Elementos_CamposXArea_Serie">
       <wsdl:input message="tns:ListaNormas_Elementos_CamposXArea_SerieSoapIn" />
@@ -6346,17 +6417,27 @@
       <wsdl:input message="tns:ABC_BajaElementos_CamposSoapIn" />
       <wsdl:output message="tns:ABC_BajaElementos_CamposSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ListaArchivo_val_Campo_bus">
-      <wsdl:input message="tns:ListaArchivo_val_Campo_busSoapIn" />
-      <wsdl:output message="tns:ListaArchivo_val_Campo_busSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="Reportecgca_datos">
-      <wsdl:input message="tns:Reportecgca_datosSoapIn" />
-      <wsdl:output message="tns:Reportecgca_datosSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaArchivo_Descripciones_Transferencia_Filtro">
+      <soap:operation soapAction="http://tempuri.org/ListaArchivo_Descripciones_Transferencia_Filtro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion">
+      <soap:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListaBajas_Archivo_Tramite">
       <soap:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Tramite" style="document" />
       <wsdl:input>
@@ -6701,6 +6782,24 @@
     </wsdl:operation>
     <wsdl:operation name="CuentaElementosNivel">
       <soap:operation soapAction="http://tempuri.org/CuentaElementosNivel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaArchivo_val_Campo_bus">
+      <soap:operation soapAction="http://tempuri.org/ListaArchivo_val_Campo_bus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reportecgca_datos">
+      <soap:operation soapAction="http://tempuri.org/Reportecgca_datos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -7455,24 +7554,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ListaArchivo_Descripciones_Transferencia_Filtro">
-      <soap:operation soapAction="http://tempuri.org/ListaArchivo_Descripciones_Transferencia_Filtro" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion">
-      <soap:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="ABC_Archivo_Fisico">
       <soap:operation soapAction="http://tempuri.org/ABC_Archivo_Fisico" style="document" />
       <wsdl:input>
@@ -7799,6 +7880,24 @@
     </wsdl:operation>
     <wsdl:operation name="ListaNormas_Elementos_CamposxSerie_Defaults">
       <soap:operation soapAction="http://tempuri.org/ListaNormas_Elementos_CamposxSerie_Defaults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaNormas_Elementos_CamposxSerie_Heredar">
+      <soap:operation soapAction="http://tempuri.org/ListaNormas_Elementos_CamposxSerie_Heredar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaNormas_Elementos_CamposxSerie_idIndiceNorma">
+      <soap:operation soapAction="http://tempuri.org/ListaNormas_Elementos_CamposxSerie_idIndiceNorma" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -8211,27 +8310,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ListaArchivo_val_Campo_bus">
-      <soap:operation soapAction="http://tempuri.org/ListaArchivo_val_Campo_bus" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Reportecgca_datos">
-      <soap:operation soapAction="http://tempuri.org/Reportecgca_datos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListaArchivo_Descripciones_Transferencia_Filtro">
+      <soap12:operation soapAction="http://tempuri.org/ListaArchivo_Descripciones_Transferencia_Filtro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion">
+      <soap12:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListaBajas_Archivo_Tramite">
       <soap12:operation soapAction="http://tempuri.org/ListaBajas_Archivo_Tramite" style="document" />
       <wsdl:input>
@@ -8576,6 +8675,24 @@
     </wsdl:operation>
     <wsdl:operation name="CuentaElementosNivel">
       <soap12:operation soapAction="http://tempuri.org/CuentaElementosNivel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaArchivo_val_Campo_bus">
+      <soap12:operation soapAction="http://tempuri.org/ListaArchivo_val_Campo_bus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reportecgca_datos">
+      <soap12:operation soapAction="http://tempuri.org/Reportecgca_datos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -9330,24 +9447,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ListaArchivo_Descripciones_Transferencia_Filtro">
-      <soap12:operation soapAction="http://tempuri.org/ListaArchivo_Descripciones_Transferencia_Filtro" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaVencimientos_Archivo_Tramite_Seleccion">
-      <soap12:operation soapAction="http://tempuri.org/ListaVencimientos_Archivo_Tramite_Seleccion" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="ABC_Archivo_Fisico">
       <soap12:operation soapAction="http://tempuri.org/ABC_Archivo_Fisico" style="document" />
       <wsdl:input>
@@ -9674,6 +9773,24 @@
     </wsdl:operation>
     <wsdl:operation name="ListaNormas_Elementos_CamposxSerie_Defaults">
       <soap12:operation soapAction="http://tempuri.org/ListaNormas_Elementos_CamposxSerie_Defaults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaNormas_Elementos_CamposxSerie_Heredar">
+      <soap12:operation soapAction="http://tempuri.org/ListaNormas_Elementos_CamposxSerie_Heredar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaNormas_Elementos_CamposxSerie_idIndiceNorma">
+      <soap12:operation soapAction="http://tempuri.org/ListaNormas_Elementos_CamposxSerie_idIndiceNorma" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -10079,24 +10196,6 @@
     </wsdl:operation>
     <wsdl:operation name="ABC_BajaElementos_Campos">
       <soap12:operation soapAction="http://tempuri.org/ABC_BajaElementos_Campos" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaArchivo_val_Campo_bus">
-      <soap12:operation soapAction="http://tempuri.org/ListaArchivo_val_Campo_bus" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Reportecgca_datos">
-      <soap12:operation soapAction="http://tempuri.org/Reportecgca_datos" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
