@@ -3243,6 +3243,33 @@ Public Class Persistencia
         End Select
         Return resultado
     End Function
+	
+	Public Function ObtenDocIdPorIdDescripcion(ByVal idDescripcion As Integer) As Integer
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim resultado As Integer = 0
+
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                resultado = CType(db.ExecuteScalar("ObtenDocIdPorIdDescripcion", idDescripcion), Integer)
+            Case eTipoBD.SQLServer
+                resultado = CType(db.ExecuteScalar("ObtenDocIdPorIdDescripcion", idDescripcion), Integer)
+        End Select
+        Return resultado
+    End Function
+
+    Public Function ObtenArchivoDescripcionesArchivisticasPorIdDescripcion(ByVal idDescripcion As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ObtenArchivoDescripcionesArchivisticasPorIdDescripcion", idDescripcion, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ObtenArchivoDescripcionesArchivisticasPorIdDescripcion", idDescripcion)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
 
 #End Region
 
