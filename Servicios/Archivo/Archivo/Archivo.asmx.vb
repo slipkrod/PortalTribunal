@@ -2,7 +2,7 @@
 Imports System.Web.Services.Protocols
 Imports System.ComponentModel
 Imports System.Data
-
+Imports Archivo
 ' Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la siguiente línea.
 ' <System.Web.Script.Services.ScriptService()> _
 <System.Web.Services.WebService(Namespace:="http://tempuri.org/")> _
@@ -2879,5 +2879,33 @@ Public Class Service1
         End Try
         Return resultado
     End Function
+
+    <WebMethod()> Public Sub InsertaEventoLog(ByVal TipoEvento As String, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String)
+        Const strProcName As String = "InsertaLogEventos"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        'Dim resultado As DataSet
+        Try
+            pBD.InsertaEventoLog(TipoEvento, Descripcion, Pagina, Usuario, Grupo, Archivo, IP)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+    End Sub
+
+    <WebMethod()> Public Function GetLogEventosFecha() As DataSet
+        Const strProcName As String = "GetLogEventosFecha"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.GetLogEventosFecha()
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
 
 End Class
