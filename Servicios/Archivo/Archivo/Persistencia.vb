@@ -3271,6 +3271,38 @@ Public Class Persistencia
         Return ds
     End Function
 
+
+    Public Sub InsertaEventoLog(ByVal TipoEvento As String, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim nRes As Integer
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("InsertaLogEventos", TipoEvento, Descripcion, Pagina, _
+                                               Usuario, Grupo, Archivo, IP, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("InsertaLogEventos", TipoEvento, Descripcion, Pagina, _
+                                               Usuario, Grupo, Archivo, IP)
+        End Select
+        nRes = db.ExecuteNonQuery(dbCW)
+    End Sub
+
+
+    Public Function GetLogEventosFecha() As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("GetLogEventosFecha", Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("GetLogEventosFecha")
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+
 #End Region
 
 
