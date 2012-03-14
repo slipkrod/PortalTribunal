@@ -58,7 +58,8 @@
     <tr>
         <td colspan="3">
             <dxwgv:ASPxGridView ID="aspxGridCatalogoCampos" runat="server" 
-                AutoGenerateColumns="False" DataSourceID="dsValores" KeyFieldName="idFolio" Width="355px">
+                AutoGenerateColumns="False" DataSourceID="dsValores" 
+                KeyFieldName="idFolio" Width="355px" EnableRowsCache="False">
                 <SettingsText CommandCancel="Cancelar" CommandDelete="Borrar"  
                     CommandEdit="Editar" CommandNew="Nuevo" CommandUpdate="Actualizar" 
                     ConfirmDelete="¿Seguro desea borrar este registro?" 
@@ -80,18 +81,17 @@
                             <tr>
                                 <td style="width: 161px">Campo</td>
                                 <td>
-                                    <dxe:ASPxComboBox ID="cmbCampo" runat="server" ClientInstanceName="cmbCampo" 
+                                    <dxe:ASPxComboBox ID="cmbCampoAll" runat="server" 
                                         TextField="Descripcion" ValueField="IDCatalogo_item" ValueType="System.Int32"  
-                                        DataSourceID="dsCatalogoDatos" Value='<%# Bind("IDCatalogo_item") %>'>
-                                    </dxe:ASPxComboBox>
-                                    <dxe:ASPxComboBox ID="cmbCampoAll" runat="server" Enabled="false" Visible="false" 
-                                        TextField="Descripcion" ValueField="IDCatalogo_item" ValueType="System.Int32"  
-                                        DataSourceID="dsCatalogoDatosAll" Value='<%# Eval("IDCatalogo_item") %>'>
+                                        DataSourceID="dsCatalogoDatosAll" Value='<%# Bind("IDCatalogo_item") %>'>
                                     </dxe:ASPxComboBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 161px">Valor</td>
+                                <td style="width: 161px">Valor<dxe:ASPxLabel ID="lblidFolio" runat="server" 
+                                        Value='<%# Bind("idFolio") %>'>
+                                    </dxe:ASPxLabel>
+                                </td>
                                 <td>                                    
                                     <dxe:ASPxTextBox ID="txtValor" runat="server" Width="120px" Text='<%# Bind("Valor") %>' ClientInstanceName="txtValor"></dxe:ASPxTextBox>
                                     <dxe:ASPxSpinEdit ID="speValor" runat="server" AllowNull="False" NumberType="Integer" Width="70px"
@@ -152,8 +152,6 @@
                         <DataItemTemplate>
                             <%#GeneraValor(Eval("Valor"), Eval("Tipo_Dato"))%>
                         </DataItemTemplate>
-                    </dxwgv:GridViewDataTextColumn>
-                    <dxwgv:GridViewDataTextColumn Caption="Valor" FieldName="Valor" VisibleIndex="2" Visible="false" >
                     </dxwgv:GridViewDataTextColumn>
                     <dxwgv:GridViewDataTextColumn Caption="idSerie" FieldName="idSerie" Visible="False" VisibleIndex="0">
                     </dxwgv:GridViewDataTextColumn>
@@ -218,11 +216,15 @@
      </UpdateParameters>
     <SelectParameters>
         <asp:QueryStringParameter Name="idNorma" QueryStringField="idNorma" Type="Int32" />
-        <asp:Parameter Name="idArea" Type="Int32" />
-        <asp:Parameter Name="idElemento" Type="Int32" />
-        <asp:Parameter Name="idIndice" Type="Int32" />
+        <asp:ControlParameter ControlID="lblidArea" Name="idArea" PropertyName="Text" 
+            Type="Int32" />
+        <asp:ControlParameter ControlID="lblidElemento" Name="idElemento" 
+            PropertyName="Text" Type="Int32" />
+        <asp:ControlParameter ControlID="lblidIndice" Name="idIndice" 
+            PropertyName="Text" Type="Int32" />
         <asp:QueryStringParameter Name="idArchivo" QueryStringField="idArchivo" Type="Int32" />
-        <asp:ControlParameter Name="idDescripcion"  ControlID="lblidDescripcion" PropertyName="Text" Type="Int32"/>
+        <asp:QueryStringParameter Name="idDescripcion" QueryStringField="idDescripcion" 
+            Type="Int32" />
     </SelectParameters>
      <InsertParameters>
          <asp:Parameter DefaultValue="0" Name="op" Type="Object" />

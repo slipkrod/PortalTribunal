@@ -196,13 +196,13 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccionados_Hist
     Protected WithEvents gdbuscadorresultado As Global.DevExpress.Web.ASPxGridView.ASPxGridView
 
     '''<summary>
-    '''Control trArchivoDestino.
+    '''Control gdbuscadorEliminar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents trArchivoDestino As Global.System.Web.UI.HtmlControls.HtmlTableRow
+    Protected WithEvents gdbuscadorEliminar As Global.DevExpress.Web.ASPxGridView.ASPxGridView
 
     '''<summary>
     '''Control butRepAutorizacion.
@@ -239,6 +239,15 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccionados_Hist
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents ObjectDataSource1 As Global.System.Web.UI.WebControls.ObjectDataSource
+
+    '''<summary>
+    '''Control dsExpedientesEliminar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents dsExpedientesEliminar As Global.System.Web.UI.WebControls.ObjectDataSource
 
     '''<summary>
     '''Control dsTransferenciaActiva.

@@ -52,6 +52,15 @@ Partial Public Class Wfrm_ValorizacionBajas_Seleccion
     Protected WithEvents lblArchivo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Control ASPxRadioButtonList1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ASPxRadioButtonList1 As Global.DevExpress.Web.ASPxEditors.ASPxRadioButtonList
+
+    '''<summary>
     '''Control deFechaCorte.
     '''</summary>
     '''<remarks>
@@ -59,6 +68,15 @@ Partial Public Class Wfrm_ValorizacionBajas_Seleccion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents deFechaCorte As Global.DevExpress.Web.ASPxEditors.ASPxDateEdit
+
+    '''<summary>
+    '''Control txtCodigo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtCodigo As Global.DevExpress.Web.ASPxEditors.ASPxTextBox
 
     '''<summary>
     '''Control btnBuscar.

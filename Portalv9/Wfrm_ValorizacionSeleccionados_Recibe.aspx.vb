@@ -36,6 +36,8 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
                     MsgBox1.ShowMessage("El folio de transferencia se encuentra sin transferir")
                 Case 2
                     rsDatosArchivo = sv.ListaArchivo(rsDatosTransferencia.Tables(0).Rows(0).Item("idArchivoOrigen"))
+                    idArchivoOrigen.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("idArchivoOrigen")
+                    idArchivoDestino.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("idArchivoDestino")
                     lblidNorma.Text = rsDatosArchivo.Tables(0).Rows(0).Item("idNorma")
                     lblFolio.Text = txtTransferencia.Text
                     lblidArchivoOrigen.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
@@ -63,6 +65,8 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
 
     Protected Sub butTransferir_Click(ByVal sender As Object, ByVal e As EventArgs) Handles butTransferir.Click
         Dim intI As Integer
+        Dim rsElementoPadre As DataSet
+        Dim rsElementoPadreNew As DataSet        
         'For Each nNodo As TreeListNode In aspxtreeDocumentos.GetSelectedNodes()
         '    If nNodo.Level = 1 Then
         '        sv.ABC_Transferencias_Primarias_Expedientes(3, txtTransferencia.Value, nNodo.GetValue("idFolioDetalle"), nNodo.GetValue("idDescripcion"), nNodo.GetValue("idDocumentoPID"), 3)
@@ -78,10 +82,21 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
                     If iterator.Current.Level = 1 Then
                         sv.ABC_Transferencias_Primarias_Expedientes(3, txtTransferencia.Value, iterator.Current.GetValue("idFolioDetalle"), iterator.Current.GetValue("idDescripcion"), iterator.Current.GetValue("idDocumentoPID"), 3)
                     ElseIf iterator.Current.Level = 2 Then
-                        sv.ABC_Transferencias_Primarias_Documentos(3, txtTransferencia.Value, iterator.Current.GetValue("idFolioDetalle"), iterator.Current.GetValue("idFolioDetalleDocumento"), iterator.Current.GetValue("idDescripcion"), iterator.Current.GetValue("idDocumentoPID"), 3)
+                        If aspxtreeDocumentos.FindNodeByKeyValue(iterator.Current.Key).ParentNode.Selected Then
+                            sv.ABC_Transferencias_Primarias_Documentos(3, txtTransferencia.Value, iterator.Current.GetValue("idFolioDetalle"), iterator.Current.GetValue("idFolioDetalleDocumento"), iterator.Current.GetValue("idDescripcion"), iterator.Current.GetValue("idDocumentoPID"), 3)
+                        End If
                     End If
                 Else
-
+                    If iterator.Current.Level = 1 Then
+                        'Se transfiere el expediente al archivo de concentracion
+                        rsElementoPadre = sv.ListaArchivo_Descripciones_idDescripcion(idArchivoOrigen.Text, iterator.Current.GetValue("idDocumentoPID"))
+                        If rsElementoPadre.Tables(0).Rows.Count > 0 Then
+                            rsElementoPadreNew = sv.ListaArchivo_Codigo_clasificacion(idArchivoDestino.Text, rsElementoPadre.Tables(0).Rows(0).Item("Codigo_clasificacion"))
+                            If rsElementoPadreNew.Tables(0).Rows.Count > 0 Then
+                                sv.Transfiere_Archivo_Descripciones_primarias(idArchivoDestino.Text, iterator.Current.GetValue("idDescripcion"), idArchivoOrigen.Text, iterator.Current.GetValue("idDocumentoPID"), iterator.Current.GetValue("idFolioDetalle"))
+                            End If
+                        End If
+                    End If
                 End If
                 iterator.GetNext()
             Loop
@@ -100,4 +115,44 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
             Return container.GetValue("Imagen_Close")
         End If
     End Function
+
+    Protected Sub btnBuscaExpediente_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBuscaExpediente.Click
+        Dim rsDatosExpediente As DataSet
+        Dim rsDatosTransferencia As DataSet
+        Dim rsElementoPadre As DataSet
+        Dim idFolioDetalle As Integer
+        Dim rsElementoPadreNew As DataSet
+        Dim rsElementoDocumentos As DataSet
+        Dim intI As Integer
+
+        rsDatosExpediente = sv.ListaArchivo_Codigo_clasificacion(idArchivoOrigen.Text, txtBuscaCodigo.Text)
+        If rsDatosExpediente.Tables(0).Rows.Count = 0 Then
+            MsgBox1.ShowMessage("Expediente no encontrado")
+        Else
+            'Se da de alta el expediente y sus documentos en la tabla de transferencias
+            rsDatosTransferencia = sv.ListaTransferencia_Primaria(txtTransferencia.Value)
+            idFolioDetalle = sv.ABC_Transferencias_Primarias_Expedientes(0, rsDatosTransferencia.Tables(0).Rows(0).Item("idFolio"), 0, rsDatosExpediente.Tables(0).Rows(0).Item("idDescripcion"), rsDatosExpediente.Tables(0).Rows(0).Item("idDocumentoPID"), 2)
+            sv.ABC_Transferencias_Primarias_Documentos(0, rsDatosTransferencia.Tables(0).Rows(0).Item("idFolio"), idFolioDetalle, 0, rsDatosExpediente.Tables(0).Rows(0).Item("idDescripcion"), rsDatosExpediente.Tables(0).Rows(0).Item("idDocumentoPID"), 0)
+            rsElementoDocumentos = sv.ListaArchivo_Descripciones_idDescripcion_Hijos(idArchivoOrigen.Text, rsDatosExpediente.Tables(0).Rows(0).Item("idDescripcion"))
+            For intI = 0 To rsElementoDocumentos.Tables(0).Rows.Count - 1
+                sv.ABC_Transferencias_Primarias_Documentos(0, rsDatosTransferencia.Tables(0).Rows(0).Item("idFolio"), idFolioDetalle, 0, rsElementoDocumentos.Tables(0).Rows(intI).Item("idDescripcion"), rsElementoDocumentos.Tables(0).Rows(intI).Item("idDocumentoPID"), 0)
+            Next
+
+            'Se transfiere el expediente al archivo de concentración
+            rsElementoPadre = sv.ListaArchivo_Descripciones_idDescripcion(idArchivoOrigen.Text, rsDatosExpediente.Tables(0).Rows(0).Item("idDocumentoPID"))
+            If rsElementoPadre.Tables(0).Rows.Count > 0 Then
+                rsElementoPadreNew = sv.ListaArchivo_Codigo_clasificacion(idArchivoDestino.Text, rsElementoPadre.Tables(0).Rows(0).Item("Codigo_clasificacion"))
+                If rsElementoPadreNew.Tables(0).Rows.Count > 0 Then
+                    sv.Transfiere_Archivo_Descripciones_primarias(idArchivoOrigen.Text, rsDatosExpediente.Tables(0).Rows(0).Item("idDescripcion"), idArchivoDestino.Text, rsElementoPadreNew.Tables(0).Rows(0).Item("idDescripcion"), idFolioDetalle)
+                End If
+            End If
+
+            'Se actualiza el arbol.
+            dsExpedientesTransferir.SelectParameters("idFolio").DefaultValue = txtTransferencia.Value
+            dsExpedientesTransferir.Select()
+            aspxtreeDocumentos.DataBind()
+
+            ASPxPopupControl1.ShowOnPageLoad = False
+        End If
+    End Sub
 End Class

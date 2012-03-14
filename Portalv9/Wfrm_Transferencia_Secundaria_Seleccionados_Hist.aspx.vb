@@ -33,6 +33,11 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccionados_Hist
             If Not rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud") Is DBNull.Value Then
                 lblFecha_Solicitud.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Solicitud")
             End If
+            rsDatosArchivo = sv.ListaArchivo(rsDatosTransferencia.Tables(0).Rows(0).Item("idArchivoDestino"))
+            lblidArchivoDestino.Text = rsDatosArchivo.Tables(0).Rows(0).Item("Archivo_Descripcion")
+            If Not rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Aplicacion") Is DBNull.Value Then
+                lblFecha_Aplicacion.Text = rsDatosTransferencia.Tables(0).Rows(0).Item("Fecha_Aplicacion")
+            End If
         End If
     End Sub
 

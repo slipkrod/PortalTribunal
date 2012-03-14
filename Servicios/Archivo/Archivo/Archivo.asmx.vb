@@ -1239,19 +1239,33 @@ Public Class Service1
         End Try
     End Sub
 
-    <WebMethod()> Public Function Func_Concatena_Indices_Grid(ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer) As System.Data.DataSet
+    <WebMethod()> Public Function Func_Concatena_Indices_Grid(ByVal idIndice_Norma As Integer, ByVal relacion_con_normaPID As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer) As System.Data.DataSet
         Const strProcName As String = "Func_Concatena_Indices_Grid"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Dim ds As DataSet
 
         Try
-            ds = pBD.Func_Concatena_Indices_Grid(idNorma, idArea, idElemento, idIndice, idArchivo, idDescripcion)
+            ds = pBD.Func_Concatena_Indices_Grid(idIndice_Norma, relacion_con_normaPID, idArchivo, idDescripcion)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
         End Try
         Return ds
     End Function
+    <WebMethod()> Public Function Func_Concatena_Indices_Grid_Suma(ByVal idIndice_Norma As Integer, ByVal relacion_con_normaPID As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer) As System.Data.DataSet
+        Const strProcName As String = "Func_Concatena_Indices_Grid_Suma"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim ds As DataSet
+
+        Try
+            ds = pBD.Func_Concatena_Indices_Grid_Suma(idIndice_Norma, relacion_con_normaPID, idArchivo, idDescripcion)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+        Return ds
+    End Function
+
 
     <WebMethod()> Public Function Func_Concatena_padres(ByVal idArchivo As Integer, ByVal idIndice As Integer, ByVal idFolio As Integer) As System.Data.DataSet
         Const strProcName As String = "Func_Concatena_padres"
@@ -2198,6 +2212,19 @@ Public Class Service1
         End Try
     End Sub
 
+    <WebMethod()> Public Sub Prepara_Vencimientos_Archivo_Tramite_Bajas_Codigo(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Codigo_clasificacion As String)
+        Const strProcName As String = "Prepara_Vencimientos_Archivo_Tramite_Bajas_Codigo"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            pBD.Prepara_Vencimientos_Archivo_Tramite_Bajas_Codigo(idArchivo, idFolio, Codigo_clasificacion)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+    End Sub
+
+
 
     <WebMethod()> Public Sub Prepara_Vencimientos_Concentracion_Bajas(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
         Const strProcName As String = "Prepara_Vencimientos_Concentracion_Bajas"
@@ -2241,16 +2268,18 @@ Public Class Service1
         End Try
     End Sub
 
-    <WebMethod()> Public Sub ABC_Transferencias_Primarias_Expedientes(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+    <WebMethod()> Public Function ABC_Transferencias_Primarias_Expedientes(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer) As Integer
         Const strProcName As String = "ABC_Transferencias_Primarias_Expedientes"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim nID As Integer
         Try
-            pBD.ABC_Transferencias_Primarias_Expedientes(op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus)
+            nID = pBD.ABC_Transferencias_Primarias_Expedientes(op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
         End Try
-    End Sub
+        Return nID
+    End Function
 
     <WebMethod()> Public Sub ABC_Transferencias_Primarias_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
         Const strProcName As String = "ABC_Transferencias_Primarias_Documentos"

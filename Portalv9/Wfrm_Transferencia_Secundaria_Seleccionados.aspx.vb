@@ -123,6 +123,12 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccionados
         For intI = 0 To gdbuscadorresultado.VisibleRowCount - 1
             sv.ABC_Transferencias_Secundarias_Expedientes(3, Request.QueryString("idFolio"), gdbuscadorresultado.GetRowValues(intI, "idFolioDetalle"), gdbuscadorresultado.GetRowValues(intI, "idDescripcion"), gdbuscadorresultado.GetRowValues(intI, "idDocumentoPID"), 2)
         Next
+
+        'Eliminamos las Bajas
+        For intI = 0 To gdbuscadorEliminar.VisibleRowCount - 1
+            sv.ABC_Archivo_Descripciones(WSArchivo.OperacionesABC.operBaja, Request.QueryString("idArchivo"), gdbuscadorEliminar.GetRowValues(intI, "idDescripcion"), "", 0, 0, "", 0, "", 0, 0)
+        Next
+
         sv.ABC_Transferencias_Secundarias(3, Request.QueryString("idFolio"), 0, Now.Date, 0, 0, "", 2)
         Response.Redirect("Wfrm_Transferencia_Secundaria_Seleccionados_OK.aspx")
     End Sub

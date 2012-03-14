@@ -782,7 +782,12 @@ Public Class Funciones_Archivo
                         End If
 
                     Case 12
-                        dsCampoValor = sv.Func_Concatena_Indices_Grid(idNorma, dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), idArchivo, idDescripcion)
+                        If dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma") = 7 Then
+                            dsCampoValor = sv.Func_Concatena_Indices_Grid_Suma(dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), idArchivo, idDescripcion)
+                        Else
+                            dsCampoValor = sv.Func_Concatena_Indices_Grid(dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), idArchivo, idDescripcion)
+                        End If
+
                         If dsCampoValor.Tables(0).Rows.Count > 0 Then
                             ''Session("idDescripcion") = iddescrip
                             ''Session("idNivel") = idNivel
@@ -792,6 +797,8 @@ Public Class Funciones_Archivo
                             ''    CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoGrid).TextoPadres = dsConcatenaPadres.Tables(0).Rows(0).Item("LLave_concatenada")
                             ''End If
                         End If
+                        CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoGrid).idDescripcion = idDescripcion
+
                     Case 13
                         dsCampoValor = sv.ListaArchivo_indice(idNorma, dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), idArchivo, idDescripcion)
                         If dsCampoValor.Tables(0).Rows.Count > 0 Then
@@ -1046,7 +1053,12 @@ Public Class Funciones_Archivo
                             End If
                         End If
                     Case 12
-                        dsCampoValor = sv.Func_Concatena_Indices_Grid(idNorma, dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), idArchivo, idDescripcion)
+                        If dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma") = 7 Then
+                            dsCampoValor = sv.Func_Concatena_Indices_Grid_Suma(dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), idArchivo, idDescripcion)
+                        Else
+                            dsCampoValor = sv.Func_Concatena_Indices_Grid(dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), idArchivo, idDescripcion)
+                        End If
+
                         If dsCampoValor.Tables(0).Rows.Count > 0 Then
                             ''Session("idDescripcioncion") = idDescripcion
                             ''Session("idNivel") = idNivel
@@ -1073,7 +1085,7 @@ Public Class Funciones_Archivo
                     Case 14
                         dsCampoValor = sv.ListaArchivo_indice(idNorma, dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), idArchivo, idDescripcion)
                     Case 15
-                        dsCampoValor = sv.Func_Concatena_Indices_Grid(idNorma, dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), idArchivo, idDescripcion)
+                        dsCampoValor = sv.Func_Concatena_Indices_Grid(dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), idArchivo, idDescripcion)
                         If dsCampoValor.Tables(0).Rows.Count > 0 Then
                             If Not dsCampoValor.Tables(0).Rows(0).Item("Valor") Is DBNull.Value Then
                                 CType(PnlElementos.FindControl("vC" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoSlectura).MuestraValorHTML = True

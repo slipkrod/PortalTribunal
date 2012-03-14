@@ -2310,6 +2310,14 @@ Control lblidArchivoOrigen.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Portalv9.Wfrm_ValorizacionSeleccionados_Recibe.idArchivoOrigen">
+	<summary>
+Control idArchivoOrigen.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Portalv9.Wfrm_ValorizacionSeleccionados_Recibe.Label4">
 	<summary>
 Control Label4.
@@ -2366,6 +2374,14 @@ Control lblFecha_Aplicacion.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Portalv9.Wfrm_ValorizacionSeleccionados_Recibe.btnAgregaExp">
+	<summary>
+Control btnAgregaExp.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Portalv9.Wfrm_ValorizacionSeleccionados_Recibe.aspxtreeDocumentos">
 	<summary>
 Control aspxtreeDocumentos.
@@ -2385,6 +2401,30 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:Portalv9.Wfrm_ValorizacionSeleccionados_Recibe.lblArchivo">
 	<summary>
 Control lblArchivo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Portalv9.Wfrm_ValorizacionSeleccionados_Recibe.ASPxPopupControl1">
+	<summary>
+Control ASPxPopupControl1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Portalv9.Wfrm_ValorizacionSeleccionados_Recibe.txtBuscaCodigo">
+	<summary>
+Control txtBuscaCodigo.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Portalv9.Wfrm_ValorizacionSeleccionados_Recibe.btnBuscaExpediente">
+	<summary>
+Control btnBuscaExpediente.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -7988,6 +8028,10 @@ To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="M:Portalv9.WSArchivo.Service1.#ctor">
 	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_Bajas_DocumentosCompleted">
+	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_DocumentosCompleted">
+	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_FiltroCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ListaVencimientos_Archivo_Tramite_SeleccionCompleted">
@@ -8089,6 +8133,8 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="E:Portalv9.WSArchivo.Service1.ABC_Niveles_Plantilla_CapturaCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_GridCompleted">
+	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_Grid_SumaCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.Func_Concatena_padresCompleted">
 	<remarks/>
@@ -8226,6 +8272,8 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.Prepara_Vencimientos_Archivo_Tramite_BajasCompleted">
 	<remarks/>
+</member><member name="E:Portalv9.WSArchivo.Service1.Prepara_Vencimientos_Archivo_Tramite_Bajas_CodigoCompleted">
+	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.Prepara_Vencimientos_Concentracion_BajasCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ListaTransferencias_PrimariasCompleted">
@@ -8235,10 +8283,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="E:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_ExpedientesCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_DocumentosCompleted">
-	<remarks/>
-</member><member name="E:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_Bajas_DocumentosCompleted">
-	<remarks/>
-</member><member name="E:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_DocumentosCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ABC_Archivo_FisicoCompleted">
 	<remarks/>
@@ -8407,6 +8451,18 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="E:Portalv9.WSArchivo.Service1.ListaArchivo_indicexelemenCompleted">
 	<remarks/>
 </member><member name="E:Portalv9.WSArchivo.Service1.ABC_BajaElementos_CamposCompleted">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_Bajas_Documentos(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_Bajas_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_Bajas_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_Documentos(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ListaArchivo_Descripciones_Transferencia_Filtro(System.Int32,System.Int32)">
 	<remarks/>
@@ -8708,11 +8764,17 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ABC_Niveles_Plantilla_CapturaAsync(Portalv9.WSArchivo.OperacionesABC,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
 	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_Grid(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+</member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_Grid(System.Int32,System.Int32,System.Int32,System.Int32)">
 	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_GridAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+</member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_GridAsync(System.Int32,System.Int32,System.Int32,System.Int32)">
 	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_GridAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
+</member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_GridAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_Grid_Suma(System.Int32,System.Int32,System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_Grid_SumaAsync(System.Int32,System.Int32,System.Int32,System.Int32)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_Indices_Grid_SumaAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.Func_Concatena_padres(System.Int32,System.Int32,System.Int32)">
 	<remarks/>
@@ -9122,6 +9184,12 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.Prepara_Vencimientos_Archivo_Tramite_BajasAsync(System.Int32,System.Int32,System.DateTime,System.Object)">
 	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.Prepara_Vencimientos_Archivo_Tramite_Bajas_Codigo(System.Int32,System.Int32,System.String)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.Prepara_Vencimientos_Archivo_Tramite_Bajas_CodigoAsync(System.Int32,System.Int32,System.String)">
+	<remarks/>
+</member><member name="M:Portalv9.WSArchivo.Service1.Prepara_Vencimientos_Archivo_Tramite_Bajas_CodigoAsync(System.Int32,System.Int32,System.String,System.Object)">
+	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.Prepara_Vencimientos_Concentracion_Bajas(System.Int32,System.Int32,System.DateTime)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.Prepara_Vencimientos_Concentracion_BajasAsync(System.Int32,System.Int32,System.DateTime)">
@@ -9151,18 +9219,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_Bajas_Documentos(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_Bajas_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Primarias_Bajas_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_Documentos(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-	<remarks/>
-</member><member name="M:Portalv9.WSArchivo.Service1.ABC_Transferencias_Secundarias_Bajas_DocumentosAsync(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Object)">
 	<remarks/>
 </member><member name="M:Portalv9.WSArchivo.Service1.ABC_Archivo_Fisico(Portalv9.WSArchivo.OperacionesABC,System.Int32,System.String)">
 	<remarks/>
@@ -9680,6 +9736,10 @@ To modify move field declaration from designer file to code-behind file.
 	<comentarios/>
 </member><member name="T:Portalv9.WSArchivo.OperacionesABC">
 	<comentarios/>
+</member><member name="T:Portalv9.WSArchivo.ABC_Transferencias_Primarias_Bajas_DocumentosCompletedEventHandler">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ABC_Transferencias_Secundarias_Bajas_DocumentosCompletedEventHandler">
+	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ListaArchivo_Descripciones_Transferencia_FiltroCompletedEventHandler">
 	<remarks/>
 </member><member name="P:Portalv9.WSArchivo.ListaArchivo_Descripciones_Transferencia_FiltroCompletedEventArgs.Result">
@@ -9937,6 +9997,12 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="P:Portalv9.WSArchivo.Func_Concatena_Indices_GridCompletedEventArgs.Result">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.Func_Concatena_Indices_GridCompletedEventArgs">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.Func_Concatena_Indices_Grid_SumaCompletedEventHandler">
+	<remarks/>
+</member><member name="P:Portalv9.WSArchivo.Func_Concatena_Indices_Grid_SumaCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.Func_Concatena_Indices_Grid_SumaCompletedEventArgs">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.Func_Concatena_padresCompletedEventHandler">
 	<remarks/>
@@ -10318,6 +10384,8 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.Prepara_Vencimientos_Archivo_Tramite_BajasCompletedEventHandler">
 	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.Prepara_Vencimientos_Archivo_Tramite_Bajas_CodigoCompletedEventHandler">
+	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.Prepara_Vencimientos_Concentracion_BajasCompletedEventHandler">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ListaTransferencias_PrimariasCompletedEventHandler">
@@ -10330,11 +10398,11 @@ To modify move field declaration from designer file to code-behind file.
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ABC_Transferencias_Primarias_ExpedientesCompletedEventHandler">
 	<remarks/>
+</member><member name="P:Portalv9.WSArchivo.ABC_Transferencias_Primarias_ExpedientesCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:Portalv9.WSArchivo.ABC_Transferencias_Primarias_ExpedientesCompletedEventArgs">
+	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ABC_Transferencias_Primarias_DocumentosCompletedEventHandler">
-	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.ABC_Transferencias_Primarias_Bajas_DocumentosCompletedEventHandler">
-	<remarks/>
-</member><member name="T:Portalv9.WSArchivo.ABC_Transferencias_Secundarias_Bajas_DocumentosCompletedEventHandler">
 	<remarks/>
 </member><member name="T:Portalv9.WSArchivo.ABC_Archivo_FisicoCompletedEventHandler">
 	<remarks/>
@@ -16846,155 +16914,155 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.tdCampo">
 	<summary>
-tdCampo control.
+Control tdCampo.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.Campo">
 	<summary>
-Campo control.
+Control Campo.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.tdTexto_Padres">
 	<summary>
-tdTexto_Padres control.
+Control tdTexto_Padres.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.Texto_Padres">
 	<summary>
-Texto_Padres control.
+Control Texto_Padres.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.aspxGridCatalogoCampos">
 	<summary>
-aspxGridCatalogoCampos control.
+Control aspxGridCatalogoCampos.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.dsListaCatalogo">
 	<summary>
-dsListaCatalogo control.
+Control dsListaCatalogo.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.dsCatalogoDatos">
 	<summary>
-dsCatalogoDatos control.
+Control dsCatalogoDatos.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.dsCatalogoDatosAll">
 	<summary>
-dsCatalogoDatosAll control.
+Control dsCatalogoDatosAll.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.dsValores">
 	<summary>
-dsValores control.
+Control dsValores.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblidArea">
 	<summary>
-lblidArea control.
+Control lblidArea.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblidElemento">
 	<summary>
-lblidElemento control.
+Control lblidElemento.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblidIndice">
 	<summary>
-lblidIndice control.
+Control lblidIndice.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblidDescripcion">
 	<summary>
-lblidDescripcion control.
+Control lblidDescripcion.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblidNivel">
 	<summary>
-lblidNivel control.
+Control lblidNivel.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblIndice_Tipo">
 	<summary>
-lblIndice_Tipo control.
+Control lblIndice_Tipo.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblCatalogo">
 	<summary>
-lblCatalogo control.
+Control lblCatalogo.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblTipoValor">
 	<summary>
-lblTipoValor control.
+Control lblTipoValor.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblValores_Aceptados">
 	<summary>
-lblValores_Aceptados control.
+Control lblValores_Aceptados.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.CampoGrid.lblValoresAgregados">
 	<summary>
-lblValoresAgregados control.
+Control lblValoresAgregados.
 </summary>
 	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member><member name="F:Portalv9.Wfrm_TE_SolicitudDoc.lbltitle">
 	<summary>
@@ -19636,6 +19704,14 @@ Control gdbuscadorresultado.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccion.gdbuscadorBajas">
+	<summary>
+Control gdbuscadorBajas.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccion.butTransferir">
 	<summary>
 Control butTransferir.
@@ -19663,6 +19739,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccion.dsExpedientesTraspaso">
 	<summary>
 Control dsExpedientesTraspaso.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccion.dsExpedientesBaja">
+	<summary>
+Control dsExpedientesBaja.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -21676,9 +21760,25 @@ Control lblArchivo.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Portalv9.Wfrm_ValorizacionBajas_Seleccion.ASPxRadioButtonList1">
+	<summary>
+Control ASPxRadioButtonList1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Portalv9.Wfrm_ValorizacionBajas_Seleccion.deFechaCorte">
 	<summary>
 Control deFechaCorte.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Portalv9.Wfrm_ValorizacionBajas_Seleccion.txtCodigo">
+	<summary>
+Control txtCodigo.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -23200,9 +23300,9 @@ Control gdbuscadorresultado.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
-</member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados_Hist.trArchivoDestino">
+</member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados_Hist.gdbuscadorEliminar">
 	<summary>
-Control trArchivoDestino.
+Control gdbuscadorEliminar.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -23235,6 +23335,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados_Hist.ObjectDataSource1">
 	<summary>
 Control ObjectDataSource1.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados_Hist.dsExpedientesEliminar">
+	<summary>
+Control dsExpedientesEliminar.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -24558,6 +24666,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados_Upd.gdbuscadorresultado">
 	<summary>
 Control gdbuscadorresultado.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados_Upd.gdbuscadorBajas">
+	<summary>
+Control gdbuscadorBajas.
 </summary>
 	<remarks>
 Campo generado automáticamente.
@@ -27870,6 +27986,14 @@ Control gdbuscadorresultado.
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
+</member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados.gdbuscadorEliminar">
+	<summary>
+Control gdbuscadorEliminar.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados.butRepAutorizacion">
 	<summary>
 Control butRepAutorizacion.
@@ -27913,6 +28037,14 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 </member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados.dsExpedientesTransferir">
 	<summary>
 Control dsExpedientesTransferir.
+</summary>
+	<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member><member name="F:Portalv9.Wfrm_Transferencia_Secundaria_Seleccionados.dsExpedientesEliminar">
+	<summary>
+Control dsExpedientesEliminar.
 </summary>
 	<remarks>
 Campo generado automáticamente.

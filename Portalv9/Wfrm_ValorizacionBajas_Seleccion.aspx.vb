@@ -88,14 +88,26 @@ Partial Public Class Wfrm_ValorizacionBajas_Seleccion
 
 
     Protected Sub btnBuscar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBuscar.Click
-        If deFechaCorte.Text <> "" Then
-            sv.Prepara_Vencimientos_Archivo_Tramite_Bajas(Request.QueryString("idArchivo"), Request.QueryString("idFolio"), deFechaCorte.Date)
-            dsExpedientesBaja.SelectParameters("idFolio").DefaultValue = Request.QueryString("idFolio")
-            dsExpedientesBaja.SelectParameters("Baja").DefaultValue = 1
-            dsExpedientesBaja.Select()
-            gdbuscadorBajas.DataBind()
+        If ASPxRadioButtonList1.SelectedIndex = 0 Then
+            If deFechaCorte.Text <> "" Then
+                sv.Prepara_Vencimientos_Archivo_Tramite_Bajas(Request.QueryString("idArchivo"), Request.QueryString("idFolio"), deFechaCorte.Date)
+                dsExpedientesBaja.SelectParameters("idFolio").DefaultValue = Request.QueryString("idFolio")
+                dsExpedientesBaja.SelectParameters("Baja").DefaultValue = 1
+                dsExpedientesBaja.Select()
+                gdbuscadorBajas.DataBind()
+            Else
+                MsgBox1.ShowMessage("Debe seleccionar la fecha de corte")
+            End If
         Else
-            MsgBox1.ShowMessage("Debe seleccionar la fecha de corte")
+            If txtCodigo.Text <> "" Then
+                sv.Prepara_Vencimientos_Archivo_Tramite_Bajas_Codigo(Request.QueryString("idArchivo"), Request.QueryString("idFolio"), txtCodigo.Text)
+                dsExpedientesBaja.SelectParameters("idFolio").DefaultValue = Request.QueryString("idFolio")
+                dsExpedientesBaja.SelectParameters("Baja").DefaultValue = 1
+                dsExpedientesBaja.Select()
+                gdbuscadorBajas.DataBind()
+            Else
+                MsgBox1.ShowMessage("Debe seleccionar la fecha de corte")
+            End If
         End If
     End Sub
 

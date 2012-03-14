@@ -124,6 +124,15 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
     Protected WithEvents lblidArchivoOrigen As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Control idArchivoOrigen.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents idArchivoOrigen As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control Label4.
     '''</summary>
     '''<remarks>
@@ -187,6 +196,15 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
     Protected WithEvents lblFecha_Aplicacion As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''Control btnAgregaExp.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnAgregaExp As Global.DevExpress.Web.ASPxEditors.ASPxButton
+
+    '''<summary>
     '''Control aspxtreeDocumentos.
     '''</summary>
     '''<remarks>
@@ -212,6 +230,33 @@ Partial Public Class Wfrm_ValorizacionSeleccionados_Recibe
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblArchivo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control ASPxPopupControl1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ASPxPopupControl1 As Global.DevExpress.Web.ASPxPopupControl.ASPxPopupControl
+
+    '''<summary>
+    '''Control txtBuscaCodigo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtBuscaCodigo As Global.DevExpress.Web.ASPxEditors.ASPxTextBox
+
+    '''<summary>
+    '''Control btnBuscaExpediente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnBuscaExpediente As Global.DevExpress.Web.ASPxEditors.ASPxButton
 
     '''<summary>
     '''Control lblidNorma.

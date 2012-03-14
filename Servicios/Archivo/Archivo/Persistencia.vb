@@ -1632,15 +1632,29 @@ Public Class Persistencia
         db.ExecuteDataSet(dbCW)
     End Sub
 
-    Public Function Func_Concatena_Indices_Grid(ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer) As System.Data.DataSet
+    Public Function Func_Concatena_Indices_Grid(ByVal idIndice_Norma As Integer, ByVal relacion_con_normaPID As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer) As System.Data.DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim ds As DataSet
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand("Func_Concatena_Indices_Grid", idNorma, idArea, idElemento, idIndice, idArchivo, idDescripcion, Nothing)
+                dbCW = db.GetStoredProcCommand("Func_Concatena_Indices_Grid", idIndice_Norma, relacion_con_normaPID, idArchivo, idDescripcion, Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand("Func_Concatena_Indices_Grid", idNorma, idArea, idElemento, idIndice, idArchivo, idDescripcion)
+                dbCW = db.GetStoredProcCommand("Func_Concatena_Indices_Grid", idIndice_Norma, relacion_con_normaPID, idArchivo, idDescripcion)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
+
+    Public Function Func_Concatena_Indices_Grid_Suma(ByVal idIndice_Norma As Integer, ByVal relacion_con_normaPID As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer) As System.Data.DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("Func_Concatena_Indices_Grid_Suma", idIndice_Norma, relacion_con_normaPID, idArchivo, idDescripcion, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("Func_Concatena_Indices_Grid_Suma", idIndice_Norma, relacion_con_normaPID, idArchivo, idDescripcion)
         End Select
         ds = db.ExecuteDataSet(dbCW)
         Return ds
@@ -2585,6 +2599,20 @@ Public Class Persistencia
         db.ExecuteDataSet(dbCW)
     End Sub
 
+    Public Sub Prepara_Vencimientos_Archivo_Tramite_Bajas_Codigo(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Codigo_clasificacion As String)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("Prepara_Vencimientos_Archivo_Tramite_Bajas_Codigo", idArchivo, idFolio, Codigo_clasificacion, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("Prepara_Vencimientos_Archivo_Tramite_Bajas_Codigo", idArchivo, idFolio, Codigo_clasificacion)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
+
+
     Public Sub Prepara_Vencimientos_Concentracion_Bajas(ByVal idArchivo As Integer, ByVal idFolio As Integer, ByVal Fecha_Corte As Date)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
@@ -2699,15 +2727,14 @@ Public Class Persistencia
 
     Public Sub ABC_Transferencias_Primarias(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal idArchivoDestino As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
-        Dim dbCW As DbCommand = Nothing
-        Dim nID As Integer
+        Dim dbCW As DbCommand = Nothing        
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
                 dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias", op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, idArchivoDestino, Notas_Solicitud, Status, Nothing)
             Case eTipoBD.SQLServer
                 dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias", op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, idArchivoDestino, Notas_Solicitud, Status)
         End Select
-        db.ExecuteDataSet(dbCW)
+        db.ExecuteDataSet(dbCW)        
     End Sub
 
 
@@ -2723,9 +2750,10 @@ Public Class Persistencia
         db.ExecuteDataSet(dbCW)
     End Sub
 
-    Public Sub ABC_Transferencias_Primarias_Expedientes(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
-        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+    Public Function ABC_Transferencias_Primarias_Expedientes(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer) As Integer
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)        
         Dim dbCW As DbCommand = Nothing
+        Dim nID As Integer
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
                 dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Expedientes", op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus, Nothing)
@@ -2733,7 +2761,9 @@ Public Class Persistencia
                 dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Expedientes", op, idFolio, idFolioDetalle, idDescripcion, idDocumentoPID, idStatus)
         End Select
         db.ExecuteDataSet(dbCW)
-    End Sub
+        nID = CType(dbCW.Parameters.Item("@idFolioDetalle").Value, Integer)
+        Return nID
+    End Function
 
     Public Sub ABC_Transferencias_Primarias_Bajas_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)

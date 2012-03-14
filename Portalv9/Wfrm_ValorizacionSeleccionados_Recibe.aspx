@@ -8,6 +8,7 @@
 <%@ Register assembly="DevExpress.Web.ASPxTreeList.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxTreeList" tagprefix="dxwtl" %>
 <%@ Register TagPrefix="cc1" Namespace="MsgBox" Assembly="MsgBox" %>
 <%@ Register assembly="DevExpress.Web.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dxrp" %>
+<%@ Register assembly="DevExpress.Web.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dx" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="TituloBarra" runat="server">
     <div id="pagetitle">
         <asp:Label ID="lbltitulo" runat="server" Text=""></asp:Label>
@@ -68,6 +69,8 @@
                     </td>                        
                     <td>
                         <asp:label id="lblidArchivoOrigen" runat="server" Font-Names="Arial"></asp:label>
+                        <asp:Label ID="idArchivoOrigen" runat="server" Font-Names="Arial" 
+                            Visible="False"></asp:Label>
                     </td>
                     <td>
                         <asp:label id="Label4" runat="server" Font-Names="Arial" Font-Bold="True" Text="Fecha de Solicitud: "></asp:label>
@@ -93,7 +96,13 @@
                 </tr>                    
                 <tr>
                     <td>
-                        &nbsp;</td>
+                        <dxe:ASPxButton ID="btnAgregaExp" runat="server" AutoPostBack="False" 
+                            Text="Agregar Expediente" Width="147px">
+                            <ClientSideEvents Click="function(s, e) {
+	ASPxPopupControl1.Show();
+}" />
+                        </dxe:ASPxButton>
+                    </td>
                     <td>
                         &nbsp;</td>
                     <td>
@@ -225,7 +234,34 @@
         </tr>
         <tr>
             <td valign="top">
+                <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" 
+                    ClientInstanceName="ASPxPopupControl1" CloseAction="CloseButton" 
+                    HeaderText="Agregar Expediente" PopupAction="None" 
+                    PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter">
+                    <ContentCollection>
+<dx:PopupControlContentControl runat="server">
+    <table style="width: 500px">
+        <tr>
+            <td style="width: 142px">
+                Código del expediente:</td>
+            <td>
+                <dxe:ASPxTextBox ID="txtBuscaCodigo" runat="server" Width="300px">
+                </dxe:ASPxTextBox>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 142px">
                 &nbsp;</td>
+            <td>
+                <dxe:ASPxButton ID="btnBuscaExpediente" runat="server" Text="Aceptar">
+                </dxe:ASPxButton>
+            </td>
+        </tr>
+    </table>
+                        </dx:PopupControlContentControl>
+</ContentCollection>
+                </dx:ASPxPopupControl>
+            </td>
         </tr>
     </table>
     <asp:Label ID="lblidNorma" runat="server" Visible="False"></asp:Label>

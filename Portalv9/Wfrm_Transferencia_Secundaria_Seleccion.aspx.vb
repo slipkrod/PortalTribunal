@@ -56,6 +56,14 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccion
                 End If
             Next
 
+            For iRow = 0 To gdbuscadorBajas.VisibleRowCount - 1
+                If gdbuscadorBajas.Selection.IsRowSelected(iRow) Then
+                    svr.ABC_Transferencias_Secundarias_Bajas_Documentos(3, Request.QueryString("idFolio"), gdbuscadorBajas.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorBajas.GetRowValues(iRow, "idDescripcion"), gdbuscadorBajas.GetRowValues(iRow, "idDocumentoPID"), 1)
+                Else
+                    svr.ABC_Transferencias_Secundarias_Bajas_Documentos(3, Request.QueryString("idFolio"), gdbuscadorBajas.GetRowValues(iRow, "idFolioDetalle"), gdbuscadorBajas.GetRowValues(iRow, "idDescripcion"), gdbuscadorBajas.GetRowValues(iRow, "idDocumentoPID"), 0)
+                End If
+            Next
+
 
             svr.ABC_Transferencias_Secundarias(3, Request.QueryString("idFolio"), 0, Now.Date, 0, 0, "", 1)
             Response.Redirect("Wfrm_Transferencia_Secundaria_Seleccionados.aspx?idArchivo=" & Request.QueryString("idArchivo") & _
@@ -90,9 +98,17 @@ Partial Public Class Wfrm_Transferencia_Secundaria_Seleccion
 
     Protected Sub btnBuscar_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnBuscar.Click
         sv.Prepara_Vencimientos_Archivo_Concentracion(Request.QueryString("idArchivo"), Request.QueryString("idFolio"), deFechaCorte.Date)
+        sv.Prepara_Vencimientos_Concentracion_Bajas(Request.QueryString("idArchivo"), Request.QueryString("idFolio"), deFechaCorte.Date)
+
         dsExpedientesTraspaso.SelectParameters("idFolio").DefaultValue = Request.QueryString("idFolio")
         dsExpedientesTraspaso.SelectParameters("Baja").DefaultValue = 0
         dsExpedientesTraspaso.Select()
         gdbuscadorresultado.DataBind()
+
+
+        dsExpedientesBaja.SelectParameters("idFolio").DefaultValue = Request.QueryString("idFolio")
+        dsExpedientesBaja.SelectParameters("Baja").DefaultValue = 1
+        dsExpedientesBaja.Select()
+        gdbuscadorBajas.DataBind()
     End Sub
 End Class

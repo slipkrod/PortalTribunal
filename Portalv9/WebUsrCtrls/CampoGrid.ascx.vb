@@ -84,13 +84,20 @@ Partial Public Class CampoGrid
         If e.InputParameters("idDescripcion") Is Nothing Then
             e.InputParameters("idDescripcion") = lblidDescripcion.Text
         End If
+       Dim intI As Integer
+       For intI = 0 To aspxGridCatalogoCampos.VisibleRowCount - 1
+           If e.InputParameters("IDCatalogo_item")=aspxGridCatalogoCampos.GetRowValues(intI, "IDCatalogo_item") then
+              e.Cancel=True
+           end if       
+       Next
+       
     End Sub
+
     Private Sub dsValores_Updating(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs) Handles dsValores.Updating
         e.InputParameters("idArea") = lblidArea.Text
         e.InputParameters("idElemento") = lblidElemento.Text
         e.InputParameters("idIndice") = lblidIndice.Text
         e.InputParameters("Indice_Tipo") = lblIndice_Tipo.Text
-        e.InputParameters("Indice_Tipo") = lblidDescripcion.Text
         If e.InputParameters("idNivel") Is Nothing Then
             e.InputParameters("idNivel") = lblidNivel.Text
         End If
@@ -161,7 +168,12 @@ Partial Public Class CampoGrid
 
     Protected Sub aspxGridCatalogoCampos_BeforePerformDataSelect(ByVal sender As Object, ByVal e As EventArgs) Handles aspxGridCatalogoCampos.BeforePerformDataSelect
         Try
-
+            dsValores.SelectParameters.Item("idNorma").DefaultValue=Request.QueryString("idNorma")
+            dsValores.SelectParameters.Item("idArea").DefaultValue=lblidArea.Text
+            dsValores.SelectParameters.Item("idElemento").DefaultValue=lblidElemento.Text
+            dsValores.SelectParameters.Item("idIndice").DefaultValue=lblidIndice.Text
+            dsValores.SelectParameters.Item("idArchivo").DefaultValue=Request.QueryString("idArchivo")
+            dsValores.SelectParameters.Item("idDescripcion").DefaultValue=Request.QueryString("idDescripcion")
         Catch ex As Exception
 
         End Try
@@ -189,13 +201,6 @@ Partial Public Class CampoGrid
                                 CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("speValor"), ASPxSpinEdit).Number = CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("txtValor"), ASPxTextBox).Text
                             End If
                     End Select
-                    If CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("cmbCampo"), ASPxComboBox).Items.Count > 2 Then
-                        CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("cmbCampo"), ASPxComboBox).Visible = True
-                        CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("cmbCampoAll"), ASPxComboBox).Visible = False
-                    Else
-                        CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("cmbCampo"), ASPxComboBox).Visible = False
-                        CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("cmbCampoAll"), ASPxComboBox).Visible = True
-                    End If                    
                 End If
                 CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("cmbCatalogos"), ASPxComboBox).Items.FindByValue(Integer.Parse(lblCatalogo.Text)).Selected = True
                 CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("lblCatalogo"), Label).Text = CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("cmbCatalogos"), ASPxComboBox).SelectedItem.Text
@@ -219,7 +224,7 @@ Partial Public Class CampoGrid
     End Function
 
     Protected Sub dsCatalogoDatos_Selected(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs) Handles dsCatalogoDatos.Selected
-        
+
     End Sub
 
     Protected Sub aspxGridCatalogoCampos_RowInserting(ByVal sender As Object, ByVal e As DevExpress.Web.Data.ASPxDataInsertingEventArgs) Handles aspxGridCatalogoCampos.RowInserting
@@ -264,20 +269,9 @@ Partial Public Class CampoGrid
     End Sub
 
     Protected Sub aspxGridCatalogoCampos_HtmlCommandCellPrepared(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.ASPxGridViewTableCommandCellEventArgs) Handles aspxGridCatalogoCampos.HtmlCommandCellPrepared
-        If e.Cell.Controls.Count > 0 Then
-            If lblValoresAgregados.Text >= lblValores_Aceptados.Text Then
-                e.Cell.Controls(1).Visible = False
-            Else
-                e.Cell.Controls(1).Visible = True
-            End If
-        End If
     End Sub
 
     Protected Sub dsValores_Selected(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs) Handles dsValores.Selected
-        Try
-            lblValoresAgregados.Text = DirectCast(DirectCast(e.ReturnValue, System.Object), System.Data.DataSet).Tables(0).Rows.Count
-        Catch ex As Exception
-        End Try
     End Sub
 
     Protected Sub dsCatalogoDatosAll_Selected(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs) Handles dsCatalogoDatosAll.Selected
@@ -293,4 +287,21 @@ Partial Public Class CampoGrid
         Catch ex As Exception
         End Try
     End Sub
+
+    Protected Sub aspxGridCatalogoCampos_RowValidating(ByVal sender As Object, ByVal e As DevExpress.Web.Data.ASPxDataValidationEventArgs) Handles aspxGridCatalogoCampos.RowValidating
+        Dim x As String
+        Dim intI As Integer
+        If e.IsNewRow Then
+            x = CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("cmbCampoAll"), ASPxComboBox).SelectedItem.Value
+            For intI = 0 To aspxGridCatalogoCampos.VisibleRowCount - 1
+                If CType(aspxGridCatalogoCampos.FindEditFormTemplateControl("cmbCampoAll"), ASPxComboBox).SelectedItem.Value = aspxGridCatalogoCampos.GetRowValues(intI, "IDCatalogo_item") Then
+                    e.Errors.Add(aspxGridCatalogoCampos.Columns("IDCatalogo_item"), "El tipo de campo ya existe.")
+                End If
+            Next
+        End If
+
+
+    End Sub
+
+
 End Class

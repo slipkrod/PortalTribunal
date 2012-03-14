@@ -32,18 +32,43 @@
                 <table style="width: 445px">
                     <tr>
                         <td>
-                            Fecha de corte:
+                            <dxe:ASPxRadioButtonList ID="ASPxRadioButtonList1" runat="server" 
+                                ClientInstanceName="ASPxRadioButtonList1" SelectedIndex="0" 
+                                ValueType="System.Int32">
+                                <Items>
+                                    <dxe:ListEditItem Text="Fecha de corte" Value="0" />
+                                    <dxe:ListEditItem Text="Código de expediente" Value="1" />
+                                </Items>
+                                <ClientSideEvents ValueChanged="function(s, e) {
+	if(s.GetValue()==0)
+    { txtCodigo.SetText('');
+      deFechaCorte.SetText('');
+      deFechaCorte.SetClientVisible(true);
+      txtCodigo.SetClientVisible(false);
+    }
+    else
+    { txtCodigo.SetText('');
+      deFechaCorte.SetText('');
+      deFechaCorte.SetClientVisible(false);
+      txtCodigo.SetClientVisible(true);
+    }
+}" />
+                            </dxe:ASPxRadioButtonList>
                         </td>
                         <td>
-                            <dxe:ASPxDateEdit ID="deFechaCorte" runat="server">
+                            <dxe:ASPxDateEdit ID="deFechaCorte" runat="server" 
+                                ClientInstanceName="deFechaCorte">
                             </dxe:ASPxDateEdit>
+                            <dxe:ASPxTextBox ID="txtCodigo" runat="server" ClientInstanceName="txtCodigo" 
+                                Width="170px" ClientVisible="False">
+                            </dxe:ASPxTextBox>
                         </td>
                         <td>
                             <dxe:ASPxButton ID="btnBuscar" runat="server" Text="Buscar">
                             </dxe:ASPxButton>
                         </td>
                     </tr>
-                </table>
+                    </table>
             </td>
         </tr>
         <tr>

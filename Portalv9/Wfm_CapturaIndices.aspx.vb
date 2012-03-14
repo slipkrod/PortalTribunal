@@ -656,7 +656,7 @@ Partial Public Class Wfm_CapturaIndices
                             End If
                         End If
                     Case 12
-                        dsCampoValor = sv.Func_Concatena_Indices_Grid(Request.QueryString("idNorma"), dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), Request.QueryString("idArchivo"), iddescrip)
+                        dsCampoValor = sv.Func_Concatena_Indices_Grid(7, 12, Request.QueryString("idArchivo"), iddescrip)
                         If dsCampoValor.Tables(0).Rows.Count > 0 Then
                             ''Session("idDescripcion") = iddescrip
                             ''Session("idNivel") = idNivel
