@@ -2909,13 +2909,13 @@ Public Class Service1
         Return resultado
     End Function
 
-    <WebMethod()> Public Sub InsertaEventoLog(ByVal TipoEvento As Byte, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String, ByVal objeto As String)
+    <WebMethod()> Public Sub InsertaEventoLog(ByVal TipoEvento As Byte, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String, ByVal objeto As String, ByVal idDescripcion As Integer, ByVal idserie As Integer)
         Const strProcName As String = "InsertaLogEventos"
 
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         'Dim resultado As DataSet
         Try
-            pBD.InsertaEventoLog(TipoEvento, Descripcion, Pagina, Usuario, Grupo, Archivo, IP, objeto)
+            pBD.InsertaEventoLog(TipoEvento, Descripcion, Pagina, Usuario, Grupo, Archivo, IP, objeto, idDescripcion, idserie)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
