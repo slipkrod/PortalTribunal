@@ -3302,17 +3302,17 @@ Public Class Persistencia
     End Function
 
 
-    Public Sub InsertaEventoLog(ByVal TipoEvento As Byte, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String, ByVal objeto As String)
+    Public Sub InsertaEventoLog(ByVal TipoEvento As Byte, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String, ByVal objeto As String, ByVal idDescripcion As Integer, ByVal idSerie As Integer)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim nRes As Integer
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
                 dbCW = db.GetStoredProcCommand("InsertaLogEventos", TipoEvento, Descripcion, Pagina, _
-                                               Usuario, Grupo, Archivo, IP, objeto, Nothing)
+                                               Usuario, Grupo, Archivo, IP, objeto, idDescripcion, idSerie, Nothing)
             Case eTipoBD.SQLServer
                 dbCW = db.GetStoredProcCommand("InsertaLogEventos", TipoEvento, Descripcion, Pagina, _
-                                               Usuario, Grupo, Archivo, IP, objeto)
+                                               Usuario, Grupo, Archivo, IP, objeto, idDescripcion, idSerie)
         End Select
         nRes = db.ExecuteNonQuery(dbCW)
     End Sub
