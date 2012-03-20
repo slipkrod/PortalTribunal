@@ -185,7 +185,7 @@ Public Class Persistencia
     Private Const SP_PermisosAD As String = "SP_PermisosAD"
     Private Const SP_ABC_Series_Modelo As String = "ABC_Series_Modelo"
     Private Const SP_ListaSeries_Modelo_Hijos As String = "ListaSeries_Modelo_Hijos"
-    
+
     Private Const SP_ListaSeries_Indices As String = "ListaSeries_Indices"
     Private Const SP_ListaSeries_Indices_padres As String = "ListaSeries_Indices_padres"
     Private Const SP_ABC_Series_Indices As String = "ABC_Series_Indices"
@@ -1080,7 +1080,7 @@ Public Class Persistencia
         Return ds
     End Function
 
-    Public Function ABC_Archivo_indice(ByVal op As OperacionesABC, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer) As Integer
+    Public Function ABC_Archivo_indice(ByVal op As Integer, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer) As Integer
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim nID As Integer
@@ -2727,14 +2727,14 @@ Public Class Persistencia
 
     Public Sub ABC_Transferencias_Primarias(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal idArchivoDestino As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
-        Dim dbCW As DbCommand = Nothing        
+        Dim dbCW As DbCommand = Nothing
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
                 dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias", op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, idArchivoDestino, Notas_Solicitud, Status, Nothing)
             Case eTipoBD.SQLServer
                 dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias", op, idFolio, Usrid, Fecha_Solicitud, idArchivoOrigen, idArchivoDestino, Notas_Solicitud, Status)
         End Select
-        db.ExecuteDataSet(dbCW)        
+        db.ExecuteDataSet(dbCW)
     End Sub
 
 
@@ -2751,7 +2751,7 @@ Public Class Persistencia
     End Sub
 
     Public Function ABC_Transferencias_Primarias_Expedientes(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer) As Integer
-        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)        
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim nID As Integer
         Select Case Me.TipoBD
@@ -3273,8 +3273,8 @@ Public Class Persistencia
         End Select
         Return resultado
     End Function
-	
-	Public Function ObtenDocIdPorIdDescripcion(ByVal idDescripcion As Integer) As Integer
+
+    Public Function ObtenDocIdPorIdDescripcion(ByVal idDescripcion As Integer) As Integer
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim resultado As Integer = 0
 
@@ -3301,6 +3301,19 @@ Public Class Persistencia
         Return ds
     End Function
 
+    Public Function TieneHijosconValorenIndice(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idIndice_Norma As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("TieneHijosconValorenIndice", idArchivo, idDescripcion, idIndice_Norma, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("TieneHijosconValorenIndice", idArchivo, idDescripcion, idIndice_Norma)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
 
     Public Sub InsertaEventoLog(ByVal TipoEvento As Byte, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String, ByVal objeto As String, ByVal idDescripcion As Integer, ByVal idSerie As Integer)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
