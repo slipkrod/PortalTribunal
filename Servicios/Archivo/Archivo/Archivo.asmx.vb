@@ -813,7 +813,7 @@ Public Class Service1
     End Function
 
 
-    <WebMethod()> Public Function ABC_Archivo_indice(ByVal op As OperacionesABC, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer) As Integer
+    <WebMethod()> Public Function ABC_Archivo_indice(ByVal op As Integer, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer) As Integer
         Const strProcName As String = "ABC_Archivo_Descripciones"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Dim nID As Integer
@@ -1417,7 +1417,7 @@ Public Class Service1
         Return ds
     End Function
 
- 
+
 
 
     <WebMethod()> Public Function ABC_ISAAR(ByVal op As OperacionesABC, ByVal idISAAR As Integer, ByVal Tipo_de_entidad As String, ByVal Formas_autorizadas_nombre As String, ByVal Formas_paralelas_nombre As String, ByVal Formas_normalizadas_nombre As String, ByVal Otras_formas_nombre As String, ByVal Identificadores_para_instituciones As String, ByVal Fechas_de_existencia As Date, ByVal Historia As String, ByVal Lugares As String, ByVal Estatuto_jurídico As String, ByVal Funciones_ocupaciones_actividades As String, ByVal Atribuciones_Fuentes_legales As String, ByVal Estructuras_internas_Genealogía As String, ByVal Contexto_general As String, ByVal Identificador_registro_autoridad As String, ByVal Identificadores_institución As String, ByVal Reglas_convenciones As String, ByVal Estado_elaboración As String, ByVal Nivel_detalle As String, ByVal Fechas_creación_revisión_eliminación As Date, ByVal Lenguas_escrituras As String, ByVal Fuentes As String, ByVal Notas_de_mantenimiento As String) As Integer
@@ -2880,8 +2880,8 @@ Public Class Service1
         End Try
         Return resultado
     End Function
-	
-	<WebMethod()> Public Function ObtenDocIdPorIdDescripcion(ByVal idDescripcion As Integer) As Integer
+
+    <WebMethod()> Public Function ObtenDocIdPorIdDescripcion(ByVal idDescripcion As Integer) As Integer
         Const strProcName As String = "ObtenDocIdPorIdDescripcion"
 
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
@@ -2908,6 +2908,20 @@ Public Class Service1
         End Try
         Return resultado
     End Function
+    <WebMethod()> Public Function TieneHijosconValorenIndice(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idIndice_Norma As Integer) As DataSet
+        Const strProcName As String = "TieneHijosconValorenIndice"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.TieneHijosconValorenIndice(idArchivo, idDescripcion, idIndice_Norma)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
 
     <WebMethod()> Public Sub InsertaEventoLog(ByVal TipoEvento As Byte, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String, ByVal objeto As String, ByVal idDescripcion As Integer, ByVal idserie As Integer)
         Const strProcName As String = "InsertaLogEventos"
