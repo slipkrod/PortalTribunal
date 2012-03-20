@@ -118,6 +118,16 @@ Namespace WSArchivo
         
         Private CuentaElementosNivelOperationCompleted As System.Threading.SendOrPostCallback
         
+        Private ObtenDocIdPorIdDescripcionOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private ObtenArchivoDescripcionesArchivisticasPorIdDescripcionOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private TieneHijosconValorenIndiceOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private InsertaEventoLogOperationCompleted As System.Threading.SendOrPostCallback
+        
+        Private GetLogEventosFechaOperationCompleted As System.Threading.SendOrPostCallback
+        
         Private ListaArchivo_val_Campo_busOperationCompleted As System.Threading.SendOrPostCallback
         
         Private Reportecgca_datosOperationCompleted As System.Threading.SendOrPostCallback
@@ -622,6 +632,21 @@ Namespace WSArchivo
         
         '''<remarks/>
         Public Event CuentaElementosNivelCompleted As CuentaElementosNivelCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ObtenDocIdPorIdDescripcionCompleted As ObtenDocIdPorIdDescripcionCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event ObtenArchivoDescripcionesArchivisticasPorIdDescripcionCompleted As ObtenArchivoDescripcionesArchivisticasPorIdDescripcionCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event TieneHijosconValorenIndiceCompleted As TieneHijosconValorenIndiceCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event InsertaEventoLogCompleted As InsertaEventoLogCompletedEventHandler
+        
+        '''<remarks/>
+        Public Event GetLogEventosFechaCompleted As GetLogEventosFechaCompletedEventHandler
         
         '''<remarks/>
         Public Event ListaArchivo_val_Campo_busCompleted As ListaArchivo_val_Campo_busCompletedEventHandler
@@ -2279,6 +2304,140 @@ Namespace WSArchivo
             If (Not (Me.CuentaElementosNivelCompletedEvent) Is Nothing) Then
                 Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
                 RaiseEvent CuentaElementosNivelCompleted(Me, New CuentaElementosNivelCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ObtenDocIdPorIdDescripcion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ObtenDocIdPorIdDescripcion(ByVal idDescripcion As Integer) As Integer
+            Dim results() As Object = Me.Invoke("ObtenDocIdPorIdDescripcion", New Object() {idDescripcion})
+            Return CType(results(0),Integer)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ObtenDocIdPorIdDescripcionAsync(ByVal idDescripcion As Integer)
+            Me.ObtenDocIdPorIdDescripcionAsync(idDescripcion, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ObtenDocIdPorIdDescripcionAsync(ByVal idDescripcion As Integer, ByVal userState As Object)
+            If (Me.ObtenDocIdPorIdDescripcionOperationCompleted Is Nothing) Then
+                Me.ObtenDocIdPorIdDescripcionOperationCompleted = AddressOf Me.OnObtenDocIdPorIdDescripcionOperationCompleted
+            End If
+            Me.InvokeAsync("ObtenDocIdPorIdDescripcion", New Object() {idDescripcion}, Me.ObtenDocIdPorIdDescripcionOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnObtenDocIdPorIdDescripcionOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ObtenDocIdPorIdDescripcionCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ObtenDocIdPorIdDescripcionCompleted(Me, New ObtenDocIdPorIdDescripcionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ObtenArchivoDescripcionesArchivisticasPorIdDescripcion", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function ObtenArchivoDescripcionesArchivisticasPorIdDescripcion(ByVal idDescripcion As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("ObtenArchivoDescripcionesArchivisticasPorIdDescripcion", New Object() {idDescripcion})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub ObtenArchivoDescripcionesArchivisticasPorIdDescripcionAsync(ByVal idDescripcion As Integer)
+            Me.ObtenArchivoDescripcionesArchivisticasPorIdDescripcionAsync(idDescripcion, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub ObtenArchivoDescripcionesArchivisticasPorIdDescripcionAsync(ByVal idDescripcion As Integer, ByVal userState As Object)
+            If (Me.ObtenArchivoDescripcionesArchivisticasPorIdDescripcionOperationCompleted Is Nothing) Then
+                Me.ObtenArchivoDescripcionesArchivisticasPorIdDescripcionOperationCompleted = AddressOf Me.OnObtenArchivoDescripcionesArchivisticasPorIdDescripcionOperationCompleted
+            End If
+            Me.InvokeAsync("ObtenArchivoDescripcionesArchivisticasPorIdDescripcion", New Object() {idDescripcion}, Me.ObtenArchivoDescripcionesArchivisticasPorIdDescripcionOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnObtenArchivoDescripcionesArchivisticasPorIdDescripcionOperationCompleted(ByVal arg As Object)
+            If (Not (Me.ObtenArchivoDescripcionesArchivisticasPorIdDescripcionCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent ObtenArchivoDescripcionesArchivisticasPorIdDescripcionCompleted(Me, New ObtenArchivoDescripcionesArchivisticasPorIdDescripcionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/TieneHijosconValorenIndice", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function TieneHijosconValorenIndice(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idIndice_Norma As Integer) As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("TieneHijosconValorenIndice", New Object() {idArchivo, idDescripcion, idIndice_Norma})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub TieneHijosconValorenIndiceAsync(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idIndice_Norma As Integer)
+            Me.TieneHijosconValorenIndiceAsync(idArchivo, idDescripcion, idIndice_Norma, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub TieneHijosconValorenIndiceAsync(ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idIndice_Norma As Integer, ByVal userState As Object)
+            If (Me.TieneHijosconValorenIndiceOperationCompleted Is Nothing) Then
+                Me.TieneHijosconValorenIndiceOperationCompleted = AddressOf Me.OnTieneHijosconValorenIndiceOperationCompleted
+            End If
+            Me.InvokeAsync("TieneHijosconValorenIndice", New Object() {idArchivo, idDescripcion, idIndice_Norma}, Me.TieneHijosconValorenIndiceOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnTieneHijosconValorenIndiceOperationCompleted(ByVal arg As Object)
+            If (Not (Me.TieneHijosconValorenIndiceCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent TieneHijosconValorenIndiceCompleted(Me, New TieneHijosconValorenIndiceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertaEventoLog", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub InsertaEventoLog(ByVal TipoEvento As Byte, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String, ByVal objeto As String)
+            Me.Invoke("InsertaEventoLog", New Object() {TipoEvento, Descripcion, Pagina, Usuario, Grupo, Archivo, IP, objeto})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub InsertaEventoLogAsync(ByVal TipoEvento As Byte, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String, ByVal objeto As String)
+            Me.InsertaEventoLogAsync(TipoEvento, Descripcion, Pagina, Usuario, Grupo, Archivo, IP, objeto, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub InsertaEventoLogAsync(ByVal TipoEvento As Byte, ByVal Descripcion As String, ByVal Pagina As String, ByVal Usuario As String, ByVal Grupo As String, ByVal Archivo As String, ByVal IP As String, ByVal objeto As String, ByVal userState As Object)
+            If (Me.InsertaEventoLogOperationCompleted Is Nothing) Then
+                Me.InsertaEventoLogOperationCompleted = AddressOf Me.OnInsertaEventoLogOperationCompleted
+            End If
+            Me.InvokeAsync("InsertaEventoLog", New Object() {TipoEvento, Descripcion, Pagina, Usuario, Grupo, Archivo, IP, objeto}, Me.InsertaEventoLogOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnInsertaEventoLogOperationCompleted(ByVal arg As Object)
+            If (Not (Me.InsertaEventoLogCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent InsertaEventoLogCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetLogEventosFecha", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Function GetLogEventosFecha() As System.Data.DataSet
+            Dim results() As Object = Me.Invoke("GetLogEventosFecha", New Object(-1) {})
+            Return CType(results(0),System.Data.DataSet)
+        End Function
+        
+        '''<remarks/>
+        Public Overloads Sub GetLogEventosFechaAsync()
+            Me.GetLogEventosFechaAsync(Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub GetLogEventosFechaAsync(ByVal userState As Object)
+            If (Me.GetLogEventosFechaOperationCompleted Is Nothing) Then
+                Me.GetLogEventosFechaOperationCompleted = AddressOf Me.OnGetLogEventosFechaOperationCompleted
+            End If
+            Me.InvokeAsync("GetLogEventosFecha", New Object(-1) {}, Me.GetLogEventosFechaOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnGetLogEventosFechaOperationCompleted(ByVal arg As Object)
+            If (Not (Me.GetLogEventosFechaCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent GetLogEventosFechaCompleted(Me, New GetLogEventosFechaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
             End If
         End Sub
         
@@ -6600,18 +6759,18 @@ Namespace WSArchivo
         
         '''<remarks/>
         <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ABC_Archivo_indice", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
-        Public Function ABC_Archivo_indice(ByVal op As OperacionesABC, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer) As Integer
+        Public Function ABC_Archivo_indice(ByVal op As Integer, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer) As Integer
             Dim results() As Object = Me.Invoke("ABC_Archivo_indice", New Object() {op, idNorma, idArea, idElemento, idIndice, idArchivo, idDescripcion, idFolio, idNivel, idSerie, relacion_con_normaPID, Valor, Indice_Tipo, IDCatalogo_item})
             Return CType(results(0),Integer)
         End Function
         
         '''<remarks/>
-        Public Overloads Sub ABC_Archivo_indiceAsync(ByVal op As OperacionesABC, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer)
+        Public Overloads Sub ABC_Archivo_indiceAsync(ByVal op As Integer, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer)
             Me.ABC_Archivo_indiceAsync(op, idNorma, idArea, idElemento, idIndice, idArchivo, idDescripcion, idFolio, idNivel, idSerie, relacion_con_normaPID, Valor, Indice_Tipo, IDCatalogo_item, Nothing)
         End Sub
         
         '''<remarks/>
-        Public Overloads Sub ABC_Archivo_indiceAsync(ByVal op As OperacionesABC, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer, ByVal userState As Object)
+        Public Overloads Sub ABC_Archivo_indiceAsync(ByVal op As Integer, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idElemento As Integer, ByVal idIndice As Integer, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idFolio As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal relacion_con_normaPID As Integer, ByVal Valor As String, ByVal Indice_Tipo As Integer, ByVal IDCatalogo_item As Integer, ByVal userState As Object)
             If (Me.ABC_Archivo_indiceOperationCompleted Is Nothing) Then
                 Me.ABC_Archivo_indiceOperationCompleted = AddressOf Me.OnABC_Archivo_indiceOperationCompleted
             End If
@@ -8181,6 +8340,118 @@ Namespace WSArchivo
             Get
                 Me.RaiseExceptionIfNecessary
                 Return CType(Me.results(0),Integer)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ObtenDocIdPorIdDescripcionCompletedEventHandler(ByVal sender As Object, ByVal e As ObtenDocIdPorIdDescripcionCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ObtenDocIdPorIdDescripcionCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As Integer
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),Integer)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub ObtenArchivoDescripcionesArchivisticasPorIdDescripcionCompletedEventHandler(ByVal sender As Object, ByVal e As ObtenArchivoDescripcionesArchivisticasPorIdDescripcionCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class ObtenArchivoDescripcionesArchivisticasPorIdDescripcionCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub TieneHijosconValorenIndiceCompletedEventHandler(ByVal sender As Object, ByVal e As TieneHijosconValorenIndiceCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class TieneHijosconValorenIndiceCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
+            End Get
+        End Property
+    End Class
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub InsertaEventoLogCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420")>  _
+    Public Delegate Sub GetLogEventosFechaCompletedEventHandler(ByVal sender As Object, ByVal e As GetLogEventosFechaCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "2.0.50727.5420"),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code")>  _
+    Partial Public Class GetLogEventosFechaCompletedEventArgs
+        Inherits System.ComponentModel.AsyncCompletedEventArgs
+        
+        Private results() As Object
+        
+        Friend Sub New(ByVal results() As Object, ByVal exception As System.Exception, ByVal cancelled As Boolean, ByVal userState As Object)
+            MyBase.New(exception, cancelled, userState)
+            Me.results = results
+        End Sub
+        
+        '''<remarks/>
+        Public ReadOnly Property Result() As System.Data.DataSet
+            Get
+                Me.RaiseExceptionIfNecessary
+                Return CType(Me.results(0),System.Data.DataSet)
             End Get
         End Property
     End Class

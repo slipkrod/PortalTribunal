@@ -26,7 +26,7 @@ Partial Public Class Wfm_Indices_Nuevo
         If Request.QueryString("idNorma") <> "" Then
             dsAreas = sv.ListaNormas_Elementos_CamposXArea_Serie(-1, Request.QueryString("idSerie"))
             For intI = 0 To dsAreas.Tables(0).Rows.Count - 1
-                Funciones_Archivo.CreaTablaElemento(PnlElementos, Page, Request.QueryString("idArchivo"), Request.QueryString("idNorma"), dsAreas.Tables(0).Rows(intI).Item("idArea"), _
+                Funciones_Archivo.CreaTablaElemento(PnlElementos, Page, Request.QueryString("idArchivo"), -1, Request.QueryString("idNorma"), dsAreas.Tables(0).Rows(intI).Item("idArea"), _
                                      dsAreas.Tables(0).Rows(intI).Item("idSerie"))
             Next
         End If
@@ -82,12 +82,13 @@ Partial Public Class Wfm_Indices_Nuevo
                             If CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoCatalogo).itemSeleccionado <> -1 Then
                                 sv.ABC_Archivo_indice(WSArchivo.OperacionesABC.operAlta, Request.QueryString("idNorma"), dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), _
                                         dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), Request.QueryString("idArchivo"), _
-                                        newidDescripcionPID, 0, idnivel, 0, _
+                                        newidDescripcionPID, 0, idnivel, Request.QueryString("idSerie"), _
                                         dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoCatalogo).ValorCampo, _
                                         dsNomraCampos.Tables(0).Rows(intI).Item("Indice_Tipo"), _
                                         CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoCatalogo).ValorCatalogo)
                             End If
                         Case 12
+                            CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoGridUnbound).GrabaDatos_Archivo(Request.QueryString("idArchivo"), newidDescripcionPID, Request.QueryString("idNorma"), idnivel, Request.QueryString("idSerie"), dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), 0, dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"))
                         Case 13
                             If CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoCatalogoISAAR).cambiovalor Then
                                 sv.ABC_Archivo_indice(WSArchivo.OperacionesABC.operAlta, Request.QueryString("idNorma"), dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), Request.QueryString("idArchivo"), Request.QueryString("idDescripcion"), 0, idnivel, Request.QueryString("idSerie"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoCatalogoISAAR).ValorCampo, dsNomraCampos.Tables(0).Rows(intI).Item("Indice_Tipo"), 0)

@@ -5,8 +5,10 @@ Partial Public Class CampoGrid
     Inherits System.Web.UI.UserControl
 
     Public Show_Parents As Boolean = False
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not IsPostBack Then
+        End If
     End Sub
 
     Public Property TextoCampo() As String
@@ -84,13 +86,6 @@ Partial Public Class CampoGrid
         If e.InputParameters("idDescripcion") Is Nothing Then
             e.InputParameters("idDescripcion") = lblidDescripcion.Text
         End If
-       Dim intI As Integer
-       For intI = 0 To aspxGridCatalogoCampos.VisibleRowCount - 1
-           If e.InputParameters("IDCatalogo_item")=aspxGridCatalogoCampos.GetRowValues(intI, "IDCatalogo_item") then
-              e.Cancel=True
-           end if       
-       Next
-       
     End Sub
 
     Private Sub dsValores_Updating(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs) Handles dsValores.Updating

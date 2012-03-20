@@ -6,12 +6,13 @@ Imports DevExpress.Web.ASPxPanel
 Imports DevExpress.Web.ASPxTreeList
 
 Public Class Funciones_Archivo
-    Shared Sub CreaTablaElemento(ByVal PnlElementos As ASPxPanel, ByVal sourcePage As Page, ByVal idArchivo As Integer, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idSerie As Integer)
+    Shared Sub CreaTablaElemento(ByVal PnlElementos As ASPxPanel, ByVal sourcePage As Page, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idSerie As Integer)
         Dim sv As New WSArchivo.Service1
         Dim dsElementos As DataSet
         Dim intI As Integer
         Dim intJ As Integer
         Dim rsDatosArchivo As DataSet
+        Dim dsTieneHijosconValor As DataSet
 
         rsDatosArchivo = sv.ListaArchivo(idArchivo)
         dsElementos = sv.ListaNormas_ElementosxSeriexElemento_Visible(idNorma, idArea, idSerie)
@@ -152,14 +153,36 @@ Public Class Funciones_Archivo
                         TBCampos.Rows.Add(nFilaC)
                         nCampoT.ID = "C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")
                     Case 12
-                        Dim nCampoT As New CampoGrid
-                        nCampoT.Visible = False
-                        nCampoT = CType(sourcePage.LoadControl("~/WebUsrCtrls/CampoGrid.ascx"), CampoGrid)
-                        nCeldaC.Width = PnlElementos.Width
-                        nCeldaC.Controls.Add(nCampoT)
-                        nFilaC.Cells.Add(nCeldaC)
-                        TBCampos.Rows.Add(nFilaC)
-                        nCampoT.ID = "C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")
+                        If dsCampos.Tables(0).Rows(intJ).Item("idIndice_Norma") = 7 Then
+                            dsTieneHijosconValor = sv.TieneHijosconValorenIndice(idArchivo, idDescripcion, 7)
+                            If dsTieneHijosconValor.Tables(0).Rows(0).Item("TieneValores") > 0 Then
+                                Dim nCampoTview As New CampoSlectura
+                                nCampoTview = CType(sourcePage.LoadControl("~/WebUsrCtrls/CampoSlectura.ascx"), CampoSlectura)
+                                nCeldaC.Width = PnlElementos.Width
+                                nCeldaC.Controls.Add(nCampoTview)
+                                nFilaC.Cells.Add(nCeldaC)
+                                TBCampos.Rows.Add(nFilaC)
+                                nCampoTview.ID = "C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")
+                            Else
+                                Dim nCampoT As New CampoGridUnbound
+                                nCampoT.Visible = False
+                                nCampoT = CType(sourcePage.LoadControl("~/WebUsrCtrls/CampoGridUnbound.ascx"), CampoGridUnbound)
+                                nCeldaC.Width = PnlElementos.Width
+                                nCeldaC.Controls.Add(nCampoT)
+                                nFilaC.Cells.Add(nCeldaC)
+                                TBCampos.Rows.Add(nFilaC)
+                                nCampoT.ID = "C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")
+                            End If
+                        Else
+                            Dim nCampoT As New CampoGridUnbound
+                            nCampoT.Visible = False
+                            nCampoT = CType(sourcePage.LoadControl("~/WebUsrCtrls/CampoGridUnbound.ascx"), CampoGridUnbound)
+                            nCeldaC.Width = PnlElementos.Width
+                            nCeldaC.Controls.Add(nCampoT)
+                            nFilaC.Cells.Add(nCeldaC)
+                            TBCampos.Rows.Add(nFilaC)
+                            nCampoT.ID = "C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")
+                        End If
                     Case 13
                         Dim nCampoT As New CampoCatalogoISAAR
                         nCampoT.Visible = False
@@ -362,23 +385,47 @@ Public Class Funciones_Archivo
                                 End If
                             End If
                         Case 12
-                            If dsCampos.Tables(0).Rows(intJ).Item("Indice_Obligatorio") Then
-                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).TextoCampo = _
-                                    dsCampos.Tables(0).Rows(intJ).Item("Folio_norma").ToString & " " & dsCampos.Tables(0).Rows(intJ).Item("Indice_descripcion") & " *" '<span style='color:Red;'>*</span>"
-                            Else
-                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).TextoCampo = _
-                                    dsCampos.Tables(0).Rows(intJ).Item("Folio_norma").ToString & " " & dsCampos.Tables(0).Rows(intJ).Item("Indice_descripcion")
-                            End If
-                            CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).Catalogo = dsCampos.Tables(0).Rows(intJ).Item("relacion_con_normaPID")
-                            CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).Muestra_Padres = dsCampos.Tables(0).Rows(intJ).Item("Muestra_padres")
 
-                            CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).idArea = dsCampos.Tables(0).Rows(intJ).Item("idArea")
-                            CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).idElemento = dsCampos.Tables(0).Rows(intJ).Item("idElemento")
-                            CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).idIndice = dsCampos.Tables(0).Rows(intJ).Item("idIndice")
-                            CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).Indice_Tipo = 12
-                            CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).idNivel = dsCampos.Tables(0).Rows(intJ).Item("idNivel")
-                            CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).idDescripcion = -1
-                            CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGrid).DataBind()
+                            If dsCampos.Tables(0).Rows(intJ).Item("idIndice_Norma") = 7 Then
+                                dsTieneHijosconValor = sv.TieneHijosconValorenIndice(idArchivo, idDescripcion, 7)
+                                If dsTieneHijosconValor.Tables(0).Rows(0).Item("TieneValores") = 0 Then
+                                    If dsCampos.Tables(0).Rows(intJ).Item("Indice_Obligatorio") Then
+                                        CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).TextoCampo = _
+                                            dsCampos.Tables(0).Rows(intJ).Item("Folio_norma").ToString & " " & dsCampos.Tables(0).Rows(intJ).Item("Indice_descripcion") & " *" '<span style='color:Red;'>*</span>"
+                                    Else
+                                        CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).TextoCampo = _
+                                            dsCampos.Tables(0).Rows(intJ).Item("Folio_norma").ToString & " " & dsCampos.Tables(0).Rows(intJ).Item("Indice_descripcion")
+                                    End If
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).Catalogo = dsCampos.Tables(0).Rows(intJ).Item("relacion_con_normaPID")
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).Muestra_Padres = dsCampos.Tables(0).Rows(intJ).Item("Muestra_padres")
+
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idArea = dsCampos.Tables(0).Rows(intJ).Item("idArea")
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idElemento = dsCampos.Tables(0).Rows(intJ).Item("idElemento")
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idIndice = dsCampos.Tables(0).Rows(intJ).Item("idIndice")
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).Indice_Tipo = 12
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idNivel = dsCampos.Tables(0).Rows(intJ).Item("idNivel")
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idDescripcion = -1
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).DataBind()
+                                End If
+                            Else
+                                If dsCampos.Tables(0).Rows(intJ).Item("Indice_Obligatorio") Then
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).TextoCampo = _
+                                        dsCampos.Tables(0).Rows(intJ).Item("Folio_norma").ToString & " " & dsCampos.Tables(0).Rows(intJ).Item("Indice_descripcion") & " *" '<span style='color:Red;'>*</span>"
+                                Else
+                                    CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).TextoCampo = _
+                                        dsCampos.Tables(0).Rows(intJ).Item("Folio_norma").ToString & " " & dsCampos.Tables(0).Rows(intJ).Item("Indice_descripcion")
+                                End If
+                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).Catalogo = dsCampos.Tables(0).Rows(intJ).Item("relacion_con_normaPID")
+                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).Muestra_Padres = dsCampos.Tables(0).Rows(intJ).Item("Muestra_padres")
+
+                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idArea = dsCampos.Tables(0).Rows(intJ).Item("idArea")
+                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idElemento = dsCampos.Tables(0).Rows(intJ).Item("idElemento")
+                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idIndice = dsCampos.Tables(0).Rows(intJ).Item("idIndice")
+                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).Indice_Tipo = 12
+                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idNivel = dsCampos.Tables(0).Rows(intJ).Item("idNivel")
+                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).idDescripcion = -1
+                                CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoGridUnbound).DataBind()
+                            End If
                         Case 13
                             If dsCampos.Tables(0).Rows(intJ).Item("Indice_Obligatorio") Then
                                 CType(PnlElementos.FindControl("C" & dsCampos.Tables(0).Rows(intJ).Item("idIndice")), CampoCatalogoISAAR).TextoCampo = _
@@ -607,6 +654,8 @@ Public Class Funciones_Archivo
         Dim dsCampoValor As DataSet
         Dim dsConcatenaPadres As DataSet
         Dim dsFuncCampoValor As DataSet
+        Dim dsTieneHijosconValor As DataSet
+
         dsNomraCampos = sv.ListaNormas_Elementos_CamposxSerie(idSerie)
         For intI = 0 To dsNomraCampos.Tables(0).Rows.Count - 1
             If Not PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")) Is Nothing Then
@@ -782,10 +831,22 @@ Public Class Funciones_Archivo
                         End If
 
                     Case 12
+
                         If dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma") = 7 Then
-                            dsCampoValor = sv.Func_Concatena_Indices_Grid_Suma(dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), idArchivo, idDescripcion)
+                            dsTieneHijosconValor = sv.TieneHijosconValorenIndice(idArchivo, idDescripcion, 7)
+                            If dsTieneHijosconValor.Tables(0).Rows(0).Item("TieneValores") > 0 Then
+                                dsCampoValor = sv.Func_Concatena_Indices_Grid_Suma(dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), idArchivo, idDescripcion)
+                                If Not dsCampoValor.Tables(0).Rows(0).Item("Valor") Is DBNull.Value Then
+                                    CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoSlectura).MuestraValorHTML = True
+                                    CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoSlectura).ValorCampo = dsCampoValor.Tables(0).Rows(0).Item("Valor")
+                                End If
+                            Else
+                                dsCampoValor = sv.Func_Concatena_Indices_Grid(dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), idArchivo, idDescripcion)
+                                CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoGridUnbound).idDescripcion = idDescripcion
+                            End If
                         Else
                             dsCampoValor = sv.Func_Concatena_Indices_Grid(dsNomraCampos.Tables(0).Rows(intI).Item("idIndice_Norma"), dsNomraCampos.Tables(0).Rows(intI).Item("relacion_con_normaPID"), idArchivo, idDescripcion)
+                            CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoGridUnbound).idDescripcion = idDescripcion
                         End If
 
                         If dsCampoValor.Tables(0).Rows.Count > 0 Then
@@ -797,7 +858,7 @@ Public Class Funciones_Archivo
                             ''    CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoGrid).TextoPadres = dsConcatenaPadres.Tables(0).Rows(0).Item("LLave_concatenada")
                             ''End If
                         End If
-                        CType(PnlElementos.FindControl("C" & dsNomraCampos.Tables(0).Rows(intI).Item("idIndice")), CampoGrid).idDescripcion = idDescripcion
+
 
                     Case 13
                         dsCampoValor = sv.ListaArchivo_indice(idNorma, dsNomraCampos.Tables(0).Rows(intI).Item("idArea"), dsNomraCampos.Tables(0).Rows(intI).Item("idElemento"), dsNomraCampos.Tables(0).Rows(intI).Item("idIndice"), idArchivo, idDescripcion)

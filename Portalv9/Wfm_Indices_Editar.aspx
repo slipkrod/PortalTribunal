@@ -60,7 +60,7 @@
                             <tr>
                                 <td>
                                      <dxe:ASPxButton ID="aspxguardar" runat="server" ValidateInvisibleEditors="True" ValidationGroup="Archivos"
-                                         CausesValidation="True" style="height: 24px" Text="Guardar"></dxe:ASPxButton>
+                                         CausesValidation="True" Text="Guardar"></dxe:ASPxButton>
                                 </td>
                                 <td>&nbsp;&nbsp;</td>
                                 <td>

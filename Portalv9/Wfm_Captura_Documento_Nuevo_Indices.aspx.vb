@@ -24,7 +24,7 @@
         If Request.QueryString("idNorma") <> "" Then
             dsAreas = sv.ListaNormas_Elementos_CamposXArea_Serie(-1, Request.QueryString("idSerie"))
             For intI = 0 To dsAreas.Tables(0).Rows.Count - 1
-                Funciones_Archivo.CreaTablaElemento(PnlElementos, Page, Request.QueryString("idArchivo"), Request.QueryString("idNorma"), dsAreas.Tables(0).Rows(intI).Item("idArea"), dsAreas.Tables(0).Rows(intI).Item("idSerie"))
+                Funciones_Archivo.CreaTablaElemento(PnlElementos, Page, Request.QueryString("idArchivo"), Request.QueryString("idDescripcion"), Request.QueryString("idNorma"), dsAreas.Tables(0).Rows(intI).Item("idArea"), dsAreas.Tables(0).Rows(intI).Item("idSerie"))
             Next
         End If
     End Sub

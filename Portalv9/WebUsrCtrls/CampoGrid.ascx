@@ -67,7 +67,7 @@
                 <SettingsEditing Mode="EditForm" />
                 <Templates>
                     <EditForm>
-                        <table style="border: thin solid #C9D7DD; width: 100%; height: 160px;">
+                        <table style="border: thin solid #C9D7DD; width: 100%; ">
                             <tr>
                                 <td style="width: 161px">Catalogo</td>
                                 <td>
