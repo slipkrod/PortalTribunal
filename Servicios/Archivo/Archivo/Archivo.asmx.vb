@@ -2618,11 +2618,11 @@ Public Class Service1
 
     End Function
 
-    <WebMethod()> Public Sub ABC_Transferencias_Primarias_Cajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioCaja As Integer, ByVal Caja_Codigo As String, ByVal Caja_Descripcion As String, ByVal Caja_Notas As String)
+    <WebMethod()> Public Sub ABC_Transferencias_Primarias_Cajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioCaja As Integer, ByVal Caja_Codigo As String, ByVal Caja_Descripcion As String, ByVal Caja_Notas As String, ByVal Asignacion As String)
         Const strProcName As String = "ABC_Transferencias_Primarias_Cajas"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Try
-            pBD.ABC_Transferencias_Primarias_Cajas(op, idFolio, idFolioCaja, Caja_Codigo, Caja_Descripcion, Caja_Notas)
+            pBD.ABC_Transferencias_Primarias_Cajas(op, idFolio, idFolioCaja, Caja_Codigo, Caja_Descripcion, Caja_Notas, Asignacion)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
