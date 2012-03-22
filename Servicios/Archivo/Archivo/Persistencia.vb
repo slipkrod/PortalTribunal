@@ -3004,14 +3004,14 @@ Public Class Persistencia
         Return ds
     End Function
 
-    Public Sub ABC_Transferencias_Primarias_Cajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioCaja As Integer, ByVal Caja_Codigo As String, ByVal Caja_Descripcion As String, ByVal Caja_Notas As String)
+    Public Sub ABC_Transferencias_Primarias_Cajas(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioCaja As Integer, ByVal Caja_Codigo As String, ByVal Caja_Descripcion As String, ByVal Caja_Notas As String, ByVal Asignacion As String)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Cajas", op, idFolio, idFolioCaja, Caja_Codigo, Caja_Descripcion, Caja_Notas, Nothing)
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Cajas", op, idFolio, idFolioCaja, Caja_Codigo, Caja_Descripcion, Caja_Notas, Asignacion, Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Cajas", op, idFolio, idFolioCaja, Caja_Codigo, Caja_Descripcion, Caja_Notas)
+                dbCW = db.GetStoredProcCommand("ABC_Transferencias_Primarias_Cajas", op, idFolio, idFolioCaja, Caja_Codigo, Caja_Descripcion, Caja_Notas, Asignacion)
         End Select
         db.ExecuteDataSet(dbCW)
     End Sub
