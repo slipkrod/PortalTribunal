@@ -2253,10 +2253,6 @@ Public Class Service1
 
     End Function
 
-
-
-
-
     <WebMethod()> Public Sub ABC_Transferencias_Primarias(ByVal op As Integer, ByVal idFolio As Integer, ByVal Usrid As Integer, ByVal Fecha_Solicitud As Date, ByVal idArchivoOrigen As Integer, ByVal idArchivoDestino As Integer, ByVal Notas_Solicitud As String, ByVal Status As Integer)
         Const strProcName As String = "ABC_Transferencias_Primarias"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
@@ -2281,16 +2277,18 @@ Public Class Service1
         Return nID
     End Function
 
-    <WebMethod()> Public Sub ABC_Transferencias_Primarias_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
+    <WebMethod()> Public Function ABC_Transferencias_Primarias_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idFolioDetalleDocumento As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer) As Integer
         Const strProcName As String = "ABC_Transferencias_Primarias_Documentos"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim nID As Integer
         Try
-            pBD.ABC_Transferencias_Primarias_Documentos(op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus)
+            nID = pBD.ABC_Transferencias_Primarias_Documentos(op, idFolio, idFolioDetalle, idFolioDetalleDocumento, idDescripcion, idDocumentoPID, idStatus)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
         End Try
-    End Sub
+        Return nID
+    End Function
 
 
     <WebMethod()> Public Sub ABC_Transferencias_Primarias_Bajas_Documentos(ByVal op As Integer, ByVal idFolio As Integer, ByVal idFolioDetalle As Integer, ByVal idDescripcion As Integer, ByVal idDocumentoPID As Integer, ByVal idStatus As Integer)
@@ -2682,6 +2680,23 @@ Public Class Service1
         Return resultado
     End Function
 
+
+    <WebMethod()> Public Function Lista_Transferencias_Primarias_Documentos_Por_Caja(ByVal idFolio As Integer, ByVal idStatus As Integer) As DataSet
+        Const strProcName As String = "Lista_Transferencias_Primarias_Documentos_Por_Caja"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Lista_Transferencias_Primarias_Documentos_Por_Caja(idFolio, idStatus)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+
+
     <WebMethod()> Public Function Lista_Transferencias_Secundarias_Documentos(ByVal idFolio As Integer, ByVal idStatus As Integer) As DataSet
         Const strProcName As String = "Lista_Transferencias_Secundarias_Documentos"
 
@@ -2949,6 +2964,178 @@ Public Class Service1
         End Try
         Return resultado
     End Function
+    <WebMethod()> Public Function ObtenEtiquetaPorId(ByVal idEtiqueta As Integer) As DataSet
+        Const strProcName As String = "Obten_Lista_Etiquetas"
 
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ObtenEtiquetaPorId(idEtiqueta)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+
+    <WebMethod()> Public Function ObtenListaEtiquetas(ByVal idArchivo As Integer, ByVal estatus As String) As DataSet
+        Const strProcName As String = "Obten_Lista_Etiquetas"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ObtenListaEtiquetas(idArchivo, estatus)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function ABC_Etiquetas(ByVal op As Integer, ByVal idEtiqueta As Integer, ByVal idArchivo As Integer, _
+                                                    ByVal idDescripcion As Integer, ByVal Codigo_Clasificacion As String, _
+                                                    ByVal Descripcion As String, ByVal Estatus As String, ByVal Posicion As Integer, _
+                                                    ByVal EnCola As Boolean) As Integer
+        Const strProcName As String = "ABC_Etiquetas"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As Integer
+        Try
+            resultado = pBD.ABC_Etiquetas(op, idEtiqueta, idArchivo, idDescripcion, Codigo_Clasificacion, Descripcion, Estatus, Posicion, EnCola)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function ObtenColaImpresionEtiquetas(ByVal idArchivo As Integer) As DataSet
+        Const strProcName As String = "ObtenColaImpresionEtiquetas"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.ObtenColaImpresionEtiquetas(idArchivo)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+
+    <WebMethod()> Public Function Reporte_Inventario_General_Series(ByVal idArchivo As Integer) As DataSet
+        Const strProcName As String = "Reporte_Inventario_General_Series"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Reporte_Inventario_General_Series(idArchivo)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function Reporte_Inventario_General(ByVal idArchivo As Integer) As DataSet
+        Const strProcName As String = "Reporte_Inventario_General"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Reporte_Inventario_General(idArchivo)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function Reporte_Expedientes_Reservados(ByVal idArchivo As Integer, ByVal fechaInicio As Date, ByVal fechaFin As Date) As DataSet
+        Const strProcName As String = "Reporte_Expedientes_Reservados"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Reporte_Expedientes_Reservados(idArchivo, fechaInicio, fechaFin)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function Reporte_Expedientes_Confidenciales(ByVal idArchivo As Integer, ByVal fechaInicio As Date, ByVal fechaFin As Date) As DataSet
+        Const strProcName As String = "Reporte_Expedientes_Confidenciales"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Reporte_Expedientes_Confidenciales(idArchivo, fechaInicio, fechaFin)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function Obten_Estadisticas_Log(ByVal idArchivo As Integer, ByVal opcion As Integer) As DataSet
+        Const strProcName As String = "ObtenEstadisticasLog"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Obten_Estadisticas_Log(idArchivo, opcion)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function Reporte_Registros_Por_Area(ByVal idArchivo As Integer, ByVal idNivelMin As Integer) As DataSet
+        Const strProcName As String = "Reporte_Registros_Por_Area"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Reporte_Registros_Por_Area(idArchivo, idNivelMin)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function Reporte_Recepcion_Transferencia(ByVal tipoTransferencia As Integer, ByVal idFolio As Integer) As DataSet
+        Const strProcName As String = "Reporte_Recepcion_Transferencia"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Reporte_Recepcion_Transferencia(tipoTransferencia, idFolio)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+
+    <WebMethod()> Public Function Reporte_Inventario_Transferencia(ByVal tipoTransferencia As Integer, ByVal idFolio As Integer) As DataSet
+        Const strProcName As String = "Reporte_Inventario_Transferencia"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Reporte_Inventario_Transferencia(tipoTransferencia, idFolio)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
 
 End Class
