@@ -187,13 +187,13 @@ Public Class Service1
         Return ds
     End Function
 
-    <WebMethod()> Public Function ListaFiltros_Indices(ByVal idNorma As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer) As DataSet
+    <WebMethod()> Public Function ListaFiltros_Indices(ByVal idNorma As Integer) As DataSet
         Const strProcName As String = "ListaFiltros_Indices"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Dim ds As DataSet
 
         Try
-            ds = pBD.ListaFiltros_Indices(idNorma, idNivel, idSerie)
+            ds = pBD.ListaFiltros_Indices(idNorma)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)

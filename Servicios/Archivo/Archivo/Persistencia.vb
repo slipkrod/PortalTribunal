@@ -310,15 +310,15 @@ Public Class Persistencia
         Return ds
     End Function
 
-    Public Function ListaFiltros_Indices(ByVal idNorma As Integer, ByVal idNivel As Integer, ByVal idSerie As Integer) As DataSet
+    Public Function ListaFiltros_Indices(ByVal idNorma As Integer) As DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim ds As DataSet
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand("ListaFiltros_Indices", idNorma, idNivel, idSerie, Nothing)
+                dbCW = db.GetStoredProcCommand("ListaFiltros_Indices", idNorma, Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand("ListaFiltros_Indices", idNorma, idNivel, idSerie)
+                dbCW = db.GetStoredProcCommand("ListaFiltros_Indices", idNorma)
         End Select
         ds = db.ExecuteDataSet(dbCW)
         Return ds
