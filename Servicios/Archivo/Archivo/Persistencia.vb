@@ -633,15 +633,15 @@ Public Class Persistencia
         Return ds
     End Function
 
-    Public Function ListaNormas_ElementosxSeriexElemento_Visible(ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idSerie As Integer) As DataSet
+    Public Function ListaNormas_ElementosxSeriexElemento_Visible(ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idSerie As Integer, ByVal idArchivo As Integer) As DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim ds As DataSet
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand(SP_ListaNormas_ElementosxSeriexElemento_Visible, idNorma, idArea, idSerie, Nothing)
+                dbCW = db.GetStoredProcCommand(SP_ListaNormas_ElementosxSeriexElemento_Visible, idNorma, idArea, idSerie, idArchivo, Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand(SP_ListaNormas_ElementosxSeriexElemento_Visible, idNorma, idArea, idSerie)
+                dbCW = db.GetStoredProcCommand(SP_ListaNormas_ElementosxSeriexElemento_Visible, idNorma, idArea, idSerie, idArchivo)
         End Select
         ds = db.ExecuteDataSet(dbCW)
         Return ds
@@ -3565,6 +3565,18 @@ Public Class Persistencia
 
     End Function
 
+    Public Function Transferencia_Primaria_Cuenta_Documentos_Sin_Caja(ByVal idFolio As Integer) As Integer
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim resultado As Integer = 0
+
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                resultado = CType(db.ExecuteScalar("Transferencia_Primaria_Cuenta_Documentos_Sin_Caja", idFolio), Integer)
+            Case eTipoBD.SQLServer
+                resultado = CType(db.ExecuteScalar("Transferencia_Primaria_Cuenta_Documentos_Sin_Caja", idFolio), Integer)
+        End Select
+        Return resultado
+    End Function
 
 #End Region
 

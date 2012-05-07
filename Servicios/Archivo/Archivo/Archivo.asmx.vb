@@ -396,13 +396,13 @@ Public Class Service1
         End Try
         Return ds
     End Function
-    <WebMethod()> Public Function ListaNormas_ElementosxSeriexElemento_Visible(ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idSerie As Integer) As System.Data.DataSet
+    <WebMethod()> Public Function ListaNormas_ElementosxSeriexElemento_Visible(ByVal idNorma As Integer, ByVal idArea As Integer, ByVal idSerie As Integer, ByVal idArchivo As Integer) As System.Data.DataSet
         Const strProcName As String = "ListaNormas_ElementosxSeriexElemento_Visible"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Dim ds As DataSet
 
         Try
-            ds = pBD.ListaNormas_ElementosxSeriexElemento_Visible(idNorma, idArea, idSerie)
+            ds = pBD.ListaNormas_ElementosxSeriexElemento_Visible(idNorma, idArea, idSerie, idArchivo)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
@@ -3131,6 +3131,21 @@ Public Class Service1
         Dim resultado As DataSet
         Try
             resultado = pBD.Reporte_Inventario_Transferencia(tipoTransferencia, idFolio)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+
+    <WebMethod()> Public Function Transferencia_Primaria_Cuenta_Documentos_Sin_Caja(ByVal idFolio As Integer) As Integer
+        Const strProcName As String = "Transferencia_Primaria_Cuenta_Documentos_Sin_Caja"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As Integer
+        Try
+            resultado = pBD.Transferencia_Primaria_Cuenta_Documentos_Sin_Caja(idFolio)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
