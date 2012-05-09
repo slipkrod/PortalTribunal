@@ -1036,16 +1036,16 @@ Public Class Persistencia
         End Select
     End Function
 
-    Public Function ABC_Archivo_Descripciones(ByVal op As OperacionesABC, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal Codigo_clasificacion As String, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal valuePath As String, ByVal idUnidadInstalacion As Integer, ByVal Descripcion As String, ByVal idTipoElemento As Integer, ByVal idDocumentoPID As Integer) As Integer
+    Public Function ABC_Archivo_Descripciones(ByVal op As OperacionesABC, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal Codigo_clasificacion As String, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal valuePath As String, ByVal idUnidadInstalacion As Integer, ByVal Descripcion As String, ByVal idTipoElemento As Integer, ByVal idDocumentoPID As Integer, ByVal usuario As String) As Integer
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim nID As Integer
 
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand(SP_ABC_Archivo_Descripciones, op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID, Nothing)
+                dbCW = db.GetStoredProcCommand(SP_ABC_Archivo_Descripciones, op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID, usuario, Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand(SP_ABC_Archivo_Descripciones, op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID)
+                dbCW = db.GetStoredProcCommand(SP_ABC_Archivo_Descripciones, op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID, usuario)
         End Select
         db.ExecuteDataSet(dbCW)
         nID = CType(dbCW.Parameters.Item("@idDescripcion").Value, Integer)

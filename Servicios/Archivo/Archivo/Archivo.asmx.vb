@@ -667,12 +667,12 @@ Public Class Service1
         Return ds
     End Function
 
-    <WebMethod()> Public Function ABC_Archivo_Descripciones(ByVal op As OperacionesABC, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal Codigo_clasificacion As String, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal valuePath As String, ByVal idUnidadInstalacion As Integer, ByVal Descripcion As String, ByVal idTipoElemento As Integer, ByVal idDocumentoPID As Integer) As Integer
+    <WebMethod()> Public Function ABC_Archivo_Descripciones(ByVal op As OperacionesABC, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal Codigo_clasificacion As String, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal valuePath As String, ByVal idUnidadInstalacion As Integer, ByVal Descripcion As String, ByVal idTipoElemento As Integer, ByVal idDocumentoPID As Integer, ByVal usuario As String) As Integer
         Const strProcName As String = "ABC_Archivo_Descripciones"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Dim nID As Integer
         Try
-            nID = pBD.ABC_Archivo_Descripciones(op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID)
+            nID = pBD.ABC_Archivo_Descripciones(op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID, usuario)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
