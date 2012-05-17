@@ -3596,6 +3596,26 @@ Public Class Persistencia
         Return resultado
     End Function
 
+    Public Sub InsertaLogExpDoc(ByVal TipoEvento As Byte, ByVal CodigoReferencia As String, ByVal Titulo As String, _
+                                          ByVal Usuario As String, ByVal Grupo As String, ByVal idDescripcion As Integer, _
+                                          ByVal idSerie As Integer, ByVal idArchivo As Integer)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim nRes As Integer
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("Inserta_LogExpDoc", TipoEvento, CodigoReferencia, Titulo, _
+                                               Usuario, Grupo, idDescripcion, _
+                                               idSerie, idArchivo, Nothing)
+
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("Inserta_LogExpDoc", TipoEvento, CodigoReferencia, Titulo, _
+                                               Usuario, Grupo, idDescripcion, _
+                                               idSerie, idArchivo)
+        End Select
+        nRes = db.ExecuteNonQuery(dbCW)
+    End Sub
+
 #End Region
 
 End Class

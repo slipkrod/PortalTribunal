@@ -3166,5 +3166,25 @@ Public Class Service1
         End Try
         Return resultado
     End Function
+	
+	
+    <WebMethod()> Public Sub InsertaLogExpedienteDocumento(ByVal TipoEvento As Byte, ByVal CodigoReferencia As String, ByVal Titulo As String, ByVal idUsuario As Integer, ByVal Usuario As String, ByVal idGrupo As Integer, ByVal Grupo As String, ByVal idDescripcion As Integer, ByVal idSerie As Integer, ByVal idArchivo As Integer)
+        Const strProcName As String = "Inserta_LogExpDoc"
+
+
+
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        'Dim resultado As DataSet
+
+        Try
+            pBD.InsertaLogExpDoc(TipoEvento, CodigoReferencia, Titulo, Usuario, Grupo, idDescripcion, idSerie, idArchivo)
+
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+    End Sub
+
 
 End Class
