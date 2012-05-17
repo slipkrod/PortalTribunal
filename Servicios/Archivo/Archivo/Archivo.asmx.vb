@@ -3123,6 +3123,20 @@ Public Class Service1
         Return resultado
     End Function
 
+    <WebMethod()> Public Function Reporte_Inventario_Transferencia_Primaria(ByVal idFolio As Integer) As DataSet
+        Const strProcName As String = "Reporte_Recepcion_Transferencia_Primaria"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Reporte_Inventario_Transferencia_Primaria(idFolio)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
 
     <WebMethod()> Public Function Reporte_Inventario_Transferencia(ByVal tipoTransferencia As Integer, ByVal idFolio As Integer) As DataSet
         Const strProcName As String = "Reporte_Inventario_Transferencia"

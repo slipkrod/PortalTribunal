@@ -1543,9 +1543,9 @@ Public Class Persistencia
         Dim ds As DataSet
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand(SP_Reportegs_datos, idArchivo, idNorma, Nothing)
+                dbCW = db.GetStoredProcCommand("Reporte_Guia_Simple", Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand(SP_Reportegs_datos, idArchivo, idNorma)
+                dbCW = db.GetStoredProcCommand("Reporte_Guia_Simple")
         End Select
         ds = db.ExecuteDataSet(dbCW)
         Return ds
@@ -3559,6 +3559,24 @@ Public Class Persistencia
                 dbCw = db.GetStoredProcCommand("Reporte_Inventario_Transferencia", tipoTransferencia, idFolio, Nothing)
             Case eTipoBD.SQLServer
                 dbCw = db.GetStoredProcCommand("Reporte_Inventario_Transferencia", tipoTransferencia, idFolio)
+        End Select
+        ds = db.ExecuteDataSet(dbCw)
+        Return ds
+
+    End Function
+
+
+    Public Function Reporte_Inventario_Transferencia_Primaria(ByVal idFolio As Integer) As DataSet
+
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCw As DbCommand = Nothing
+        Dim ds As DataSet
+
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCw = db.GetStoredProcCommand("Reporte_Inventario_Transferencia_Primaria", idFolio, Nothing)
+            Case eTipoBD.SQLServer
+                dbCw = db.GetStoredProcCommand("Reporte_Inventario_Transferencia_Primaria", idFolio)
         End Select
         ds = db.ExecuteDataSet(dbCw)
         Return ds
