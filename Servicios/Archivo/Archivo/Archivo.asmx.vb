@@ -3599,4 +3599,16 @@ Public Class Service1
         Return resultado
     End Function
 
+    <WebMethod()> Public Sub Reactiva_Expediente(ByVal idDescripcion As Integer)
+        Const strProcName As String = "Reactiva_Expediente"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        'Dim resultado As DataSet
+        Try
+            pBD.Reactiva_Expediente(idDescripcion)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+    End Sub
 End Class

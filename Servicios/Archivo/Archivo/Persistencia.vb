@@ -4068,5 +4068,17 @@ Public Class Persistencia
         Return ds
     End Function
 
+    Public Sub Reactiva_Expediente(ByVal idDescripcion As Integer)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("Reactiva_Expediente", idDescripcion, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("Reactiva_Expediente", idDescripcion)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
+
 #End Region
 End Class
