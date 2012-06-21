@@ -3993,6 +3993,21 @@ Public Class Persistencia
         Return ds
     End Function
 
+    Public Function Transferencia_Bajas_Bitacora(ByVal status As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCw As DbCommand = Nothing
+        Dim ds As DataSet
+
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCw = db.GetStoredProcCommand("Transferencia_Baja_Bitacora", status, Nothing)
+            Case eTipoBD.SQLServer
+                dbCw = db.GetStoredProcCommand("Transferencia_Baja_Bitacora", status)
+        End Select
+        ds = db.ExecuteDataSet(dbCw)
+        Return ds
+    End Function
+
     Public Function Lista_Expedientes_Valoracion_Secundaria(ByVal fechaCorte As Date, ByVal area As String, ByVal baja As Boolean) As DataSet
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCw As DbCommand = Nothing
@@ -4068,6 +4083,18 @@ Public Class Persistencia
         Return ds
     End Function
 
+    Public Sub Transfiere_Archivo_Descripciones_Bajas(ByVal idDescripcion As Integer, ByVal idFolioDetalle As Integer)
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("Transfiere_Archivo_Descripciones_Bajas", idDescripcion, idFolioDetalle, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("Transfiere_Archivo_Descripciones_Bajas", idDescripcion, idFolioDetalle)
+        End Select
+        db.ExecuteDataSet(dbCW)
+    End Sub
+
     Public Sub Reactiva_Expediente(ByVal idDescripcion As Integer)
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
@@ -4079,6 +4106,23 @@ Public Class Persistencia
         End Select
         db.ExecuteDataSet(dbCW)
     End Sub
+
+
+    Public Function Reintegra_Expediente(ByVal idDescripcion As Integer, ByVal idArchivoDestino As Integer) As Integer
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim resultado As Integer
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("Reintegra_Expediente", idDescripcion, idArchivoDestino, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("Reintegra_Expediente", idDescripcion, idArchivoDestino)
+        End Select
+        db.ExecuteDataSet(dbCW)
+        Return resultado
+    End Function
+
+
 
 #End Region
 End Class

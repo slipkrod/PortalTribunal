@@ -3530,6 +3530,21 @@ Public Class Service1
     End Function
 
 
+    <WebMethod()> Public Function Transferencia_Bajas_Bitacora(ByVal status As Integer) As DataSet
+        Const strProcName As String = "Transferencia_Bajas_Bitacora"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Transferencia_Bajas_Bitacora(status)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+
 
     <WebMethod()> Public Function Lista_Expedientes_Valoracion_Secundaria(ByVal fechaCorte As Date, ByVal area As String, ByVal baja As Boolean) As DataSet
         Const strProcName As String = "Transferencia_Primaria_Bitacora"
@@ -3599,6 +3614,19 @@ Public Class Service1
         Return resultado
     End Function
 
+    <WebMethod()> Public Sub Transfiere_Archivo_Descripciones_Bajas(ByVal idDescripcion As Integer, ByVal idFolioDetalle As Integer)
+        Const strProcName As String = "Reactiva_Expediente"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        'Dim resultado As DataSet
+        Try
+            pBD.Transfiere_Archivo_Descripciones_Bajas(idDescripcion, idFolioDetalle)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+    End Sub
+
     <WebMethod()> Public Sub Reactiva_Expediente(ByVal idDescripcion As Integer)
         Const strProcName As String = "Reactiva_Expediente"
 
@@ -3611,4 +3639,17 @@ Public Class Service1
             Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
         End Try
     End Sub
+
+    <WebMethod()> Public Function Reintegra_Expediente(ByVal idDescripcion As Integer, ByVal idArchivoDestino As Integer) As Integer
+        Const strProcName As String = "Reintegra_Expediente"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As Integer
+        Try
+            resultado = pBD.Reintegra_Expediente(idDescripcion, idArchivoDestino)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
 End Class
