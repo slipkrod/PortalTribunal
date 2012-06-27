@@ -4107,7 +4107,6 @@ Public Class Persistencia
         db.ExecuteDataSet(dbCW)
     End Sub
 
-
     Public Function Reintegra_Expediente(ByVal idDescripcion As Integer, ByVal idArchivoDestino As Integer) As Integer
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
@@ -4122,7 +4121,20 @@ Public Class Persistencia
         Return resultado
     End Function
 
+    Public Function Obten_Ubicacion_Documento(ByVal idDescripcion As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCw As DbCommand = Nothing
+        Dim ds As DataSet
 
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCw = db.GetStoredProcCommand("Obten_Ubicacion_Documento", idDescripcion, Nothing)
+            Case eTipoBD.SQLServer
+                dbCw = db.GetStoredProcCommand("Obten_Ubicacion_Documento", idDescripcion)
+        End Select
+        ds = db.ExecuteDataSet(dbCw)
+        Return ds
+    End Function
 
 #End Region
 End Class

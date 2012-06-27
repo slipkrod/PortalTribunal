@@ -3652,4 +3652,18 @@ Public Class Service1
         End Try
         Return resultado
     End Function
+
+    <WebMethod()> Public Function Obten_Ubicacion_Documento(ByVal idDescripcion As Integer) As DataSet
+        Const strProcName As String = "ObtenAreasGeneradoras"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Obten_Ubicacion_Documento(idDescripcion)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
 End Class

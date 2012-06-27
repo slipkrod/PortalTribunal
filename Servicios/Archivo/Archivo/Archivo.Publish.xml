@@ -1,4 +1,16 @@
 <publishData>
+  <publishTarget publishUrl="C:\Users\Rodrigo\Desktop\Tribunal\Tribunal Junio\Instaladores\Archivo\">
+    <file relUrl="bin/Microsoft.Practices.ObjectBuilder.dll" publishTime="02/28/2012 17:30:28" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Configuration.dll" publishTime="02/28/2012 17:30:28" />
+    <file relUrl="Archivo.asmx" publishTime="02/28/2012 17:30:27" />
+    <file relUrl="bin/Archivo.dll" publishTime="06/26/2012 15:34:11" />
+    <file relUrl="Web.config" publishTime="06/12/2012 09:48:51" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Logging.dll" publishTime="02/28/2012 17:30:28" />
+    <file relUrl="bin/Archivo.pdb" publishTime="06/26/2012 15:34:11" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll" publishTime="02/28/2012 17:30:28" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll" publishTime="02/28/2012 17:30:28" />
+    <file relUrl="bin/Archivo.xml" publishTime="06/26/2012 15:34:11" />
+  </publishTarget>
   <publishTarget publishUrl="http://localhost/WSArchivo/">
     <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Configuration.dll" publishTime="04/29/2005 10:57:30" />
     <file relUrl="Archivo.asmx" publishTime="11/02/2008 18:19:28" />

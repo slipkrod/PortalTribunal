@@ -12,7 +12,7 @@
           <NativeDebugging>False</NativeDebugging>
           <SQLDebugging>False</SQLDebugging>
           <PublishCopyOption>RunFiles</PublishCopyOption>
-          <PublishTargetLocation>http://localhost/WSArchivo/</PublishTargetLocation>
+          <PublishTargetLocation>C:\Users\Rodrigo\Desktop\Tribunal\Tribunal Junio\Instaladores\Archivo\</PublishTargetLocation>
           <PublishDeleteAllFiles>False</PublishDeleteAllFiles>
           <PublishCopyAppData>False</PublishCopyAppData>
           <ExternalProgram>
