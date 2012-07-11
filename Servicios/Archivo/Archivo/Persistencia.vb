@@ -120,6 +120,7 @@ Public Class Persistencia
     Private Const SP_ListaArchivo_Descripciones As String = "ListaArchivo_Descripciones"
     Private Const SP_ListaArchivo_Descripciones_nivel As String = "ListaArchivo_Descripciones_nivel"
     Private Const SP_ListaArchivo_Descripciones_idSerie As String = "ListaArchivo_Descripciones_idSerie"
+    Private Const SP_ListaArchivo_Descripciones_Unidad As String = "ListaArchivo_Descripciones_Unidad"
     Private Const SP_ListaArchivo_Descripciones_idDescripcion As String = "ListaArchivo_Descripciones_idDescripcion"
     Private Const SP_ListaArchivo_Descripciones_idDescripcion_Hijos As String = "ListaArchivo_Descripciones_idDescripcion_Hijos"
 
@@ -1036,16 +1037,16 @@ Public Class Persistencia
         End Select
     End Function
 
-    Public Function ABC_Archivo_Descripciones(ByVal op As OperacionesABC, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal Codigo_clasificacion As String, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal valuePath As String, ByVal idUnidadInstalacion As Integer, ByVal Descripcion As String, ByVal idTipoElemento As Integer, ByVal idDocumentoPID As Integer, ByVal usuario As String) As Integer
+    Public Function ABC_Archivo_Descripciones(ByVal op As OperacionesABC, ByVal idArchivo As Integer, ByVal idDescripcion As Integer, ByVal Codigo_clasificacion As String, ByVal idNivel As Integer, ByVal idSerie As Integer, ByVal valuePath As String, ByVal idUnidadInstalacion As Integer, ByVal Descripcion As String, ByVal idTipoElemento As Integer, ByVal idDocumentoPID As Integer, ByVal usuario As String, ByVal unidadid As Integer, ByVal unidad As String) As Integer
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim nID As Integer
 
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand(SP_ABC_Archivo_Descripciones, op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID, usuario, Nothing)
+                dbCW = db.GetStoredProcCommand(SP_ABC_Archivo_Descripciones, op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID, usuario, unidadid, unidad, Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand(SP_ABC_Archivo_Descripciones, op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID, usuario)
+                dbCW = db.GetStoredProcCommand(SP_ABC_Archivo_Descripciones, op, idArchivo, idDescripcion, Codigo_clasificacion, idNivel, idSerie, valuePath, idUnidadInstalacion, Descripcion, idTipoElemento, idDocumentoPID, usuario, unidadid, unidad)
         End Select
         db.ExecuteDataSet(dbCW)
         nID = CType(dbCW.Parameters.Item("@idDescripcion").Value, Integer)
@@ -3594,7 +3595,7 @@ Public Class Persistencia
         Return ds
 
     End Function
-    Public Function Reporte_Expedientes_Reservados(ByVal idArchivo As Integer, ByVal fechaInicio As Date, ByVal fechaFin As Date) As DataSet
+    Public Function Reporte_Expedientes_Reservados(ByVal idArchivo As Integer, ByVal fechaInicio As String, ByVal fechaFin As String, ByVal idserie As Integer, ByVal unidad As String, ByVal fechadscf As String) As DataSet
 
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCw As DbCommand = Nothing
@@ -3602,16 +3603,16 @@ Public Class Persistencia
 
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCw = db.GetStoredProcCommand("Reporte_Expedientes_Reservados", idArchivo, fechaInicio, fechaFin, Nothing)
+                dbCw = db.GetStoredProcCommand("Reporte_Expedientes_Reservados", idArchivo, fechaInicio, fechaFin, idserie, unidad, fechadscf, Nothing)
             Case eTipoBD.SQLServer
-                dbCw = db.GetStoredProcCommand("Reporte_Expedientes_Reservados", idArchivo, fechaInicio, fechaFin)
+                dbCw = db.GetStoredProcCommand("Reporte_Expedientes_Reservados", idArchivo, fechaInicio, fechaFin, idserie, unidad, fechadscf)
         End Select
         ds = db.ExecuteDataSet(dbCw)
         Return ds
 
     End Function
 
-    Public Function Reporte_Expedientes_Confidenciales(ByVal idArchivo As Integer, ByVal fechaInicio As Date, ByVal fechaFin As Date) As DataSet
+    Public Function Reporte_Expedientes_Confidenciales(ByVal idArchivo As Integer, ByVal fechaInicio As String, ByVal fechaFin As String, ByVal idserie As Integer, ByVal unidad As String) As DataSet
 
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCw As DbCommand = Nothing
@@ -3619,15 +3620,14 @@ Public Class Persistencia
 
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCw = db.GetStoredProcCommand("Reporte_Expedientes_Confidenciales", idArchivo, fechaInicio, fechaFin, Nothing)
+                dbCw = db.GetStoredProcCommand("Reporte_Expedientes_Confidenciales", idArchivo, fechaInicio, fechaFin, idserie, unidad, Nothing)
             Case eTipoBD.SQLServer
-                dbCw = db.GetStoredProcCommand("Reporte_Expedientes_Confidenciales", idArchivo, fechaInicio, fechaFin)
+                dbCw = db.GetStoredProcCommand("Reporte_Expedientes_Confidenciales", idArchivo, fechaInicio, fechaFin, idserie, unidad)
         End Select
         ds = db.ExecuteDataSet(dbCw)
         Return ds
 
     End Function
-
 
     Public Function Obten_Estadisticas_Log(ByVal idArchivo As Integer, ByVal opcion As Integer) As DataSet
 
@@ -4242,5 +4242,18 @@ Public Class Persistencia
         Return ds
     End Function
 
+    Public Function ListaArchivo_Descripciones_Unidad(ByVal idArchivo As Integer, ByVal unidadId As String, ByVal idparent As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim ds As DataSet
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand(SP_ListaArchivo_Descripciones_Unidad, idArchivo, unidadId, idparent, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand(SP_ListaArchivo_Descripciones_Unidad, idArchivo, unidadId, idparent)
+        End Select
+        ds = db.ExecuteDataSet(dbCW)
+        Return ds
+    End Function
 #End Region
 End Class
