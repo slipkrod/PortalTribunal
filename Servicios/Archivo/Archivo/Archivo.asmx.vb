@@ -3564,7 +3564,7 @@ Public Class Service1
         Const strProcName As String = "ABC_Dictamen_Valoracion"
         Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
         Try
-            Return pBD.ABC_Dictamen_Valoracion(op, idDictamen, idDescripcion, destinoFinal, fechaElaboracion, usuario, usrId, ampliacionResguardo, tiempoResguardo, tipologias, respuestas(0), respuestas(1), respuestas(2), respuestas(3), respuestas(4), respuestas(5), respuestas(6), respuestas(7), respuestas(8), respuestas(9), respuestas(10), respuestas(11), respuestas(12), respuestas(13), respuestas(14), respuestas(15), respuestas(16), respuestas(17), respuestas(18), respuestas(19), respuestas(20), respuestas(21), respuestas(22), memoBaja, memoTestimonio, memoEvidencia, memoInformacion, hora, dia, mes, anio, elaboroDireccion, revisoDireccion, reponsableUnidad, titularUnidad)
+            Return pBD.ABC_Dictamen_Valoracion(op, idDictamen, idDescripcion, destinoFinal, fechaElaboracion, usuario, usrId, ampliacionResguardo, tiempoResguardo, tipologias, respuestas(0), respuestas(1), respuestas(2), respuestas(3), respuestas(4), respuestas(5), respuestas(6), respuestas(7), respuestas(8), respuestas(9), respuestas(10), respuestas(11), respuestas(12), respuestas(13), respuestas(14), respuestas(15), respuestas(16), respuestas(17), respuestas(18), respuestas(19), respuestas(20), respuestas(21), respuestas(22), respuestas(23), memoBaja, memoTestimonio, memoEvidencia, memoInformacion, hora, dia, mes, anio, elaboroDireccion, revisoDireccion, reponsableUnidad, titularUnidad)
         Catch ex As System.Exception
             RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
             Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
@@ -3666,4 +3666,100 @@ Public Class Service1
         End Try
         Return resultado
     End Function
+
+    <WebMethod()> Public Function Obten_Resultados_Busqueda(ByVal texto As String, ByVal idArchivo As Integer, ByVal campos As Integer, ByVal nivel As Integer, ByVal campoOrden As Integer) As DataSet
+        Const strProcName As String = "Obten_Resultados_Busqueda"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Obten_Resultados_Busqueda(texto, idArchivo, campos, nivel, campoOrden)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function Obten_Niveles_Norma(ByVal idNorma As Integer) As DataSet
+        Const strProcName As String = "Obten_Resultados_Busqueda"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Obten_Niveles_Norma(idNorma)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function ABC_Busqueda(ByVal op As Integer, ByVal idBusqueda As Integer, ByVal idNivel As Integer, ByVal descripcion As String, ByVal fecha_creacion As DateTime, ByVal fecha_modificacion As DateTime, ByVal usuario As String, ByVal guardada As Boolean) As Integer
+        Const strProcName As String = "ABC_Busqueda"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            Return pBD.ABC_Busqueda(op, idBusqueda, idNivel, descripcion, fecha_creacion, fecha_modificacion, usuario, guardada)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+        Return 0
+    End Function
+
+    <WebMethod()> Public Function ABC_Busqueda_Elemento(ByVal op As Integer, ByVal idBusqueda As Integer, ByVal idBusqueda_elemento As Integer, ByVal valor_busqueda As String, ByVal folio_operador As Integer, ByVal campo_busqueda As Integer, ByVal operador_logico_y As Boolean) As Integer
+        Const strProcName As String = "ABC_Busqueda"
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Try
+            Return pBD.ABC_Busqueda_Elemento(op, idBusqueda, idBusqueda_elemento, valor_busqueda, folio_operador, campo_busqueda, operador_logico_y)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw New Exception(mstrModNombre & "." & strProcName & " : " & ex.Message)
+        End Try
+        Return 0
+    End Function
+
+    <WebMethod()> Public Function Obten_Resultados_Busqueda_Booleana(ByVal idBusqueda As Integer, ByVal idArchivo As Integer, ByVal campoOrden As Integer) As DataSet
+        Const strProcName As String = "Obten_Resultados_Busqueda_Booleana"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Obten_Resultados_Busqueda_Booleana(idBusqueda, idArchivo, campoOrden)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+
+    End Function
+
+    <WebMethod()> Public Function Obten_Filtros_Busqueda(ByVal idBusqueda As Integer) As DataSet
+        Const strProcName As String = "Obten_Filtros_Busqueda"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Obten_Filtros_Busqueda(idBusqueda)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
+    <WebMethod()> Public Function Obten_Historial_Busquedas(ByVal idArchivo As Integer, ByVal usuario As String) As DataSet
+        Const strProcName As String = "Obten_Historial_Busquedas"
+
+        Dim pBD As New Persistencia(ObtenerCS, ObtenerTipoBD)
+        Dim resultado As DataSet
+        Try
+            resultado = pBD.Obten_Historial_Busquedas(idArchivo, usuario)
+        Catch ex As System.Exception
+            RegistraEventoLog(mstrModNombre & "." & strProcName, System.Diagnostics.TraceEventType.Error, ex.Message)
+            Throw Excepciones.ConstruyeExcepcion(mstrModNombre, strProcName, ex, ex.Message)
+        End Try
+        Return resultado
+    End Function
+
 End Class

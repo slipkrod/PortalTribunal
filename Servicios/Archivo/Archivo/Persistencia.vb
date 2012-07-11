@@ -4023,15 +4023,15 @@ Public Class Persistencia
         Return ds
     End Function
 
-    Public Function ABC_Dictamen_Valoracion(ByVal op As Integer, ByVal idDictamen As Integer, ByVal idDescripcion As Integer, ByVal destinoFinal As Integer, ByVal fechaElaboracion As Date, ByVal usuario As String, ByVal usrId As Integer, ByVal ampliacionResguardo As Boolean, ByVal tiempoResguardo As Integer, ByVal tipologias As String, ByVal r1 As String, ByVal r2 As String, ByVal r3 As String, ByVal r4 As String, ByVal r5 As String, ByVal r6 As String, ByVal r7 As String, ByVal r8 As String, ByVal r9 As String, ByVal r10 As String, ByVal r11 As String, ByVal r12 As String, ByVal r13 As String, ByVal r14 As String, ByVal r15 As String, ByVal r16 As String, ByVal r17 As String, ByVal r18 As String, ByVal r19 As String, ByVal r20 As String, ByVal r21 As String, ByVal r22 As String, ByVal r23 As String, ByVal memoBaja As String, ByVal memoTestimonio As String, ByVal memoEvidencia As String, ByVal memoInformacion As String, ByVal hora As String, ByVal dia As String, ByVal mes As String, ByVal anio As String, ByVal elaboroDireccion As String, ByVal revisoDireccion As String, ByVal reponsableUnidad As String, ByVal titularUnidad As String) As Integer
+    Public Function ABC_Dictamen_Valoracion(ByVal op As Integer, ByVal idDictamen As Integer, ByVal idDescripcion As Integer, ByVal destinoFinal As Integer, ByVal fechaElaboracion As Date, ByVal usuario As String, ByVal usrId As Integer, ByVal ampliacionResguardo As Boolean, ByVal tiempoResguardo As Integer, ByVal tipologias As String, ByVal r1 As String, ByVal r2 As String, ByVal r3 As String, ByVal r4 As String, ByVal r5 As String, ByVal r6 As String, ByVal r7 As String, ByVal r8 As String, ByVal r9 As String, ByVal r10 As String, ByVal r11 As String, ByVal r12 As String, ByVal r13 As String, ByVal r14 As String, ByVal r15 As String, ByVal r16 As String, ByVal r17 As String, ByVal r18 As String, ByVal r19 As String, ByVal r20 As String, ByVal r21 As String, ByVal r22 As String, ByVal r23 As String, ByVal r24 As String, ByVal memoBaja As String, ByVal memoTestimonio As String, ByVal memoEvidencia As String, ByVal memoInformacion As String, ByVal hora As String, ByVal dia As String, ByVal mes As String, ByVal anio As String, ByVal elaboroDireccion As String, ByVal revisoDireccion As String, ByVal reponsableUnidad As String, ByVal titularUnidad As String) As Integer
         Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
         Dim dbCW As DbCommand = Nothing
         Dim nID As Integer
         Select Case Me.TipoBD
             Case eTipoBD.Oracle
-                dbCW = db.GetStoredProcCommand("ABC_Dictamen_Valoracion", op, idDictamen, idDescripcion, destinoFinal, fechaElaboracion, usuario, usrId, ampliacionResguardo, tiempoResguardo, tipologias, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, memoBaja, memoTestimonio, memoEvidencia, memoInformacion, hora, dia, mes, anio, elaboroDireccion, revisoDireccion, reponsableUnidad, titularUnidad, Nothing)
+                dbCW = db.GetStoredProcCommand("ABC_Dictamen_Valoracion", op, idDictamen, idDescripcion, destinoFinal, fechaElaboracion, usuario, usrId, ampliacionResguardo, tiempoResguardo, tipologias, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, memoBaja, memoTestimonio, memoEvidencia, memoInformacion, hora, dia, mes, anio, elaboroDireccion, revisoDireccion, reponsableUnidad, titularUnidad, Nothing)
             Case eTipoBD.SQLServer
-                dbCW = db.GetStoredProcCommand("ABC_Dictamen_Valoracion", op, idDictamen, idDescripcion, destinoFinal, fechaElaboracion, usuario, usrId, ampliacionResguardo, tiempoResguardo, tipologias, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, memoBaja, memoTestimonio, memoEvidencia, memoInformacion, hora, dia, mes, anio, elaboroDireccion, revisoDireccion, reponsableUnidad, titularUnidad)
+                dbCW = db.GetStoredProcCommand("ABC_Dictamen_Valoracion", op, idDictamen, idDescripcion, destinoFinal, fechaElaboracion, usuario, usrId, ampliacionResguardo, tiempoResguardo, tipologias, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, memoBaja, memoTestimonio, memoEvidencia, memoInformacion, hora, dia, mes, anio, elaboroDireccion, revisoDireccion, reponsableUnidad, titularUnidad)
         End Select
         db.ExecuteDataSet(dbCW)
         nID = CType(dbCW.Parameters.Item("@idDictamen").Value, Integer)
@@ -4131,6 +4131,112 @@ Public Class Persistencia
                 dbCw = db.GetStoredProcCommand("Obten_Ubicacion_Documento", idDescripcion, Nothing)
             Case eTipoBD.SQLServer
                 dbCw = db.GetStoredProcCommand("Obten_Ubicacion_Documento", idDescripcion)
+        End Select
+        ds = db.ExecuteDataSet(dbCw)
+        Return ds
+    End Function
+
+    Public Function Obten_Resultados_Busqueda(ByVal texto As String, ByVal idArchivo As Integer, ByVal campo As Integer, ByVal nivel As Integer, ByVal campoOrden As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCw As DbCommand = Nothing
+        Dim ds As DataSet
+
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCw = db.GetStoredProcCommand("Obten_Resultados_Busqueda", texto, idArchivo, campo, nivel, campoOrden, Nothing)
+            Case eTipoBD.SQLServer
+                dbCw = db.GetStoredProcCommand("Obten_Resultados_Busqueda", texto, idArchivo, campo, nivel, campoOrden)
+        End Select
+        ds = db.ExecuteDataSet(dbCw)
+        Return ds
+    End Function
+
+
+    Public Function Obten_Niveles_Norma(ByVal idNorma As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCw As DbCommand = Nothing
+        Dim ds As DataSet
+
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCw = db.GetStoredProcCommand("Lista_Niveles_Norma", idNorma, Nothing)
+            Case eTipoBD.SQLServer
+                dbCw = db.GetStoredProcCommand("Lista_Niveles_Norma", idNorma)
+        End Select
+        ds = db.ExecuteDataSet(dbCw)
+        Return ds
+    End Function
+
+    Public Function ABC_Busqueda(ByVal op As Integer, ByVal idBusqueda As Integer, ByVal idNivel As Integer, ByVal descripcion As String, ByVal fecha_creacion As DateTime, ByVal fecha_modificacion As DateTime, ByVal usuario As String, ByVal guardada As Boolean) As Integer
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim nID As Integer
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ABC_Busqueda", op, idBusqueda, idNivel, descripcion, fecha_creacion, fecha_modificacion, usuario, guardada, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ABC_Busqueda", op, idBusqueda, idNivel, descripcion, fecha_creacion, fecha_modificacion, usuario, guardada)
+        End Select
+        db.ExecuteDataSet(dbCW)
+        nID = CType(dbCW.Parameters.Item("@idBusqueda").Value, Integer)
+        Return nID
+    End Function
+
+    Public Function ABC_Busqueda_Elemento(ByVal op As Integer, ByVal idBusqueda As Integer, ByVal idBusqueda_elemento As Integer, ByVal valor_busqueda As String, ByVal folio_operador As Integer, ByVal campo_busqueda As Integer, ByVal operador_logico_y As Boolean) As Integer
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCW As DbCommand = Nothing
+        Dim nID As Integer
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCW = db.GetStoredProcCommand("ABC_Busqueda_Elemento", op, idBusqueda, idBusqueda_elemento, valor_busqueda, folio_operador, campo_busqueda, operador_logico_y, Nothing)
+            Case eTipoBD.SQLServer
+                dbCW = db.GetStoredProcCommand("ABC_Busqueda_Elemento", op, idBusqueda, idBusqueda_elemento, valor_busqueda, folio_operador, campo_busqueda, operador_logico_y)
+        End Select
+        db.ExecuteDataSet(dbCW)
+        nID = CType(dbCW.Parameters.Item("@idBusqueda_elemento").Value, Integer)
+        Return nID
+    End Function
+
+    Public Function Obten_Resultados_Busqueda_Booleana(ByVal idBusqueda As Integer, ByVal idArchivo As Integer, ByVal campoOrden As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCw As DbCommand = Nothing
+        Dim ds As DataSet
+
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCw = db.GetStoredProcCommand("Obten_Resultados_Busqueda_Booleana", idBusqueda, idArchivo, campoOrden, Nothing)
+            Case eTipoBD.SQLServer
+                dbCw = db.GetStoredProcCommand("Obten_Resultados_Busqueda_Booleana", idBusqueda, idArchivo, campoOrden)
+        End Select
+        ds = db.ExecuteDataSet(dbCw)
+        Return ds
+    End Function
+
+    Public Function Obten_Filtros_Busqueda(ByVal idBusqueda As Integer) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCw As DbCommand = Nothing
+        Dim ds As DataSet
+
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCw = db.GetStoredProcCommand("Obten_Filtros_Busqueda", idBusqueda, Nothing)
+            Case eTipoBD.SQLServer
+                dbCw = db.GetStoredProcCommand("Obten_Filtros_Busqueda", idBusqueda)
+        End Select
+        ds = db.ExecuteDataSet(dbCw)
+        Return ds
+    End Function
+
+    Public Function Obten_Historial_Busquedas(ByVal idArchivo As Integer, ByVal usuario As String) As DataSet
+        Dim db As Database = DatabaseFactory.CreateDatabase(mstrCS)
+        Dim dbCw As DbCommand = Nothing
+        Dim ds As DataSet
+
+        Select Case Me.TipoBD
+            Case eTipoBD.Oracle
+                dbCw = db.GetStoredProcCommand("Obten_Historial_Busquedas", idArchivo, usuario, Nothing)
+            Case eTipoBD.SQLServer
+                dbCw = db.GetStoredProcCommand("Obten_Historial_Busquedas", idArchivo, usuario)
         End Select
         ds = db.ExecuteDataSet(dbCw)
         Return ds
